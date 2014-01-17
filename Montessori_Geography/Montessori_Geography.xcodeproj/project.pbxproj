@@ -1,0 +1,897 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD022595187FF54C00B51647 /* GlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FD022594187FF54C00B51647 /* GlobalMethods.m */; };
+		FD0225A01880034F00B51647 /* stage1_active_China@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0225971880034F00B51647 /* stage1_active_China@2x.png */; };
+		FD0225A11880034F00B51647 /* stage1_active_Mongolia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0225981880034F00B51647 /* stage1_active_Mongolia@2x.png */; };
+		FD0225A21880034F00B51647 /* stage1_active_Russia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0225991880034F00B51647 /* stage1_active_Russia@2x.png */; };
+		FD0225A31880034F00B51647 /* stage1_inactive_China@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD02259A1880034F00B51647 /* stage1_inactive_China@2x.png */; };
+		FD0225A41880034F00B51647 /* stage1_inactive_Mongolia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD02259B1880034F00B51647 /* stage1_inactive_Mongolia@2x.png */; };
+		FD0225A51880034F00B51647 /* stage1_inactive_Russia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD02259C1880034F00B51647 /* stage1_inactive_Russia@2x.png */; };
+		FD0225A61880034F00B51647 /* stage1_placeholder_China@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD02259D1880034F00B51647 /* stage1_placeholder_China@2x.png */; };
+		FD0225A71880034F00B51647 /* stage1_placeholder_Mongolia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD02259E1880034F00B51647 /* stage1_placeholder_Mongolia@2x.png */; };
+		FD0225A81880034F00B51647 /* stage1_placeholder_Russia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD02259F1880034F00B51647 /* stage1_placeholder_Russia@2x.png */; };
+		FD0EF838187E7D21008BE10E /* stage1_active_Japan_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF832187E7D21008BE10E /* stage1_active_Japan_flag@2x.png */; };
+		FD0EF839187E7D21008BE10E /* stage1_active_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF833187E7D21008BE10E /* stage1_active_NorthKorea_flag@2x.png */; };
+		FD0EF83A187E7D21008BE10E /* stage1_active_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF834187E7D21008BE10E /* stage1_active_SouthKorea_flag@2x.png */; };
+		FD0EF83B187E7D21008BE10E /* stage1_placeholder_Japan_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF835187E7D21008BE10E /* stage1_placeholder_Japan_flag@2x.png */; };
+		FD0EF83C187E7D21008BE10E /* stage1_placeholder_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF836187E7D21008BE10E /* stage1_placeholder_NorthKorea_flag@2x.png */; };
+		FD0EF83D187E7D21008BE10E /* stage1_placeholder_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF837187E7D21008BE10E /* stage1_placeholder_SouthKorea_flag@2x.png */; };
+		FD0EF83F187E7D39008BE10E /* asia_map_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */; };
+		FD128E771883E21F00D760E9 /* InAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E741883E21F00D760E9 /* InAppHelper.m */; };
+		FD128E781883E21F00D760E9 /* SubclassInAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E761883E21F00D760E9 /* SubclassInAppHelper.m */; };
+		FD128E7C1883E2B500D760E9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E7B1883E2B500D760E9 /* MBProgressHUD.m */; };
+		FD128E7E1883E3C400D760E9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD128E7D1883E3C400D760E9 /* SystemConfiguration.framework */; };
+		FD128E801883E3CF00D760E9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD128E7F1883E3CF00D760E9 /* StoreKit.framework */; };
+		FD128E891883E8C500D760E9 /* flags_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD128E821883E8C500D760E9 /* flags_blue@2x.png */; };
+		FD128E8A1883E8C500D760E9 /* flags_grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD128E831883E8C500D760E9 /* flags_grey@2x.png */; };
+		FD128E8B1883E8C500D760E9 /* maps_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD128E841883E8C500D760E9 /* maps_blue@2x.png */; };
+		FD128E8C1883E8C500D760E9 /* maps_grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD128E851883E8C500D760E9 /* maps_grey@2x.png */; };
+		FD128E8E1883E8C500D760E9 /* menu_grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD128E871883E8C500D760E9 /* menu_grey@2x.png */; };
+		FD128E8F1883E8C500D760E9 /* plus_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD128E881883E8C500D760E9 /* plus_icon@2x.png */; };
+		FD128E911883FE2000D760E9 /* menu_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD128E901883FE2000D760E9 /* menu_blue@2x.png */; };
+		FD1CA73E187D45050064FBBA /* StagesViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CA73C187D45050064FBBA /* StagesViewCtr.m */; };
+		FD1CA73F187D45050064FBBA /* StagesViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1CA73D187D45050064FBBA /* StagesViewCtr.xib */; };
+		FD1CA741187D53D10064FBBA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1CA740187D53D10064FBBA /* CoreText.framework */; };
+		FD4FF1C9187FCB8000D6823A /* NSUserDefaults+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */; };
+		FD4FF1CC187FCE3B00D6823A /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FF1CB187FCE3B00D6823A /* NSString+Validation.m */; };
+		FD4FF1CE187FDD7300D6823A /* MGAMapStages.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4FF1CD187FDD7300D6823A /* MGAMapStages.plist */; };
+		FD58E76D1884066400322E54 /* menu_with_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD58E76C1884066400322E54 /* menu_with_arrow@2x.png */; };
+		FD58E76F1884073700322E54 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD58E76E1884073700322E54 /* arrow@2x.png */; };
+		FD6CEE8A187EB237009ADF7D /* stage1_inactive_Japan_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE87187EB237009ADF7D /* stage1_inactive_Japan_flag@2x.png */; };
+		FD6CEE8B187EB237009ADF7D /* stage1_inactive_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE88187EB237009ADF7D /* stage1_inactive_NorthKorea_flag@2x.png */; };
+		FD6CEE8C187EB237009ADF7D /* stage1_inactive_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE89187EB237009ADF7D /* stage1_inactive_SouthKorea_flag@2x.png */; };
+		FD71B2201873D233006DD001 /* asia_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B21E1873D233006DD001 /* asia_map@2x.png */; };
+		FD71B2211873D233006DD001 /* world_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B21F1873D233006DD001 /* world_map@2x.png */; };
+		FD71B22C18740158006DD001 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22A18740158006DD001 /* plane.png */; };
+		FD71B22D18740158006DD001 /* plane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22B18740158006DD001 /* plane@2x.png */; };
+		FD7C839D1880119600F7329C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD7C839C1880119600F7329C /* Localization.strings */; };
+		FD9D7000187D348300404C3C /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */; };
+		FD9D7003187D3F1C00404C3C /* MGAGamePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7002187D3F1C00404C3C /* MGAGamePiece.m */; };
+		FD9D7005187D3F3100404C3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9D7004187D3F3100404C3C /* QuartzCore.framework */; };
+		FDC36FA91887A50500FFDAA9 /* MGAPlanePath.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDC36FA81887A50500FFDAA9 /* MGAPlanePath.plist */; };
+		FDC815001887B65600A28EB5 /* img_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDC814FF1887B65600A28EB5 /* img_shadow@2x.png */; };
+		FDFCE8D2187AB24C004BDF60 /* stage1_active_Japan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8C8187AB24C004BDF60 /* stage1_active_Japan@2x.png */; };
+		FDFCE8D3187AB24C004BDF60 /* stage1_active_NorthKorea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8C9187AB24C004BDF60 /* stage1_active_NorthKorea@2x.png */; };
+		FDFCE8D4187AB24C004BDF60 /* stage1_active_SouthKorea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8CA187AB24C004BDF60 /* stage1_active_SouthKorea@2x.png */; };
+		FDFCE8D5187AB24C004BDF60 /* stage1_inactive_Japan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8CB187AB24C004BDF60 /* stage1_inactive_Japan@2x.png */; };
+		FDFCE8D6187AB24C004BDF60 /* stage1_inactive_NorthKorea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8CC187AB24C004BDF60 /* stage1_inactive_NorthKorea@2x.png */; };
+		FDFCE8D7187AB24C004BDF60 /* stage1_inactive_SouthKorea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8CD187AB24C004BDF60 /* stage1_inactive_SouthKorea@2x.png */; };
+		FDFCE8D8187AB24C004BDF60 /* stage1_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8CE187AB24C004BDF60 /* stage1_map@2x.png */; };
+		FDFCE8D9187AB24C004BDF60 /* stage1_placeholder_Japan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8CF187AB24C004BDF60 /* stage1_placeholder_Japan@2x.png */; };
+		FDFCE8DA187AB24C004BDF60 /* stage1_placeholder_NorthKorea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8D0187AB24C004BDF60 /* stage1_placeholder_NorthKorea@2x.png */; };
+		FDFCE8DB187AB24C004BDF60 /* stage1_placeholder_SouthKorea@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFCE8D1187AB24C004BDF60 /* stage1_placeholder_SouthKorea@2x.png */; };
+		FDFDE2F6187425DA00206614 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FDFDE2F5187425DA00206614 /* logo@2x.png */; };
+		FDFF880A18714AAE0005173E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFF880918714AAE0005173E /* Foundation.framework */; };
+		FDFF880C18714AAE0005173E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFF880B18714AAE0005173E /* CoreGraphics.framework */; };
+		FDFF880E18714AAE0005173E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFF880D18714AAE0005173E /* UIKit.framework */; };
+		FDFF881418714AAE0005173E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDFF881218714AAE0005173E /* InfoPlist.strings */; };
+		FDFF881618714AAE0005173E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFF881518714AAE0005173E /* main.m */; };
+		FDFF881A18714AAE0005173E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFF881918714AAE0005173E /* AppDelegate.m */; };
+		FDFF882518714AAE0005173E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDFF882418714AAE0005173E /* Images.xcassets */; };
+		FDFF882C18714AAE0005173E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFF882B18714AAE0005173E /* XCTest.framework */; };
+		FDFF882D18714AAE0005173E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFF880918714AAE0005173E /* Foundation.framework */; };
+		FDFF882E18714AAE0005173E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDFF880D18714AAE0005173E /* UIKit.framework */; };
+		FDFF883618714AAE0005173E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDFF883418714AAE0005173E /* InfoPlist.strings */; };
+		FDFF883818714AAE0005173E /* Montessori_GeographyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFF883718714AAE0005173E /* Montessori_GeographyTests.m */; };
+		FDFF884818714D8C0005173E /* IntroductionViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FDFF884618714D8C0005173E /* IntroductionViewCtr.m */; };
+		FDFF884918714D8C0005173E /* IntroductionViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDFF884718714D8C0005173E /* IntroductionViewCtr.xib */; };
+		FDFF8890187152900005173E /* Questrial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDFF888F187152900005173E /* Questrial-Regular.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDFF882F18714AAE0005173E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDFF87FE18714AAE0005173E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDFF880518714AAE0005173E;
+			remoteInfo = Montessori_Geography;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD022593187FF54C00B51647 /* GlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalMethods.h; sourceTree = "<group>"; };
+		FD022594187FF54C00B51647 /* GlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalMethods.m; sourceTree = "<group>"; };
+		FD0225971880034F00B51647 /* stage1_active_China@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_China@2x.png"; sourceTree = "<group>"; };
+		FD0225981880034F00B51647 /* stage1_active_Mongolia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_Mongolia@2x.png"; sourceTree = "<group>"; };
+		FD0225991880034F00B51647 /* stage1_active_Russia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_Russia@2x.png"; sourceTree = "<group>"; };
+		FD02259A1880034F00B51647 /* stage1_inactive_China@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_China@2x.png"; sourceTree = "<group>"; };
+		FD02259B1880034F00B51647 /* stage1_inactive_Mongolia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_Mongolia@2x.png"; sourceTree = "<group>"; };
+		FD02259C1880034F00B51647 /* stage1_inactive_Russia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_Russia@2x.png"; sourceTree = "<group>"; };
+		FD02259D1880034F00B51647 /* stage1_placeholder_China@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_China@2x.png"; sourceTree = "<group>"; };
+		FD02259E1880034F00B51647 /* stage1_placeholder_Mongolia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_Mongolia@2x.png"; sourceTree = "<group>"; };
+		FD02259F1880034F00B51647 /* stage1_placeholder_Russia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_Russia@2x.png"; sourceTree = "<group>"; };
+		FD0EF832187E7D21008BE10E /* stage1_active_Japan_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_Japan_flag@2x.png"; sourceTree = "<group>"; };
+		FD0EF833187E7D21008BE10E /* stage1_active_NorthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_NorthKorea_flag@2x.png"; sourceTree = "<group>"; };
+		FD0EF834187E7D21008BE10E /* stage1_active_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
+		FD0EF835187E7D21008BE10E /* stage1_placeholder_Japan_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_Japan_flag@2x.png"; sourceTree = "<group>"; };
+		FD0EF836187E7D21008BE10E /* stage1_placeholder_NorthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_NorthKorea_flag@2x.png"; sourceTree = "<group>"; };
+		FD0EF837187E7D21008BE10E /* stage1_placeholder_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
+		FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asia_map_blue@2x.png"; sourceTree = "<group>"; };
+		FD128E731883E21F00D760E9 /* InAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppHelper.h; sourceTree = "<group>"; };
+		FD128E741883E21F00D760E9 /* InAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppHelper.m; sourceTree = "<group>"; };
+		FD128E751883E21F00D760E9 /* SubclassInAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassInAppHelper.h; sourceTree = "<group>"; };
+		FD128E761883E21F00D760E9 /* SubclassInAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubclassInAppHelper.m; sourceTree = "<group>"; };
+		FD128E7A1883E2B500D760E9 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FD128E7B1883E2B500D760E9 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		FD128E7D1883E3C400D760E9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FD128E7F1883E3CF00D760E9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FD128E821883E8C500D760E9 /* flags_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flags_blue@2x.png"; sourceTree = "<group>"; };
+		FD128E831883E8C500D760E9 /* flags_grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flags_grey@2x.png"; sourceTree = "<group>"; };
+		FD128E841883E8C500D760E9 /* maps_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps_blue@2x.png"; sourceTree = "<group>"; };
+		FD128E851883E8C500D760E9 /* maps_grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps_grey@2x.png"; sourceTree = "<group>"; };
+		FD128E871883E8C500D760E9 /* menu_grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_grey@2x.png"; sourceTree = "<group>"; };
+		FD128E881883E8C500D760E9 /* plus_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus_icon@2x.png"; sourceTree = "<group>"; };
+		FD128E901883FE2000D760E9 /* menu_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_blue@2x.png"; sourceTree = "<group>"; };
+		FD1CA73A187D43880064FBBA /* MGAStageSteps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGAStageSteps.h; sourceTree = "<group>"; };
+		FD1CA73B187D45050064FBBA /* StagesViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StagesViewCtr.h; sourceTree = "<group>"; };
+		FD1CA73C187D45050064FBBA /* StagesViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StagesViewCtr.m; sourceTree = "<group>"; };
+		FD1CA73D187D45050064FBBA /* StagesViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StagesViewCtr.xib; sourceTree = "<group>"; };
+		FD1CA740187D53D10064FBBA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FD4FF1C7187FCB8000D6823A /* NSUserDefaults+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Helpers.h"; sourceTree = "<group>"; };
+		FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Helpers.m"; sourceTree = "<group>"; };
+		FD4FF1CA187FCE3B00D6823A /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
+		FD4FF1CB187FCE3B00D6823A /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
+		FD4FF1CD187FDD7300D6823A /* MGAMapStages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MGAMapStages.plist; sourceTree = "<group>"; };
+		FD58E76C1884066400322E54 /* menu_with_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_with_arrow@2x.png"; sourceTree = "<group>"; };
+		FD58E76E1884073700322E54 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		FD6CEE87187EB237009ADF7D /* stage1_inactive_Japan_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_Japan_flag@2x.png"; sourceTree = "<group>"; };
+		FD6CEE88187EB237009ADF7D /* stage1_inactive_NorthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_NorthKorea_flag@2x.png"; sourceTree = "<group>"; };
+		FD6CEE89187EB237009ADF7D /* stage1_inactive_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
+		FD71B21E1873D233006DD001 /* asia_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asia_map@2x.png"; sourceTree = "<group>"; };
+		FD71B21F1873D233006DD001 /* world_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_map@2x.png"; sourceTree = "<group>"; };
+		FD71B22A18740158006DD001 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
+		FD71B22B18740158006DD001 /* plane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane@2x.png"; sourceTree = "<group>"; };
+		FD7C839C1880119600F7329C /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
+		FD968D96187E5F5D0046AE06 /* MGACurrentMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGACurrentMode.h; sourceTree = "<group>"; };
+		FD9D6FFE187D348300404C3C /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
+		FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
+		FD9D7001187D3F1C00404C3C /* MGAGamePiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAGamePiece.h; sourceTree = "<group>"; };
+		FD9D7002187D3F1C00404C3C /* MGAGamePiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGAGamePiece.m; sourceTree = "<group>"; };
+		FD9D7004187D3F3100404C3C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FDC36FA81887A50500FFDAA9 /* MGAPlanePath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MGAPlanePath.plist; sourceTree = "<group>"; };
+		FDC814FF1887B65600A28EB5 /* img_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_shadow@2x.png"; sourceTree = "<group>"; };
+		FDFCE8C8187AB24C004BDF60 /* stage1_active_Japan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_Japan@2x.png"; sourceTree = "<group>"; };
+		FDFCE8C9187AB24C004BDF60 /* stage1_active_NorthKorea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_NorthKorea@2x.png"; sourceTree = "<group>"; };
+		FDFCE8CA187AB24C004BDF60 /* stage1_active_SouthKorea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_active_SouthKorea@2x.png"; sourceTree = "<group>"; };
+		FDFCE8CB187AB24C004BDF60 /* stage1_inactive_Japan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_Japan@2x.png"; sourceTree = "<group>"; };
+		FDFCE8CC187AB24C004BDF60 /* stage1_inactive_NorthKorea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_NorthKorea@2x.png"; sourceTree = "<group>"; };
+		FDFCE8CD187AB24C004BDF60 /* stage1_inactive_SouthKorea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_inactive_SouthKorea@2x.png"; sourceTree = "<group>"; };
+		FDFCE8CE187AB24C004BDF60 /* stage1_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_map@2x.png"; sourceTree = "<group>"; };
+		FDFCE8CF187AB24C004BDF60 /* stage1_placeholder_Japan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_Japan@2x.png"; sourceTree = "<group>"; };
+		FDFCE8D0187AB24C004BDF60 /* stage1_placeholder_NorthKorea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_NorthKorea@2x.png"; sourceTree = "<group>"; };
+		FDFCE8D1187AB24C004BDF60 /* stage1_placeholder_SouthKorea@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_placeholder_SouthKorea@2x.png"; sourceTree = "<group>"; };
+		FDFDE2F5187425DA00206614 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		FDFF880618714AAE0005173E /* Montessori_Geography.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Montessori_Geography.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDFF880918714AAE0005173E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FDFF880B18714AAE0005173E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FDFF880D18714AAE0005173E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FDFF881118714AAE0005173E /* Montessori_Geography-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Montessori_Geography-Info.plist"; sourceTree = "<group>"; };
+		FDFF881318714AAE0005173E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FDFF881518714AAE0005173E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FDFF881718714AAE0005173E /* Montessori_Geography-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Montessori_Geography-Prefix.pch"; sourceTree = "<group>"; };
+		FDFF881818714AAE0005173E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FDFF881918714AAE0005173E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FDFF882418714AAE0005173E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FDFF882A18714AAE0005173E /* Montessori_GeographyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Montessori_GeographyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDFF882B18714AAE0005173E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FDFF883318714AAE0005173E /* Montessori_GeographyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Montessori_GeographyTests-Info.plist"; sourceTree = "<group>"; };
+		FDFF883518714AAE0005173E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FDFF883718714AAE0005173E /* Montessori_GeographyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Montessori_GeographyTests.m; sourceTree = "<group>"; };
+		FDFF884518714D8C0005173E /* IntroductionViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionViewCtr.h; sourceTree = "<group>"; };
+		FDFF884618714D8C0005173E /* IntroductionViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionViewCtr.m; sourceTree = "<group>"; };
+		FDFF884718714D8C0005173E /* IntroductionViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroductionViewCtr.xib; sourceTree = "<group>"; };
+		FDFF888D187152000005173E /* AppConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstant.h; sourceTree = "<group>"; };
+		FDFF888F187152900005173E /* Questrial-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Questrial-Regular.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDFF880318714AAE0005173E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD128E801883E3CF00D760E9 /* StoreKit.framework in Frameworks */,
+				FD128E7E1883E3C400D760E9 /* SystemConfiguration.framework in Frameworks */,
+				FD1CA741187D53D10064FBBA /* CoreText.framework in Frameworks */,
+				FD9D7005187D3F3100404C3C /* QuartzCore.framework in Frameworks */,
+				FDFF880C18714AAE0005173E /* CoreGraphics.framework in Frameworks */,
+				FDFF880E18714AAE0005173E /* UIKit.framework in Frameworks */,
+				FDFF880A18714AAE0005173E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDFF882718714AAE0005173E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDFF882C18714AAE0005173E /* XCTest.framework in Frameworks */,
+				FDFF882E18714AAE0005173E /* UIKit.framework in Frameworks */,
+				FDFF882D18714AAE0005173E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD0225961880034F00B51647 /* Group2 */ = {
+			isa = PBXGroup;
+			children = (
+				FD0225971880034F00B51647 /* stage1_active_China@2x.png */,
+				FD0225981880034F00B51647 /* stage1_active_Mongolia@2x.png */,
+				FD0225991880034F00B51647 /* stage1_active_Russia@2x.png */,
+				FD02259A1880034F00B51647 /* stage1_inactive_China@2x.png */,
+				FD02259B1880034F00B51647 /* stage1_inactive_Mongolia@2x.png */,
+				FD02259C1880034F00B51647 /* stage1_inactive_Russia@2x.png */,
+				FD02259D1880034F00B51647 /* stage1_placeholder_China@2x.png */,
+				FD02259E1880034F00B51647 /* stage1_placeholder_Mongolia@2x.png */,
+				FD02259F1880034F00B51647 /* stage1_placeholder_Russia@2x.png */,
+			);
+			path = Group2;
+			sourceTree = "<group>";
+		};
+		FD128E721883E21F00D760E9 /* In App Purchase Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FD128E731883E21F00D760E9 /* InAppHelper.h */,
+				FD128E741883E21F00D760E9 /* InAppHelper.m */,
+				FD128E751883E21F00D760E9 /* SubclassInAppHelper.h */,
+				FD128E761883E21F00D760E9 /* SubclassInAppHelper.m */,
+			);
+			path = "In App Purchase Classes";
+			sourceTree = "<group>";
+		};
+		FD128E791883E2B500D760E9 /* MBProgress */ = {
+			isa = PBXGroup;
+			children = (
+				FD128E7A1883E2B500D760E9 /* MBProgressHUD.h */,
+				FD128E7B1883E2B500D760E9 /* MBProgressHUD.m */,
+			);
+			path = MBProgress;
+			sourceTree = "<group>";
+		};
+		FD128E811883E8C500D760E9 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FDC814FF1887B65600A28EB5 /* img_shadow@2x.png */,
+				FD58E76E1884073700322E54 /* arrow@2x.png */,
+				FD58E76C1884066400322E54 /* menu_with_arrow@2x.png */,
+				FD128E901883FE2000D760E9 /* menu_blue@2x.png */,
+				FD128E821883E8C500D760E9 /* flags_blue@2x.png */,
+				FD128E831883E8C500D760E9 /* flags_grey@2x.png */,
+				FD128E841883E8C500D760E9 /* maps_blue@2x.png */,
+				FD128E851883E8C500D760E9 /* maps_grey@2x.png */,
+				FD128E871883E8C500D760E9 /* menu_grey@2x.png */,
+				FD128E881883E8C500D760E9 /* plus_icon@2x.png */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		FD71B21D1873D233006DD001 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FD128E811883E8C500D760E9 /* Home Screen */,
+				FDFCE8C6187AB24C004BDF60 /* Stage1 */,
+				FDFDE2F5187425DA00206614 /* logo@2x.png */,
+				FD71B22A18740158006DD001 /* plane.png */,
+				FD71B22B18740158006DD001 /* plane@2x.png */,
+				FD71B21E1873D233006DD001 /* asia_map@2x.png */,
+				FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */,
+				FD71B21F1873D233006DD001 /* world_map@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		FD7C839B1880117A00F7329C /* LocalizesString */ = {
+			isa = PBXGroup;
+			children = (
+				FD7C839C1880119600F7329C /* Localization.strings */,
+			);
+			path = LocalizesString;
+			sourceTree = "<group>";
+		};
+		FD9D6FF4187D32C400404C3C /* Stages */ = {
+			isa = PBXGroup;
+			children = (
+				FD1CA73B187D45050064FBBA /* StagesViewCtr.h */,
+				FD1CA73C187D45050064FBBA /* StagesViewCtr.m */,
+				FD1CA73D187D45050064FBBA /* StagesViewCtr.xib */,
+			);
+			path = Stages;
+			sourceTree = "<group>";
+		};
+		FD9D6FFA187D335D00404C3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD9D7001187D3F1C00404C3C /* MGAGamePiece.h */,
+				FD9D7002187D3F1C00404C3C /* MGAGamePiece.m */,
+				FD4FF1CD187FDD7300D6823A /* MGAMapStages.plist */,
+				FDC36FA81887A50500FFDAA9 /* MGAPlanePath.plist */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD9D6FFD187D348300404C3C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				FD4FF1CA187FCE3B00D6823A /* NSString+Validation.h */,
+				FD4FF1CB187FCE3B00D6823A /* NSString+Validation.m */,
+				FD4FF1C7187FCB8000D6823A /* NSUserDefaults+Helpers.h */,
+				FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */,
+				FD9D6FFE187D348300404C3C /* NSMutableArray+Shuffling.h */,
+				FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		FDFCE8C6187AB24C004BDF60 /* Stage1 */ = {
+			isa = PBXGroup;
+			children = (
+				FDFCE8C7187AB24C004BDF60 /* Group1 */,
+				FD0225961880034F00B51647 /* Group2 */,
+			);
+			path = Stage1;
+			sourceTree = "<group>";
+		};
+		FDFCE8C7187AB24C004BDF60 /* Group1 */ = {
+			isa = PBXGroup;
+			children = (
+				FD6CEE87187EB237009ADF7D /* stage1_inactive_Japan_flag@2x.png */,
+				FD6CEE88187EB237009ADF7D /* stage1_inactive_NorthKorea_flag@2x.png */,
+				FD6CEE89187EB237009ADF7D /* stage1_inactive_SouthKorea_flag@2x.png */,
+				FD0EF832187E7D21008BE10E /* stage1_active_Japan_flag@2x.png */,
+				FD0EF833187E7D21008BE10E /* stage1_active_NorthKorea_flag@2x.png */,
+				FD0EF834187E7D21008BE10E /* stage1_active_SouthKorea_flag@2x.png */,
+				FD0EF835187E7D21008BE10E /* stage1_placeholder_Japan_flag@2x.png */,
+				FD0EF836187E7D21008BE10E /* stage1_placeholder_NorthKorea_flag@2x.png */,
+				FD0EF837187E7D21008BE10E /* stage1_placeholder_SouthKorea_flag@2x.png */,
+				FDFCE8C8187AB24C004BDF60 /* stage1_active_Japan@2x.png */,
+				FDFCE8C9187AB24C004BDF60 /* stage1_active_NorthKorea@2x.png */,
+				FDFCE8CA187AB24C004BDF60 /* stage1_active_SouthKorea@2x.png */,
+				FDFCE8CB187AB24C004BDF60 /* stage1_inactive_Japan@2x.png */,
+				FDFCE8CC187AB24C004BDF60 /* stage1_inactive_NorthKorea@2x.png */,
+				FDFCE8CD187AB24C004BDF60 /* stage1_inactive_SouthKorea@2x.png */,
+				FDFCE8CE187AB24C004BDF60 /* stage1_map@2x.png */,
+				FDFCE8CF187AB24C004BDF60 /* stage1_placeholder_Japan@2x.png */,
+				FDFCE8D0187AB24C004BDF60 /* stage1_placeholder_NorthKorea@2x.png */,
+				FDFCE8D1187AB24C004BDF60 /* stage1_placeholder_SouthKorea@2x.png */,
+			);
+			path = Group1;
+			sourceTree = "<group>";
+		};
+		FDFF87FD18714AAE0005173E = {
+			isa = PBXGroup;
+			children = (
+				FDFF880F18714AAE0005173E /* Montessori_Geography */,
+				FDFF883118714AAE0005173E /* Montessori_GeographyTests */,
+				FDFF880818714AAE0005173E /* Frameworks */,
+				FDFF880718714AAE0005173E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDFF880718714AAE0005173E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF880618714AAE0005173E /* Montessori_Geography.app */,
+				FDFF882A18714AAE0005173E /* Montessori_GeographyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDFF880818714AAE0005173E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD128E7F1883E3CF00D760E9 /* StoreKit.framework */,
+				FD128E7D1883E3C400D760E9 /* SystemConfiguration.framework */,
+				FD1CA740187D53D10064FBBA /* CoreText.framework */,
+				FD9D7004187D3F3100404C3C /* QuartzCore.framework */,
+				FDFF880918714AAE0005173E /* Foundation.framework */,
+				FDFF880B18714AAE0005173E /* CoreGraphics.framework */,
+				FDFF880D18714AAE0005173E /* UIKit.framework */,
+				FDFF882B18714AAE0005173E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDFF880F18714AAE0005173E /* Montessori_Geography */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF881818714AAE0005173E /* AppDelegate.h */,
+				FDFF881918714AAE0005173E /* AppDelegate.m */,
+				FDFF884118714D470005173E /* Classes */,
+				FD9D6FFA187D335D00404C3C /* Model */,
+				FDFF884218714D470005173E /* Resources */,
+				FDFF884318714D470005173E /* Utilities */,
+				FDFF882418714AAE0005173E /* Images.xcassets */,
+				FDFF881018714AAE0005173E /* Supporting Files */,
+			);
+			path = Montessori_Geography;
+			sourceTree = "<group>";
+		};
+		FDFF881018714AAE0005173E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF881118714AAE0005173E /* Montessori_Geography-Info.plist */,
+				FDFF881218714AAE0005173E /* InfoPlist.strings */,
+				FDFF881518714AAE0005173E /* main.m */,
+				FDFF881718714AAE0005173E /* Montessori_Geography-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDFF883118714AAE0005173E /* Montessori_GeographyTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF883718714AAE0005173E /* Montessori_GeographyTests.m */,
+				FDFF883218714AAE0005173E /* Supporting Files */,
+			);
+			path = Montessori_GeographyTests;
+			sourceTree = "<group>";
+		};
+		FDFF883218714AAE0005173E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF883318714AAE0005173E /* Montessori_GeographyTests-Info.plist */,
+				FDFF883418714AAE0005173E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FDFF884118714D470005173E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF884418714D6D0005173E /* Introduction Screen */,
+				FD9D6FF4187D32C400404C3C /* Stages */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FDFF884218714D470005173E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD71B21D1873D233006DD001 /* Images */,
+				FDFF888E187152900005173E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FDFF884318714D470005173E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FD128E791883E2B500D760E9 /* MBProgress */,
+				FD128E721883E21F00D760E9 /* In App Purchase Classes */,
+				FD7C839B1880117A00F7329C /* LocalizesString */,
+				FD9D6FFD187D348300404C3C /* Category */,
+				FDFF888C187151DD0005173E /* Constant */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FDFF884418714D6D0005173E /* Introduction Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF884518714D8C0005173E /* IntroductionViewCtr.h */,
+				FDFF884618714D8C0005173E /* IntroductionViewCtr.m */,
+				FDFF884718714D8C0005173E /* IntroductionViewCtr.xib */,
+			);
+			path = "Introduction Screen";
+			sourceTree = "<group>";
+		};
+		FDFF888C187151DD0005173E /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF888D187152000005173E /* AppConstant.h */,
+				FD1CA73A187D43880064FBBA /* MGAStageSteps.h */,
+				FD968D96187E5F5D0046AE06 /* MGACurrentMode.h */,
+				FD022593187FF54C00B51647 /* GlobalMethods.h */,
+				FD022594187FF54C00B51647 /* GlobalMethods.m */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		FDFF888E187152900005173E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF888F187152900005173E /* Questrial-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDFF880518714AAE0005173E /* Montessori_Geography */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDFF883B18714AAF0005173E /* Build configuration list for PBXNativeTarget "Montessori_Geography" */;
+			buildPhases = (
+				FDFF880218714AAE0005173E /* Sources */,
+				FDFF880318714AAE0005173E /* Frameworks */,
+				FDFF880418714AAE0005173E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Montessori_Geography;
+			productName = Montessori_Geography;
+			productReference = FDFF880618714AAE0005173E /* Montessori_Geography.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FDFF882918714AAE0005173E /* Montessori_GeographyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDFF883E18714AAF0005173E /* Build configuration list for PBXNativeTarget "Montessori_GeographyTests" */;
+			buildPhases = (
+				FDFF882618714AAE0005173E /* Sources */,
+				FDFF882718714AAE0005173E /* Frameworks */,
+				FDFF882818714AAE0005173E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDFF883018714AAE0005173E /* PBXTargetDependency */,
+			);
+			name = Montessori_GeographyTests;
+			productName = Montessori_GeographyTests;
+			productReference = FDFF882A18714AAE0005173E /* Montessori_GeographyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDFF87FE18714AAE0005173E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "MAC 227";
+				TargetAttributes = {
+					FDFF882918714AAE0005173E = {
+						TestTargetID = FDFF880518714AAE0005173E;
+					};
+				};
+			};
+			buildConfigurationList = FDFF880118714AAE0005173E /* Build configuration list for PBXProject "Montessori_Geography" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDFF87FD18714AAE0005173E;
+			productRefGroup = FDFF880718714AAE0005173E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDFF880518714AAE0005173E /* Montessori_Geography */,
+				FDFF882918714AAE0005173E /* Montessori_GeographyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDFF880418714AAE0005173E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDFCE8DB187AB24C004BDF60 /* stage1_placeholder_SouthKorea@2x.png in Resources */,
+				FD128E8B1883E8C500D760E9 /* maps_blue@2x.png in Resources */,
+				FD0EF83A187E7D21008BE10E /* stage1_active_SouthKorea_flag@2x.png in Resources */,
+				FDFCE8D3187AB24C004BDF60 /* stage1_active_NorthKorea@2x.png in Resources */,
+				FD0225A41880034F00B51647 /* stage1_inactive_Mongolia@2x.png in Resources */,
+				FD0EF83F187E7D39008BE10E /* asia_map_blue@2x.png in Resources */,
+				FD128E8F1883E8C500D760E9 /* plus_icon@2x.png in Resources */,
+				FD128E911883FE2000D760E9 /* menu_blue@2x.png in Resources */,
+				FD0225A31880034F00B51647 /* stage1_inactive_China@2x.png in Resources */,
+				FDFF882518714AAE0005173E /* Images.xcassets in Resources */,
+				FD0225A51880034F00B51647 /* stage1_inactive_Russia@2x.png in Resources */,
+				FD0225A81880034F00B51647 /* stage1_placeholder_Russia@2x.png in Resources */,
+				FDC36FA91887A50500FFDAA9 /* MGAPlanePath.plist in Resources */,
+				FDFDE2F6187425DA00206614 /* logo@2x.png in Resources */,
+				FDFCE8D2187AB24C004BDF60 /* stage1_active_Japan@2x.png in Resources */,
+				FD6CEE8C187EB237009ADF7D /* stage1_inactive_SouthKorea_flag@2x.png in Resources */,
+				FD1CA73F187D45050064FBBA /* StagesViewCtr.xib in Resources */,
+				FD4FF1CE187FDD7300D6823A /* MGAMapStages.plist in Resources */,
+				FD71B2201873D233006DD001 /* asia_map@2x.png in Resources */,
+				FD7C839D1880119600F7329C /* Localization.strings in Resources */,
+				FD58E76D1884066400322E54 /* menu_with_arrow@2x.png in Resources */,
+				FD71B2211873D233006DD001 /* world_map@2x.png in Resources */,
+				FDFCE8D5187AB24C004BDF60 /* stage1_inactive_Japan@2x.png in Resources */,
+				FD0225A11880034F00B51647 /* stage1_active_Mongolia@2x.png in Resources */,
+				FDFCE8D9187AB24C004BDF60 /* stage1_placeholder_Japan@2x.png in Resources */,
+				FDFF8890187152900005173E /* Questrial-Regular.otf in Resources */,
+				FD6CEE8B187EB237009ADF7D /* stage1_inactive_NorthKorea_flag@2x.png in Resources */,
+				FDFCE8D4187AB24C004BDF60 /* stage1_active_SouthKorea@2x.png in Resources */,
+				FD128E8A1883E8C500D760E9 /* flags_grey@2x.png in Resources */,
+				FD71B22C18740158006DD001 /* plane.png in Resources */,
+				FD0EF838187E7D21008BE10E /* stage1_active_Japan_flag@2x.png in Resources */,
+				FDFCE8D8187AB24C004BDF60 /* stage1_map@2x.png in Resources */,
+				FDFCE8D7187AB24C004BDF60 /* stage1_inactive_SouthKorea@2x.png in Resources */,
+				FDFF881418714AAE0005173E /* InfoPlist.strings in Resources */,
+				FD6CEE8A187EB237009ADF7D /* stage1_inactive_Japan_flag@2x.png in Resources */,
+				FD0225A61880034F00B51647 /* stage1_placeholder_China@2x.png in Resources */,
+				FDFF884918714D8C0005173E /* IntroductionViewCtr.xib in Resources */,
+				FDFCE8D6187AB24C004BDF60 /* stage1_inactive_NorthKorea@2x.png in Resources */,
+				FD128E8C1883E8C500D760E9 /* maps_grey@2x.png in Resources */,
+				FD0EF83D187E7D21008BE10E /* stage1_placeholder_SouthKorea_flag@2x.png in Resources */,
+				FD0EF83B187E7D21008BE10E /* stage1_placeholder_Japan_flag@2x.png in Resources */,
+				FD128E891883E8C500D760E9 /* flags_blue@2x.png in Resources */,
+				FD71B22D18740158006DD001 /* plane@2x.png in Resources */,
+				FD0EF83C187E7D21008BE10E /* stage1_placeholder_NorthKorea_flag@2x.png in Resources */,
+				FD128E8E1883E8C500D760E9 /* menu_grey@2x.png in Resources */,
+				FD0225A71880034F00B51647 /* stage1_placeholder_Mongolia@2x.png in Resources */,
+				FD58E76F1884073700322E54 /* arrow@2x.png in Resources */,
+				FDC815001887B65600A28EB5 /* img_shadow@2x.png in Resources */,
+				FD0EF839187E7D21008BE10E /* stage1_active_NorthKorea_flag@2x.png in Resources */,
+				FDFCE8DA187AB24C004BDF60 /* stage1_placeholder_NorthKorea@2x.png in Resources */,
+				FD0225A01880034F00B51647 /* stage1_active_China@2x.png in Resources */,
+				FD0225A21880034F00B51647 /* stage1_active_Russia@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDFF882818714AAE0005173E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDFF883618714AAE0005173E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDFF880218714AAE0005173E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1CA73E187D45050064FBBA /* StagesViewCtr.m in Sources */,
+				FD4FF1C9187FCB8000D6823A /* NSUserDefaults+Helpers.m in Sources */,
+				FD128E771883E21F00D760E9 /* InAppHelper.m in Sources */,
+				FD9D7003187D3F1C00404C3C /* MGAGamePiece.m in Sources */,
+				FD128E781883E21F00D760E9 /* SubclassInAppHelper.m in Sources */,
+				FD4FF1CC187FCE3B00D6823A /* NSString+Validation.m in Sources */,
+				FDFF881A18714AAE0005173E /* AppDelegate.m in Sources */,
+				FD022595187FF54C00B51647 /* GlobalMethods.m in Sources */,
+				FDFF881618714AAE0005173E /* main.m in Sources */,
+				FD128E7C1883E2B500D760E9 /* MBProgressHUD.m in Sources */,
+				FD9D7000187D348300404C3C /* NSMutableArray+Shuffling.m in Sources */,
+				FDFF884818714D8C0005173E /* IntroductionViewCtr.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDFF882618714AAE0005173E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDFF883818714AAE0005173E /* Montessori_GeographyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDFF883018714AAE0005173E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDFF880518714AAE0005173E /* Montessori_Geography */;
+			targetProxy = FDFF882F18714AAE0005173E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDFF881218714AAE0005173E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDFF881318714AAE0005173E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FDFF883418714AAE0005173E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDFF883518714AAE0005173E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDFF883918714AAF0005173E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		FDFF883A18714AAF0005173E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDFF883C18714AAF0005173E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
+				INFOPLIST_FILE = "Montessori_Geography/Montessori_Geography-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FDFF883D18714AAF0005173E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
+				INFOPLIST_FILE = "Montessori_Geography/Montessori_Geography-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FDFF883F18714AAF0005173E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Montessori_Geography.app/Montessori_Geography";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Montessori_GeographyTests/Montessori_GeographyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FDFF884018714AAF0005173E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Montessori_Geography.app/Montessori_Geography";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
+				INFOPLIST_FILE = "Montessori_GeographyTests/Montessori_GeographyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDFF880118714AAE0005173E /* Build configuration list for PBXProject "Montessori_Geography" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDFF883918714AAF0005173E /* Debug */,
+				FDFF883A18714AAF0005173E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDFF883B18714AAF0005173E /* Build configuration list for PBXNativeTarget "Montessori_Geography" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDFF883C18714AAF0005173E /* Debug */,
+				FDFF883D18714AAF0005173E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDFF883E18714AAF0005173E /* Build configuration list for PBXNativeTarget "Montessori_GeographyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDFF883F18714AAF0005173E /* Debug */,
+				FDFF884018714AAF0005173E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDFF87FE18714AAE0005173E /* Project object */;
+}

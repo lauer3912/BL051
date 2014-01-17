@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F25C57E5-51C8-48F4-B975-2D55E930DC05</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Montessori_Geography</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>04C8967F-8983-45DB-8C1F-4345C8E93D9C</key>
+		<string>https://github.com/iggytheiguana/BL051.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>trunk/Montessori_Geography/Montessori_Geography.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>04C8967F-8983-45DB-8C1F-4345C8E93D9C</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>04C8967F-8983-45DB-8C1F-4345C8E93D9C</key>
+		<string>https://github.com/iggytheiguana/BL051.git</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/iggytheiguana/BL051.git/trunk/App/Montessori_Geography/Montessori_Geography.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>04C8967F-8983-45DB-8C1F-4345C8E93D9C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>04C8967F-8983-45DB-8C1F-4345C8E93D9C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BL051</string>
+		</dict>
+	</array>
+</dict>
+</plist>
