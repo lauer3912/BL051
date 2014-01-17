@@ -74,6 +74,7 @@
 @property (nonatomic, strong) UIImage *image_inactive_flag;
 @property (nonatomic) CGRect frameStep0_flag;
 @property (nonatomic) CGRect frameStep1_flag;
+@property (nonatomic) CGRect frameStep2Placeholder_flag;
 @property (nonatomic) CGRect frameStep2GamePiece_flag;
 @property (nonatomic) CGRect frameStep3_flag;
 

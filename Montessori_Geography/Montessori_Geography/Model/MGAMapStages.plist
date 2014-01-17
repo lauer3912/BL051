@@ -33,7 +33,7 @@
 					<key>map</key>
 					<dict>
 						<key>map_image_filename</key>
-						<string>stage1_map</string>
+						<string>stage1_group1_map</string>
 						<key>frames</key>
 						<dict>
 							<key>frameStep0</key>
@@ -43,9 +43,31 @@
 								<key>y</key>
 								<integer>0</integer>
 								<key>width</key>
-								<integer>754</integer>
+								<real>978.5</real>
 								<key>height</key>
-								<integer>682</integer>
+								<integer>812</integer>
+							</dict>
+							<key>frameStep2</key>
+							<dict>
+								<key>x</key>
+								<integer>-99</integer>
+								<key>y</key>
+								<real>-0.5</real>
+								<key>width</key>
+								<real>847.97</real>
+								<key>height</key>
+								<real>707.99</real>
+							</dict>
+							<key>frameStep3</key>
+							<dict>
+								<key>x</key>
+								<integer>0</integer>
+								<key>y</key>
+								<integer>0</integer>
+								<key>width</key>
+								<real>978.5</real>
+								<key>height</key>
+								<real>812</real>
 							</dict>
 						</dict>
 					</dict>
@@ -55,33 +77,33 @@
 							<key>name</key>
 							<string>North Korea</string>
 							<key>placeholder_image_filename</key>
-							<string>stage1_placeholder_NorthKorea</string>
+							<string>placeholder_NorthKorea</string>
 							<key>active_image_filename</key>
-							<string>stage1_active_NorthKorea</string>
+							<string>active_NorthKorea</string>
 							<key>inactive_image_filename</key>
-							<string>stage1_inactive_NorthKorea</string>
+							<string>inactive_NorthKorea</string>
 							<key>scaleStep0</key>
-							<integer>2</integer>
+							<real>2.25</real>
 							<key>maxDistanceFromCenterStep2</key>
 							<real>50</real>
 							<key>placeholder_image_filename_flag</key>
-							<string>stage1_placeholder_NorthKorea_flag</string>
+							<string>placeholder_NorthKorea_flag</string>
 							<key>active_image_filename_flag</key>
-							<string>stage1_active_NorthKorea_flag</string>
+							<string>active_NorthKorea_flag</string>
 							<key>inactive_image_filename_flag</key>
-							<string>stage1_inactive_NorthKorea_flag</string>
+							<string>inactive_NorthKorea_flag</string>
 							<key>frames</key>
 							<dict>
 								<key>frameStep0</key>
 								<dict>
 									<key>x</key>
-									<integer>156</integer>
+									<real>285.03</real>
 									<key>y</key>
-									<integer>219</integer>
+									<real>231.955</real>
 									<key>width</key>
-									<integer>118</integer>
+									<real>141.265</real>
 									<key>height</key>
-									<integer>130</integer>
+									<real>156.33</real>
 								</dict>
 								<key>frameStep1</key>
 								<dict>
@@ -90,42 +112,42 @@
 									<key>y</key>
 									<integer>0</integer>
 									<key>width</key>
-									<real>139</real>
+									<real>178.1</real>
 									<key>height</key>
-									<real>152</real>
+									<real>197.1</real>
 								</dict>
 								<key>frameStep2Placeholder</key>
 								<dict>
 									<key>x</key>
-									<integer>156</integer>
+									<real>147.75</real>
 									<key>y</key>
-									<integer>219</integer>
+									<real>201.82</real>
 									<key>width</key>
-									<integer>118</integer>
+									<real>122.41</real>
 									<key>height</key>
-									<integer>130</integer>
+									<real>136.35</real>
 								</dict>
 								<key>frameStep2GamePiece</key>
 								<dict>
 									<key>x</key>
-									<real>591</real>
+									<integer>545</integer>
 									<key>y</key>
-									<real>469</real>
+									<real>457.5</real>
 									<key>width</key>
-									<real>139</real>
+									<real>149.07</real>
 									<key>height</key>
-									<real>152</real>
+									<real>164.97</real>
 								</dict>
 								<key>frameStep3</key>
 								<dict>
 									<key>x</key>
-									<integer>156</integer>
+									<real>285.03</real>
 									<key>y</key>
-									<integer>219</integer>
+									<real>231.96</real>
 									<key>width</key>
-									<integer>118</integer>
+									<real>141.27</real>
 									<key>height</key>
-									<integer>130</integer>
+									<real>156.33</real>
 								</dict>
 							</dict>
 							<key>framesflag</key>
@@ -133,9 +155,9 @@
 								<key>frameStep0</key>
 								<dict>
 									<key>x</key>
-									<integer>74</integer>
+									<integer>200</integer>
 									<key>y</key>
-									<integer>228</integer>
+									<integer>254</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
@@ -151,6 +173,17 @@
 									<integer>293</integer>
 									<key>height</key>
 									<integer>195</integer>
+								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<integer>69</integer>
+									<key>y</key>
+									<integer>219</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
 								</dict>
 								<key>frameStep2GamePiece</key>
 								<dict>
@@ -166,9 +199,9 @@
 								<key>frameStep3</key>
 								<dict>
 									<key>x</key>
-									<integer>74</integer>
+									<integer>200</integer>
 									<key>y</key>
-									<integer>228</integer>
+									<integer>254</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
@@ -180,33 +213,33 @@
 							<key>name</key>
 							<string>South Korea</string>
 							<key>placeholder_image_filename</key>
-							<string>stage1_placeholder_SouthKorea</string>
+							<string>placeholder_SouthKorea</string>
 							<key>active_image_filename</key>
-							<string>stage1_active_SouthKorea</string>
+							<string>active_SouthKorea</string>
 							<key>inactive_image_filename</key>
-							<string>stage1_inactive_SouthKorea</string>
+							<string>inactive_SouthKorea</string>
 							<key>scaleStep0</key>
-							<real>2</real>
+							<integer>3</integer>
 							<key>maxDistanceFromCenterStep2</key>
 							<integer>50</integer>
 							<key>placeholder_image_filename_flag</key>
-							<string>stage1_placeholder_SouthKorea_flag</string>
+							<string>placeholder_SouthKorea_flag</string>
 							<key>active_image_filename_flag</key>
-							<string>stage1_active_SouthKorea_flag</string>
+							<string>active_SouthKorea_flag</string>
 							<key>inactive_image_filename_flag</key>
-							<string>stage1_inactive_SouthKorea_flag</string>
+							<string>inactive_SouthKorea_flag</string>
 							<key>frames</key>
 							<dict>
 								<key>frameStep0</key>
 								<dict>
 									<key>x</key>
-									<real>162</real>
+									<real>289.83</real>
 									<key>y</key>
-									<real>326</real>
+									<real>362.57</real>
 									<key>width</key>
-									<real>117</real>
+									<real>143.35</real>
 									<key>height</key>
-									<real>123</real>
+									<real>150.71</real>
 								</dict>
 								<key>frameStep1</key>
 								<dict>
@@ -215,42 +248,42 @@
 									<key>y</key>
 									<integer>0</integer>
 									<key>width</key>
-									<real>159</real>
+									<real>223.49</real>
 									<key>height</key>
-									<real>168</real>
+									<real>234.96</real>
 								</dict>
 								<key>frameStep2Placeholder</key>
 								<dict>
 									<key>x</key>
-									<real>162</real>
+									<real>151.91</real>
 									<key>y</key>
-									<real>326</real>
+									<real>315.72</real>
 									<key>width</key>
-									<real>117</real>
+									<real>124.21</real>
 									<key>height</key>
-									<real>123</real>
+									<real>131.46</real>
 								</dict>
 								<key>frameStep2GamePiece</key>
 								<dict>
 									<key>x</key>
-									<real>826</real>
+									<real>817.5</real>
 									<key>y</key>
-									<real>151</real>
+									<real>87.5</real>
 									<key>width</key>
-									<real>159</real>
+									<real>189.32</real>
 									<key>height</key>
-									<real>168</real>
+									<real>199.03</real>
 								</dict>
 								<key>frameStep3</key>
 								<dict>
 									<key>x</key>
-									<real>162</real>
+									<real>289.83</real>
 									<key>y</key>
-									<real>326</real>
+									<real>362.57</real>
 									<key>width</key>
-									<real>117</real>
+									<real>143.35</real>
 									<key>height</key>
-									<real>123</real>
+									<real>150.71</real>
 								</dict>
 							</dict>
 							<key>framesflag</key>
@@ -258,9 +291,9 @@
 								<key>frameStep0</key>
 								<dict>
 									<key>x</key>
-									<integer>74</integer>
+									<integer>200</integer>
 									<key>y</key>
-									<integer>400</integer>
+									<integer>447</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
@@ -276,6 +309,17 @@
 									<integer>293</integer>
 									<key>height</key>
 									<integer>195</integer>
+								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<integer>69</integer>
+									<key>y</key>
+									<integer>376</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
 								</dict>
 								<key>frameStep2GamePiece</key>
 								<dict>
@@ -291,9 +335,9 @@
 								<key>frameStep3</key>
 								<dict>
 									<key>x</key>
-									<integer>74</integer>
+									<integer>200</integer>
 									<key>y</key>
-									<integer>400</integer>
+									<integer>447</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
@@ -305,33 +349,33 @@
 							<key>name</key>
 							<string>Japan</string>
 							<key>placeholder_image_filename</key>
-							<string>stage1_placeholder_Japan</string>
+							<string>placeholder_Japan</string>
 							<key>active_image_filename</key>
-							<string>stage1_active_Japan</string>
+							<string>active_Japan</string>
 							<key>inactive_image_filename</key>
-							<string>stage1_inactive_Japan</string>
+							<string>inactive_Japan</string>
 							<key>scaleStep0</key>
 							<real>1.25</real>
 							<key>maxDistanceFromCenterStep2</key>
 							<real>50</real>
 							<key>placeholder_image_filename_flag</key>
-							<string>stage1_placeholder_Japan_flag</string>
+							<string>placeholder_Japan_flag</string>
 							<key>active_image_filename_flag</key>
-							<string>stage1_active_Japan_flag</string>
+							<string>active_Japan_flag</string>
 							<key>inactive_image_filename_flag</key>
-							<string>stage1_inactive_Japan_flag</string>
+							<string>inactive_Japan_flag</string>
 							<key>frames</key>
 							<dict>
 								<key>frameStep0</key>
 								<dict>
 									<key>x</key>
-									<real>129</real>
+									<real>251.72</real>
 									<key>y</key>
-									<real>152</real>
+									<real>149.33</real>
 									<key>width</key>
-									<real>422</real>
+									<integer>523</integer>
 									<key>height</key>
-									<real>484</real>
+									<real>597.16</real>
 								</dict>
 								<key>frameStep1</key>
 								<dict>
@@ -340,42 +384,42 @@
 									<key>y</key>
 									<integer>0</integer>
 									<key>width</key>
-									<real>240</real>
+									<real>335.67</real>
 									<key>height</key>
-									<real>276</real>
+									<real>385.32</real>
 								</dict>
 								<key>frameStep2Placeholder</key>
 								<dict>
 									<key>x</key>
-									<real>129</real>
+									<real>118.89</real>
 									<key>y</key>
-									<real>152</real>
+									<real>129.75</real>
 									<key>width</key>
-									<real>422</real>
+									<real>450.74</real>
 									<key>height</key>
-									<real>484</real>
+									<real>520.83</real>
 								</dict>
 								<key>frameStep2GamePiece</key>
 								<dict>
 									<key>x</key>
-									<real>748</real>
+									<real>692.5</real>
 									<key>y</key>
-									<real>397</real>
+									<real>362.5</real>
 									<key>width</key>
-									<real>240</real>
+									<real>284.36</real>
 									<key>height</key>
-									<real>276</real>
+									<real>326.41</real>
 								</dict>
 								<key>frameStep3</key>
 								<dict>
 									<key>x</key>
-									<real>129</real>
+									<real>251.72</real>
 									<key>y</key>
-									<real>152</real>
+									<real>149.33</real>
 									<key>width</key>
-									<real>422</real>
+									<integer>523</integer>
 									<key>height</key>
-									<real>484</real>
+									<real>597.16</real>
 								</dict>
 							</dict>
 							<key>framesflag</key>
@@ -383,9 +427,9 @@
 								<key>frameStep0</key>
 								<dict>
 									<key>x</key>
-									<integer>491</integer>
+									<integer>686</integer>
 									<key>y</key>
-									<integer>391</integer>
+									<integer>447</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
@@ -402,6 +446,17 @@
 									<key>height</key>
 									<integer>195</integer>
 								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<integer>490</integer>
+									<key>y</key>
+									<integer>376</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
 								<key>frameStep2GamePiece</key>
 								<dict>
 									<key>x</key>
@@ -416,9 +471,9 @@
 								<key>frameStep3</key>
 								<dict>
 									<key>x</key>
-									<integer>491</integer>
+									<integer>686</integer>
 									<key>y</key>
-									<integer>391</integer>
+									<integer>447</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
@@ -430,9 +485,457 @@
 				</dict>
 				<dict>
 					<key>map</key>
-					<dict/>
+					<dict>
+						<key>map_image_filename</key>
+						<string>stage1_group2_map</string>
+						<key>frames</key>
+						<dict>
+							<key>frameStep0</key>
+							<dict>
+								<key>x</key>
+								<integer>159</integer>
+								<key>y</key>
+								<real>49.5</real>
+								<key>width</key>
+								<real>706.5</real>
+								<key>height</key>
+								<integer>670</integer>
+							</dict>
+							<key>frameStep2</key>
+							<dict>
+								<key>x</key>
+								<integer>14</integer>
+								<key>y</key>
+								<integer>163</integer>
+								<key>width</key>
+								<real>706.5</real>
+								<key>height</key>
+								<real>670</real>
+							</dict>
+							<key>frameStep3</key>
+							<dict>
+								<key>x</key>
+								<integer>159</integer>
+								<key>y</key>
+								<real>49.5</real>
+								<key>width</key>
+								<real>706.5</real>
+								<key>height</key>
+								<real>670</real>
+							</dict>
+						</dict>
+					</dict>
 					<key>countries</key>
-					<dict/>
+					<array>
+						<dict>
+							<key>name</key>
+							<string>China</string>
+							<key>placeholder_image_filename</key>
+							<string>placeholder_China</string>
+							<key>active_image_filename</key>
+							<string>active_China</string>
+							<key>inactive_image_filename</key>
+							<string>inactive_China</string>
+							<key>scaleStep0</key>
+							<real>2.1</real>
+							<key>maxDistanceFromCenterStep2</key>
+							<real>50</real>
+							<key>placeholder_image_filename_flag</key>
+							<string>placeholder_China_flag</string>
+							<key>active_image_filename_flag</key>
+							<string>active_China_flag</string>
+							<key>inactive_image_filename_flag</key>
+							<string>inactive_China_flag</string>
+							<key>frames</key>
+							<dict>
+								<key>frameStep0</key>
+								<dict>
+									<key>x</key>
+									<real>381.92</real>
+									<key>y</key>
+									<real>411.71</real>
+									<key>width</key>
+									<real>251.41</real>
+									<key>height</key>
+									<real>186.07</real>
+								</dict>
+								<key>frameStep1</key>
+								<dict>
+									<key>x</key>
+									<integer>0</integer>
+									<key>y</key>
+									<integer>0</integer>
+									<key>width</key>
+									<real>242.96</real>
+									<key>height</key>
+									<real>179.67</real>
+								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<real>236.92</real>
+									<key>y</key>
+									<real>525.21</real>
+									<key>width</key>
+									<real>251.41</real>
+									<key>height</key>
+									<real>186.07</real>
+								</dict>
+								<key>frameStep2GamePiece</key>
+								<dict>
+									<key>x</key>
+									<real>490</real>
+									<key>y</key>
+									<real>21.5</real>
+									<key>width</key>
+									<real>201.72</real>
+									<key>height</key>
+									<real>148.97</real>
+								</dict>
+								<key>frameStep3</key>
+								<dict>
+									<key>x</key>
+									<real>381.92</real>
+									<key>y</key>
+									<real>411.71</real>
+									<key>width</key>
+									<real>251.41</real>
+									<key>height</key>
+									<real>186.07</real>
+								</dict>
+							</dict>
+							<key>framesflag</key>
+							<dict>
+								<key>frameStep0</key>
+								<dict>
+									<key>x</key>
+									<integer>200</integer>
+									<key>y</key>
+									<integer>254</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+								<key>frameStep1</key>
+								<dict>
+									<key>x</key>
+									<integer>0</integer>
+									<key>y</key>
+									<integer>0</integer>
+									<key>width</key>
+									<integer>293</integer>
+									<key>height</key>
+									<integer>195</integer>
+								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<integer>69</integer>
+									<key>y</key>
+									<integer>219</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+								<key>frameStep2GamePiece</key>
+								<dict>
+									<key>x</key>
+									<integer>461</integer>
+									<key>y</key>
+									<integer>522</integer>
+									<key>width</key>
+									<integer>219</integer>
+									<key>height</key>
+									<integer>146</integer>
+								</dict>
+								<key>frameStep3</key>
+								<dict>
+									<key>x</key>
+									<integer>200</integer>
+									<key>y</key>
+									<integer>254</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>name</key>
+							<string>Mongolia</string>
+							<key>placeholder_image_filename</key>
+							<string>placeholder_Mongolia</string>
+							<key>active_image_filename</key>
+							<string>active_Mongolia</string>
+							<key>inactive_image_filename</key>
+							<string>inactive_Mongolia</string>
+							<key>scaleStep0</key>
+							<integer>4</integer>
+							<key>maxDistanceFromCenterStep2</key>
+							<integer>50</integer>
+							<key>placeholder_image_filename_flag</key>
+							<string>placeholder_Mongolia_flag</string>
+							<key>active_image_filename_flag</key>
+							<string>active_Mongolia_flag</string>
+							<key>inactive_image_filename_flag</key>
+							<string>inactive_Mongolia_flag</string>
+							<key>frames</key>
+							<dict>
+								<key>frameStep0</key>
+								<dict>
+									<key>x</key>
+									<real>440.27</real>
+									<key>y</key>
+									<real>421.88</real>
+									<key>width</key>
+									<real>131.78</real>
+									<key>height</key>
+									<real>62.74</real>
+								</dict>
+								<key>frameStep1</key>
+								<dict>
+									<key>x</key>
+									<integer>0</integer>
+									<key>y</key>
+									<integer>0</integer>
+									<key>width</key>
+									<real>242.47</real>
+									<key>height</key>
+									<real>115.44</real>
+								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<real>295.27</real>
+									<key>y</key>
+									<real>535.38</real>
+									<key>width</key>
+									<real>131.78</real>
+									<key>height</key>
+									<real>62.74</real>
+								</dict>
+								<key>frameStep2GamePiece</key>
+								<dict>
+									<key>x</key>
+									<integer>780</integer>
+									<key>y</key>
+									<real>302.5</real>
+									<key>width</key>
+									<real>201.32</real>
+									<key>height</key>
+									<real>95.72</real>
+								</dict>
+								<key>frameStep3</key>
+								<dict>
+									<key>x</key>
+									<real>440.27</real>
+									<key>y</key>
+									<real>421.88</real>
+									<key>width</key>
+									<real>131.78</real>
+									<key>height</key>
+									<real>62.74</real>
+								</dict>
+							</dict>
+							<key>framesflag</key>
+							<dict>
+								<key>frameStep0</key>
+								<dict>
+									<key>x</key>
+									<integer>200</integer>
+									<key>y</key>
+									<integer>447</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+								<key>frameStep1</key>
+								<dict>
+									<key>x</key>
+									<integer>0</integer>
+									<key>y</key>
+									<integer>0</integer>
+									<key>width</key>
+									<integer>293</integer>
+									<key>height</key>
+									<integer>195</integer>
+								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<integer>69</integer>
+									<key>y</key>
+									<integer>376</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+								<key>frameStep2GamePiece</key>
+								<dict>
+									<key>x</key>
+									<integer>780</integer>
+									<key>y</key>
+									<integer>276</integer>
+									<key>width</key>
+									<integer>219</integer>
+									<key>height</key>
+									<integer>146</integer>
+								</dict>
+								<key>frameStep3</key>
+								<dict>
+									<key>x</key>
+									<integer>200</integer>
+									<key>y</key>
+									<integer>447</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+							</dict>
+						</dict>
+						<dict>
+							<key>name</key>
+							<string>Russia </string>
+							<key>placeholder_image_filename</key>
+							<string>placeholder_Russia</string>
+							<key>active_image_filename</key>
+							<string>active_Russia</string>
+							<key>inactive_image_filename</key>
+							<string>inactive_Russia</string>
+							<key>scaleStep0</key>
+							<integer>1</integer>
+							<key>maxDistanceFromCenterStep2</key>
+							<real>50</real>
+							<key>placeholder_image_filename_flag</key>
+							<string>placeholder_Russia_flag</string>
+							<key>active_image_filename_flag</key>
+							<string>active_Russia_flag</string>
+							<key>inactive_image_filename_flag</key>
+							<string>inactive_Russia_flag</string>
+							<key>frames</key>
+							<dict>
+								<key>frameStep0</key>
+								<dict>
+									<key>x</key>
+									<integer>159</integer>
+									<key>y</key>
+									<real>49.5</real>
+									<key>width</key>
+									<real>706.5</real>
+									<key>height</key>
+									<real>437.38</real>
+								</dict>
+								<key>frameStep1</key>
+								<dict>
+									<key>x</key>
+									<integer>0</integer>
+									<key>y</key>
+									<integer>0</integer>
+									<key>width</key>
+									<real>299.16</real>
+									<key>height</key>
+									<real>185.25</real>
+								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<integer>14</integer>
+									<key>y</key>
+									<integer>163</integer>
+									<key>width</key>
+									<real>706.5</real>
+									<key>height</key>
+									<real>437.38</real>
+								</dict>
+								<key>frameStep2GamePiece</key>
+								<dict>
+									<key>x</key>
+									<integer>735</integer>
+									<key>y</key>
+									<integer>85</integer>
+									<key>width</key>
+									<real>248.38</real>
+									<key>height</key>
+									<real>153.6</real>
+								</dict>
+								<key>frameStep3</key>
+								<dict>
+									<key>x</key>
+									<real>159</real>
+									<key>y</key>
+									<real>49.5</real>
+									<key>width</key>
+									<real>706.5</real>
+									<key>height</key>
+									<real>437.38</real>
+								</dict>
+							</dict>
+							<key>framesflag</key>
+							<dict>
+								<key>frameStep0</key>
+								<dict>
+									<key>x</key>
+									<integer>686</integer>
+									<key>y</key>
+									<integer>447</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+								<key>frameStep1</key>
+								<dict>
+									<key>x</key>
+									<integer>0</integer>
+									<key>y</key>
+									<integer>0</integer>
+									<key>width</key>
+									<integer>293</integer>
+									<key>height</key>
+									<integer>195</integer>
+								</dict>
+								<key>frameStep2Placeholder</key>
+								<dict>
+									<key>x</key>
+									<integer>490</integer>
+									<key>y</key>
+									<integer>376</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+								<key>frameStep2GamePiece</key>
+								<dict>
+									<key>x</key>
+									<integer>780</integer>
+									<key>y</key>
+									<integer>522</integer>
+									<key>width</key>
+									<integer>219</integer>
+									<key>height</key>
+									<integer>146</integer>
+								</dict>
+								<key>frameStep3</key>
+								<dict>
+									<key>x</key>
+									<integer>686</integer>
+									<key>y</key>
+									<integer>447</integer>
+									<key>width</key>
+									<integer>73</integer>
+									<key>height</key>
+									<integer>49</integer>
+								</dict>
+							</dict>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>

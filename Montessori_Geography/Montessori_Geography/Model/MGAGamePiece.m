@@ -407,7 +407,6 @@
 
 - (void)placeGamePieceOnMapTarget:(BOOL)animated GameMode:(int)modeValue{
     _isScaled = NO;
-    [self zoomGamePieceOut];
     
     if (animated) {
         [UIView animateWithDuration:0.25
@@ -418,12 +417,12 @@
                              {
                                  self.transform = CGAffineTransformIdentity;
                                  self.frame = self.placeholder.frame;
-                                 
                                  self.image = self.image_inactive;
                              }
                              else
                              {
-                                 self.frame = self.frameStep3_flag;
+                                 self.transform = CGAffineTransformIdentity;
+                                 self.frame = self.frameStep2Placeholder_flag;
                                  self.placeholder.image = self.image_inactive;
                              }
                          }

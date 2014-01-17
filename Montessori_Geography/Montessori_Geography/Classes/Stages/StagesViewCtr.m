@@ -41,6 +41,32 @@
     NSDictionary *_stageGroupMapDataDictionary = [_CurrentGroupDic objectForKey:@"map"];
     _imgView_Stage_Map.image = [UIImage imageNamed:[_stageGroupMapDataDictionary objectForKey:@"map_image_filename"]];
     
+    //map frame dictionory for step 0 - step 2 - step 3
+    NSDictionary *_frameMapDataDic = [_stageGroupMapDataDictionary valueForKey:@"frames"];
+    obj_mapFrame = [[MapFrameModal alloc] init];
+    
+    //map frame For Step 0
+    NSDictionary *map_frameStep0 = [_frameMapDataDic objectForKey:@"frameStep0"];
+    obj_mapFrame.MapframeStep0 = CGRectMake([[map_frameStep0 objectForKey:@"x"] floatValue],
+                                      [[map_frameStep0 objectForKey:@"y"] floatValue],
+                                      [[map_frameStep0 objectForKey:@"width"] floatValue],
+                                      [[map_frameStep0 objectForKey:@"height"] floatValue]);
+    
+    //map frame For Step 2
+    NSDictionary *map_frameStep2 = [_frameMapDataDic objectForKey:@"frameStep2"];
+    obj_mapFrame.MapframeStep2 = CGRectMake([[map_frameStep2 objectForKey:@"x"] floatValue],
+                                            [[map_frameStep2 objectForKey:@"y"] floatValue],
+                                            [[map_frameStep2 objectForKey:@"width"] floatValue],
+                                            [[map_frameStep2 objectForKey:@"height"] floatValue]);
+    
+    //map frame For Step 3
+    NSDictionary *map_frameStep3 = [_frameMapDataDic objectForKey:@"frameStep3"];
+    obj_mapFrame.MapframeStep3 = CGRectMake([[map_frameStep3 objectForKey:@"x"] floatValue],
+                                            [[map_frameStep3 objectForKey:@"y"] floatValue],
+                                            [[map_frameStep3 objectForKey:@"width"] floatValue],
+                                            [[map_frameStep3 objectForKey:@"height"] floatValue]);
+    
+    
     // Next, setup the game pieces and placeholders for each country.
     NSArray *countries = [_CurrentGroupDic objectForKey:@"countries"];
     
@@ -130,6 +156,15 @@
                                                      [[frameStep2Placeholder objectForKey:@"y"] floatValue],
                                                      [[frameStep2Placeholder objectForKey:@"width"] floatValue],
                                                      [[frameStep2Placeholder objectForKey:@"height"] floatValue]);
+        
+        //For Flag
+        NSDictionary *frameStep2Placeholder_flag = [frames_flag objectForKey:@"frameStep2Placeholder"];
+        gamePiece.frameStep2Placeholder_flag = CGRectMake([[frameStep2Placeholder_flag objectForKey:@"x"] floatValue],
+                                               [[frameStep2Placeholder_flag objectForKey:@"y"] floatValue],
+                                               [[frameStep2Placeholder_flag objectForKey:@"width"] floatValue],
+                                               [[frameStep2Placeholder_flag objectForKey:@"height"] floatValue]);
+        //
+        
         
         NSDictionary *frameStep2GamePiece = [frames objectForKey:@"frameStep2GamePiece"];
         gamePiece.frameStep2GamePiece = CGRectMake([[frameStep2GamePiece objectForKey:@"x"] floatValue],
@@ -227,6 +262,9 @@
 - (void)setupStep0 {
     _currentStep = kSTEP0;
     _currentGamePieceIndex = 0;
+    
+    //Setup mapframe for step 0
+    _imgView_Stage_Map.frame = obj_mapFrame.MapframeStep0;
     
     // Apply the frame for step 1 for each game piece
     for (MGAGamePiece *gamePiece in _gamePieceArray) {
@@ -566,6 +604,9 @@
     _currentStep = kSTEP2;
     _currentGamePieceIndex = 0;
     
+    //Setup mapframe for step 2
+    _imgView_Stage_Map.frame = obj_mapFrame.MapframeStep2;
+    
     // First empty the array that tracks which game pieces have been completed for this step.
     [_gamePiecesCompletedInCurrentStep removeAllObjects];
     
@@ -584,7 +625,6 @@
                              {
                                  gamePiece.image = gamePiece.image_active;
                                  gamePiece.frame = gamePiece.frameStep2GamePiece;
-                                 gamePiece.placeholder.frame = gamePiece.frameStep2Placeholder;
                              }
                              else
                              {
@@ -593,6 +633,7 @@
                                  gamePiece.placeholder.image = gamePiece.image_placeholder;
                              }
                              
+                             gamePiece.placeholder.frame = gamePiece.frameStep2Placeholder;
                              [self.view bringSubviewToFront:gamePiece];
                              
                          }
@@ -631,6 +672,25 @@
                                           }];
                      }];
 }
+-(void)endStep2
+{
+    [self.view setUserInteractionEnabled:YES];
+    // Fade out the current view to prepare for step 1.
+    [UIView animateWithDuration:0.35
+                          delay:1.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _imgView_Stage_Map.alpha = 0.0f;
+                         
+                         for (MGAGamePiece *gamePiece in _gamePieceArray) {
+                             gamePiece.alpha = 0.0f;
+                         }
+                     }
+                     completion:^(BOOL finished){
+                         [self startStep3];
+                     }];
+}
+
 
 - (void)setupGamePiecesForDragging {
     for (MGAGamePiece *gamePiece in _gamePieceArray) {
@@ -646,6 +706,10 @@
     _currentStep = kSTEP3;
     _currentGamePieceIndex = 0;
     
+    //Setup mapframe for step 3
+    _imgView_Stage_Map.frame = obj_mapFrame.MapframeStep3;
+    _imgView_Stage_Map.alpha = 1.0f;
+    
     Step_Timer = [NSTimer scheduledTimerWithTimeInterval: 10.0 target: self selector:@selector(ChangeInActiveForHint:) userInfo: nil repeats:NO];
 
     
@@ -656,16 +720,23 @@
     // Make them tappable for this step.
     
     for (MGAGamePiece *gamePiece in _gamePieceArray) {
-        [gamePiece makeGamePieceTappableWithCenter:gamePiece.center];
         
         if (_currentGameMode == kModeCountry)
+        {
             gamePiece.image = gamePiece.image_active;
+            gamePiece.frame = gamePiece.frameStep3;
+        }
         else
         {
             gamePiece.image = gamePiece.image_active_flag;
+            gamePiece.frame = gamePiece.frameStep3_flag;
             gamePiece.placeholder.image = gamePiece.image_active;
+            gamePiece.placeholder.frame = gamePiece.frameStep3;
+            
         }
+        gamePiece.alpha = 1.0f;
         
+        [gamePiece makeGamePieceTappableWithCenter:gamePiece.center];
         [gamePiece setUserInteractionEnabled:YES];
     }
     
@@ -747,16 +818,16 @@
         [gamePiece returnGamePieceToOriginalLocation];
     }
 }
-
 - (void)gamePiecePlacedOnTarget:(MGAGamePiece *)gamePiece {
     if (_currentStep == kSTEP2) {
         [_gamePiecesCompletedInCurrentStep addObject:gamePiece];
         
         // Check to see if all game pieces have been correctly placed on the map.
         if ([_gamePiecesCompletedInCurrentStep count] == [_gamePieceArray count]) {
+            
             [self.view setUserInteractionEnabled:NO];
             [self PlaneAnimationPathAfterActivityCompletion];
-            [self performSelector:@selector(startStep3) withObject:nil afterDelay:StepCompleteAnimationTime];
+            [self performSelector:@selector(endStep2) withObject:nil afterDelay:StepCompleteAnimationTime-1.0];
         }
     }
 }

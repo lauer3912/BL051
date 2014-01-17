@@ -147,15 +147,7 @@
     NSDictionary *DicAirplaneInfo = [dicPath valueForKey:@"airplane"];
     [self movePlane:trackPath PlaneLastPoint:planePosition AnimationTime:[[DicAirplaneInfo valueForKey:@"animationtime"] floatValue]];
 }
--(void)PlaneFlyOff
-{
-    UIBezierPath *trackPath = [UIBezierPath bezierPath];
-	[trackPath moveToPoint:P(719, 510)];
-    
-    [trackPath addCurveToPoint:P(-100, 510) controlPoint1:P(452, 340) controlPoint2:P(175, 390)];
-    
-    [self movePlane:trackPath PlaneLastPoint:P(-100, 510) AnimationTime:5.0];
-}
+
 -(void)movePlane:(UIBezierPath*)trackPath PlaneLastPoint:(CGPoint)point AnimationTime:(CGFloat)animationTime
 {
     /*CAShapeLayer *centerline = [CAShapeLayer layer];
@@ -195,7 +187,7 @@
     {
         //Frame Before MoveNext Stage
         NSLog(@"Plane Touched");
-        NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
+        NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
         
         [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"start"]];
         
@@ -214,7 +206,8 @@
                 img_Arrow.hidden = YES;
             }
             
-            img_Map.frame = CGRectMake(-1755, -1041, 2920, 2195);
+            //img_Map.frame = CGRectMake(-1755, -1041, 2920, 2195);
+            img_Map.frame = CGRectMake(-1639, -934, 2920, 2195);
             img_Logo.frame = CGRectMake(img_Logo.frame.origin.x, self.view.frame.size.height, img_Logo.frame.size.width, img_Logo.frame.size.height);
             View_Purchase.frame = CGRectMake(View_Purchase.frame.origin.x, -180, View_Purchase.frame.size.width, 180);
             img_Shadow.frame = CGRectMake(img_Shadow.frame.origin.x, -200, img_Shadow.frame.size.width, 200);
@@ -224,8 +217,10 @@
             
                 StagesViewCtr *obj_StagesViewCtr = [[StagesViewCtr alloc]initWithNibName:@"StagesViewCtr" bundle:nil];
                 obj_StagesViewCtr._currentGameMode = _CurrentMode;
-                obj_StagesViewCtr._currentStage = _CurrentStage;
-                obj_StagesViewCtr._currentGroup = _CurrentGroup;
+                //obj_StagesViewCtr._currentStage = _CurrentStage;
+                obj_StagesViewCtr._currentStage = 0; // Static  For Now
+                //obj_StagesViewCtr._currentGroup = _CurrentGroup;
+                obj_StagesViewCtr._currentGroup = 0; //  static For Now
                 obj_StagesViewCtr._Stagedelegate = self;
                 [self.navigationController pushViewController:obj_StagesViewCtr animated:NO];
         }];

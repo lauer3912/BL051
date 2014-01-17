@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "MGAGamePiece.h"
+#import "MapFrameModal.h"
 
 @protocol StageCompleteDelegate <NSObject>
 
@@ -43,6 +44,9 @@
     
     //Stage or Group Complete Delegate
     id <StageCompleteDelegate> _Stagedelegate;
+    
+    //Map Frame Modal
+    MapFrameModal *obj_mapFrame;
 }
 @property (nonatomic,strong) id <StageCompleteDelegate> _Stagedelegate;
 @property (nonatomic,readwrite) int _currentGameMode;
