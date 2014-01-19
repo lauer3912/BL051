@@ -8,11 +8,19 @@
 
 #import "AppDelegate.h"
 #import "IntroductionViewCtr.h"
+#import <Crashlytics/Crashlytics.h>
+#import "TestFlight.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //test flight sdk
+    [TestFlight takeOff:@"cf0a50b0-6235-4348-b3be-bdf23e82f64b"];
+    
+    //crashlytics integration
+    [Crashlytics startWithAPIKey:@"b53fcf08df9b183b382153735d57a10862fc5348"];
+    
     //Hide Status Bar
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C58C39EE188C25710083C112 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39ED188C25710083C112 /* Crashlytics.framework */; };
+		C58C39F8188C26AA0083C112 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39F2188C26AA0083C112 /* libTestFlight.a */; };
+		C58C39F9188C26AA0083C112 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C58C39F3188C26AA0083C112 /* README.md */; };
+		C58C39FA188C26AA0083C112 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C58C39F4188C26AA0083C112 /* release_notes.md */; };
+		C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39FB188C26BF0083C112 /* libz.dylib */; };
 		FD022595187FF54C00B51647 /* GlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FD022594187FF54C00B51647 /* GlobalMethods.m */; };
 		FD0EF838187E7D21008BE10E /* active_Japan_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF832187E7D21008BE10E /* active_Japan_flag@2x.png */; };
 		FD0EF839187E7D21008BE10E /* active_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF833187E7D21008BE10E /* active_NorthKorea_flag@2x.png */; };
@@ -117,6 +122,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C58C39ED188C25710083C112 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C58C39F2188C26AA0083C112 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		C58C39F3188C26AA0083C112 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		C58C39F4188C26AA0083C112 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		C58C39F5188C26AA0083C112 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		C58C39F6188C26AA0083C112 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		C58C39F7188C26AA0083C112 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		C58C39FB188C26BF0083C112 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FD022593187FF54C00B51647 /* GlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalMethods.h; sourceTree = "<group>"; };
 		FD022594187FF54C00B51647 /* GlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalMethods.m; sourceTree = "<group>"; };
 		FD0EF832187E7D21008BE10E /* active_Japan_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Japan_flag@2x.png"; sourceTree = "<group>"; };
@@ -239,8 +252,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */,
+				C58C39F8188C26AA0083C112 /* libTestFlight.a in Frameworks */,
 				FD128E801883E3CF00D760E9 /* StoreKit.framework in Frameworks */,
 				FD128E7E1883E3C400D760E9 /* SystemConfiguration.framework in Frameworks */,
+				C58C39EE188C25710083C112 /* Crashlytics.framework in Frameworks */,
 				FD1CA741187D53D10064FBBA /* CoreText.framework in Frameworks */,
 				FD9D7005187D3F3100404C3C /* QuartzCore.framework in Frameworks */,
 				FDFF880C18714AAE0005173E /* CoreGraphics.framework in Frameworks */,
@@ -262,6 +278,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C58C39F1188C26AA0083C112 /* TestFlightSDK2.1.4 */ = {
+			isa = PBXGroup;
+			children = (
+				C58C39F2188C26AA0083C112 /* libTestFlight.a */,
+				C58C39F3188C26AA0083C112 /* README.md */,
+				C58C39F4188C26AA0083C112 /* release_notes.md */,
+				C58C39F5188C26AA0083C112 /* TestFlight+AsyncLogging.h */,
+				C58C39F6188C26AA0083C112 /* TestFlight+ManualSessions.h */,
+				C58C39F7188C26AA0083C112 /* TestFlight.h */,
+			);
+			path = TestFlightSDK2.1.4;
+			sourceTree = "<group>";
+		};
 		FD0225961880034F00B51647 /* Group2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +480,8 @@
 		FDFF880818714AAE0005173E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C58C39FB188C26BF0083C112 /* libz.dylib */,
+				C58C39ED188C25710083C112 /* Crashlytics.framework */,
 				FD128E7F1883E3CF00D760E9 /* StoreKit.framework */,
 				FD128E7D1883E3C400D760E9 /* SystemConfiguration.framework */,
 				FD1CA740187D53D10064FBBA /* CoreText.framework */,
@@ -528,6 +559,7 @@
 		FDFF884318714D470005173E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C58C39F1188C26AA0083C112 /* TestFlightSDK2.1.4 */,
 				FD128E791883E2B500D760E9 /* MBProgress */,
 				FD128E721883E21F00D760E9 /* In App Purchase Classes */,
 				FD7C839B1880117A00F7329C /* LocalizesString */,
@@ -577,6 +609,7 @@
 				FDFF880218714AAE0005173E /* Sources */,
 				FDFF880318714AAE0005173E /* Frameworks */,
 				FDFF880418714AAE0005173E /* Resources */,
+				C58C39EC188C255E0083C112 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -685,6 +718,7 @@
 				FD0EF838187E7D21008BE10E /* active_Japan_flag@2x.png in Resources */,
 				FDFF881418714AAE0005173E /* InfoPlist.strings in Resources */,
 				FD6CEE8A187EB237009ADF7D /* inactive_Japan_flag@2x.png in Resources */,
+				C58C39FA188C26AA0083C112 /* release_notes.md in Resources */,
 				FDC3613418891E60001D8E27 /* placeholder_NorthKorea@2x.png in Resources */,
 				FDC3613718891E60001D8E27 /* stage1_group1_map@2x.png in Resources */,
 				FDFF884918714D8C0005173E /* IntroductionViewCtr.xib in Resources */,
@@ -701,6 +735,7 @@
 				FDC3612618891E60001D8E27 /* active_Japan@2x.png in Resources */,
 				FDC3613218891E60001D8E27 /* placeholder_Japan@2x.png in Resources */,
 				FDC3615A18894349001D8E27 /* active_Mongolia@2x.png in Resources */,
+				C58C39F9188C26AA0083C112 /* README.md in Resources */,
 				FDC3612A18891E60001D8E27 /* active_SouthKorea@2x.png in Resources */,
 				FD71B22D18740158006DD001 /* plane@2x.png in Resources */,
 				FDC3616818894349001D8E27 /* placeholder_Russia@2x.png in Resources */,
@@ -727,6 +762,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C58C39EC188C255E0083C112 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run b53fcf08df9b183b382153735d57a10862fc5348";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FDFF880218714AAE0005173E /* Sources */ = {
@@ -871,12 +922,20 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
 				INFOPLIST_FILE = "Montessori_Geography/Montessori_Geography-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
@@ -891,12 +950,20 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
 				INFOPLIST_FILE = "Montessori_Geography/Montessori_Geography-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
