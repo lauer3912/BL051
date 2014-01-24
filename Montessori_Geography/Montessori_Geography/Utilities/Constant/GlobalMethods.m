@@ -117,4 +117,30 @@
     
     return DicPathCurretnGroup;
 }
++(NSString*)ReturnStageTitle:(int)StageValue
+{
+    switch (StageValue) {
+        case 0:
+            return @"East Asia";
+            break;
+        case 1:
+            return @"Southeast Asia";
+            break;
+        case 2:
+            return @"South Asia";
+            break;
+        case 3:
+            return @"Central Asia";
+            break;
+        case 4:
+            return @"Middle East";
+            break;
+        case 5:
+            return @"Eurasia";
+            break;
+        default:
+            break;
+    }
+    return @"";
+}
 @end

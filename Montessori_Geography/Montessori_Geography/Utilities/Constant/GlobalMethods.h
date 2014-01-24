@@ -20,4 +20,7 @@
 +(int)ReturnCurrentSatgeGroupForKey:(NSString*)forKey;
 
 +(NSDictionary*)ReturnPathForPlaneAnimationForStage:(int)StageValue ForGroup:(int)GroupValue;
+
+
++(NSString*)ReturnStageTitle:(int)StageValue;
 @end

@@ -10,11 +10,11 @@
 #import <QuartzCore/QuartzCore.h>
 #import "StagesViewCtr.h"
 
-@interface IntroductionViewCtr : UIViewController <StageCompleteDelegate>
+@interface IntroductionViewCtr : UIViewController <StageCompleteDelegate,UIAlertViewDelegate>
 {
     //Welcome View
-    IBOutlet UIView *WelComeView;
-    IBOutlet UILabel *lblWelcome,*lblMonte,*lblAsia,*lblLine1;
+    IBOutlet UIView *WelComeView,*AsiaView;
+    IBOutlet UILabel *lblWelcome,*lblMonte,*lblAsia,*lblLine1,*lblStageTitle;
     IBOutlet UIButton *btnMap,*btnFlag,*btnMenu;
     
     IBOutlet UIImageView *img_Map,*img_Logo;
@@ -27,11 +27,13 @@
     
     
     //Purchase Screen
-    IBOutlet UIView *View_Purchase;
-    IBOutlet UIButton *btnMapsPurchase,*btnFlagsPurchase,*btnMapsFlagsPurchase,*btnReset;
+    IBOutlet UIView *View_Purchase,*View_Menu;
+    IBOutlet UIButton *btnMapsPurchase,*btnFlagsPurchase,*btnMapsFlagsPurchase,*btnReset,*btnRestorePurchases;
     IBOutlet UILabel *lblMapsPurchase,*lblFlagsPurchase,*lblMapsFlagsPurchase,*lblReset;
-    IBOutlet UIImageView *img_Arrow,*img_Shadow;
-    IBOutlet UILabel *lblWhite,*lblBlue;
+    IBOutlet UIImageView *img_Shadow;
+    IBOutlet UILabel *lblBlue,*lblBorderMenu;
+    IBOutlet UILabel *lblMonte_Purchase,*lblAsia_Purchase;
+
     
 }
 @end

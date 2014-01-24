@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C58C39EE188C25710083C112 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39ED188C25710083C112 /* Crashlytics.framework */; };
-		C58C39F8188C26AA0083C112 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39F2188C26AA0083C112 /* libTestFlight.a */; };
-		C58C39F9188C26AA0083C112 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C58C39F3188C26AA0083C112 /* README.md */; };
-		C58C39FA188C26AA0083C112 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C58C39F4188C26AA0083C112 /* release_notes.md */; };
 		C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39FB188C26BF0083C112 /* libz.dylib */; };
 		FD022595187FF54C00B51647 /* GlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FD022594187FF54C00B51647 /* GlobalMethods.m */; };
 		FD0EF838187E7D21008BE10E /* active_Japan_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF832187E7D21008BE10E /* active_Japan_flag@2x.png */; };
@@ -35,16 +31,106 @@
 		FD1CA73E187D45050064FBBA /* StagesViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CA73C187D45050064FBBA /* StagesViewCtr.m */; };
 		FD1CA73F187D45050064FBBA /* StagesViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD1CA73D187D45050064FBBA /* StagesViewCtr.xib */; };
 		FD1CA741187D53D10064FBBA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1CA740187D53D10064FBBA /* CoreText.framework */; };
+		FD37E9A4188FAFB2009C51C2 /* active_Brunei.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E95A188FAFB2009C51C2 /* active_Brunei.png */; };
+		FD37E9A5188FAFB2009C51C2 /* active_Brunei@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E95B188FAFB2009C51C2 /* active_Brunei@2x.png */; };
+		FD37E9A6188FAFB2009C51C2 /* active_Cambodia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E95C188FAFB2009C51C2 /* active_Cambodia.png */; };
+		FD37E9A7188FAFB2009C51C2 /* active_Cambodia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E95D188FAFB2009C51C2 /* active_Cambodia@2x.png */; };
+		FD37E9A8188FAFB2009C51C2 /* active_EastTimor.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E95E188FAFB2009C51C2 /* active_EastTimor.png */; };
+		FD37E9A9188FAFB2009C51C2 /* active_EastTimor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E95F188FAFB2009C51C2 /* active_EastTimor@2x.png */; };
+		FD37E9AA188FAFB2009C51C2 /* active_Indonesia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E960188FAFB2009C51C2 /* active_Indonesia.png */; };
+		FD37E9AB188FAFB2009C51C2 /* active_Indonesia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E961188FAFB2009C51C2 /* active_Indonesia@2x.png */; };
+		FD37E9AC188FAFB2009C51C2 /* active_Laos.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E962188FAFB2009C51C2 /* active_Laos.png */; };
+		FD37E9AD188FAFB2009C51C2 /* active_Laos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E963188FAFB2009C51C2 /* active_Laos@2x.png */; };
+		FD37E9AE188FAFB2009C51C2 /* active_Malaysia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E964188FAFB2009C51C2 /* active_Malaysia.png */; };
+		FD37E9AF188FAFB2009C51C2 /* active_Malaysia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E965188FAFB2009C51C2 /* active_Malaysia@2x.png */; };
+		FD37E9B0188FAFB2009C51C2 /* active_Myanmar.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E966188FAFB2009C51C2 /* active_Myanmar.png */; };
+		FD37E9B1188FAFB2009C51C2 /* active_Myanmar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E967188FAFB2009C51C2 /* active_Myanmar@2x.png */; };
+		FD37E9B2188FAFB2009C51C2 /* active_Philippines.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E968188FAFB2009C51C2 /* active_Philippines.png */; };
+		FD37E9B3188FAFB2009C51C2 /* active_Philippines@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E969188FAFB2009C51C2 /* active_Philippines@2x.png */; };
+		FD37E9B6188FAFB2009C51C2 /* active_Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E96C188FAFB2009C51C2 /* active_Thailand.png */; };
+		FD37E9B7188FAFB2009C51C2 /* active_Thailand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E96D188FAFB2009C51C2 /* active_Thailand@2x.png */; };
+		FD37E9B8188FAFB2009C51C2 /* active_Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E96E188FAFB2009C51C2 /* active_Vietnam.png */; };
+		FD37E9B9188FAFB2009C51C2 /* active_Vietnam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E96F188FAFB2009C51C2 /* active_Vietnam@2x.png */; };
+		FD37E9BA188FAFB2009C51C2 /* inactive_Brunei.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E970188FAFB2009C51C2 /* inactive_Brunei.png */; };
+		FD37E9BB188FAFB2009C51C2 /* inactive_Brunei@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E971188FAFB2009C51C2 /* inactive_Brunei@2x.png */; };
+		FD37E9BC188FAFB2009C51C2 /* inactive_Cambodia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E972188FAFB2009C51C2 /* inactive_Cambodia.png */; };
+		FD37E9BD188FAFB2009C51C2 /* inactive_Cambodia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E973188FAFB2009C51C2 /* inactive_Cambodia@2x.png */; };
+		FD37E9BE188FAFB2009C51C2 /* inactive_EastTimor.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E974188FAFB2009C51C2 /* inactive_EastTimor.png */; };
+		FD37E9BF188FAFB2009C51C2 /* inactive_EastTimor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E975188FAFB2009C51C2 /* inactive_EastTimor@2x.png */; };
+		FD37E9C0188FAFB2009C51C2 /* inactive_Indonesia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E976188FAFB2009C51C2 /* inactive_Indonesia.png */; };
+		FD37E9C1188FAFB2009C51C2 /* inactive_Indonesia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E977188FAFB2009C51C2 /* inactive_Indonesia@2x.png */; };
+		FD37E9C2188FAFB2009C51C2 /* inactive_Laos.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E978188FAFB2009C51C2 /* inactive_Laos.png */; };
+		FD37E9C3188FAFB2009C51C2 /* inactive_Laos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E979188FAFB2009C51C2 /* inactive_Laos@2x.png */; };
+		FD37E9C4188FAFB2009C51C2 /* inactive_Malaysia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E97A188FAFB2009C51C2 /* inactive_Malaysia.png */; };
+		FD37E9C5188FAFB2009C51C2 /* inactive_Malaysia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E97B188FAFB2009C51C2 /* inactive_Malaysia@2x.png */; };
+		FD37E9C6188FAFB2009C51C2 /* inactive_Myanmar.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E97C188FAFB2009C51C2 /* inactive_Myanmar.png */; };
+		FD37E9C7188FAFB2009C51C2 /* inactive_Myanmar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E97D188FAFB2009C51C2 /* inactive_Myanmar@2x.png */; };
+		FD37E9C8188FAFB2009C51C2 /* inactive_Philippines.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E97E188FAFB2009C51C2 /* inactive_Philippines.png */; };
+		FD37E9C9188FAFB2009C51C2 /* inactive_Philippines@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E97F188FAFB2009C51C2 /* inactive_Philippines@2x.png */; };
+		FD37E9CC188FAFB2009C51C2 /* inactive_Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E982188FAFB2009C51C2 /* inactive_Thailand.png */; };
+		FD37E9CD188FAFB2009C51C2 /* inactive_Thailand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E983188FAFB2009C51C2 /* inactive_Thailand@2x.png */; };
+		FD37E9CE188FAFB2009C51C2 /* inactive_Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E984188FAFB2009C51C2 /* inactive_Vietnam.png */; };
+		FD37E9CF188FAFB2009C51C2 /* inactive_Vietnam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E985188FAFB2009C51C2 /* inactive_Vietnam@2x.png */; };
+		FD37E9D0188FAFB2009C51C2 /* placeholder_Brunei.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E986188FAFB2009C51C2 /* placeholder_Brunei.png */; };
+		FD37E9D1188FAFB2009C51C2 /* placeholder_Brunei@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E987188FAFB2009C51C2 /* placeholder_Brunei@2x.png */; };
+		FD37E9D2188FAFB2009C51C2 /* placeholder_Cambodia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E988188FAFB2009C51C2 /* placeholder_Cambodia.png */; };
+		FD37E9D3188FAFB2009C51C2 /* placeholder_Cambodia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E989188FAFB2009C51C2 /* placeholder_Cambodia@2x.png */; };
+		FD37E9D4188FAFB2009C51C2 /* placeholder_EastTimor.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E98A188FAFB2009C51C2 /* placeholder_EastTimor.png */; };
+		FD37E9D5188FAFB2009C51C2 /* placeholder_EastTimor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E98B188FAFB2009C51C2 /* placeholder_EastTimor@2x.png */; };
+		FD37E9D6188FAFB2009C51C2 /* placeholder_Indonesia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E98C188FAFB2009C51C2 /* placeholder_Indonesia.png */; };
+		FD37E9D7188FAFB2009C51C2 /* placeholder_Indonesia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E98D188FAFB2009C51C2 /* placeholder_Indonesia@2x.png */; };
+		FD37E9D8188FAFB2009C51C2 /* placeholder_Laos.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E98E188FAFB2009C51C2 /* placeholder_Laos.png */; };
+		FD37E9D9188FAFB2009C51C2 /* placeholder_Laos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E98F188FAFB2009C51C2 /* placeholder_Laos@2x.png */; };
+		FD37E9DA188FAFB2009C51C2 /* placeholder_Malaysia.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E990188FAFB2009C51C2 /* placeholder_Malaysia.png */; };
+		FD37E9DB188FAFB2009C51C2 /* placeholder_Malaysia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E991188FAFB2009C51C2 /* placeholder_Malaysia@2x.png */; };
+		FD37E9DC188FAFB2009C51C2 /* placeholder_Myanmar.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E992188FAFB2009C51C2 /* placeholder_Myanmar.png */; };
+		FD37E9DD188FAFB2009C51C2 /* placeholder_Myanmar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E993188FAFB2009C51C2 /* placeholder_Myanmar@2x.png */; };
+		FD37E9DE188FAFB2009C51C2 /* placeholder_Philippines.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E994188FAFB2009C51C2 /* placeholder_Philippines.png */; };
+		FD37E9DF188FAFB2009C51C2 /* placeholder_Philippines@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E995188FAFB2009C51C2 /* placeholder_Philippines@2x.png */; };
+		FD37E9E2188FAFB2009C51C2 /* placeholder_Thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E998188FAFB2009C51C2 /* placeholder_Thailand.png */; };
+		FD37E9E3188FAFB2009C51C2 /* placeholder_Thailand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E999188FAFB2009C51C2 /* placeholder_Thailand@2x.png */; };
+		FD37E9E4188FAFB2009C51C2 /* placeholder_Vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E99A188FAFB2009C51C2 /* placeholder_Vietnam.png */; };
+		FD37E9E5188FAFB2009C51C2 /* placeholder_Vietnam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E99B188FAFB2009C51C2 /* placeholder_Vietnam@2x.png */; };
+		FD37E9E6188FAFB2009C51C2 /* stage2_group1_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E99C188FAFB2009C51C2 /* stage2_group1_map.png */; };
+		FD37E9E7188FAFB2009C51C2 /* stage2_group1_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E99D188FAFB2009C51C2 /* stage2_group1_map@2x.png */; };
+		FD37E9E8188FAFB2009C51C2 /* stage2_group2_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E99E188FAFB2009C51C2 /* stage2_group2_map.png */; };
+		FD37E9E9188FAFB2009C51C2 /* stage2_group2_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E99F188FAFB2009C51C2 /* stage2_group2_map@2x.png */; };
+		FD37E9EA188FAFB2009C51C2 /* stage2_group3_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9A0188FAFB2009C51C2 /* stage2_group3_map.png */; };
+		FD37E9EB188FAFB2009C51C2 /* stage2_group3_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9A1188FAFB2009C51C2 /* stage2_group3_map@2x.png */; };
+		FD37E9EC188FAFB2009C51C2 /* stage2_group4_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9A2188FAFB2009C51C2 /* stage2_group4_map.png */; };
+		FD37E9ED188FAFB2009C51C2 /* stage2_group4_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9A3188FAFB2009C51C2 /* stage2_group4_map@2x.png */; };
+		FD37E9F4188FB585009C51C2 /* active_Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9EE188FB585009C51C2 /* active_Singapore.png */; };
+		FD37E9F5188FB585009C51C2 /* active_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9EF188FB585009C51C2 /* active_Singapore@2x.png */; };
+		FD37E9F6188FB585009C51C2 /* inactive_Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F0188FB585009C51C2 /* inactive_Singapore.png */; };
+		FD37E9F7188FB585009C51C2 /* inactive_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */; };
+		FD37E9F8188FB585009C51C2 /* placeholder_Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */; };
+		FD37E9F9188FB585009C51C2 /* placeholder_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */; };
 		FD4FF1C9187FCB8000D6823A /* NSUserDefaults+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */; };
 		FD4FF1CC187FCE3B00D6823A /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FF1CB187FCE3B00D6823A /* NSString+Validation.m */; };
 		FD4FF1CE187FDD7300D6823A /* MGAMapStages.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4FF1CD187FDD7300D6823A /* MGAMapStages.plist */; };
 		FD58E76D1884066400322E54 /* menu_with_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD58E76C1884066400322E54 /* menu_with_arrow@2x.png */; };
 		FD58E76F1884073700322E54 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD58E76E1884073700322E54 /* arrow@2x.png */; };
+		FD63A47C188E335E005535EA /* TempViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD63A47A188E335E005535EA /* TempViewCtr.m */; };
+		FD63A47D188E335E005535EA /* TempViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD63A47B188E335E005535EA /* TempViewCtr.xib */; };
+		FD63A487188E3A8A005535EA /* active_China_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A47E188E3A8A005535EA /* active_China_flag@2x.png */; };
+		FD63A488188E3A8A005535EA /* active_Mongolia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A47F188E3A8A005535EA /* active_Mongolia_flag@2x.png */; };
+		FD63A489188E3A8A005535EA /* active_Russia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A480188E3A8A005535EA /* active_Russia_flag@2x.png */; };
+		FD63A48A188E3A8A005535EA /* inactive_China_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A481188E3A8A005535EA /* inactive_China_flag@2x.png */; };
+		FD63A48B188E3A8A005535EA /* inactive_Mongolia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A482188E3A8A005535EA /* inactive_Mongolia_flag@2x.png */; };
+		FD63A48C188E3A8A005535EA /* inactive_Russia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A483188E3A8A005535EA /* inactive_Russia_flag@2x.png */; };
+		FD63A48D188E3A8A005535EA /* placeholder_China_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A484188E3A8A005535EA /* placeholder_China_flag@2x.png */; };
+		FD63A48E188E3A8A005535EA /* placeholder_Mongolia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A485188E3A8A005535EA /* placeholder_Mongolia_flag@2x.png */; };
+		FD63A48F188E3A8A005535EA /* placeholder_Russia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A486188E3A8A005535EA /* placeholder_Russia_flag@2x.png */; };
+		FD6BEEE4188CE307005BEED3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39ED188C25710083C112 /* Crashlytics.framework */; };
+		FD6BEEEC188CE389005BEED3 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6BEEE6188CE389005BEED3 /* libTestFlight.a */; };
+		FD6BEEED188CE389005BEED3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FD6BEEE7188CE389005BEED3 /* README.md */; };
+		FD6BEEEE188CE389005BEED3 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = FD6BEEE8188CE389005BEED3 /* release_notes.md */; };
+		FD6BEEF0188CEBCE005BEED3 /* stage1_group1_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BEEEF188CEBCE005BEED3 /* stage1_group1_map.png */; };
+		FD6BEFB8188D460E005BEED3 /* asia_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BEFB6188D460E005BEED3 /* asia_map@2x.png */; };
+		FD6BEFB9188D460E005BEED3 /* world_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BEFB7188D460E005BEED3 /* world_map@2x.png */; };
 		FD6CEE8A187EB237009ADF7D /* inactive_Japan_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE87187EB237009ADF7D /* inactive_Japan_flag@2x.png */; };
 		FD6CEE8B187EB237009ADF7D /* inactive_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE88187EB237009ADF7D /* inactive_NorthKorea_flag@2x.png */; };
 		FD6CEE8C187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */; };
-		FD71B2201873D233006DD001 /* asia_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B21E1873D233006DD001 /* asia_map@2x.png */; };
-		FD71B2211873D233006DD001 /* world_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B21F1873D233006DD001 /* world_map@2x.png */; };
 		FD71B22C18740158006DD001 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22A18740158006DD001 /* plane.png */; };
 		FD71B22D18740158006DD001 /* plane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22B18740158006DD001 /* plane@2x.png */; };
 		FD7C839D1880119600F7329C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD7C839C1880119600F7329C /* Localization.strings */; };
@@ -123,12 +209,6 @@
 
 /* Begin PBXFileReference section */
 		C58C39ED188C25710083C112 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		C58C39F2188C26AA0083C112 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		C58C39F3188C26AA0083C112 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		C58C39F4188C26AA0083C112 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		C58C39F5188C26AA0083C112 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		C58C39F6188C26AA0083C112 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
-		C58C39F7188C26AA0083C112 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		C58C39FB188C26BF0083C112 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FD022593187FF54C00B51647 /* GlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalMethods.h; sourceTree = "<group>"; };
 		FD022594187FF54C00B51647 /* GlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalMethods.m; sourceTree = "<group>"; };
@@ -159,6 +239,80 @@
 		FD1CA73C187D45050064FBBA /* StagesViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StagesViewCtr.m; sourceTree = "<group>"; };
 		FD1CA73D187D45050064FBBA /* StagesViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StagesViewCtr.xib; sourceTree = "<group>"; };
 		FD1CA740187D53D10064FBBA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FD37E95A188FAFB2009C51C2 /* active_Brunei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Brunei.png; sourceTree = "<group>"; };
+		FD37E95B188FAFB2009C51C2 /* active_Brunei@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Brunei@2x.png"; sourceTree = "<group>"; };
+		FD37E95C188FAFB2009C51C2 /* active_Cambodia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Cambodia.png; sourceTree = "<group>"; };
+		FD37E95D188FAFB2009C51C2 /* active_Cambodia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Cambodia@2x.png"; sourceTree = "<group>"; };
+		FD37E95E188FAFB2009C51C2 /* active_EastTimor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_EastTimor.png; sourceTree = "<group>"; };
+		FD37E95F188FAFB2009C51C2 /* active_EastTimor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_EastTimor@2x.png"; sourceTree = "<group>"; };
+		FD37E960188FAFB2009C51C2 /* active_Indonesia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Indonesia.png; sourceTree = "<group>"; };
+		FD37E961188FAFB2009C51C2 /* active_Indonesia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Indonesia@2x.png"; sourceTree = "<group>"; };
+		FD37E962188FAFB2009C51C2 /* active_Laos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Laos.png; sourceTree = "<group>"; };
+		FD37E963188FAFB2009C51C2 /* active_Laos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Laos@2x.png"; sourceTree = "<group>"; };
+		FD37E964188FAFB2009C51C2 /* active_Malaysia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Malaysia.png; sourceTree = "<group>"; };
+		FD37E965188FAFB2009C51C2 /* active_Malaysia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Malaysia@2x.png"; sourceTree = "<group>"; };
+		FD37E966188FAFB2009C51C2 /* active_Myanmar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Myanmar.png; sourceTree = "<group>"; };
+		FD37E967188FAFB2009C51C2 /* active_Myanmar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Myanmar@2x.png"; sourceTree = "<group>"; };
+		FD37E968188FAFB2009C51C2 /* active_Philippines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Philippines.png; sourceTree = "<group>"; };
+		FD37E969188FAFB2009C51C2 /* active_Philippines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Philippines@2x.png"; sourceTree = "<group>"; };
+		FD37E96C188FAFB2009C51C2 /* active_Thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Thailand.png; sourceTree = "<group>"; };
+		FD37E96D188FAFB2009C51C2 /* active_Thailand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Thailand@2x.png"; sourceTree = "<group>"; };
+		FD37E96E188FAFB2009C51C2 /* active_Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Vietnam.png; sourceTree = "<group>"; };
+		FD37E96F188FAFB2009C51C2 /* active_Vietnam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Vietnam@2x.png"; sourceTree = "<group>"; };
+		FD37E970188FAFB2009C51C2 /* inactive_Brunei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Brunei.png; sourceTree = "<group>"; };
+		FD37E971188FAFB2009C51C2 /* inactive_Brunei@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Brunei@2x.png"; sourceTree = "<group>"; };
+		FD37E972188FAFB2009C51C2 /* inactive_Cambodia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Cambodia.png; sourceTree = "<group>"; };
+		FD37E973188FAFB2009C51C2 /* inactive_Cambodia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Cambodia@2x.png"; sourceTree = "<group>"; };
+		FD37E974188FAFB2009C51C2 /* inactive_EastTimor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_EastTimor.png; sourceTree = "<group>"; };
+		FD37E975188FAFB2009C51C2 /* inactive_EastTimor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_EastTimor@2x.png"; sourceTree = "<group>"; };
+		FD37E976188FAFB2009C51C2 /* inactive_Indonesia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Indonesia.png; sourceTree = "<group>"; };
+		FD37E977188FAFB2009C51C2 /* inactive_Indonesia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Indonesia@2x.png"; sourceTree = "<group>"; };
+		FD37E978188FAFB2009C51C2 /* inactive_Laos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Laos.png; sourceTree = "<group>"; };
+		FD37E979188FAFB2009C51C2 /* inactive_Laos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Laos@2x.png"; sourceTree = "<group>"; };
+		FD37E97A188FAFB2009C51C2 /* inactive_Malaysia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Malaysia.png; sourceTree = "<group>"; };
+		FD37E97B188FAFB2009C51C2 /* inactive_Malaysia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Malaysia@2x.png"; sourceTree = "<group>"; };
+		FD37E97C188FAFB2009C51C2 /* inactive_Myanmar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Myanmar.png; sourceTree = "<group>"; };
+		FD37E97D188FAFB2009C51C2 /* inactive_Myanmar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Myanmar@2x.png"; sourceTree = "<group>"; };
+		FD37E97E188FAFB2009C51C2 /* inactive_Philippines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Philippines.png; sourceTree = "<group>"; };
+		FD37E97F188FAFB2009C51C2 /* inactive_Philippines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Philippines@2x.png"; sourceTree = "<group>"; };
+		FD37E982188FAFB2009C51C2 /* inactive_Thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Thailand.png; sourceTree = "<group>"; };
+		FD37E983188FAFB2009C51C2 /* inactive_Thailand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Thailand@2x.png"; sourceTree = "<group>"; };
+		FD37E984188FAFB2009C51C2 /* inactive_Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Vietnam.png; sourceTree = "<group>"; };
+		FD37E985188FAFB2009C51C2 /* inactive_Vietnam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Vietnam@2x.png"; sourceTree = "<group>"; };
+		FD37E986188FAFB2009C51C2 /* placeholder_Brunei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Brunei.png; sourceTree = "<group>"; };
+		FD37E987188FAFB2009C51C2 /* placeholder_Brunei@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Brunei@2x.png"; sourceTree = "<group>"; };
+		FD37E988188FAFB2009C51C2 /* placeholder_Cambodia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Cambodia.png; sourceTree = "<group>"; };
+		FD37E989188FAFB2009C51C2 /* placeholder_Cambodia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Cambodia@2x.png"; sourceTree = "<group>"; };
+		FD37E98A188FAFB2009C51C2 /* placeholder_EastTimor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_EastTimor.png; sourceTree = "<group>"; };
+		FD37E98B188FAFB2009C51C2 /* placeholder_EastTimor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_EastTimor@2x.png"; sourceTree = "<group>"; };
+		FD37E98C188FAFB2009C51C2 /* placeholder_Indonesia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Indonesia.png; sourceTree = "<group>"; };
+		FD37E98D188FAFB2009C51C2 /* placeholder_Indonesia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Indonesia@2x.png"; sourceTree = "<group>"; };
+		FD37E98E188FAFB2009C51C2 /* placeholder_Laos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Laos.png; sourceTree = "<group>"; };
+		FD37E98F188FAFB2009C51C2 /* placeholder_Laos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Laos@2x.png"; sourceTree = "<group>"; };
+		FD37E990188FAFB2009C51C2 /* placeholder_Malaysia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Malaysia.png; sourceTree = "<group>"; };
+		FD37E991188FAFB2009C51C2 /* placeholder_Malaysia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Malaysia@2x.png"; sourceTree = "<group>"; };
+		FD37E992188FAFB2009C51C2 /* placeholder_Myanmar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Myanmar.png; sourceTree = "<group>"; };
+		FD37E993188FAFB2009C51C2 /* placeholder_Myanmar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Myanmar@2x.png"; sourceTree = "<group>"; };
+		FD37E994188FAFB2009C51C2 /* placeholder_Philippines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Philippines.png; sourceTree = "<group>"; };
+		FD37E995188FAFB2009C51C2 /* placeholder_Philippines@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Philippines@2x.png"; sourceTree = "<group>"; };
+		FD37E998188FAFB2009C51C2 /* placeholder_Thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Thailand.png; sourceTree = "<group>"; };
+		FD37E999188FAFB2009C51C2 /* placeholder_Thailand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Thailand@2x.png"; sourceTree = "<group>"; };
+		FD37E99A188FAFB2009C51C2 /* placeholder_Vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Vietnam.png; sourceTree = "<group>"; };
+		FD37E99B188FAFB2009C51C2 /* placeholder_Vietnam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Vietnam@2x.png"; sourceTree = "<group>"; };
+		FD37E99C188FAFB2009C51C2 /* stage2_group1_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage2_group1_map.png; sourceTree = "<group>"; };
+		FD37E99D188FAFB2009C51C2 /* stage2_group1_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage2_group1_map@2x.png"; sourceTree = "<group>"; };
+		FD37E99E188FAFB2009C51C2 /* stage2_group2_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage2_group2_map.png; sourceTree = "<group>"; };
+		FD37E99F188FAFB2009C51C2 /* stage2_group2_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage2_group2_map@2x.png"; sourceTree = "<group>"; };
+		FD37E9A0188FAFB2009C51C2 /* stage2_group3_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage2_group3_map.png; sourceTree = "<group>"; };
+		FD37E9A1188FAFB2009C51C2 /* stage2_group3_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage2_group3_map@2x.png"; sourceTree = "<group>"; };
+		FD37E9A2188FAFB2009C51C2 /* stage2_group4_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage2_group4_map.png; sourceTree = "<group>"; };
+		FD37E9A3188FAFB2009C51C2 /* stage2_group4_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage2_group4_map@2x.png"; sourceTree = "<group>"; };
+		FD37E9EE188FB585009C51C2 /* active_Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_Singapore.png; sourceTree = "<group>"; };
+		FD37E9EF188FB585009C51C2 /* active_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Singapore@2x.png"; sourceTree = "<group>"; };
+		FD37E9F0188FB585009C51C2 /* inactive_Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_Singapore.png; sourceTree = "<group>"; };
+		FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Singapore@2x.png"; sourceTree = "<group>"; };
+		FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Singapore.png; sourceTree = "<group>"; };
+		FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Singapore@2x.png"; sourceTree = "<group>"; };
 		FD4FF1C7187FCB8000D6823A /* NSUserDefaults+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Helpers.h"; sourceTree = "<group>"; };
 		FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Helpers.m"; sourceTree = "<group>"; };
 		FD4FF1CA187FCE3B00D6823A /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
@@ -166,11 +320,30 @@
 		FD4FF1CD187FDD7300D6823A /* MGAMapStages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MGAMapStages.plist; sourceTree = "<group>"; };
 		FD58E76C1884066400322E54 /* menu_with_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_with_arrow@2x.png"; sourceTree = "<group>"; };
 		FD58E76E1884073700322E54 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		FD63A479188E335E005535EA /* TempViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewCtr.h; sourceTree = "<group>"; };
+		FD63A47A188E335E005535EA /* TempViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewCtr.m; sourceTree = "<group>"; };
+		FD63A47B188E335E005535EA /* TempViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TempViewCtr.xib; sourceTree = "<group>"; };
+		FD63A47E188E3A8A005535EA /* active_China_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_China_flag@2x.png"; sourceTree = "<group>"; };
+		FD63A47F188E3A8A005535EA /* active_Mongolia_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Mongolia_flag@2x.png"; sourceTree = "<group>"; };
+		FD63A480188E3A8A005535EA /* active_Russia_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Russia_flag@2x.png"; sourceTree = "<group>"; };
+		FD63A481188E3A8A005535EA /* inactive_China_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_China_flag@2x.png"; sourceTree = "<group>"; };
+		FD63A482188E3A8A005535EA /* inactive_Mongolia_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Mongolia_flag@2x.png"; sourceTree = "<group>"; };
+		FD63A483188E3A8A005535EA /* inactive_Russia_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Russia_flag@2x.png"; sourceTree = "<group>"; };
+		FD63A484188E3A8A005535EA /* placeholder_China_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_China_flag@2x.png"; sourceTree = "<group>"; };
+		FD63A485188E3A8A005535EA /* placeholder_Mongolia_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Mongolia_flag@2x.png"; sourceTree = "<group>"; };
+		FD63A486188E3A8A005535EA /* placeholder_Russia_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Russia_flag@2x.png"; sourceTree = "<group>"; };
+		FD6BEEE6188CE389005BEED3 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		FD6BEEE7188CE389005BEED3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FD6BEEE8188CE389005BEED3 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		FD6BEEE9188CE389005BEED3 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		FD6BEEEA188CE389005BEED3 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		FD6BEEEB188CE389005BEED3 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		FD6BEEEF188CEBCE005BEED3 /* stage1_group1_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1_group1_map.png; sourceTree = "<group>"; };
+		FD6BEFB6188D460E005BEED3 /* asia_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asia_map@2x.png"; sourceTree = "<group>"; };
+		FD6BEFB7188D460E005BEED3 /* world_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_map@2x.png"; sourceTree = "<group>"; };
 		FD6CEE87187EB237009ADF7D /* inactive_Japan_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Japan_flag@2x.png"; sourceTree = "<group>"; };
 		FD6CEE88187EB237009ADF7D /* inactive_NorthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_NorthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
-		FD71B21E1873D233006DD001 /* asia_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asia_map@2x.png"; sourceTree = "<group>"; };
-		FD71B21F1873D233006DD001 /* world_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "world_map@2x.png"; sourceTree = "<group>"; };
 		FD71B22A18740158006DD001 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		FD71B22B18740158006DD001 /* plane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane@2x.png"; sourceTree = "<group>"; };
 		FD7C839C1880119600F7329C /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
@@ -252,12 +425,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6BEEE4188CE307005BEED3 /* Crashlytics.framework in Frameworks */,
 				C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */,
-				C58C39F8188C26AA0083C112 /* libTestFlight.a in Frameworks */,
 				FD128E801883E3CF00D760E9 /* StoreKit.framework in Frameworks */,
 				FD128E7E1883E3C400D760E9 /* SystemConfiguration.framework in Frameworks */,
-				C58C39EE188C25710083C112 /* Crashlytics.framework in Frameworks */,
 				FD1CA741187D53D10064FBBA /* CoreText.framework in Frameworks */,
+				FD6BEEEC188CE389005BEED3 /* libTestFlight.a in Frameworks */,
 				FD9D7005187D3F3100404C3C /* QuartzCore.framework in Frameworks */,
 				FDFF880C18714AAE0005173E /* CoreGraphics.framework in Frameworks */,
 				FDFF880E18714AAE0005173E /* UIKit.framework in Frameworks */,
@@ -278,22 +451,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C58C39F1188C26AA0083C112 /* TestFlightSDK2.1.4 */ = {
-			isa = PBXGroup;
-			children = (
-				C58C39F2188C26AA0083C112 /* libTestFlight.a */,
-				C58C39F3188C26AA0083C112 /* README.md */,
-				C58C39F4188C26AA0083C112 /* release_notes.md */,
-				C58C39F5188C26AA0083C112 /* TestFlight+AsyncLogging.h */,
-				C58C39F6188C26AA0083C112 /* TestFlight+ManualSessions.h */,
-				C58C39F7188C26AA0083C112 /* TestFlight.h */,
-			);
-			path = TestFlightSDK2.1.4;
-			sourceTree = "<group>";
-		};
 		FD0225961880034F00B51647 /* Group2 */ = {
 			isa = PBXGroup;
 			children = (
+				FD63A47E188E3A8A005535EA /* active_China_flag@2x.png */,
+				FD63A47F188E3A8A005535EA /* active_Mongolia_flag@2x.png */,
+				FD63A480188E3A8A005535EA /* active_Russia_flag@2x.png */,
+				FD63A481188E3A8A005535EA /* inactive_China_flag@2x.png */,
+				FD63A482188E3A8A005535EA /* inactive_Mongolia_flag@2x.png */,
+				FD63A483188E3A8A005535EA /* inactive_Russia_flag@2x.png */,
+				FD63A484188E3A8A005535EA /* placeholder_China_flag@2x.png */,
+				FD63A485188E3A8A005535EA /* placeholder_Mongolia_flag@2x.png */,
+				FD63A486188E3A8A005535EA /* placeholder_Russia_flag@2x.png */,
 				FDC3614318894349001D8E27 /* active_China.png */,
 				FDC3614418894349001D8E27 /* active_China@2x.png */,
 				FDC3614518894349001D8E27 /* active_Mongolia.png */,
@@ -355,17 +524,112 @@
 			path = "Home Screen";
 			sourceTree = "<group>";
 		};
+		FD37E959188FAFB2009C51C2 /* Stage2 */ = {
+			isa = PBXGroup;
+			children = (
+				FD37E9EE188FB585009C51C2 /* active_Singapore.png */,
+				FD37E9EF188FB585009C51C2 /* active_Singapore@2x.png */,
+				FD37E9F0188FB585009C51C2 /* inactive_Singapore.png */,
+				FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */,
+				FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */,
+				FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */,
+				FD37E95A188FAFB2009C51C2 /* active_Brunei.png */,
+				FD37E95B188FAFB2009C51C2 /* active_Brunei@2x.png */,
+				FD37E95C188FAFB2009C51C2 /* active_Cambodia.png */,
+				FD37E95D188FAFB2009C51C2 /* active_Cambodia@2x.png */,
+				FD37E95E188FAFB2009C51C2 /* active_EastTimor.png */,
+				FD37E95F188FAFB2009C51C2 /* active_EastTimor@2x.png */,
+				FD37E960188FAFB2009C51C2 /* active_Indonesia.png */,
+				FD37E961188FAFB2009C51C2 /* active_Indonesia@2x.png */,
+				FD37E962188FAFB2009C51C2 /* active_Laos.png */,
+				FD37E963188FAFB2009C51C2 /* active_Laos@2x.png */,
+				FD37E964188FAFB2009C51C2 /* active_Malaysia.png */,
+				FD37E965188FAFB2009C51C2 /* active_Malaysia@2x.png */,
+				FD37E966188FAFB2009C51C2 /* active_Myanmar.png */,
+				FD37E967188FAFB2009C51C2 /* active_Myanmar@2x.png */,
+				FD37E968188FAFB2009C51C2 /* active_Philippines.png */,
+				FD37E969188FAFB2009C51C2 /* active_Philippines@2x.png */,
+				FD37E96C188FAFB2009C51C2 /* active_Thailand.png */,
+				FD37E96D188FAFB2009C51C2 /* active_Thailand@2x.png */,
+				FD37E96E188FAFB2009C51C2 /* active_Vietnam.png */,
+				FD37E96F188FAFB2009C51C2 /* active_Vietnam@2x.png */,
+				FD37E970188FAFB2009C51C2 /* inactive_Brunei.png */,
+				FD37E971188FAFB2009C51C2 /* inactive_Brunei@2x.png */,
+				FD37E972188FAFB2009C51C2 /* inactive_Cambodia.png */,
+				FD37E973188FAFB2009C51C2 /* inactive_Cambodia@2x.png */,
+				FD37E974188FAFB2009C51C2 /* inactive_EastTimor.png */,
+				FD37E975188FAFB2009C51C2 /* inactive_EastTimor@2x.png */,
+				FD37E976188FAFB2009C51C2 /* inactive_Indonesia.png */,
+				FD37E977188FAFB2009C51C2 /* inactive_Indonesia@2x.png */,
+				FD37E978188FAFB2009C51C2 /* inactive_Laos.png */,
+				FD37E979188FAFB2009C51C2 /* inactive_Laos@2x.png */,
+				FD37E97A188FAFB2009C51C2 /* inactive_Malaysia.png */,
+				FD37E97B188FAFB2009C51C2 /* inactive_Malaysia@2x.png */,
+				FD37E97C188FAFB2009C51C2 /* inactive_Myanmar.png */,
+				FD37E97D188FAFB2009C51C2 /* inactive_Myanmar@2x.png */,
+				FD37E97E188FAFB2009C51C2 /* inactive_Philippines.png */,
+				FD37E97F188FAFB2009C51C2 /* inactive_Philippines@2x.png */,
+				FD37E982188FAFB2009C51C2 /* inactive_Thailand.png */,
+				FD37E983188FAFB2009C51C2 /* inactive_Thailand@2x.png */,
+				FD37E984188FAFB2009C51C2 /* inactive_Vietnam.png */,
+				FD37E985188FAFB2009C51C2 /* inactive_Vietnam@2x.png */,
+				FD37E986188FAFB2009C51C2 /* placeholder_Brunei.png */,
+				FD37E987188FAFB2009C51C2 /* placeholder_Brunei@2x.png */,
+				FD37E988188FAFB2009C51C2 /* placeholder_Cambodia.png */,
+				FD37E989188FAFB2009C51C2 /* placeholder_Cambodia@2x.png */,
+				FD37E98A188FAFB2009C51C2 /* placeholder_EastTimor.png */,
+				FD37E98B188FAFB2009C51C2 /* placeholder_EastTimor@2x.png */,
+				FD37E98C188FAFB2009C51C2 /* placeholder_Indonesia.png */,
+				FD37E98D188FAFB2009C51C2 /* placeholder_Indonesia@2x.png */,
+				FD37E98E188FAFB2009C51C2 /* placeholder_Laos.png */,
+				FD37E98F188FAFB2009C51C2 /* placeholder_Laos@2x.png */,
+				FD37E990188FAFB2009C51C2 /* placeholder_Malaysia.png */,
+				FD37E991188FAFB2009C51C2 /* placeholder_Malaysia@2x.png */,
+				FD37E992188FAFB2009C51C2 /* placeholder_Myanmar.png */,
+				FD37E993188FAFB2009C51C2 /* placeholder_Myanmar@2x.png */,
+				FD37E994188FAFB2009C51C2 /* placeholder_Philippines.png */,
+				FD37E995188FAFB2009C51C2 /* placeholder_Philippines@2x.png */,
+				FD37E998188FAFB2009C51C2 /* placeholder_Thailand.png */,
+				FD37E999188FAFB2009C51C2 /* placeholder_Thailand@2x.png */,
+				FD37E99A188FAFB2009C51C2 /* placeholder_Vietnam.png */,
+				FD37E99B188FAFB2009C51C2 /* placeholder_Vietnam@2x.png */,
+				FD37E99C188FAFB2009C51C2 /* stage2_group1_map.png */,
+				FD37E99D188FAFB2009C51C2 /* stage2_group1_map@2x.png */,
+				FD37E99E188FAFB2009C51C2 /* stage2_group2_map.png */,
+				FD37E99F188FAFB2009C51C2 /* stage2_group2_map@2x.png */,
+				FD37E9A0188FAFB2009C51C2 /* stage2_group3_map.png */,
+				FD37E9A1188FAFB2009C51C2 /* stage2_group3_map@2x.png */,
+				FD37E9A2188FAFB2009C51C2 /* stage2_group4_map.png */,
+				FD37E9A3188FAFB2009C51C2 /* stage2_group4_map@2x.png */,
+			);
+			path = Stage2;
+			sourceTree = "<group>";
+		};
+		FD6BEEE5188CE389005BEED3 /* TestFlightSDK2.1.4 */ = {
+			isa = PBXGroup;
+			children = (
+				FD6BEEE6188CE389005BEED3 /* libTestFlight.a */,
+				FD6BEEE7188CE389005BEED3 /* README.md */,
+				FD6BEEE8188CE389005BEED3 /* release_notes.md */,
+				FD6BEEE9188CE389005BEED3 /* TestFlight+AsyncLogging.h */,
+				FD6BEEEA188CE389005BEED3 /* TestFlight+ManualSessions.h */,
+				FD6BEEEB188CE389005BEED3 /* TestFlight.h */,
+			);
+			path = TestFlightSDK2.1.4;
+			sourceTree = "<group>";
+		};
 		FD71B21D1873D233006DD001 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				FD128E811883E8C500D760E9 /* Home Screen */,
 				FDFCE8C6187AB24C004BDF60 /* Stage1 */,
+				FD37E959188FAFB2009C51C2 /* Stage2 */,
+				FD128E811883E8C500D760E9 /* Home Screen */,
 				FDFDE2F5187425DA00206614 /* logo@2x.png */,
 				FD71B22A18740158006DD001 /* plane.png */,
 				FD71B22B18740158006DD001 /* plane@2x.png */,
-				FD71B21E1873D233006DD001 /* asia_map@2x.png */,
 				FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */,
-				FD71B21F1873D233006DD001 /* world_map@2x.png */,
+				FD6BEFB6188D460E005BEED3 /* asia_map@2x.png */,
+				FD6BEFB7188D460E005BEED3 /* world_map@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -384,6 +648,9 @@
 				FD1CA73B187D45050064FBBA /* StagesViewCtr.h */,
 				FD1CA73C187D45050064FBBA /* StagesViewCtr.m */,
 				FD1CA73D187D45050064FBBA /* StagesViewCtr.xib */,
+				FD63A479188E335E005535EA /* TempViewCtr.h */,
+				FD63A47A188E335E005535EA /* TempViewCtr.m */,
+				FD63A47B188E335E005535EA /* TempViewCtr.xib */,
 			);
 			path = Stages;
 			sourceTree = "<group>";
@@ -426,6 +693,8 @@
 		FDFCE8C7187AB24C004BDF60 /* Group1 */ = {
 			isa = PBXGroup;
 			children = (
+				FD6BEEEF188CEBCE005BEED3 /* stage1_group1_map.png */,
+				FDC3612418891E60001D8E27 /* stage1_group1_map@2x.png */,
 				FDC3611218891E60001D8E27 /* active_Japan.png */,
 				FDC3611318891E60001D8E27 /* active_Japan@2x.png */,
 				FDC3611418891E60001D8E27 /* active_NorthKorea.png */,
@@ -444,7 +713,6 @@
 				FDC3612118891E60001D8E27 /* placeholder_NorthKorea@2x.png */,
 				FDC3612218891E60001D8E27 /* placeholder_SouthKorea.png */,
 				FDC3612318891E60001D8E27 /* placeholder_SouthKorea@2x.png */,
-				FDC3612418891E60001D8E27 /* stage1_group1_map@2x.png */,
 				FD6CEE87187EB237009ADF7D /* inactive_Japan_flag@2x.png */,
 				FD6CEE88187EB237009ADF7D /* inactive_NorthKorea_flag@2x.png */,
 				FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */,
@@ -559,7 +827,7 @@
 		FDFF884318714D470005173E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				C58C39F1188C26AA0083C112 /* TestFlightSDK2.1.4 */,
+				FD6BEEE5188CE389005BEED3 /* TestFlightSDK2.1.4 */,
 				FD128E791883E2B500D760E9 /* MBProgress */,
 				FD128E721883E21F00D760E9 /* In App Purchase Classes */,
 				FD7C839B1880117A00F7329C /* LocalizesString */,
@@ -677,73 +945,158 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD128E8B1883E8C500D760E9 /* maps_blue@2x.png in Resources */,
+				FD37E9A6188FAFB2009C51C2 /* active_Cambodia.png in Resources */,
 				FDC3612818891E60001D8E27 /* active_NorthKorea@2x.png in Resources */,
+				FD37E9B1188FAFB2009C51C2 /* active_Myanmar@2x.png in Resources */,
+				FD37E9E8188FAFB2009C51C2 /* stage2_group2_map.png in Resources */,
+				FD37E9B0188FAFB2009C51C2 /* active_Myanmar.png in Resources */,
+				FD63A47D188E335E005535EA /* TempViewCtr.xib in Resources */,
 				FD0EF83A187E7D21008BE10E /* active_SouthKorea_flag@2x.png in Resources */,
+				FD37E9BD188FAFB2009C51C2 /* inactive_Cambodia@2x.png in Resources */,
+				FD37E9F5188FB585009C51C2 /* active_Singapore@2x.png in Resources */,
+				FD37E9B3188FAFB2009C51C2 /* active_Philippines@2x.png in Resources */,
 				FDC3615C18894349001D8E27 /* active_Russia@2x.png in Resources */,
 				FDC3612918891E60001D8E27 /* active_SouthKorea.png in Resources */,
 				FD0EF83F187E7D39008BE10E /* asia_map_blue@2x.png in Resources */,
+				FD37E9EA188FAFB2009C51C2 /* stage2_group3_map.png in Resources */,
+				FD37E9CE188FAFB2009C51C2 /* inactive_Vietnam.png in Resources */,
 				FDC3612718891E60001D8E27 /* active_NorthKorea.png in Resources */,
 				FDC3616318894349001D8E27 /* placeholder_China.png in Resources */,
+				FD37E9F8188FB585009C51C2 /* placeholder_Singapore.png in Resources */,
 				FD128E8F1883E8C500D760E9 /* plus_icon@2x.png in Resources */,
+				FD37E9D0188FAFB2009C51C2 /* placeholder_Brunei.png in Resources */,
 				FD128E911883FE2000D760E9 /* menu_blue@2x.png in Resources */,
 				FDC3616518894349001D8E27 /* placeholder_Mongolia.png in Resources */,
+				FD37E9A7188FAFB2009C51C2 /* active_Cambodia@2x.png in Resources */,
+				FD37E9F9188FB585009C51C2 /* placeholder_Singapore@2x.png in Resources */,
+				FD37E9C9188FAFB2009C51C2 /* inactive_Philippines@2x.png in Resources */,
 				FDFF882518714AAE0005173E /* Images.xcassets in Resources */,
 				FDC36FA91887A50500FFDAA9 /* MGAPlanePath.plist in Resources */,
 				FDFDE2F6187425DA00206614 /* logo@2x.png in Resources */,
+				FD37E9B6188FAFB2009C51C2 /* active_Thailand.png in Resources */,
+				FD37E9A5188FAFB2009C51C2 /* active_Brunei@2x.png in Resources */,
+				FD37E9AE188FAFB2009C51C2 /* active_Malaysia.png in Resources */,
+				FD63A487188E3A8A005535EA /* active_China_flag@2x.png in Resources */,
+				FD37E9D7188FAFB2009C51C2 /* placeholder_Indonesia@2x.png in Resources */,
 				FD6CEE8C187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png in Resources */,
+				FD37E9AC188FAFB2009C51C2 /* active_Laos.png in Resources */,
 				FDC3616718894349001D8E27 /* placeholder_Russia.png in Resources */,
 				FDC3615B18894349001D8E27 /* active_Russia.png in Resources */,
 				FD1CA73F187D45050064FBBA /* StagesViewCtr.xib in Resources */,
 				FDC3616418894349001D8E27 /* placeholder_China@2x.png in Resources */,
+				FD37E9C4188FAFB2009C51C2 /* inactive_Malaysia.png in Resources */,
 				FDC3615E18894349001D8E27 /* inactive_China@2x.png in Resources */,
 				FD4FF1CE187FDD7300D6823A /* MGAMapStages.plist in Resources */,
+				FD37E9CF188FAFB2009C51C2 /* inactive_Vietnam@2x.png in Resources */,
 				FDC3615818894349001D8E27 /* active_China@2x.png in Resources */,
+				FD37E9DA188FAFB2009C51C2 /* placeholder_Malaysia.png in Resources */,
+				FD63A489188E3A8A005535EA /* active_Russia_flag@2x.png in Resources */,
+				FD37E9C6188FAFB2009C51C2 /* inactive_Myanmar.png in Resources */,
+				FD37E9AF188FAFB2009C51C2 /* active_Malaysia@2x.png in Resources */,
 				FDC3612E18891E60001D8E27 /* inactive_NorthKorea@2x.png in Resources */,
+				FD37E9B7188FAFB2009C51C2 /* active_Thailand@2x.png in Resources */,
 				FDC3613518891E60001D8E27 /* placeholder_SouthKorea.png in Resources */,
-				FD71B2201873D233006DD001 /* asia_map@2x.png in Resources */,
+				FD37E9C2188FAFB2009C51C2 /* inactive_Laos.png in Resources */,
+				FD37E9E2188FAFB2009C51C2 /* placeholder_Thailand.png in Resources */,
 				FD7C839D1880119600F7329C /* Localization.strings in Resources */,
 				FD58E76D1884066400322E54 /* menu_with_arrow@2x.png in Resources */,
-				FD71B2211873D233006DD001 /* world_map@2x.png in Resources */,
+				FD37E9DD188FAFB2009C51C2 /* placeholder_Myanmar@2x.png in Resources */,
+				FD37E9BC188FAFB2009C51C2 /* inactive_Cambodia.png in Resources */,
 				FDFF8890187152900005173E /* Questrial-Regular.otf in Resources */,
+				FD37E9CC188FAFB2009C51C2 /* inactive_Thailand.png in Resources */,
+				FD6BEFB8188D460E005BEED3 /* asia_map@2x.png in Resources */,
 				FDC3616A18894349001D8E27 /* stage1_group2_map@2x.png in Resources */,
+				FD37E9E5188FAFB2009C51C2 /* placeholder_Vietnam@2x.png in Resources */,
 				FDC3616018894349001D8E27 /* inactive_Mongolia@2x.png in Resources */,
 				FD6CEE8B187EB237009ADF7D /* inactive_NorthKorea_flag@2x.png in Resources */,
 				FDC3615718894349001D8E27 /* active_China.png in Resources */,
 				FDC3616218894349001D8E27 /* inactive_Russia@2x.png in Resources */,
 				FDC3615F18894349001D8E27 /* inactive_Mongolia.png in Resources */,
+				FD63A488188E3A8A005535EA /* active_Mongolia_flag@2x.png in Resources */,
+				FD37E9AD188FAFB2009C51C2 /* active_Laos@2x.png in Resources */,
 				FDC3615918894349001D8E27 /* active_Mongolia.png in Resources */,
+				FD37E9D6188FAFB2009C51C2 /* placeholder_Indonesia.png in Resources */,
 				FDC3612B18891E60001D8E27 /* inactive_Japan.png in Resources */,
+				FD37E9DE188FAFB2009C51C2 /* placeholder_Philippines.png in Resources */,
+				FD37E9E6188FAFB2009C51C2 /* stage2_group1_map.png in Resources */,
+				FD37E9E3188FAFB2009C51C2 /* placeholder_Thailand@2x.png in Resources */,
 				FD128E8A1883E8C500D760E9 /* flags_grey@2x.png in Resources */,
+				FD37E9F6188FB585009C51C2 /* inactive_Singapore.png in Resources */,
+				FD37E9AB188FAFB2009C51C2 /* active_Indonesia@2x.png in Resources */,
 				FD71B22C18740158006DD001 /* plane.png in Resources */,
+				FD63A48B188E3A8A005535EA /* inactive_Mongolia_flag@2x.png in Resources */,
+				FD37E9BF188FAFB2009C51C2 /* inactive_EastTimor@2x.png in Resources */,
 				FD0EF838187E7D21008BE10E /* active_Japan_flag@2x.png in Resources */,
+				FD37E9DF188FAFB2009C51C2 /* placeholder_Philippines@2x.png in Resources */,
+				FD37E9B9188FAFB2009C51C2 /* active_Vietnam@2x.png in Resources */,
+				FD37E9D4188FAFB2009C51C2 /* placeholder_EastTimor.png in Resources */,
+				FD37E9C3188FAFB2009C51C2 /* inactive_Laos@2x.png in Resources */,
 				FDFF881418714AAE0005173E /* InfoPlist.strings in Resources */,
+				FD37E9BB188FAFB2009C51C2 /* inactive_Brunei@2x.png in Resources */,
+				FD37E9A8188FAFB2009C51C2 /* active_EastTimor.png in Resources */,
 				FD6CEE8A187EB237009ADF7D /* inactive_Japan_flag@2x.png in Resources */,
-				C58C39FA188C26AA0083C112 /* release_notes.md in Resources */,
+				FD37E9C1188FAFB2009C51C2 /* inactive_Indonesia@2x.png in Resources */,
+				FD37E9B2188FAFB2009C51C2 /* active_Philippines.png in Resources */,
+				FD6BEEEE188CE389005BEED3 /* release_notes.md in Resources */,
+				FD37E9E4188FAFB2009C51C2 /* placeholder_Vietnam.png in Resources */,
+				FD37E9BA188FAFB2009C51C2 /* inactive_Brunei.png in Resources */,
+				FD37E9F7188FB585009C51C2 /* inactive_Singapore@2x.png in Resources */,
 				FDC3613418891E60001D8E27 /* placeholder_NorthKorea@2x.png in Resources */,
 				FDC3613718891E60001D8E27 /* stage1_group1_map@2x.png in Resources */,
+				FD63A48F188E3A8A005535EA /* placeholder_Russia_flag@2x.png in Resources */,
+				FD6BEEF0188CEBCE005BEED3 /* stage1_group1_map.png in Resources */,
 				FDFF884918714D8C0005173E /* IntroductionViewCtr.xib in Resources */,
 				FDC3613318891E60001D8E27 /* placeholder_NorthKorea.png in Resources */,
+				FD37E9D3188FAFB2009C51C2 /* placeholder_Cambodia@2x.png in Resources */,
+				FD63A48E188E3A8A005535EA /* placeholder_Mongolia_flag@2x.png in Resources */,
+				FD37E9ED188FAFB2009C51C2 /* stage2_group4_map@2x.png in Resources */,
+				FD37E9D5188FAFB2009C51C2 /* placeholder_EastTimor@2x.png in Resources */,
+				FD37E9A4188FAFB2009C51C2 /* active_Brunei.png in Resources */,
 				FDC3613618891E60001D8E27 /* placeholder_SouthKorea@2x.png in Resources */,
+				FD37E9C5188FAFB2009C51C2 /* inactive_Malaysia@2x.png in Resources */,
 				FD128E8C1883E8C500D760E9 /* maps_grey@2x.png in Resources */,
 				FDC3613118891E60001D8E27 /* placeholder_Japan.png in Resources */,
+				FD6BEFB9188D460E005BEED3 /* world_map@2x.png in Resources */,
+				FD37E9B8188FAFB2009C51C2 /* active_Vietnam.png in Resources */,
 				FD0EF83D187E7D21008BE10E /* placeholder_SouthKorea_flag@2x.png in Resources */,
 				FDC3616618894349001D8E27 /* placeholder_Mongolia@2x.png in Resources */,
 				FD0EF83B187E7D21008BE10E /* placeholder_Japan_flag@2x.png in Resources */,
 				FDC3612F18891E60001D8E27 /* inactive_SouthKorea.png in Resources */,
+				FD37E9DB188FAFB2009C51C2 /* placeholder_Malaysia@2x.png in Resources */,
+				FD63A48C188E3A8A005535EA /* inactive_Russia_flag@2x.png in Resources */,
 				FDC3615D18894349001D8E27 /* inactive_China.png in Resources */,
 				FD128E891883E8C500D760E9 /* flags_blue@2x.png in Resources */,
 				FDC3612618891E60001D8E27 /* active_Japan@2x.png in Resources */,
 				FDC3613218891E60001D8E27 /* placeholder_Japan@2x.png in Resources */,
+				FD37E9C8188FAFB2009C51C2 /* inactive_Philippines.png in Resources */,
+				FD37E9D9188FAFB2009C51C2 /* placeholder_Laos@2x.png in Resources */,
+				FD37E9CD188FAFB2009C51C2 /* inactive_Thailand@2x.png in Resources */,
 				FDC3615A18894349001D8E27 /* active_Mongolia@2x.png in Resources */,
-				C58C39F9188C26AA0083C112 /* README.md in Resources */,
+				FD6BEEED188CE389005BEED3 /* README.md in Resources */,
+				FD37E9D8188FAFB2009C51C2 /* placeholder_Laos.png in Resources */,
 				FDC3612A18891E60001D8E27 /* active_SouthKorea@2x.png in Resources */,
+				FD37E9C7188FAFB2009C51C2 /* inactive_Myanmar@2x.png in Resources */,
+				FD37E9C0188FAFB2009C51C2 /* inactive_Indonesia.png in Resources */,
 				FD71B22D18740158006DD001 /* plane@2x.png in Resources */,
 				FDC3616818894349001D8E27 /* placeholder_Russia@2x.png in Resources */,
 				FDC3613018891E60001D8E27 /* inactive_SouthKorea@2x.png in Resources */,
+				FD37E9E9188FAFB2009C51C2 /* stage2_group2_map@2x.png in Resources */,
+				FD37E9F4188FB585009C51C2 /* active_Singapore.png in Resources */,
+				FD63A48A188E3A8A005535EA /* inactive_China_flag@2x.png in Resources */,
+				FD37E9EB188FAFB2009C51C2 /* stage2_group3_map@2x.png in Resources */,
 				FD0EF83C187E7D21008BE10E /* placeholder_NorthKorea_flag@2x.png in Resources */,
+				FD37E9EC188FAFB2009C51C2 /* stage2_group4_map.png in Resources */,
+				FD37E9E7188FAFB2009C51C2 /* stage2_group1_map@2x.png in Resources */,
+				FD37E9D2188FAFB2009C51C2 /* placeholder_Cambodia.png in Resources */,
+				FD37E9BE188FAFB2009C51C2 /* inactive_EastTimor.png in Resources */,
 				FD128E8E1883E8C500D760E9 /* menu_grey@2x.png in Resources */,
+				FD37E9DC188FAFB2009C51C2 /* placeholder_Myanmar.png in Resources */,
 				FDC3612C18891E60001D8E27 /* inactive_Japan@2x.png in Resources */,
 				FDC3612518891E60001D8E27 /* active_Japan.png in Resources */,
+				FD37E9D1188FAFB2009C51C2 /* placeholder_Brunei@2x.png in Resources */,
+				FD63A48D188E3A8A005535EA /* placeholder_China_flag@2x.png in Resources */,
+				FD37E9AA188FAFB2009C51C2 /* active_Indonesia.png in Resources */,
+				FD37E9A9188FAFB2009C51C2 /* active_EastTimor@2x.png in Resources */,
 				FD58E76F1884073700322E54 /* arrow@2x.png in Resources */,
 				FDC815001887B65600A28EB5 /* img_shadow@2x.png in Resources */,
 				FD0EF839187E7D21008BE10E /* active_NorthKorea_flag@2x.png in Resources */,
@@ -784,6 +1137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD63A47C188E335E005535EA /* TempViewCtr.m in Sources */,
 				FD1CA73E187D45050064FBBA /* StagesViewCtr.m in Sources */,
 				FD4FF1C9187FCB8000D6823A /* NSUserDefaults+Helpers.m in Sources */,
 				FD128E771883E21F00D760E9 /* InAppHelper.m in Sources */,
@@ -926,7 +1280,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography",
+					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/BL051.git/trunk/Montessori_Geography",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
@@ -934,7 +1288,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
+					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/BL051.git/trunk/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -954,7 +1308,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography",
+					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/BL051.git/trunk/Montessori_Geography",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
@@ -962,7 +1316,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
+					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/BL051.git/trunk/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";

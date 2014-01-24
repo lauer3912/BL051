@@ -28,23 +28,40 @@
 {
     [super viewDidLoad];
     
-    lblWhite.layer.cornerRadius = 8.0;
     lblBlue.layer.cornerRadius = 8.0;
-    lblBlue.hidden = YES;
+    lblBorderMenu.layer.cornerRadius = 8.0;
+    
+    [AsiaView.layer setCornerRadius:8.0f];
+    // drop shadow
+    [AsiaView.layer setShadowColor:[UIColor blackColor].CGColor];
+    [AsiaView.layer setShadowOpacity:0.2];
+    [AsiaView.layer setShadowRadius:8.0];
+    [AsiaView.layer setShadowOffset:CGSizeMake(-5, 5)];
+    AsiaView.layer.masksToBounds = NO;
+    
     //Retrive Current Stage & Group & Game Mode
     
     _CurrentMode = [GlobalMethods ReturnCurrentSatgeGroupForKey:CurrentGameMode];
     
     //Set UI Of Game Mode Country/Flag
-    [self SetGameModeUI:_CurrentMode];
+    [self SetGameModeUI:_CurrentMode MovePlane:NO];
     
     //Apply Custom Font
     [self SetCustomFont];
 
     //Zoom Map To Asia
     self.view.userInteractionEnabled = NO;
-    [self performSelector:@selector(ZoomAsiaMap) withObject:nil afterDelay:1.0];
-    [self performSelector:@selector(EnableViewInteraction) withObject:nil afterDelay:PlaneAnimationTime+1.0];
+   // if (_CurrentStage == 0 && _CurrentGroup == 0)
+    //{
+        [self performSelector:@selector(ZoomAsiaMap) withObject:nil afterDelay:1.0];
+        [self performSelector:@selector(EnableViewInteraction) withObject:nil afterDelay:PlaneAnimationTime+1.0];
+    //}
+    //else
+    //{
+        //Set Asia Witout Zoom If app not in first time
+       // [self SetAisaWithZoomWithoutAnimation];
+    //}
+    
     
     //inAppPurchase Notification Fire Declaration Start
     
@@ -65,12 +82,14 @@
     lblWelcome.font = Questrial_Regular(lblWelcome.font.pointSize);
     lblMonte.font = Questrial_Regular(lblMonte.font.pointSize);
     lblAsia.font = Questrial_Regular(lblAsia.font.pointSize);
+    lblStageTitle.font = Questrial_Regular(lblStageTitle.font.pointSize);
     
     //Home Screen
     btnMapsPurchase.titleLabel.font = Questrial_Regular(btnReset.titleLabel.font.pointSize);
     btnFlagsPurchase.titleLabel.font = Questrial_Regular(btnReset.titleLabel.font.pointSize);
     btnMapsFlagsPurchase.titleLabel.font = Questrial_Regular(btnReset.titleLabel.font.pointSize);
     btnReset.titleLabel.font = Questrial_Regular(btnReset.titleLabel.font.pointSize);
+    btnRestorePurchases.titleLabel.font = Questrial_Regular(btnRestorePurchases.titleLabel.font.pointSize);
     
     lblMapsPurchase.font = Questrial_Regular(lblMapsPurchase.font.pointSize);
     lblFlagsPurchase.font = Questrial_Regular(lblFlagsPurchase.font.pointSize);
@@ -89,25 +108,46 @@
 {
     lblLine1.alpha = 0.0;
     lblWelcome.alpha = 0.0;
-    
+
     // We need to extract the properties of the Plane Path from the plist file.
     NSString* plistsource = [[NSBundle mainBundle] pathForResource:@"MGAPlanePath" ofType:@"plist"];
     NSDictionary *temp = [NSDictionary dictionaryWithContentsOfFile:plistsource];
     // get the path Detail we are interested in.
     
-    NSDictionary *DicPath = [temp valueForKey:@"introduction"];
-    [self CreatePlaneAnimationPath:DicPath];
+    NSArray *ArryIntroPath = [temp valueForKey:@"introductionpath"];
+    NSArray *ArryCurrentStageGroup = [[ArryIntroPath objectAtIndex:0] valueForKey:@"groups"];
+    NSDictionary *DicPathCurretnGroup = [ArryCurrentStageGroup objectAtIndex:0];
+    [self CreatePlaneAnimationPath:DicPathCurretnGroup];
 
     //Map Zoom
     [UIView animateWithDuration:4.50 animations:^{
-        View_Purchase.frame = CGRectMake(View_Purchase.frame.origin.x, 0, View_Purchase.frame.size.width, View_Purchase.frame.size.height);
-        img_Shadow.frame = CGRectMake(img_Shadow.frame.origin.x, 0, img_Shadow.frame.size.width, img_Shadow.frame.size.height);
+        AsiaView.frame = CGRectMake(AsiaView.frame.origin.x, 90, AsiaView.frame.size.width, AsiaView.frame.size.height);
         WelComeView.transform = CGAffineTransformScale(WelComeView.transform, 0.80, 0.80);
-        WelComeView.frame = CGRectMake(292, 10, 440, 70);
+        WelComeView.frame = CGRectMake(292, 100, 440, 70);
         img_Map.frame = CGRectMake(-1302, -316, 2400, 1855);
     } completion:^(BOOL finished) {
+        
+        [AsiaView addSubview:WelComeView];
+        WelComeView.frame = CGRectMake(20, 10, 440, 70);
         img_Map.frame = CGRectMake(0, 0, 1024, 768);
         img_Map.image = [UIImage imageNamed:@"asia_map"];
+        
+        //Menu Down
+        [UIView animateWithDuration:10.00 delay:1.00 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            View_Menu.frame = CGRectMake(View_Menu.frame.origin.x, 0, View_Menu.frame.size.width, View_Menu.frame.size.height);
+            View_Purchase.frame = CGRectMake(View_Purchase.frame.origin.x, 0, View_Purchase.frame.size.width, View_Purchase.frame.size.height);
+            
+            img_Shadow.frame = CGRectMake(img_Shadow.frame.origin.x, 0, img_Shadow.frame.size.width, img_Shadow.frame.size.height);
+            
+            WelComeView.transform = CGAffineTransformScale(WelComeView.transform, 0.70, 0.70);
+            AsiaView.transform = CGAffineTransformScale(AsiaView.transform, 0.60, 0.60);
+            AsiaView.frame = CGRectMake(View_Menu.frame.origin.x, 0, View_Menu.frame.size.width, View_Menu.frame.size.height);
+            AsiaView.alpha = 0.0;
+            
+        } completion:^(BOOL finished){
+            
+        }];
+        
     }];
     
     //Logo Reveal
@@ -118,6 +158,41 @@
         
     }];
     
+   
+    
+    
+    
+}
+-(void)SetAisaWithZoomWithoutAnimation
+{
+    lblLine1.alpha = 0.0;
+    lblWelcome.alpha = 0.0;
+    
+    
+    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
+    
+    [self performSelector:@selector(EnableViewInteraction) withObject:nil afterDelay:0.1+1];
+    
+    NSArray *ArrayPath = [[DicPathCurretnGroup valueForKey:@"start"] valueForKey:@"path"];
+    NSDictionary *DicTemp = [ArrayPath objectAtIndex:0];
+    UIBezierPath *trackPath = [UIBezierPath bezierPath];
+    
+    [trackPath moveToPoint:P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]+20)];
+    [trackPath addLineToPoint:P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue])];
+    
+    [self movePlane:trackPath PlaneLastPoint:P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]) AnimationTime:0.1];
+    
+    
+    //Aisa
+    View_Purchase.frame = CGRectMake(View_Purchase.frame.origin.x, 0, View_Purchase.frame.size.width, View_Purchase.frame.size.height);
+    img_Shadow.frame = CGRectMake(img_Shadow.frame.origin.x, 0, img_Shadow.frame.size.width, img_Shadow.frame.size.height);
+    WelComeView.transform = CGAffineTransformScale(WelComeView.transform, 0.80, 0.80);
+    WelComeView.frame = CGRectMake(292, 10, 440, 70);
+    img_Map.frame = CGRectMake(0, 0, 1024, 768);
+    img_Map.image = [UIImage imageNamed:@"asia_map"];
+    
+    //Show Logo
+    img_Logo.frame = CGRectMake(img_Logo.frame.origin.x, img_Logo.frame.origin.y, 365, img_Logo.frame.size.height);
 }
 -(void)EnableViewInteraction
 {
@@ -145,12 +220,14 @@
         }
     }
     NSDictionary *DicAirplaneInfo = [dicPath valueForKey:@"airplane"];
+    
     [self movePlane:trackPath PlaneLastPoint:planePosition AnimationTime:[[DicAirplaneInfo valueForKey:@"animationtime"] floatValue]];
+    
 }
 
 -(void)movePlane:(UIBezierPath*)trackPath PlaneLastPoint:(CGPoint)point AnimationTime:(CGFloat)animationTime
 {
-    /*CAShapeLayer *centerline = [CAShapeLayer layer];
+   /* CAShapeLayer *centerline = [CAShapeLayer layer];
     centerline.path = trackPath.CGPath;
     centerline.strokeColor = [UIColor greenColor].CGColor;
     centerline.fillColor = [UIColor clearColor].CGColor;
@@ -187,40 +264,44 @@
     {
         //Frame Before MoveNext Stage
         NSLog(@"Plane Touched");
+        //NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
         NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+        
         
         [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"start"]];
         
-        [UIView animateWithDuration:3.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            WelComeView.frame = CGRectMake(292, -80, 440, 70);
-            
-        } completion:^(BOOL finished){
-        }];
+        //Set Stage Title
+        lblStageTitle.text = [GlobalMethods ReturnStageTitle:_CurrentStage];
         
         [UIView animateWithDuration:5.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
             if ([btnMenu isSelected])
             {
                 [btnMenu setSelected:NO];
-                [btnMenu setImage:[UIImage imageNamed:@"menu_grey"] forState:UIControlStateNormal];
-                img_Arrow.hidden = YES;
             }
+            [self.view bringSubviewToFront:View_Menu];
+
+            //Fade In Stage Title
+            lblStageTitle.alpha = 1.0;
             
             //img_Map.frame = CGRectMake(-1755, -1041, 2920, 2195);
             img_Map.frame = CGRectMake(-1639, -934, 2920, 2195);
             img_Logo.frame = CGRectMake(img_Logo.frame.origin.x, self.view.frame.size.height, img_Logo.frame.size.width, img_Logo.frame.size.height);
-            View_Purchase.frame = CGRectMake(View_Purchase.frame.origin.x, -180, View_Purchase.frame.size.width, 180);
-            img_Shadow.frame = CGRectMake(img_Shadow.frame.origin.x, -200, img_Shadow.frame.size.width, 200);
+            View_Purchase.frame = CGRectMake(View_Menu.frame.origin.x, -90, View_Menu.frame.size.width, View_Menu.frame.size.height);
+            View_Menu.frame = CGRectMake(View_Menu.frame.origin.x, -90, View_Menu.frame.size.width,  View_Menu.frame.size.height);
+            img_Shadow.frame = CGRectMake(751, -113, 290, 113);
             self.view.backgroundColor = [UIColor whiteColor];
             
         } completion:^(BOOL finished){
             
+                lblStageTitle.alpha = 0.0;
+            
                 StagesViewCtr *obj_StagesViewCtr = [[StagesViewCtr alloc]initWithNibName:@"StagesViewCtr" bundle:nil];
                 obj_StagesViewCtr._currentGameMode = _CurrentMode;
-                //obj_StagesViewCtr._currentStage = _CurrentStage;
-                obj_StagesViewCtr._currentStage = 0; // Static  For Now
-                //obj_StagesViewCtr._currentGroup = _CurrentGroup;
-                obj_StagesViewCtr._currentGroup = 0; //  static For Now
+                obj_StagesViewCtr._currentStage = _CurrentStage;
+                obj_StagesViewCtr._currentGroup = _CurrentGroup;
+//            obj_StagesViewCtr._currentStage = 0;
+//            obj_StagesViewCtr._currentGroup = 1;
                 obj_StagesViewCtr._Stagedelegate = self;
                 [self.navigationController pushViewController:obj_StagesViewCtr animated:NO];
         }];
@@ -252,8 +333,9 @@
         
         img_Map.frame = CGRectMake(0, 0, 1024, 768);
         img_Logo.frame = CGRectMake(img_Logo.frame.origin.x, self.view.frame.size.height-img_Logo.frame.size.height, img_Logo.frame.size.width, img_Logo.frame.size.height);
-        View_Purchase.frame = CGRectMake(View_Purchase.frame.origin.x, 0, View_Purchase.frame.size.width, View_Purchase.frame.size.height);
         img_Shadow.frame = CGRectMake(img_Shadow.frame.origin.x, 0, img_Shadow.frame.size.width, img_Shadow.frame.size.height);
+        View_Purchase.frame = CGRectMake(View_Menu.frame.origin.x, 0, View_Menu.frame.size.width, View_Menu.frame.size.height);
+        View_Menu.frame = CGRectMake(View_Menu.frame.origin.x, 0, View_Menu.frame.size.width,  View_Menu.frame.size.height);
         
         self.view.backgroundColor = RGBCOLOR(235.0, 248.0, 255.0);
         
@@ -294,17 +376,18 @@
 #pragma mark - Mode Selection
 -(IBAction)btnModeSelectPressed:(id)sender
 {
+    
     UIButton *btnSelected = (UIButton*)sender;
     if ([btnSelected tag] == 11)
-        [self SetGameModeUI:kModeCountry];
+        [self SetGameModeUI:kModeCountry MovePlane:YES];
     else if ([btnSelected tag] == 22)
-        [self SetGameModeUI:kModeFlag];
-    
-    NSString *strCurrentGameMode = [NSString stringWithFormat:@"%d",_CurrentMode];
-    [NSUserDefaults saveObject:strCurrentGameMode forKey:CurrentGameMode];
+        [self SetGameModeUI:kModeFlag MovePlane:YES];
 }
--(void)SetGameModeUI:(int)modeValue
+-(void)SetGameModeUI:(int)modeValue MovePlane:(BOOL)planeMove
 {
+    int tempPrevStage = _CurrentStage;
+    int tempPrevGroup = _CurrentGroup;
+    
     if (modeValue == kModeCountry)
     {
         _CurrentMode = kModeCountry;
@@ -328,33 +411,50 @@
         _CurrentStage = [GlobalMethods ReturnCurrentSatgeGroupForKey:CurrentStage_Flag];
         _CurrentGroup = [GlobalMethods ReturnCurrentSatgeGroupForKey:CurrentGroup_Flag];
     }
+    
+    NSString *strCurrentGameMode = [NSString stringWithFormat:@"%d",_CurrentMode];
+    [NSUserDefaults saveObject:strCurrentGameMode forKey:CurrentGameMode];
+    
+    if (tempPrevStage == _CurrentStage && tempPrevGroup == _CurrentGroup)
+    {
+        //Don't Move Plane
+    }
+    else
+    {
+        //Move Plane
+        if (planeMove)
+            [self MovePlaneToCurrentStageFromOtherStage];
+    }
+
 }
 
 #pragma mark - Menu OpenClose
 -(IBAction)btnMenuOpenClosePressed:(id)sender
 {
-    [self.view bringSubviewToFront:View_Purchase];
-    [self.view bringSubviewToFront:WelComeView];
-    
-    int height = 180;
-    int Shadow_height = 200;
+    int height , width = 0;
+    int Shadow_height , Shadow_width = 0;
+    int xAxis , Shadow_xAxis = 0;
+
     if ([btnMenu isSelected])
     {
-        height = 180;
-        Shadow_height = 200;
+        height = 90;
+        width = 260;
+        xAxis = 764;
+        Shadow_height = 113;
+        Shadow_width = 290;
+        Shadow_xAxis = 751;
         [btnMenu setSelected:NO];
-        [btnMenu setImage:[UIImage imageNamed:@"menu_grey"] forState:UIControlStateNormal];
-        img_Arrow.hidden = YES;
     }
     else
     {
-        lblWhite.layer.cornerRadius = 0.0;
-        lblBlue.hidden = NO;
-        height = 680;
-        Shadow_height = 700;
+        [self.view bringSubviewToFront:View_Purchase];
+        height = 700;
+        width = 550;
+        xAxis = 484;
+        Shadow_height = 723;
+        Shadow_width = 565;
+        Shadow_xAxis = 471;
         [btnMenu setSelected:YES];
-        [btnMenu setImage:[UIImage imageNamed:@"menu_blue"] forState:UIControlStateNormal];
-        img_Arrow.hidden = NO;
     }
     
     //Check purchase and update UI
@@ -363,15 +463,13 @@
     
     [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
-        View_Purchase.frame = CGRectMake(View_Purchase.frame.origin.x, View_Purchase.frame.origin.y, View_Purchase.frame.size.width, height);
-        img_Shadow.frame = CGRectMake(img_Shadow.frame.origin.x, img_Shadow.frame.origin.y, img_Shadow.frame.size.width, Shadow_height);
+        View_Purchase.frame = CGRectMake(xAxis, View_Purchase.frame.origin.y, width, height);
+        img_Shadow.frame = CGRectMake(Shadow_xAxis, img_Shadow.frame.origin.y, Shadow_width, Shadow_height);
         
     } completion:^(BOOL finished){
         
-        if ([img_Arrow isHidden])
-        {
-            lblBlue.hidden = YES;
-            lblWhite.layer.cornerRadius = 8.0;
+        if (![btnMenu isSelected]) {
+            [self.view bringSubviewToFront:View_Menu];
         }
     }];
 }
@@ -424,6 +522,10 @@
         }
     }
 }
+-(IBAction)btnRestorePurchasedPressed:(id)sender
+{
+    [GlobalMethods RestoreInApp];
+}
 -(void)CheckPurchaseAndUpdateUI
 {
     if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_identifier] isEqualToString:@"YES"])
@@ -434,6 +536,103 @@
     
     if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
         [btnMapsFlagsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
+}
+
+#pragma mark - Reset Game 
+-(IBAction)btnResetPressed:(id)sender
+{
+    UIAlertView *AlertReset = [[UIAlertView alloc]initWithTitle:@"Reset Current Progress?" message:@"Are you sure you want to reset your current progress? All progress and airplane upgrades will be lost and you will restart from stage 1." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Reset",@"Cancel", nil];
+    AlertReset.tag = 1;
+    [AlertReset show];
+}
+
+#pragma mark - UIAlertView Delegate Method
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 1)
+    {
+        if (buttonIndex == 0)
+        {
+            if (_CurrentStage == 0 && _CurrentGroup == 0)
+            {
+                [btnMenu sendActionsForControlEvents:UIControlEventTouchUpInside];
+                //Don't Reset
+            }
+            else
+            {
+                [btnMenu sendActionsForControlEvents:UIControlEventTouchUpInside];
+                //Reset
+                
+                //Reset Current stage and group value to 1
+                [NSUserDefaults deleteObjectForKey:CurrentStage_Map];
+                [NSUserDefaults deleteObjectForKey:CurrentStage_Flag];
+                [NSUserDefaults deleteObjectForKey:CurrentGroup_Map];
+                [NSUserDefaults deleteObjectForKey:CurrentGroup_Flag];
+                
+                if (_CurrentMode == kModeCountry)
+                {
+                    _CurrentStage = [GlobalMethods ReturnCurrentSatgeGroupForKey:CurrentStage_Map];
+                    _CurrentGroup = [GlobalMethods ReturnCurrentSatgeGroupForKey:CurrentGroup_Map];
+                }
+                else
+                {
+                    _CurrentStage = [GlobalMethods ReturnCurrentSatgeGroupForKey:CurrentStage_Flag];
+                    _CurrentGroup = [GlobalMethods ReturnCurrentSatgeGroupForKey:CurrentGroup_Flag];
+                }
+                
+                //Set Plane to Stage 1 group 1 After Reset
+                [self MovePlaneToCurrentStageFromOtherStage];
+            }
+            
+        }
+        else if (buttonIndex == 1)
+            return;
+    }
+}
+-(int)getRandomNumberBetween:(int)from to:(int)to {
+    return (int)from + arc4random() % (to-from+1);
+}
+-(void)MovePlaneToCurrentStageFromOtherStage
+{
+    //Set Plane to stage 1 group 1
+    
+    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
+    
+    NSArray *ArrayPath = [[DicPathCurretnGroup valueForKey:@"start"] valueForKey:@"path"];
+    NSDictionary *DicTemp = [ArrayPath objectAtIndex:0];
+    
+    float Fromx1 = plane.position.x;
+    float Fromy1 = plane.position.y;
+    
+    float Fromx2 = [[DicTemp valueForKey:@"x"] floatValue];
+    float Fromy2 = [[DicTemp valueForKey:@"y"] floatValue];
+    
+    if (Fromx1 > Fromx2)
+    {
+        Fromx1 = [[DicTemp valueForKey:@"x"] floatValue];
+        Fromx2 = plane.position.x;
+    }
+    
+    if (Fromy1 > Fromy2)
+    {
+        Fromy1 = [[DicTemp valueForKey:@"y"] floatValue];
+        Fromy2 = plane.position.y;
+    }
+    
+    //ControlPoint1
+    float cp1X = [self getRandomNumberBetween:Fromx1 to:Fromx2];
+    float cp1Y = [self getRandomNumberBetween:Fromy1 to:Fromy2+50];
+    
+    CGPoint s = plane.position;
+    CGPoint e = P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]);
+    CGPoint cp1 = P(cp1X, cp1Y);
+    CGPoint cp2 = P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]+50);
+    
+    UIBezierPath *trackpath = [UIBezierPath bezierPath];
+    [trackpath moveToPoint:s];
+    [trackpath addCurveToPoint:e controlPoint1:cp1 controlPoint2:cp2];
+    
+    [self movePlane:trackpath PlaneLastPoint:e AnimationTime:StepCompleteAnimationTime];
 }
 
 - (void)didReceiveMemoryWarning

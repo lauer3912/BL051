@@ -60,7 +60,7 @@
 #define InApp_Maps_Flags_identifier @"Monty001"
 
 
-#define SharedSecret @""
+#define SharedSecret @"67be95a0338f49e58f4718c68ff7a5f8"
 
 #define IAPHelperProductPurchasedNotification  @"IAPHelperProductPurchasedNotification"
 #define IAPHelperProductNotPurchasedNotification  @"IAPHelperProductNotPurchasedNotification"

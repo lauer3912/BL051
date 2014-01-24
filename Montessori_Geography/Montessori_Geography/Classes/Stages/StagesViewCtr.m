@@ -206,7 +206,17 @@
 {
     [super viewDidAppear:animated];
     _lbl_Instruction.font = Questrial_Regular(_lbl_Instruction.font.pointSize);
+    _lblStageTitle.font = Questrial_Regular(_lblStageTitle.font.pointSize);
 
+    //Set Stage Title
+    _lblStageTitle.text = [GlobalMethods ReturnStageTitle:_currentStage];
+    
+    //Fade Out Stage Title Before Step 0 Starts
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        _lblStageTitle.alpha = 0.0;
+    } completion:^(BOOL finished){
+    }];
+    
     [self performSelector:@selector(startStep0) withObject:nil afterDelay:2.0];
 }
 
@@ -758,7 +768,8 @@
         if (otherGamePiece != gamePiece &&
             CGRectContainsPoint(otherGamePiece.frame, touchLocation))
         {
-            [otherGamePiece touchesBegan:touches withEvent:event];
+           // [otherGamePiece touchesBegan:touches withEvent:event];
+            [self.view bringSubviewToFront:otherGamePiece];
         }
     }
 }
@@ -772,7 +783,8 @@
         if (otherGamePiece != gamePiece &&
             CGRectContainsPoint(otherGamePiece.frame, touchLocation))
         {
-            [otherGamePiece touchesMoved:touches withEvent:event];
+           // [otherGamePiece touchesMoved:touches withEvent:event];
+            [self.view bringSubviewToFront:otherGamePiece];
         }
     }
 }
@@ -786,7 +798,8 @@
         if (otherGamePiece != gamePiece &&
             CGRectContainsPoint(otherGamePiece.frame, touchLocation))
         {
-            [otherGamePiece touchesEnded:touches withEvent:event];
+           // [otherGamePiece touchesEnded:touches withEvent:event];
+            [self.view bringSubviewToFront:otherGamePiece];
         }
     }
 }

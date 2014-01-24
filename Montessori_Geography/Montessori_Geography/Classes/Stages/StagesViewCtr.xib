@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="_imgView_Stage_Map" destination="Zhd-SP-Cg1" id="ped-aN-SbK"/>
                 <outlet property="_lbl_Instruction" destination="1VT-Er-p3Q" id="1gc-Z8-Cet"/>
+                <outlet property="lblStageTitle" destination="n5Q-Xj-6FB" id="UH4-vw-Htw"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -27,6 +28,13 @@
                     <color key="backgroundColor" red="0.68627450980392157" green="0.92156862745098034" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n5Q-Xj-6FB">
+                    <rect key="frame" x="0.0" y="349" width="1024" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                    <color key="textColor" red="0.027450980390000001" green="0.27058823529999998" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

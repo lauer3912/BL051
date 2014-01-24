@@ -47,9 +47,12 @@
     
     //Map Frame Modal
     MapFrameModal *obj_mapFrame;
+    
+    IBOutlet UILabel *_lblStageTitle;
 }
 @property (nonatomic,strong) id <StageCompleteDelegate> _Stagedelegate;
 @property (nonatomic,readwrite) int _currentGameMode;
 @property (nonatomic,readwrite) int _currentStage;
 @property (nonatomic,readwrite) int _currentGroup;
+
 @end
