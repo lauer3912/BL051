@@ -133,34 +133,6 @@
 							<key>py2</key>
 							<string>555</string>
 						</dict>
-						<dict>
-							<key>x1</key>
-							<string>698</string>
-							<key>y1</key>
-							<string>309</string>
-							<key>px1</key>
-							<string>703</string>
-							<key>py1</key>
-							<string>369</string>
-							<key>px2</key>
-							<string>714</string>
-							<key>py2</key>
-							<string>431</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>534</string>
-							<key>y1</key>
-							<string>369</string>
-							<key>px1</key>
-							<string>647</string>
-							<key>py1</key>
-							<string>246</string>
-							<key>px2</key>
-							<string>552</string>
-							<key>py2</key>
-							<string>293</string>
-						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -288,6 +260,34 @@
 							<string>719</string>
 							<key>py2</key>
 							<string>555</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>698</string>
+							<key>y1</key>
+							<string>309</string>
+							<key>px1</key>
+							<string>703</string>
+							<key>py1</key>
+							<string>369</string>
+							<key>px2</key>
+							<string>714</string>
+							<key>py2</key>
+							<string>431</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>534</string>
+							<key>y1</key>
+							<string>369</string>
+							<key>px1</key>
+							<string>647</string>
+							<key>py1</key>
+							<string>246</string>
+							<key>px2</key>
+							<string>552</string>
+							<key>py2</key>
+							<string>293</string>
 						</dict>
 					</array>
 				</dict>
