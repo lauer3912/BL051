@@ -623,6 +623,11 @@
 		FD4FF1CE187FDD7300D6823A /* MGAMapStages.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4FF1CD187FDD7300D6823A /* MGAMapStages.plist */; };
 		FD58E76D1884066400322E54 /* menu_with_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD58E76C1884066400322E54 /* menu_with_arrow@2x.png */; };
 		FD58E76F1884073700322E54 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD58E76E1884073700322E54 /* arrow@2x.png */; };
+		FD5D1AA318D31D630089EF8E /* stage2_allGroups_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5D1AA118D31D630089EF8E /* stage2_allGroups_map.png */; };
+		FD5D1AA418D31D630089EF8E /* stage2_allGroups_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5D1AA218D31D630089EF8E /* stage2_allGroups_map@2x.png */; };
+		FD5D1AA718D31D6B0089EF8E /* stage1_allGroups_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5D1AA518D31D6B0089EF8E /* stage1_allGroups_map.png */; };
+		FD5D1AA818D31D6B0089EF8E /* stage1_allGroups_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5D1AA618D31D6B0089EF8E /* stage1_allGroups_map@2x.png */; };
+		FD5D1AAC18D32E690089EF8E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD5D1AAB18D32E690089EF8E /* Crashlytics.framework */; };
 		FD63A47C188E335E005535EA /* TempViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD63A47A188E335E005535EA /* TempViewCtr.m */; };
 		FD63A47D188E335E005535EA /* TempViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD63A47B188E335E005535EA /* TempViewCtr.xib */; };
 		FD63A487188E3A8A005535EA /* active_China_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A47E188E3A8A005535EA /* active_China_flag@2x.png */; };
@@ -634,7 +639,6 @@
 		FD63A48D188E3A8A005535EA /* placeholder_China_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A484188E3A8A005535EA /* placeholder_China_flag@2x.png */; };
 		FD63A48E188E3A8A005535EA /* placeholder_Mongolia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A485188E3A8A005535EA /* placeholder_Mongolia_flag@2x.png */; };
 		FD63A48F188E3A8A005535EA /* placeholder_Russia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A486188E3A8A005535EA /* placeholder_Russia_flag@2x.png */; };
-		FD6BEEE4188CE307005BEED3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39ED188C25710083C112 /* Crashlytics.framework */; };
 		FD6BEEF0188CEBCE005BEED3 /* stage1_group1_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BEEEF188CEBCE005BEED3 /* stage1_group1_map.png */; };
 		FD6BEFB8188D460E005BEED3 /* asia_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BEFB6188D460E005BEED3 /* asia_map@2x.png */; };
 		FD6BEFB9188D460E005BEED3 /* world_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6BEFB7188D460E005BEED3 /* world_map@2x.png */; };
@@ -718,7 +722,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C58C39ED188C25710083C112 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C58C39FB188C26BF0083C112 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FD022593187FF54C00B51647 /* GlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalMethods.h; sourceTree = "<group>"; };
 		FD022594187FF54C00B51647 /* GlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalMethods.m; sourceTree = "<group>"; };
@@ -1346,6 +1349,11 @@
 		FD4FF1CD187FDD7300D6823A /* MGAMapStages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MGAMapStages.plist; sourceTree = "<group>"; };
 		FD58E76C1884066400322E54 /* menu_with_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_with_arrow@2x.png"; sourceTree = "<group>"; };
 		FD58E76E1884073700322E54 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		FD5D1AA118D31D630089EF8E /* stage2_allGroups_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage2_allGroups_map.png; sourceTree = "<group>"; };
+		FD5D1AA218D31D630089EF8E /* stage2_allGroups_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage2_allGroups_map@2x.png"; sourceTree = "<group>"; };
+		FD5D1AA518D31D6B0089EF8E /* stage1_allGroups_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1_allGroups_map.png; sourceTree = "<group>"; };
+		FD5D1AA618D31D6B0089EF8E /* stage1_allGroups_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_allGroups_map@2x.png"; sourceTree = "<group>"; };
+		FD5D1AAB18D32E690089EF8E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		FD63A479188E335E005535EA /* TempViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewCtr.h; sourceTree = "<group>"; };
 		FD63A47A188E335E005535EA /* TempViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewCtr.m; sourceTree = "<group>"; };
 		FD63A47B188E335E005535EA /* TempViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TempViewCtr.xib; sourceTree = "<group>"; };
@@ -1445,7 +1453,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD6BEEE4188CE307005BEED3 /* Crashlytics.framework in Frameworks */,
+				FD5D1AAC18D32E690089EF8E /* Crashlytics.framework in Frameworks */,
 				C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */,
 				FD128E801883E3CF00D760E9 /* StoreKit.framework in Frameworks */,
 				FD128E7E1883E3C400D760E9 /* SystemConfiguration.framework in Frameworks */,
@@ -2049,6 +2057,8 @@
 		FD37E959188FAFB2009C51C2 /* Stage2 */ = {
 			isa = PBXGroup;
 			children = (
+				FD5D1AA118D31D630089EF8E /* stage2_allGroups_map.png */,
+				FD5D1AA218D31D630089EF8E /* stage2_allGroups_map@2x.png */,
 				FD0E6F1618D2FCFE00B838FE /* flag_Brunei_gray.png */,
 				FD0E6F1718D2FCFE00B838FE /* flag_Brunei_gray@2x.png */,
 				FD0E6F1818D2FCFE00B838FE /* flag_Brunei.png */,
@@ -2242,6 +2252,8 @@
 		FDFCE8C6187AB24C004BDF60 /* Stage1 */ = {
 			isa = PBXGroup;
 			children = (
+				FD5D1AA518D31D6B0089EF8E /* stage1_allGroups_map.png */,
+				FD5D1AA618D31D6B0089EF8E /* stage1_allGroups_map@2x.png */,
 				FDFCE8C7187AB24C004BDF60 /* Group1 */,
 				FD0225961880034F00B51647 /* Group2 */,
 			);
@@ -2318,8 +2330,8 @@
 		FDFF880818714AAE0005173E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD5D1AAB18D32E690089EF8E /* Crashlytics.framework */,
 				C58C39FB188C26BF0083C112 /* libz.dylib */,
-				C58C39ED188C25710083C112 /* Crashlytics.framework */,
 				FD128E7F1883E3CF00D760E9 /* StoreKit.framework */,
 				FD128E7D1883E3C400D760E9 /* SystemConfiguration.framework */,
 				FD1CA740187D53D10064FBBA /* CoreText.framework */,
@@ -2533,6 +2545,7 @@
 				FD0E6E0218D2FC9500B838FE /* flag_Turkmenistan.png in Resources */,
 				FD0E6EAE18D2FC9500B838FE /* placeholder_Qatar.png in Resources */,
 				FD0E6EC518D2FC9500B838FE /* stage5_group5_map@2x.png in Resources */,
+				FD5D1AA418D31D630089EF8E /* stage2_allGroups_map@2x.png in Resources */,
 				FD0E6C1B18D2FC7B00B838FE /* stage5_group1_active@2x.png in Resources */,
 				FD0E6BDA18D2FC7B00B838FE /* stage1_group1_complete.png in Resources */,
 				FD0E6BE618D2FC7B00B838FE /* stage2_group1_complete.png in Resources */,
@@ -2614,6 +2627,7 @@
 				FDC36FA91887A50500FFDAA9 /* MGAPlanePath.plist in Resources */,
 				FD0E6DBA18D2FC9500B838FE /* flag_Nepal_gray.png in Resources */,
 				FD0E6E1C18D2FC9500B838FE /* placeholder_Uzbekistan.png in Resources */,
+				FD5D1AA718D31D6B0089EF8E /* stage1_allGroups_map.png in Resources */,
 				FDFDE2F6187425DA00206614 /* logo@2x.png in Resources */,
 				FD0E6E4218D2FC9500B838FE /* flag_Bahrain.png in Resources */,
 				FD0E6EE118D2FC9500B838FE /* placeholder_Azerbaijan@2x.png in Resources */,
@@ -2683,6 +2697,7 @@
 				FD0E6E2218D2FC9500B838FE /* stage4_group2_map.png in Resources */,
 				FD0E6E8718D2FC9500B838FE /* inactive_Jordan@2x.png in Resources */,
 				FD0E6E8618D2FC9500B838FE /* inactive_Jordan.png in Resources */,
+				FD5D1AA818D31D6B0089EF8E /* stage1_allGroups_map@2x.png in Resources */,
 				FD0E6EF418D2FCD700B838FE /* flag_Japan.png in Resources */,
 				FD0E6E7C18D2FC9500B838FE /* flag_Yemen_gray.png in Resources */,
 				FD0E6E1618D2FC9500B838FE /* placeholder_Kyrgyzstan.png in Resources */,
@@ -2748,6 +2763,7 @@
 				FD0E6EBF18D2FC9500B838FE /* stage5_group2_map@2x.png in Resources */,
 				FD0E6DE718D2FC9500B838FE /* stage3_group1_map@2x.png in Resources */,
 				FD0E6D9418D2FC9500B838FE /* active_Afghanistan.png in Resources */,
+				FD5D1AA318D31D630089EF8E /* stage2_allGroups_map.png in Resources */,
 				FD0E6C1118D2FC7B00B838FE /* stage4_group1_complete@2x.png in Resources */,
 				FD0E6C1818D2FC7B00B838FE /* stage4_group2_placeholder.png in Resources */,
 				FD0E6EC718D2FC9500B838FE /* active_Armenia@2x.png in Resources */,
@@ -3360,7 +3376,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/BL051.git/trunk/Montessori_Geography",
+					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/SVN_Code/BL051/Montessori_Geography",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
@@ -3368,7 +3384,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/BL051.git/trunk/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
 					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/SVN_Code/BL051/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
 				);
 				ONLY_ACTIVE_ARCH = NO;
@@ -3389,7 +3404,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/BL051.git/trunk/Montessori_Geography",
+					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/SVN_Code/BL051/Montessori_Geography",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
@@ -3397,7 +3412,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/BL051.git/trunk/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
 					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/SVN_Code/BL051/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
 				);
 				ONLY_ACTIVE_ARCH = NO;

@@ -943,7 +943,7 @@
                 };
                 [self hideInstructionWithTextWithCompletion:completion];
             };
-            [self showInstructionWithText1:@"Stage completed!Well done!" withText2:nil completion:completion];
+            [self showInstructionWithText1:@"Stage completed! Well done!" withText2:nil completion:completion];
         }
     }
     else {
