@@ -48,9 +48,9 @@
     //map frame For Step 0
     NSDictionary *map_frameStep0 = [_frameMapDataDic objectForKey:@"frameStep0"];
     obj_mapFrame.MapframeStep0 = CGRectMake([[map_frameStep0 objectForKey:@"x"] floatValue],
-                                      [[map_frameStep0 objectForKey:@"y"] floatValue],
-                                      [[map_frameStep0 objectForKey:@"width"] floatValue],
-                                      [[map_frameStep0 objectForKey:@"height"] floatValue]);
+                                            [[map_frameStep0 objectForKey:@"y"] floatValue],
+                                            [[map_frameStep0 objectForKey:@"width"] floatValue],
+                                            [[map_frameStep0 objectForKey:@"height"] floatValue]);
     
     //map frame For Step 2
     NSDictionary *map_frameStep2 = [_frameMapDataDic objectForKey:@"frameStep2"];
@@ -134,7 +134,7 @@
                                                [[frameStep0_flag objectForKey:@"width"] floatValue],
                                                [[frameStep0_flag objectForKey:@"height"] floatValue]);
         //
-
+        
         
         NSDictionary *frameStep1 = [frames objectForKey:@"frameStep1"];
         gamePiece.frameStep1 = CGRectMake([[frameStep1 objectForKey:@"x"] floatValue],
@@ -160,9 +160,9 @@
         //For Flag
         NSDictionary *frameStep2Placeholder_flag = [frames_flag objectForKey:@"frameStep2Placeholder"];
         gamePiece.frameStep2Placeholder_flag = CGRectMake([[frameStep2Placeholder_flag objectForKey:@"x"] floatValue],
-                                               [[frameStep2Placeholder_flag objectForKey:@"y"] floatValue],
-                                               [[frameStep2Placeholder_flag objectForKey:@"width"] floatValue],
-                                               [[frameStep2Placeholder_flag objectForKey:@"height"] floatValue]);
+                                                          [[frameStep2Placeholder_flag objectForKey:@"y"] floatValue],
+                                                          [[frameStep2Placeholder_flag objectForKey:@"width"] floatValue],
+                                                          [[frameStep2Placeholder_flag objectForKey:@"height"] floatValue]);
         //
         
         
@@ -179,7 +179,7 @@
                                                         [[frameStep2GamePiece_flag objectForKey:@"width"] floatValue],
                                                         [[frameStep2GamePiece_flag objectForKey:@"height"] floatValue]);
         //
-
+        
         
         
         NSDictionary *frameStep3 = [frames objectForKey:@"frameStep3"];
@@ -191,9 +191,9 @@
         //For Flag
         NSDictionary *frameStep3_flag = [frames_flag objectForKey:@"frameStep3"];
         gamePiece.frameStep3_flag = CGRectMake([[frameStep3_flag objectForKey:@"x"] floatValue],
-                                          [[frameStep3_flag objectForKey:@"y"] floatValue],
-                                          [[frameStep3_flag objectForKey:@"width"] floatValue],
-                                          [[frameStep3_flag objectForKey:@"height"] floatValue]);
+                                               [[frameStep3_flag objectForKey:@"y"] floatValue],
+                                               [[frameStep3_flag objectForKey:@"width"] floatValue],
+                                               [[frameStep3_flag objectForKey:@"height"] floatValue]);
         //
         
         [_gamePieceArray addObject:gamePiece];
@@ -207,7 +207,7 @@
     [super viewDidAppear:animated];
     _lbl_Instruction.font = Questrial_Regular(_lbl_Instruction.font.pointSize);
     _lblStageTitle.font = Questrial_Regular(_lblStageTitle.font.pointSize);
-
+    
     //Set Stage Title
     _lblStageTitle.text = [GlobalMethods ReturnStageTitle:_currentStage];
     
@@ -289,7 +289,7 @@
         else
         {
             gamePiece.image = gamePiece.image_active_flag;
-            gamePiece.frame = CGRectMake(gamePiece.placeholder.center.x, -(self.view.bounds.size.height/2), 293, 195);
+            gamePiece.frame = CGRectMake(gamePiece.placeholder.center.x, -(self.view.bounds.size.height/2), gamePiece.frameStep1_flag.size.width, gamePiece.frameStep1_flag.size.height);
             gamePiece.placeholder.alpha = 1.0;
             gamePiece.placeholder.image = gamePiece.image_active;
         }
@@ -297,7 +297,7 @@
         [self.view addSubview:gamePiece];
         [self.view addSubview:gamePiece.placeholder];
     }
-        
+    
 }
 - (void)introduceGamePiece:(MGAGamePiece *)gamePiece
                  withScale:(float)scale
@@ -388,7 +388,7 @@
                                               
                                               if (_currentGameMode == kModeFlag)
                                                   gamePiece.placeholder.image = gamePiece.image_inactive;
-
+                                              
                                               [_gamePiecesCompletedInCurrentStep addObject:gamePiece];
                                               
                                               if (completion)
@@ -426,7 +426,7 @@
                 NSString *strText = [NSString stringWithFormat:@"This is %@", gamePiece.name];
                 if (_currentGameMode == kModeFlag)
                     strText = [NSString stringWithFormat:@"This is %@'s flag", gamePiece.name];
-
+                
                 [self introduceGamePiece:gamePiece
                                withScale:gamePiece.scaleStep0
                                 withText:strText
@@ -471,7 +471,7 @@
                      }
                      completion:^(BOOL finished){
                          [self startStep1];
-                    }];
+                     }];
 }
 
 #pragma mark - Step 1 (Taping - No Map) Instance Methods
@@ -593,10 +593,10 @@
     {
         //empty the array that tracks which game pieces have been completed for this step.
         [_gamePiecesCompletedInCurrentStep removeAllObjects];
-
+        
         //Timer Set If User will not touch any objects
         Step_Timer = [NSTimer scheduledTimerWithTimeInterval: 10.0 target: self selector:@selector(ChangeInActiveForHint:) userInfo: nil repeats:NO];
-
+        
         // Start with the first game piece in this stage.
         _currentGamePieceIndex = 0;
         MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:_currentGamePieceIndex];
@@ -677,7 +677,7 @@
                                               NSString *strText1 = @"Show me where these go";
                                               if (_currentGameMode == kModeFlag)
                                                   strText1 = @"Match the flag with its country";
-                    
+                                              
                                               [self showInstructionWithText1:strText1 withText2:nil completion:completion];
                                           }];
                      }];
@@ -721,7 +721,7 @@
     _imgView_Stage_Map.alpha = 1.0f;
     
     Step_Timer = [NSTimer scheduledTimerWithTimeInterval: 10.0 target: self selector:@selector(ChangeInActiveForHint:) userInfo: nil repeats:NO];
-
+    
     
     // First empty the array that tracks which game pieces have been completed for this step.
     [_gamePiecesCompletedInCurrentStep removeAllObjects];
@@ -768,8 +768,14 @@
         if (otherGamePiece != gamePiece &&
             CGRectContainsPoint(otherGamePiece.frame, touchLocation))
         {
-           // [otherGamePiece touchesBegan:touches withEvent:event];
-            [self.view bringSubviewToFront:otherGamePiece];
+            // [otherGamePiece touchesBegan:touches withEvent:event];
+            CGPoint touchLocationTemp = [touch locationInView:otherGamePiece];
+            
+            if (![self isTouchOnTransparentPixel:touchLocationTemp GamePieace:otherGamePiece]) {
+                
+                [self tappableGamePieceTouchBegan:otherGamePiece didTouchAtPoint:touchLocation];
+                NSLog(@"touchesBegan");
+            }
         }
     }
 }
@@ -783,8 +789,7 @@
         if (otherGamePiece != gamePiece &&
             CGRectContainsPoint(otherGamePiece.frame, touchLocation))
         {
-           // [otherGamePiece touchesMoved:touches withEvent:event];
-            [self.view bringSubviewToFront:otherGamePiece];
+            // [otherGamePiece touchesMoved:touches withEvent:event];
         }
     }
 }
@@ -798,8 +803,15 @@
         if (otherGamePiece != gamePiece &&
             CGRectContainsPoint(otherGamePiece.frame, touchLocation))
         {
-           // [otherGamePiece touchesEnded:touches withEvent:event];
-            [self.view bringSubviewToFront:otherGamePiece];
+            // [otherGamePiece touchesMoved:touches withEvent:event];
+            CGPoint touchLocationTemp = [touch locationInView:otherGamePiece];
+            
+            if (![self isTouchOnTransparentPixel:touchLocationTemp GamePieace:otherGamePiece]) {
+                
+                [self tappableGamePiece:otherGamePiece didReleaseAtPoint:touchLocation];
+                NSLog(@"touchesEnded");
+            }
+            
         }
     }
 }
@@ -870,7 +882,7 @@
         }
         [gamePiece.layer removeAllAnimations];
     }
-   
+    
 }
 
 - (void)tappableGamePiece:(MGAGamePiece *)gamePiece didDragToPoint:(CGPoint)point {
@@ -990,7 +1002,7 @@
 -(void)PlaneAnimationPathAfterActivityCompletion
 {
     int i = arc4random()%4;
-
+    
     //random values
     float xStart = [self getRandomNumberBetween:0 to:self.view.frame.size.width];
     float xEnd = [self getRandomNumberBetween:0 to:self.view.frame.size.width];
@@ -1032,7 +1044,7 @@
     CGPoint cp2 = P(cp2X, cp2Y);
     
     UIBezierPath *trackpath = [UIBezierPath bezierPath];
-
+    
     [trackpath moveToPoint:s];
     [trackpath addCurveToPoint:e controlPoint1:cp1 controlPoint2:cp2];
     
@@ -1084,6 +1096,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)isTouchOnTransparentPixel:(CGPoint)point GamePieace:(MGAGamePiece*)gp{
+    
+    unsigned char pixel[4] = {0};
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(pixel, 1, 1, 8, 4, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    
+    CGContextTranslateCTM(context, -point.x, -point.y);
+    
+    [gp.layer renderInContext:context];
+    
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    
+    CGFloat alpha = pixel[3]/255.0;
+    BOOL transparent = alpha < 0.01;
+    
+    return transparent;
 }
 
 @end

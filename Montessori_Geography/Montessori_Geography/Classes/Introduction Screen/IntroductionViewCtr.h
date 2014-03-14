@@ -13,12 +13,12 @@
 @interface IntroductionViewCtr : UIViewController <StageCompleteDelegate,UIAlertViewDelegate>
 {
     //Welcome View
-    IBOutlet UIView *WelComeView,*AsiaView;
+    IBOutlet UIView *WelComeView,*AsiaView,*ViewContry;
     IBOutlet UILabel *lblWelcome,*lblMonte,*lblAsia,*lblLine1,*lblStageTitle;
     IBOutlet UIButton *btnMap,*btnFlag,*btnMenu;
     
     IBOutlet UIImageView *img_Map,*img_Logo;
-        
+    
     CALayer *plane;
     
     int _CurrentMode;
@@ -33,7 +33,7 @@
     IBOutlet UIImageView *img_Shadow;
     IBOutlet UILabel *lblBlue,*lblBorderMenu;
     IBOutlet UILabel *lblMonte_Purchase,*lblAsia_Purchase;
-
+    
     
 }
 @end

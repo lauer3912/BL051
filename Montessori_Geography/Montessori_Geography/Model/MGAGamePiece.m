@@ -37,13 +37,13 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 - (void)makeGamePieceDraggable {
     self.draggable = YES;
@@ -102,7 +102,7 @@
     
     if (_didTouchTransparentPixel) {
         [self.delegate gamePieceDidTouchTransparentPixel:self touchesMoved:touches withEvent:event];
-         return;
+        return;
     }
     
     if (self.draggable)
@@ -180,8 +180,8 @@
 - (BOOL)isTouchOnTransparentPixel:(CGPoint)point {
     unsigned char pixel[4] = {0};
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef context = CGBitmapContextCreate(pixel, 1, 1, 8, 4, colorSpace, kCGImageAlphaPremultipliedLast);
-        
+    CGContextRef context = CGBitmapContextCreate(pixel, 1, 1, 8, 4, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    
     CGContextTranslateCTM(context, -point.x, -point.y);
     
     [self.layer renderInContext:context];
@@ -272,7 +272,7 @@
                                                                                             self.image = self.image_active;
                                                                                         else
                                                                                             self.image = self.image_active_flag;
-
+                                                                                        
                                                                                         [self.delegate gamePieceShakeDidComplete:self];
                                                                                     }];
                                                                }];
@@ -333,7 +333,7 @@
 {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:self.referenceView];
-        
+    
     // Make the piece slightly transparent
     [self makeTransparent:YES];
     
