@@ -976,7 +976,7 @@
 								<key>x</key>
 								<integer>0</integer>
 								<key>y</key>
-								<integer>0</integer>
+								<integer>-25</integer>
 								<key>width</key>
 								<integer>1024</integer>
 								<key>height</key>
@@ -1043,9 +1043,9 @@
 								<key>frameStep2Placeholder</key>
 								<dict>
 									<key>x</key>
-									<real>741.22</real>
+									<real>740.72</real>
 									<key>y</key>
-									<real>657.6</real>
+									<real>632.515</real>
 									<key>width</key>
 									<real>55.14</real>
 									<key>height</key>
@@ -1103,7 +1103,7 @@
 									<key>x</key>
 									<integer>767</integer>
 									<key>y</key>
-									<integer>682</integer>
+									<integer>657</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
@@ -1179,9 +1179,9 @@
 								<key>frameStep2Placeholder</key>
 								<dict>
 									<key>x</key>
-									<real>253.96</real>
+									<real>253.455</real>
 									<key>y</key>
-									<real>421.13</real>
+									<real>396.045</real>
 									<key>width</key>
 									<real>770.42</real>
 									<key>height</key>
@@ -1239,7 +1239,7 @@
 									<key>x</key>
 									<integer>256</integer>
 									<key>y</key>
-									<integer>581</integer>
+									<integer>556</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
@@ -1315,9 +1315,9 @@
 								<key>frameStep2Placeholder</key>
 								<dict>
 									<key>x</key>
-									<real>622.41</real>
+									<real>621.905</real>
 									<key>y</key>
-									<real>157.55</real>
+									<real>132.485</real>
 									<key>width</key>
 									<real>162.25</real>
 									<key>height</key>
@@ -1373,9 +1373,9 @@
 								<key>frameStep2Placeholder</key>
 								<dict>
 									<key>x</key>
-									<integer>732</integer>
+									<integer>750</integer>
 									<key>y</key>
-									<integer>203</integer>
+									<integer>209</integer>
 									<key>width</key>
 									<integer>73</integer>
 									<key>height</key>
