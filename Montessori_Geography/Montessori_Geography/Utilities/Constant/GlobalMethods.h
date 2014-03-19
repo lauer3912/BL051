@@ -23,4 +23,6 @@
 
 
 +(NSString*)ReturnStageTitle:(int)StageValue;
+
++(CGRect)ReturnFrameForAllGroup:(int)StageValue;
 @end

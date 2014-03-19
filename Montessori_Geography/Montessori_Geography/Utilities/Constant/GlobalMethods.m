@@ -143,4 +143,30 @@
     }
     return @"";
 }
++(CGRect)ReturnFrameForAllGroup:(int)StageValue{
+    CGRect MapFrame;
+    
+    if (StageValue == 1) {
+        MapFrame = CGRectMake(18.05, 344.42, 581.55, 392.58);
+        //18.05	344.42	581.55	392.58
+    }
+    else if (StageValue == 2) {
+        MapFrame = CGRectMake(0.00, 0.00, 883.50, 426.50);
+        //0.00	0.00	883.50	426.50
+    }
+    else if (StageValue == 3) {
+        MapFrame = CGRectMake(0.00, 0.00, 1024.00, 768.00);
+        //0.00	0.00	1024.00	768.00
+    }
+    else if (StageValue == 4) {
+        MapFrame = CGRectMake(0.00, 0.00, 1024.00, 768.00);
+        //0.00	0.00	1024.00	768.00
+    }
+    else if (StageValue == 5) {
+        MapFrame = CGRectMake(434.00, 0.00, 590.00, 504.50);
+        //434.00	0.00	590.00	504.50
+    }
+    return MapFrame;
+
+}
 @end

@@ -202,6 +202,10 @@
 }
 -(void)SetImagesToGroups:(int)CurrStage Group:(int)CurrGroup
 {
+    if (_CurrentGroup == 111) {
+        CurrStage++;
+        CurrGroup = -1;
+    }
     for (UIImageView *imgViewComplete in ViewContry.subviews) {
         NSString *strTag = [NSString stringWithFormat:@"%d%d",CurrStage+1,CurrGroup+1];
         int TempStage = 0;
@@ -216,7 +220,9 @@
             imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_placeholder",TempStage,TempGroup]];
         }
     }
-    [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active"];
+    if (_CurrentGroup != 111) {
+        [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active"];
+    }
 }
 #pragma mark - Create Path for Plane Animation
 -(void)CreatePlaneAnimationPath:(NSDictionary*)dicPath
@@ -314,14 +320,36 @@
             
             lblStageTitle.alpha = 0.0;
             
-            StagesViewCtr *obj_StagesViewCtr = [[StagesViewCtr alloc]initWithNibName:@"StagesViewCtr" bundle:nil];
-            obj_StagesViewCtr._currentGameMode = _CurrentMode;
-            obj_StagesViewCtr._currentStage = _CurrentStage;
-            obj_StagesViewCtr._currentGroup = _CurrentGroup;
-            // obj_StagesViewCtr._currentStage = 4;
-            // obj_StagesViewCtr._currentGroup = 4;
-            obj_StagesViewCtr._Stagedelegate = self;
-            [self.navigationController pushViewController:obj_StagesViewCtr animated:NO];
+            int tempflag = 0;
+            if (_CurrentMode == kModeCountry) {
+                if ([[NSUserDefaults retrieveObjectForKey:CurrentGroup_Map] isEqualToString:@"111"]) {
+                    tempflag = 1;
+                }
+            }
+            else if (_CurrentMode == kModeFlag){
+                if ([[NSUserDefaults retrieveObjectForKey:CurrentGroup_Flag] isEqualToString:@"111"]) {
+                    tempflag = 1;
+                }
+            }
+        
+            if (tempflag == 0) {
+                StagesViewCtr *obj_StagesViewCtr = [[StagesViewCtr alloc]initWithNibName:@"StagesViewCtr" bundle:nil];
+                obj_StagesViewCtr._currentGameMode = _CurrentMode;
+                obj_StagesViewCtr._currentStage = _CurrentStage;
+                obj_StagesViewCtr._currentGroup = _CurrentGroup;
+                // obj_StagesViewCtr._currentStage = 4;
+                // obj_StagesViewCtr._currentGroup = 4;
+                obj_StagesViewCtr._Stagedelegate = self;
+                [self.navigationController pushViewController:obj_StagesViewCtr animated:NO];
+            }
+            else{
+                StagesAllGroupViewCtr *obj_StagesAllGroupViewCtr = [[StagesAllGroupViewCtr alloc]initWithNibName:@"StagesAllGroupViewCtr" bundle:nil];
+                obj_StagesAllGroupViewCtr._currentGameMode = _CurrentMode;
+                obj_StagesAllGroupViewCtr._currentStage = _CurrentStage;
+                //obj_StagesAllGroupViewCtr._currentStage = 4;
+                obj_StagesAllGroupViewCtr._StageAllGroupDelegate = self;
+                [self.navigationController pushViewController:obj_StagesAllGroupViewCtr animated:NO];
+            }
         }];
     }
 }
@@ -377,39 +405,62 @@
     
     NSArray *_currentStageArray = [GlobalMethods ReturnCurrentStageArray:_CurrentStage ForKey:@"Stage"];
     int TotalGroup = _currentStageArray.count;
+    NSString *strCurrentGroup;
     if (_CurrentGroup < TotalGroup-1) {
         _CurrentGroup++;
+        strCurrentGroup = [NSString stringWithFormat:@"%d",_CurrentGroup];
+        [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active"];
     }
     else if (_CurrentGroup >= TotalGroup-1)
     {
-        _CurrentStage++;
-        _CurrentGroup = 0;
-        
-        NSString *strCurrentStage = [NSString stringWithFormat:@"%d",_CurrentStage];
-        
-        if (_CurrentMode == kModeCountry) {
-            [NSUserDefaults saveObject:strCurrentStage forKey:CurrentStage_Map];
+        if (_CurrentStage == 5) {
+            return;
         }
-        else if (_CurrentMode == kModeFlag){
-            [NSUserDefaults saveObject:strCurrentStage forKey:CurrentStage_Flag];
-        }
+        //For All Group
+        strCurrentGroup = @"111";
     }
-    NSString *strCurrentGroup = [NSString stringWithFormat:@"%d",_CurrentGroup];
+    
     if (_CurrentMode == kModeCountry) {
         [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Map];
     }
     else if (_CurrentMode == kModeFlag){
         [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Flag];
     }
-    
-    [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active"];
-    
 }
 -(void)ChangeImageAfterStageComplete:(int)stageno group:(int)groupno ImageName:(NSString*)strImg
 {
     NSString *strTag = [NSString stringWithFormat:@"%d%d",stageno+1,groupno+1];
     UIImageView *imgStageComplete = (UIImageView*)[ViewContry viewWithTag:[strTag intValue]];
     imgStageComplete.image = [UIImage imageNamed:[NSString stringWithFormat:strImg,stageno+1,groupno+1]];
+}
+
+#pragma mark - _StageAllGroupDelegate Delegate
+-(void)StageCompleteForAllGroup
+{
+    [self ZoomOutForNextStage];
+    
+    //Move Plane to next stage
+    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+    //Change Stage And Group for Plane Animation
+    
+    [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
+    
+        _CurrentStage++;
+        _CurrentGroup = 0;
+        
+        NSString *strCurrentStage = [NSString stringWithFormat:@"%d",_CurrentStage];
+        NSString *strCurrentGroup = [NSString stringWithFormat:@"%d",_CurrentGroup];
+
+        if (_CurrentMode == kModeCountry) {
+            [NSUserDefaults saveObject:strCurrentStage forKey:CurrentStage_Map];
+            [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Map];
+        }
+        else if (_CurrentMode == kModeFlag){
+            [NSUserDefaults saveObject:strCurrentStage forKey:CurrentStage_Flag];
+            [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Flag];
+        }
+    
+    [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active"];
 }
 #pragma mark - Mode Selection
 -(IBAction)btnModeSelectPressed:(id)sender

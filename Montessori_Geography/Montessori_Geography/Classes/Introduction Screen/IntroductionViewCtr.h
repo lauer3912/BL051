@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "StagesViewCtr.h"
+#import "StagesAllGroupViewCtr.h"
 
-@interface IntroductionViewCtr : UIViewController <StageCompleteDelegate,UIAlertViewDelegate>
+@interface IntroductionViewCtr : UIViewController <StageCompleteDelegate,UIAlertViewDelegate,StageCompleteForAllGroupDelegate>
 {
     //Welcome View
     IBOutlet UIView *WelComeView,*AsiaView,*ViewContry;
