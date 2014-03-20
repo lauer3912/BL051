@@ -327,6 +327,7 @@
                     else if ([file_name isEqualToString:@"active"]){
                         [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:0];
                     }
+                    break;
                 }
             }
         }
@@ -487,6 +488,7 @@
             }
             //For All Group
             strCurrentGroup = @"111";
+            _CurrentGroup = 111;
         }
         
         if (_CurrentMode == kModeCountry) {
