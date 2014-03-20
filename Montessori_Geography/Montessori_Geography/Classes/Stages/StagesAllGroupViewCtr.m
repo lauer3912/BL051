@@ -88,7 +88,7 @@
             NSDictionary *frames = [countryDictionary objectForKey:@"frames_allGroups"];
             
             //For Flag
-            NSDictionary *frames_flag = [countryDictionary objectForKey:@"framesflag"];
+            NSDictionary *frames_flag = [countryDictionary objectForKey:@"frames_allGroups_flag"];
             //
             
             NSDictionary *frameStep1 = [frames objectForKey:@"frameStep1"];
@@ -283,18 +283,24 @@
         {
             gamePiece.image = gamePiece.image_active;
             gamePiece.frame = gamePiece.frameStep1;
+            if (maxWidth < gamePiece.frame.size.width) {
+                maxWidth = gamePiece.frame.size.width;
+            }
+            if (maxHeight < gamePiece.frame.size.height) {
+                maxHeight = gamePiece.frame.size.height;
+            }
         }
         else
         {
             gamePiece.image = gamePiece.image_active_flag;
             gamePiece.frame = gamePiece.frameStep1_flag;
-        }
-        
-        if (maxWidth < gamePiece.frame.size.width) {
-            maxWidth = gamePiece.frame.size.width;
-        }
-        if (maxHeight < gamePiece.frame.size.height) {
-            maxHeight = gamePiece.frame.size.height;
+            gamePiece.placeholder.alpha = 0.0f;
+            if (maxWidth < gamePiece.frameStep1.size.width) {
+                maxWidth = gamePiece.frameStep1.size.width;
+            }
+            if (maxHeight < gamePiece.frameStep1.size.height) {
+                maxHeight = gamePiece.frameStep1.size.height;
+            }
         }
         
         gamePiece.alpha = 1.0f;
@@ -530,7 +536,6 @@
             if (![self isTouchOnTransparentPixel:touchLocationTemp GamePieace:otherGamePiece]) {
                 
                 [self tappableGamePieceTouchBegan:otherGamePiece didTouchAtPoint:touchLocation];
-                NSLog(@"touchesBegan");
             }
         }
     }
@@ -565,7 +570,6 @@
             if (![self isTouchOnTransparentPixel:touchLocationTemp GamePieace:otherGamePiece]) {
                 
                 [self tappableGamePiece:otherGamePiece didReleaseAtPoint:touchLocation];
-                NSLog(@"touchesEnded");
             }
             
         }

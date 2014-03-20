@@ -216,12 +216,14 @@
         
         if (imgViewComplete.tag < [strTag intValue]) {
             imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_complete",TempStage,TempGroup]];
+            [imgViewComplete setAccessibilityIdentifier:@"complete"];
         }else{
             imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_placeholder",TempStage,TempGroup]];
+            [imgViewComplete setAccessibilityIdentifier:@"placeholder"];
         }
     }
     if (_CurrentGroup != 111) {
-        [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active"];
+        [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active" Identifier:@"active"];
     }
 }
 #pragma mark - Create Path for Plane Animation
@@ -267,6 +269,10 @@
         plane.contents = (id)([UIImage imageNamed:@"plane.png"].CGImage);
         [self.view.layer addSublayer:plane];
     }
+    else
+    {
+        [self bringSublayerToFront:plane];
+    }
     plane.position = point;
     
 	CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
@@ -279,78 +285,51 @@
 	[plane addAnimation:anim forKey:@"race"];
     
 }
+- (void)bringSublayerToFront:(CALayer *)layer {
+    CALayer *superlayer = layer.superlayer;
+    [layer removeFromSuperlayer];
+    [superlayer insertSublayer:layer atIndex:[layer.sublayers count]-1];
+}
 
 #pragma mark - Toches Methods
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self.view];
+    
     if (CGRectContainsPoint(plane.frame,currentPoint)==YES)
     {
-        //Frame Before MoveNext Stage
-        NSLog(@"Plane Touched");
-        //NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
-        NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+        int tempflag = 0;
+        if (_CurrentGroup == 111) {
+            tempflag = 1;
+        }
         
-        
-        [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"start"]];
-        
-        //Set Stage Title
-        lblStageTitle.text = [GlobalMethods ReturnStageTitle:_CurrentStage];
-        
-        [UIView animateWithDuration:5.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            
-            if ([btnMenu isSelected])
+        [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:tempflag];
+    }
+    else{
+        CGPoint currentPointViewContry = [touch locationInView:ViewContry];
+        for (UIImageView *imgViewContry in ViewContry.subviews) {
+            if (CGRectContainsPoint(imgViewContry.frame,currentPointViewContry)==YES)
             {
-                [btnMenu setSelected:NO];
-            }
-            [self.view bringSubviewToFront:View_Menu];
-            
-            //Fade In Stage Title
-            lblStageTitle.alpha = 1.0;
-            //img_Map.frame = CGRectMake(-1755, -1041, 2920, 2195);
-            //img_Map.frame = CGRectMake(-1639, -934, 2920, 2195);
-            img_Logo.frame = CGRectMake(img_Logo.frame.origin.x, self.view.frame.size.height, img_Logo.frame.size.width, img_Logo.frame.size.height);
-            View_Purchase.frame = CGRectMake(View_Menu.frame.origin.x, -90, View_Menu.frame.size.width, View_Menu.frame.size.height);
-            View_Menu.frame = CGRectMake(View_Menu.frame.origin.x, -90, View_Menu.frame.size.width,  View_Menu.frame.size.height);
-            img_Shadow.frame = CGRectMake(751, -113, 290, 113);
-            self.view.backgroundColor = [UIColor whiteColor];
-            
-        } completion:^(BOOL finished){
-            
-            lblStageTitle.alpha = 0.0;
-            
-            int tempflag = 0;
-            if (_CurrentMode == kModeCountry) {
-                if ([[NSUserDefaults retrieveObjectForKey:CurrentGroup_Map] isEqualToString:@"111"]) {
-                    tempflag = 1;
+                CGPoint touchLocationTemp = [touch locationInView:imgViewContry];
+                
+                if (![self isTouchOnTransparentPixel:touchLocationTemp ImageView:imgViewContry]) {
+                    
+                    NSString *file_name = [imgViewContry accessibilityIdentifier] ;
+                    int TempStage = 0;
+                    int TempGroup = 0;
+                    
+                    TempGroup = imgViewContry.tag % 10;
+                    TempStage = imgViewContry.tag / 10;
+                    if ([file_name isEqualToString:@"complete"]) {
+                        [self CheckInAppAndStartStage:TempStage-1 CurrentGroup:TempGroup-1 PreviousComplete:YES AllGroup:0];
+                    }
+                    else if ([file_name isEqualToString:@"active"]){
+                        [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:0];
+                    }
                 }
             }
-            else if (_CurrentMode == kModeFlag){
-                if ([[NSUserDefaults retrieveObjectForKey:CurrentGroup_Flag] isEqualToString:@"111"]) {
-                    tempflag = 1;
-                }
-            }
-        
-            if (tempflag == 0) {
-                StagesViewCtr *obj_StagesViewCtr = [[StagesViewCtr alloc]initWithNibName:@"StagesViewCtr" bundle:nil];
-                obj_StagesViewCtr._currentGameMode = _CurrentMode;
-                obj_StagesViewCtr._currentStage = _CurrentStage;
-                obj_StagesViewCtr._currentGroup = _CurrentGroup;
-                // obj_StagesViewCtr._currentStage = 4;
-                // obj_StagesViewCtr._currentGroup = 4;
-                obj_StagesViewCtr._Stagedelegate = self;
-                [self.navigationController pushViewController:obj_StagesViewCtr animated:NO];
-            }
-            else{
-                StagesAllGroupViewCtr *obj_StagesAllGroupViewCtr = [[StagesAllGroupViewCtr alloc]initWithNibName:@"StagesAllGroupViewCtr" bundle:nil];
-                obj_StagesAllGroupViewCtr._currentGameMode = _CurrentMode;
-                obj_StagesAllGroupViewCtr._currentStage = _CurrentStage;
-                //obj_StagesAllGroupViewCtr._currentStage = 4;
-                obj_StagesAllGroupViewCtr._StageAllGroupDelegate = self;
-                [self.navigationController pushViewController:obj_StagesAllGroupViewCtr animated:NO];
-            }
-        }];
+        }
     }
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -365,7 +344,95 @@
 {
     
 }
+-(void)CheckInAppAndStartStage:(int)stage CurrentGroup:(int)group PreviousComplete:(BOOL)YesNo AllGroup:(int)tempflag
+{
+    if (_CurrentStage == 0) {
+        [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
+    }
+    else{
+        if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
+        {
+            [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
+        }
+        else
+        {
+            if (_CurrentMode == kModeCountry) {
+                if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_identifier] isEqualToString:@"YES"])
+                {
+                    [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
+                }
+                else
+                {
+                    [btnMenu sendActionsForControlEvents:UIControlEventTouchUpInside];
+                }
+            }
+            else if (_CurrentMode == kModeFlag)
+            {
+                if ([[NSUserDefaults retrieveObjectForKey:InApp_Flags_identifier] isEqualToString:@"YES"])
+                {
+                    [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
+                }
+                else
+                {
+                    [btnMenu sendActionsForControlEvents:UIControlEventTouchUpInside];
+                }
+            }
+        }
+    }
+}
 
+#pragma mark - StageBegan With Steps
+-(void)StageBegan:(int)stage CurrentGroup:(int)group PreviousComplete:(BOOL)YesNo AllGroup:(int)tempflag
+{
+    //NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
+    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+    
+    [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"start"]];
+    
+    //Set Stage Title
+    lblStageTitle.text = [GlobalMethods ReturnStageTitle:stage];
+    
+    [UIView animateWithDuration:5.0 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        
+        if ([btnMenu isSelected])
+        {
+            [btnMenu setSelected:NO];
+        }
+        [self.view bringSubviewToFront:View_Menu];
+        
+        //Fade In Stage Title
+        lblStageTitle.alpha = 1.0;
+        //img_Map.frame = CGRectMake(-1755, -1041, 2920, 2195);
+        //img_Map.frame = CGRectMake(-1639, -934, 2920, 2195);
+        img_Logo.frame = CGRectMake(img_Logo.frame.origin.x, self.view.frame.size.height, img_Logo.frame.size.width, img_Logo.frame.size.height);
+        View_Purchase.frame = CGRectMake(View_Menu.frame.origin.x, -90, View_Menu.frame.size.width, View_Menu.frame.size.height);
+        View_Menu.frame = CGRectMake(View_Menu.frame.origin.x, -90, View_Menu.frame.size.width,  View_Menu.frame.size.height);
+        img_Shadow.frame = CGRectMake(751, -113, 290, 113);
+        self.view.backgroundColor = [UIColor whiteColor];
+        
+    } completion:^(BOOL finished){
+        
+        lblStageTitle.alpha = 0.0;
+        
+        if (tempflag == 0) {
+            StagesViewCtr *obj_StagesViewCtr = [[StagesViewCtr alloc]initWithNibName:@"StagesViewCtr" bundle:nil];
+            obj_StagesViewCtr._currentGameMode = _CurrentMode;
+            obj_StagesViewCtr._currentStage = stage;
+            obj_StagesViewCtr._currentGroup = group;
+            obj_StagesViewCtr.Completed = YesNo;
+            obj_StagesViewCtr._Stagedelegate = self;
+            [self.navigationController pushViewController:obj_StagesViewCtr animated:NO];
+        }
+        else{
+            StagesAllGroupViewCtr *obj_StagesAllGroupViewCtr = [[StagesAllGroupViewCtr alloc]initWithNibName:@"StagesAllGroupViewCtr" bundle:nil];
+            obj_StagesAllGroupViewCtr._currentGameMode = _CurrentMode;
+            obj_StagesAllGroupViewCtr._currentStage = stage;
+            obj_StagesAllGroupViewCtr._StageAllGroupDelegate = self;
+            [self.navigationController pushViewController:obj_StagesAllGroupViewCtr animated:NO];
+        }
+    }];
+
+}
 #pragma mark - Zoom Out After Satge Complete
 -(void)ZoomOutForNextStage
 {
@@ -391,10 +458,8 @@
 }
 
 #pragma Mark - Stage Completion Delegate
--(void)StageComplete
+-(void)StageComplete:(BOOL)previouslycompleted
 {
-    [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_complete"];
-    
     [self ZoomOutForNextStage];
     
     //Move Plane to next stage
@@ -403,35 +468,41 @@
     
     [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
     
-    NSArray *_currentStageArray = [GlobalMethods ReturnCurrentStageArray:_CurrentStage ForKey:@"Stage"];
-    int TotalGroup = _currentStageArray.count;
-    NSString *strCurrentGroup;
-    if (_CurrentGroup < TotalGroup-1) {
-        _CurrentGroup++;
-        strCurrentGroup = [NSString stringWithFormat:@"%d",_CurrentGroup];
-        [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active"];
-    }
-    else if (_CurrentGroup >= TotalGroup-1)
-    {
-        if (_CurrentStage == 5) {
-            return;
+    if (!previouslycompleted) {
+        
+        [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_complete" Identifier:@"complete"];
+        
+        NSArray *_currentStageArray = [GlobalMethods ReturnCurrentStageArray:_CurrentStage ForKey:@"Stage"];
+        int TotalGroup = _currentStageArray.count;
+        NSString *strCurrentGroup;
+        if (_CurrentGroup < TotalGroup-1) {
+            _CurrentGroup++;
+            strCurrentGroup = [NSString stringWithFormat:@"%d",_CurrentGroup];
+            [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active" Identifier:@"active"];
         }
-        //For All Group
-        strCurrentGroup = @"111";
-    }
-    
-    if (_CurrentMode == kModeCountry) {
-        [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Map];
-    }
-    else if (_CurrentMode == kModeFlag){
-        [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Flag];
+        else if (_CurrentGroup >= TotalGroup-1)
+        {
+            if (_CurrentStage == 5) {
+                return;
+            }
+            //For All Group
+            strCurrentGroup = @"111";
+        }
+        
+        if (_CurrentMode == kModeCountry) {
+            [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Map];
+        }
+        else if (_CurrentMode == kModeFlag){
+            [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Flag];
+        }
     }
 }
--(void)ChangeImageAfterStageComplete:(int)stageno group:(int)groupno ImageName:(NSString*)strImg
+-(void)ChangeImageAfterStageComplete:(int)stageno group:(int)groupno ImageName:(NSString*)strImg Identifier:(NSString*)strId
 {
     NSString *strTag = [NSString stringWithFormat:@"%d%d",stageno+1,groupno+1];
     UIImageView *imgStageComplete = (UIImageView*)[ViewContry viewWithTag:[strTag intValue]];
     imgStageComplete.image = [UIImage imageNamed:[NSString stringWithFormat:strImg,stageno+1,groupno+1]];
+    [imgStageComplete setAccessibilityIdentifier:strId];
 }
 
 #pragma mark - _StageAllGroupDelegate Delegate
@@ -460,7 +531,7 @@
             [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Flag];
         }
     
-    [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active"];
+    [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active" Identifier:@"active"];
 }
 #pragma mark - Mode Selection
 -(IBAction)btnModeSelectPressed:(id)sender
@@ -583,7 +654,7 @@
 {
     if ([sender tag] == 111)
     {
-        if (![[NSUserDefaults retrieveObjectForKey:InApp_Maps_identifier] isEqualToString:@"YES"])
+        if (![[NSUserDefaults retrieveObjectForKey:InApp_Maps_identifier] isEqualToString:@"YES"] && ![[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
         {
             if ([AppDel checkConnection])
                 [GlobalMethods BuyProduct:InApp_Maps_identifier];
@@ -593,7 +664,7 @@
     }
     else if ([sender tag] == 222)
     {
-        if (![[NSUserDefaults retrieveObjectForKey:InApp_Flags_identifier] isEqualToString:@"YES"])
+        if (![[NSUserDefaults retrieveObjectForKey:InApp_Flags_identifier] isEqualToString:@"YES"] && ![[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
         {
             if ([AppDel checkConnection])
                 [GlobalMethods BuyProduct:InApp_Flags_identifier];
@@ -625,7 +696,11 @@
         [btnFlagsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
     
     if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
+    {
+        [btnMapsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
+        [btnFlagsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
         [btnMapsFlagsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark - Reset Game
@@ -723,6 +798,26 @@
     [trackpath addCurveToPoint:e controlPoint1:cp1 controlPoint2:cp2];
     
     [self movePlane:trackpath PlaneLastPoint:e AnimationTime:StepCompleteAnimationTime];
+}
+
+#pragma mark - Check ImageView Transperant or not
+- (BOOL)isTouchOnTransparentPixel:(CGPoint)point ImageView:(UIImageView*)iv{
+    
+    unsigned char pixel[4] = {0};
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(pixel, 1, 1, 8, 4, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    
+    CGContextTranslateCTM(context, -point.x, -point.y);
+    
+    [iv.layer renderInContext:context];
+    
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    
+    CGFloat alpha = pixel[3]/255.0;
+    BOOL transparent = alpha < 0.01;
+    
+    return transparent;
 }
 
 - (void)didReceiveMemoryWarning

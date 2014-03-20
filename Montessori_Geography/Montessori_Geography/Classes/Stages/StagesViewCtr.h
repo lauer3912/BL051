@@ -16,7 +16,7 @@
 @protocol StageCompleteDelegate <NSObject>
 
 @optional
--(void)StageComplete;
+-(void)StageComplete:(BOOL)previouslycompleted;
 @end
 
 @interface StagesViewCtr : UIViewController <MGAGamePieceDelegate>
@@ -54,5 +54,6 @@
 @property (nonatomic,readwrite) int _currentGameMode;
 @property (nonatomic,readwrite) int _currentStage;
 @property (nonatomic,readwrite) int _currentGroup;
+@property (nonatomic,assign)BOOL Completed;
 
 @end

@@ -17,6 +17,7 @@
 @implementation StagesViewCtr
 @synthesize _currentGameMode,_currentStage,_currentGroup;
 @synthesize _Stagedelegate;
+@synthesize Completed;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -530,7 +531,7 @@
     // Now we let the game pieces drop down into the screen form the top.
     for (int i = 0; i < gamePieceCount; i++) {
         MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:i];
-        CGPoint center = CGPointMake(gamePiece.center.x, self.view.bounds.size.height/2);
+        CGPoint center = CGPointMake(gamePiece.center.x, (self.view.bounds.size.height/2));
         [gamePiece makeGamePieceTappableWithCenter:center];
         
         [gamePiece performSelector:@selector(setUserInteractionEnabled:) withObject:[NSNumber numberWithBool:YES] afterDelay:2.0];
@@ -774,7 +775,6 @@
             if (![self isTouchOnTransparentPixel:touchLocationTemp GamePieace:otherGamePiece]) {
                 
                 [self tappableGamePieceTouchBegan:otherGamePiece didTouchAtPoint:touchLocation];
-                NSLog(@"touchesBegan");
             }
         }
     }
@@ -809,7 +809,6 @@
             if (![self isTouchOnTransparentPixel:touchLocationTemp GamePieace:otherGamePiece]) {
                 
                 [self tappableGamePiece:otherGamePiece didReleaseAtPoint:touchLocation];
-                NSLog(@"touchesEnded");
             }
             
         }
@@ -977,7 +976,7 @@
 -(void)PopViewToNextStageorGroup
 {
     [self.navigationController popViewControllerAnimated:NO];
-    [_Stagedelegate StageComplete];
+    [_Stagedelegate StageComplete:Completed];
 }
 
 #pragma mark - CAAnimation Delegate
