@@ -138,7 +138,7 @@
         }
 
     }
-    [self setupStep0];
+    [self setupStep1];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -221,8 +221,8 @@
 }
 
 
-#pragma mark - Step 0 (Intro) Instance Methods
-- (void)setupStep0 {
+#pragma mark - Step 1 Instance Methods
+- (void)setupStep1 {
     _currentStep = kSTEP0;
     _currentGamePieceIndex = 0;
     
@@ -504,9 +504,9 @@
                                                   [self hideInstructionWithTextWithCompletion:nil];
                                               };
                                               
-                                              NSString *strText1 = @"Show me where these go";
+                                              NSString *strText1 = LSSTRING(@"Show me where these go");
                                               if (_currentGameMode == kModeFlag)
-                                                  strText1 = @"Match the flag with its country";
+                                                  strText1 = LSSTRING(@"Match the flag with its country");
                                               
                                               [self showInstructionWithText1:strText1 withText2:nil completion:completion];
                                           }];
@@ -622,11 +622,11 @@
                         [self PlaneAnimationPathAfterActivityCompletion];
                         [self performSelector:@selector(PopViewToNextStageorGroup) withObject:nil afterDelay:StepCompleteAnimationTime];
                     };
-                    [self showInstructionWithText1:@"On to the next stage." withText2:nil completion:completion];
+                    [self showInstructionWithText1:LSSTRING(@"On to the next stage.") withText2:nil completion:completion];
                 };
                 [self hideInstructionWithTextWithCompletion:completion];
             };
-            [self showInstructionWithText1:@"Stage completed! Well done!" withText2:nil completion:completion];
+            [self showInstructionWithText1:LSSTRING(@"Stage completed! Well done!") withText2:nil completion:completion];
         }else{
             MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:[_gamePiecesCompletedInCurrentStep count]];
             gamePiece.lbl_name.alpha = 1.0;

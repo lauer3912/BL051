@@ -346,7 +346,7 @@
                      }
                      completion:^(BOOL finished){
                          // Animate the transition of the label text changing.
-                         CATransition *animation = [CATransition animation];
+                        /* CATransition *animation = [CATransition animation];
                          animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
                          animation.type = kCATransitionFade;
                          animation.duration = 1.5;
@@ -356,7 +356,7 @@
                          if (_currentGameMode == kModeFlag)
                              strText = [NSString stringWithFormat:@"%@'s flag", gamePiece.name];
                          
-                         [_lbl_Instruction setText:strText];
+                         [_lbl_Instruction setText:strText];*/
                          
                          CGRect newLabelFrame = CGRectMake(0.0, self.view.bounds.size.height, self.view.bounds.size.width, labelHeight);
                          
@@ -675,9 +675,9 @@
                                                   [self hideInstructionWithTextWithCompletion:nil];
                                               };
                                               
-                                              NSString *strText1 = @"Show me where these go";
+                                              NSString *strText1 = LSSTRING(@"Show me where these go");
                                               if (_currentGameMode == kModeFlag)
-                                                  strText1 = @"Match the flag with its country";
+                                                  strText1 = LSSTRING(@"Match the flag with its country");
                                               
                                               [self showInstructionWithText1:strText1 withText2:nil completion:completion];
                                           }];
@@ -938,11 +938,11 @@
                         [self PlaneAnimationPathAfterActivityCompletion];
                         [self performSelector:@selector(PopViewToNextStageorGroup) withObject:nil afterDelay:StepCompleteAnimationTime];
                     };
-                    [self showInstructionWithText1:@"On to the next stage." withText2:nil completion:completion];
+                    [self showInstructionWithText1:LSSTRING(@"On to the next stage.") withText2:nil completion:completion];
                 };
                 [self hideInstructionWithTextWithCompletion:completion];
             };
-            [self showInstructionWithText1:@"Stage completed! Well done!" withText2:nil completion:completion];
+            [self showInstructionWithText1:LSSTRING(@"Stage completed! Well done!") withText2:nil completion:completion];
         }
     }
     else {

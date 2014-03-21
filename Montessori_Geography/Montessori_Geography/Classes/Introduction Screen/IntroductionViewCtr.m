@@ -27,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //Set Localized String of the view
+    [GlobalMethods replaceTextWithLocalizedTextInSubviewsForView:self.view];
     
     lblBlue.layer.cornerRadius = 8.0;
     lblBorderMenu.layer.cornerRadius = 8.0;
@@ -130,8 +132,6 @@
         [AsiaView addSubview:WelComeView];
         WelComeView.frame = CGRectMake(20, 10, 440, 70);
         ViewContry.hidden = NO;
-        //img_Map.frame = CGRectMake(0, 0, 1024, 768);
-        //img_Map.image = [UIImage imageNamed:@"asia_map"];
         
         //Menu Down
         [UIView animateWithDuration:10.00 delay:1.00 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -158,12 +158,8 @@
     } completion:^(BOOL finished){
         
     }];
-    
-    
-    
-    
-    
 }
+
 -(void)SetAisaWithZoomWithoutAnimation
 {
     lblLine1.alpha = 0.0;
@@ -200,14 +196,18 @@
     self.view.userInteractionEnabled = YES;
     [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
 }
+
+//Check and set image of group whether it is complete - active - placeholder
 -(void)SetImagesToGroups:(int)CurrStage Group:(int)CurrGroup
 {
-    if (_CurrentGroup == 111) {
-        CurrStage++;
-        CurrGroup = -1;
-    }
     for (UIImageView *imgViewComplete in ViewContry.subviews) {
-        NSString *strTag = [NSString stringWithFormat:@"%d%d",CurrStage+1,CurrGroup+1];
+        NSString *strTag;
+        if (_CurrentGroup == 111) {
+            strTag = [NSString stringWithFormat:@"%d9",CurrStage+1];
+        }
+        else{
+            strTag = [NSString stringWithFormat:@"%d%d",CurrStage+1,CurrGroup+1];
+        }
         int TempStage = 0;
         int TempGroup = 0;
         
@@ -215,17 +215,29 @@
         TempStage = imgViewComplete.tag / 10;
         
         if (imgViewComplete.tag < [strTag intValue]) {
-            imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_complete",TempStage,TempGroup]];
-            [imgViewComplete setAccessibilityIdentifier:@"complete"];
-        }else{
+            
+            NSString *strTagStart = [NSString stringWithFormat:@"%d0",CurrStage+1];
+            if (_CurrentGroup == 111 && imgViewComplete.tag > [strTagStart intValue]) {
+                imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_active",TempStage,TempGroup]];
+                [imgViewComplete setAccessibilityIdentifier:@"active"];
+            }
+            else{
+                imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_complete",TempStage,TempGroup]];
+                [imgViewComplete setAccessibilityIdentifier:@"complete"];
+            }
+        }
+        else if (imgViewComplete.tag == [strTag intValue])
+        {
+            imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_active",TempStage,TempGroup]];
+            [imgViewComplete setAccessibilityIdentifier:@"active"];
+        }
+        else{
             imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_placeholder",TempStage,TempGroup]];
             [imgViewComplete setAccessibilityIdentifier:@"placeholder"];
         }
     }
-    if (_CurrentGroup != 111) {
-        [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active" Identifier:@"active"];
-    }
 }
+
 #pragma mark - Create Path for Plane Animation
 -(void)CreatePlaneAnimationPath:(NSDictionary*)dicPath
 {
@@ -285,6 +297,7 @@
 	[plane addAnimation:anim forKey:@"race"];
     
 }
+//Bring plane to front
 - (void)bringSublayerToFront:(CALayer *)layer {
     CALayer *superlayer = layer.superlayer;
     [layer removeFromSuperlayer];
@@ -297,15 +310,19 @@
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self.view];
     
+    //If Plane Touch
     if (CGRectContainsPoint(plane.frame,currentPoint)==YES)
     {
         int tempflag = 0;
         if (_CurrentGroup == 111) {
             tempflag = 1;
         }
-        
-        [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:tempflag];
+        NSArray *_totalStageArray = [GlobalMethods ReturnCurrentStageArray:_CurrentStage ForKey:@"AllStage"];
+        if (_CurrentStage <= _totalStageArray.count-1) {
+            [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:tempflag];
+        }
     }
+    //Else highlighted countries touch
     else{
         CGPoint currentPointViewContry = [touch locationInView:ViewContry];
         for (UIImageView *imgViewContry in ViewContry.subviews) {
@@ -325,7 +342,12 @@
                         [self CheckInAppAndStartStage:TempStage-1 CurrentGroup:TempGroup-1 PreviousComplete:YES AllGroup:0];
                     }
                     else if ([file_name isEqualToString:@"active"]){
-                        [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:0];
+                        
+                        int tempflag = 0;
+                        if (_CurrentGroup == 111) {
+                            tempflag = 1;
+                        }
+                        [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:tempflag];
                     }
                     break;
                 }
@@ -347,18 +369,18 @@
 }
 -(void)CheckInAppAndStartStage:(int)stage CurrentGroup:(int)group PreviousComplete:(BOOL)YesNo AllGroup:(int)tempflag
 {
-    if (_CurrentStage == 0) {
+    if (stage == 0) {
         [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
     }
     else{
-        if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
+        if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_Flags_ID] isEqualToString:@"YES"])
         {
             [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
         }
         else
         {
             if (_CurrentMode == kModeCountry) {
-                if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_identifier] isEqualToString:@"YES"])
+                if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"])
                 {
                     [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
                 }
@@ -369,7 +391,7 @@
             }
             else if (_CurrentMode == kModeFlag)
             {
-                if ([[NSUserDefaults retrieveObjectForKey:InApp_Flags_identifier] isEqualToString:@"YES"])
+                if ([[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"])
                 {
                     [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
                 }
@@ -403,8 +425,6 @@
         
         //Fade In Stage Title
         lblStageTitle.alpha = 1.0;
-        //img_Map.frame = CGRectMake(-1755, -1041, 2920, 2195);
-        //img_Map.frame = CGRectMake(-1639, -934, 2920, 2195);
         img_Logo.frame = CGRectMake(img_Logo.frame.origin.x, self.view.frame.size.height, img_Logo.frame.size.width, img_Logo.frame.size.height);
         View_Purchase.frame = CGRectMake(View_Menu.frame.origin.x, -90, View_Menu.frame.size.width, View_Menu.frame.size.height);
         View_Menu.frame = CGRectMake(View_Menu.frame.origin.x, -90, View_Menu.frame.size.width,  View_Menu.frame.size.height);
@@ -471,20 +491,27 @@
     
     if (!previouslycompleted) {
         
-        [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_complete" Identifier:@"complete"];
-        
         NSArray *_currentStageArray = [GlobalMethods ReturnCurrentStageArray:_CurrentStage ForKey:@"Stage"];
         int TotalGroup = _currentStageArray.count;
         NSString *strCurrentGroup;
         if (_CurrentGroup < TotalGroup-1) {
             _CurrentGroup++;
             strCurrentGroup = [NSString stringWithFormat:@"%d",_CurrentGroup];
-            [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active" Identifier:@"active"];
         }
         else if (_CurrentGroup >= TotalGroup-1)
         {
-            if (_CurrentStage == 5) {
-                return;
+            NSArray *_totalStageArray = [GlobalMethods ReturnCurrentStageArray:_CurrentStage ForKey:@"AllStage"];
+            
+            if (_CurrentStage == _totalStageArray.count - 1) {
+                _CurrentStage++;
+                NSString *strCurrentStage = [NSString stringWithFormat:@"%d",_CurrentStage];
+                
+                if (_CurrentMode == kModeCountry) {
+                    [NSUserDefaults saveObject:strCurrentStage forKey:CurrentStage_Map];
+                }
+                else if (_CurrentMode == kModeFlag){
+                    [NSUserDefaults saveObject:strCurrentStage forKey:CurrentStage_Flag];
+                }
             }
             //For All Group
             strCurrentGroup = @"111";
@@ -497,6 +524,7 @@
         else if (_CurrentMode == kModeFlag){
             [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Flag];
         }
+        [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
     }
 }
 -(void)ChangeImageAfterStageComplete:(int)stageno group:(int)groupno ImageName:(NSString*)strImg Identifier:(NSString*)strId
@@ -533,7 +561,8 @@
             [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Flag];
         }
     
-    [self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active" Identifier:@"active"];
+    //[self ChangeImageAfterStageComplete:_CurrentStage group:_CurrentGroup ImageName:@"stage%d_group%d_active" Identifier:@"active"];
+    [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
 }
 #pragma mark - Mode Selection
 -(IBAction)btnModeSelectPressed:(id)sender
@@ -656,32 +685,43 @@
 {
     if ([sender tag] == 111)
     {
-        if (![[NSUserDefaults retrieveObjectForKey:InApp_Maps_identifier] isEqualToString:@"YES"] && ![[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
+        if (![[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"])
         {
-            if ([AppDel checkConnection])
-                [GlobalMethods BuyProduct:InApp_Maps_identifier];
-            else
-                DisplayAlertWithTitle(@"Error Message", @"Please check your internet connection");
+            if (![[NSUserDefaults retrieveObjectForKey:InApp_Countries_Flags_ID] isEqualToString:@"YES"]) {
+                if ([AppDel checkConnection])
+                    [GlobalMethods BuyProduct:InApp_Countries_ID];
+                else
+                    DisplayLocalizedAlertNoInternet;
+            }
         }
     }
     else if ([sender tag] == 222)
     {
-        if (![[NSUserDefaults retrieveObjectForKey:InApp_Flags_identifier] isEqualToString:@"YES"] && ![[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
+        if (![[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"])
         {
-            if ([AppDel checkConnection])
-                [GlobalMethods BuyProduct:InApp_Flags_identifier];
-            else
-                DisplayAlertWithTitle(@"Error Message", @"Please check your internet connection");
+            if (![[NSUserDefaults retrieveObjectForKey:InApp_Countries_Flags_ID] isEqualToString:@"YES"]) {
+                if ([AppDel checkConnection])
+                    [GlobalMethods BuyProduct:InApp_Flags_ID];
+                else
+                    DisplayLocalizedAlertNoInternet;
+            }
         }
     }
     else if ([sender tag] == 333)
     {
-        if (![[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
+        if (![[NSUserDefaults retrieveObjectForKey:InApp_Countries_Flags_ID] isEqualToString:@"YES"])
         {
-            if ([AppDel checkConnection])
-                [GlobalMethods BuyProduct:InApp_Maps_Flags_identifier];
+            if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"] && [[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"])
+            {
+                //If Country & flag purchased separately
+            }
             else
-                DisplayAlertWithTitle(@"Error Message", @"Please check your internet connection");
+            {
+                if ([AppDel checkConnection])
+                    [GlobalMethods BuyProduct:InApp_Countries_Flags_ID];
+                else
+                    DisplayLocalizedAlertNoInternet;
+            }
         }
     }
 }
@@ -691,24 +731,31 @@
 }
 -(void)CheckPurchaseAndUpdateUI
 {
-    if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_identifier] isEqualToString:@"YES"])
-        [btnMapsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
+    if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"])
+        [btnMapsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
     
-    if ([[NSUserDefaults retrieveObjectForKey:InApp_Flags_identifier] isEqualToString:@"YES"])
-        [btnFlagsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
+    if ([[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"])
+        [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
     
-    if ([[NSUserDefaults retrieveObjectForKey:InApp_Maps_Flags_identifier] isEqualToString:@"YES"])
+    if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_Flags_ID] isEqualToString:@"YES"])
     {
-        [btnMapsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
-        [btnFlagsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
-        [btnMapsFlagsPurchase setTitle:@"UNLOCKED" forState:UIControlStateNormal];
+        [btnMapsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
+        [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
+        [btnMapsFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
+    }
+    
+    if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"] && [[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"])
+    {
+        [btnMapsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
+        [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
+        [btnMapsFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
     }
 }
 
 #pragma mark - Reset Game
 -(IBAction)btnResetPressed:(id)sender
 {
-    UIAlertView *AlertReset = [[UIAlertView alloc]initWithTitle:@"Reset Current Progress?" message:@"Are you sure you want to reset your current progress? All progress and airplane upgrades will be lost and you will restart from stage 1." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Reset",@"Cancel", nil];
+    UIAlertView *AlertReset = [[UIAlertView alloc]initWithTitle:LSSTRING(@"Reset Current Progress?") message:LSSTRING(@"Are you sure you want to reset your current progress? All progress and airplane upgrades will be lost and you will restart from stage 1.") delegate:self cancelButtonTitle:nil otherButtonTitles:LSSTRING(@"Reset"),LSSTRING(@"Cancel"), nil];
     AlertReset.tag = 1;
     [AlertReset show];
 }

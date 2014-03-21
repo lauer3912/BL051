@@ -5745,7 +5745,7 @@
 							<key>inactive_image_filename</key>
 							<string>inactive_Tajikistan</string>
 							<key>scaleStep0</key>
-							<real>3.4</real>
+							<real>2.5</real>
 							<key>maxDistanceFromCenterStep2</key>
 							<integer>50</integer>
 							<key>placeholder_image_filename_flag</key>
@@ -5953,7 +5953,7 @@
 							<key>inactive_image_filename</key>
 							<string>inactive_Kyrgyzstan</string>
 							<key>scaleStep0</key>
-							<real>2.4</real>
+							<real>1.5</real>
 							<key>maxDistanceFromCenterStep2</key>
 							<integer>50</integer>
 							<key>placeholder_image_filename_flag</key>

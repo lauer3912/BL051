@@ -539,6 +539,7 @@
 		FD0EF83C187E7D21008BE10E /* placeholder_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF836187E7D21008BE10E /* placeholder_NorthKorea_flag@2x.png */; };
 		FD0EF83D187E7D21008BE10E /* placeholder_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF837187E7D21008BE10E /* placeholder_SouthKorea_flag@2x.png */; };
 		FD0EF83F187E7D39008BE10E /* asia_map_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */; };
+		FD1281F518DC5269008EC651 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD1281F418DC5269008EC651 /* Localizable.strings */; };
 		FD128E771883E21F00D760E9 /* InAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E741883E21F00D760E9 /* InAppHelper.m */; };
 		FD128E781883E21F00D760E9 /* SubclassInAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E761883E21F00D760E9 /* SubclassInAppHelper.m */; };
 		FD128E7C1883E2B500D760E9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E7B1883E2B500D760E9 /* MBProgressHUD.m */; };
@@ -659,7 +660,6 @@
 		FD6CEE8C187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */; };
 		FD71B22C18740158006DD001 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22A18740158006DD001 /* plane.png */; };
 		FD71B22D18740158006DD001 /* plane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22B18740158006DD001 /* plane@2x.png */; };
-		FD7C839D1880119600F7329C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD7C839C1880119600F7329C /* Localization.strings */; };
 		FD9D7000187D348300404C3C /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */; };
 		FD9D7003187D3F1C00404C3C /* MGAGamePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7002187D3F1C00404C3C /* MGAGamePiece.m */; };
 		FD9D7005187D3F3100404C3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9D7004187D3F3100404C3C /* QuartzCore.framework */; };
@@ -1270,6 +1270,7 @@
 		FD0EF836187E7D21008BE10E /* placeholder_NorthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_NorthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD0EF837187E7D21008BE10E /* placeholder_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asia_map_blue@2x.png"; sourceTree = "<group>"; };
+		FD1281F418DC5269008EC651 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FD128E731883E21F00D760E9 /* InAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppHelper.h; sourceTree = "<group>"; };
 		FD128E741883E21F00D760E9 /* InAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppHelper.m; sourceTree = "<group>"; };
 		FD128E751883E21F00D760E9 /* SubclassInAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassInAppHelper.h; sourceTree = "<group>"; };
@@ -1399,7 +1400,6 @@
 		FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD71B22A18740158006DD001 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		FD71B22B18740158006DD001 /* plane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane@2x.png"; sourceTree = "<group>"; };
-		FD7C839C1880119600F7329C /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
 		FD968D96187E5F5D0046AE06 /* MGACurrentMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGACurrentMode.h; sourceTree = "<group>"; };
 		FD9D6FFE187D348300404C3C /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
 		FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
@@ -2240,7 +2240,7 @@
 		FD7C839B1880117A00F7329C /* LocalizesString */ = {
 			isa = PBXGroup;
 			children = (
-				FD7C839C1880119600F7329C /* Localization.strings */,
+				FD1281F418DC5269008EC651 /* Localizable.strings */,
 			);
 			path = LocalizesString;
 			sourceTree = "<group>";
@@ -2793,7 +2793,6 @@
 				FD0E6E4B18D2FC9500B838FE /* flag_Iraq@2x.png in Resources */,
 				FD0E6E1818D2FC9500B838FE /* placeholder_Tajikistan.png in Resources */,
 				FD37E9E2188FAFB2009C51C2 /* placeholder_Thailand.png in Resources */,
-				FD7C839D1880119600F7329C /* Localization.strings in Resources */,
 				FD0E6E5518D2FC9500B838FE /* flag_Jordan_gray@2x.png in Resources */,
 				FD0E6C2918D2FC7B00B838FE /* stage5_group3_complete@2x.png in Resources */,
 				FD0E6E6318D2FC9500B838FE /* flag_Palestine@2x.png in Resources */,
@@ -2866,6 +2865,7 @@
 				FD37E9DE188FAFB2009C51C2 /* placeholder_Philippines.png in Resources */,
 				FD37E9E6188FAFB2009C51C2 /* stage2_group1_map.png in Resources */,
 				FD0E6EDB18D2FC9500B838FE /* inactive_Azerbaijan@2x.png in Resources */,
+				FD1281F518DC5269008EC651 /* Localizable.strings in Resources */,
 				FD0E6DCE18D2FC9500B838FE /* inactive_Nepal.png in Resources */,
 				FD0E6C0118D2FC7B00B838FE /* stage3_group1_placeholder@2x.png in Resources */,
 				FD0E6F5218D2FCFE00B838FE /* flag_Laos_gray.png in Resources */,
@@ -3421,7 +3421,6 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3449,7 +3448,6 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (

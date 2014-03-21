@@ -19,7 +19,7 @@
     // This method will initialize the InAppHelper with required products.
     dispatch_once(&once, ^{
         // Specify your product identifiers into NSSet seperated by comma.
-        NSSet *productIdentifiers = [NSSet setWithObjects:InApp_Maps_identifier,InApp_Flags_identifier,InApp_Maps_Flags_identifier,nil];
+        NSSet *productIdentifiers = [NSSet setWithObjects:InApp_Countries_ID,InApp_Flags_ID,InApp_Countries_Flags_ID,nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });
     

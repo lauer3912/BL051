@@ -111,7 +111,7 @@
         {
             case SKPaymentTransactionStatePurchasing:
             {
-                [AppDel showGlobalProgressHUDWithTitle:@"Purchasing..."];
+                [AppDel showGlobalProgressHUDWithTitle:LSSTRING(@"Purchasing...")];
                 // Item is still in the process of being purchased
 				break;
             }
@@ -119,7 +119,7 @@
             {
                 // Item was successfully purchased!
                 // Now transaction should be finished with purchased product.
-                [AppDel showGlobalProgressHUDWithTitle:@"Verifying..."];
+                [AppDel showGlobalProgressHUDWithTitle:LSSTRING(@"Verifying...")];
                 [self completeTransaction:transaction];
                 break;
             }
@@ -133,7 +133,7 @@
             {
                 // Verified that user has already paid for this item.
                 // Now transaction should be finish with restoring previously purchased product.
-                [AppDel showGlobalProgressHUDWithTitle:@"Restored..."];
+                [AppDel showGlobalProgressHUDWithTitle:LSSTRING(@"Restored...")];
                 [self restoreTransaction:transaction];
                 break;
             }
@@ -157,7 +157,7 @@
     }
     else
     {
-        DisplayAlertWithTitle(@"Error Message", @"Varification Error");
+        DisplayAlertWithTitle(LSSTRING(@"Error Message"), LSSTRING(@"Varification Error"));
         [AppDel dismissGlobalHUD];
     }
 

@@ -25,4 +25,6 @@
 +(NSString*)ReturnStageTitle:(int)StageValue;
 
 +(CGRect)ReturnFrameForAllGroup:(int)StageValue;
+
++(void)replaceTextWithLocalizedTextInSubviewsForView:(UIView*)view;
 @end

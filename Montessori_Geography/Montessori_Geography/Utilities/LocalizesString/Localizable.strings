@@ -1,0 +1,57 @@
+/* 
+  Localizable.strings
+  Montessori_Geography
+
+  Created by MAC236 on 21/03/14.
+  Copyright (c) 2014 MAC 227. All rights reserved.
+*/
+
+//--------- Intro Page ----------//
+"Reset Current Progress?" = "Reset Current Progress?";
+"Are you sure you want to reset your current progress? All progress and airplane upgrades will be lost and you will restart from stage 1." = "Are you sure you want to reset your current progress? All progress and airplane upgrades will be lost and you will restart from stage 1.";
+"Reset" = "Reset";
+"Cancel" = "Cancel";
+
+//--------- In App Purchase ----------//
+"Error Message" = "Error Message";
+"Please check your internet connection" = "Please check your internet connection";
+"Failed" = "Failed";
+"Oops!" = "Oops!";
+"You're not connected to the internet.\nPlease connect and retry." = "You're not connected to the internet.\nPlease connect and retry.";
+"Got it!" = "Got it!";
+"UNLOCKED" = "UNLOCKED";
+"Varification Error" = "Varification Error";
+"Restoring product...." = "Restoring product....";
+"Loading products..." = "Loading products...";
+"Buying products..." = "Buying products...";
+"Restored..." = "Restored...";
+"Purchasing..." = "Purchasing...";
+"Verifying..." = "Verifying...";
+
+//-------------------//
+"Montessori Geography" = "Montessori Geography";
+"Unlock access to all country maps and flags of asia." = "Unlock access to all country maps and flags of asia.";
+"This will restart your game from the beginning. this will not reset your purchases, only your game play." = "This will restart your game from the beginning. this will not reset your purchases, only your game play.";
+"UNLOCK FLAGS + MAPS: $5.99" = "UNLOCK FLAGS + MAPS: $5.99";
+"RESTORE PURCHASES" = "RESTORE PURCHASES";
+"RESET GAME" = "RESET GAME";
+"Unlock access to all country maps of asia." = "Unlock access to all country maps of asia.";
+"UNLOCK MAPS: $3.99" = "UNLOCK MAPS: $3.99";
+"Unlock access to all country flags of asia." = "Unlock access to all country flags of asia.";
+"UNLOCK FLAGS: $3.99" = "UNLOCK FLAGS: $3.99";
+"ASIA" = "ASIA";
+"Welcome to" = "Welcome to";
+
+//-------------------//
+"East Asia" = "East Asia";
+"Southeast Asia" = "Southeast Asia";
+"South Asia" = "South Asia";
+"Central Asia" = "Central Asia";
+"Middle East" = "Middle East";
+"Eurasia" = "Eurasia";
+
+//-------------------//
+"Show me where these go" = "Show me where these go";
+"Match the flag with its country" = "Match the flag with its country";
+"On to the next stage." = "On to the next stage.";
+"Stage completed! Well done!" = "Stage completed! Well done!";
