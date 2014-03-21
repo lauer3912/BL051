@@ -1,23 +1,21 @@
 //
-//  StagesViewCtr.m
+//  StagesAllGroupViewCtr.m
 //  Montessori_Geography
 //
-//  Created by Chirag on 08/01/14.
+//  Created by MAC236 on 18/03/14.
 //  Copyright (c) 2014 MAC 227. All rights reserved.
 //
 
-#import "StagesViewCtr.h"
+#import "StagesAllGroupViewCtr.h"
 #import "AppConstant.h"
 
-
-@interface StagesViewCtr ()
+@interface StagesAllGroupViewCtr ()
 
 @end
 
-@implementation StagesViewCtr
-@synthesize _currentGameMode,_currentStage,_currentGroup;
-@synthesize _Stagedelegate;
-@synthesize Completed;
+@implementation StagesAllGroupViewCtr
+@synthesize _currentGameMode,_currentStage;
+@synthesize _StageAllGroupDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,176 +29,117 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     //get Current Stage Data
+    _imgView_Stage_Map.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_allGroups_map",_currentStage+1]];
+
     NSArray *_CurrentStageArray = [GlobalMethods ReturnCurrentStageArray:_currentStage ForKey:@"Stage"];
     
-    //Get Current Group Data of the Current Stage Data
-    NSDictionary *_CurrentGroupDic = [_CurrentStageArray objectAtIndex:_currentGroup];
-    
-    // First setup the map for this stage.
-    NSDictionary *_stageGroupMapDataDictionary = [_CurrentGroupDic objectForKey:@"map"];
-    _imgView_Stage_Map.image = [UIImage imageNamed:[_stageGroupMapDataDictionary objectForKey:@"map_image_filename"]];
-    
-    //map frame dictionory for step 0 - step 2 - step 3
-    NSDictionary *_frameMapDataDic = [_stageGroupMapDataDictionary valueForKey:@"frames"];
-    obj_mapFrame = [[MapFrameModal alloc] init];
-    
-    //map frame For Step 0
-    NSDictionary *map_frameStep0 = [_frameMapDataDic objectForKey:@"frameStep0"];
-    obj_mapFrame.MapframeStep0 = CGRectMake([[map_frameStep0 objectForKey:@"x"] floatValue],
-                                            [[map_frameStep0 objectForKey:@"y"] floatValue],
-                                            [[map_frameStep0 objectForKey:@"width"] floatValue],
-                                            [[map_frameStep0 objectForKey:@"height"] floatValue]);
-    
-    //map frame For Step 2
-    NSDictionary *map_frameStep2 = [_frameMapDataDic objectForKey:@"frameStep2"];
-    obj_mapFrame.MapframeStep2 = CGRectMake([[map_frameStep2 objectForKey:@"x"] floatValue],
-                                            [[map_frameStep2 objectForKey:@"y"] floatValue],
-                                            [[map_frameStep2 objectForKey:@"width"] floatValue],
-                                            [[map_frameStep2 objectForKey:@"height"] floatValue]);
-    
-    //map frame For Step 3
-    NSDictionary *map_frameStep3 = [_frameMapDataDic objectForKey:@"frameStep3"];
-    obj_mapFrame.MapframeStep3 = CGRectMake([[map_frameStep3 objectForKey:@"x"] floatValue],
-                                            [[map_frameStep3 objectForKey:@"y"] floatValue],
-                                            [[map_frameStep3 objectForKey:@"width"] floatValue],
-                                            [[map_frameStep3 objectForKey:@"height"] floatValue]);
-    
-    
     // Next, setup the game pieces and placeholders for each country.
-    NSArray *countries = [_CurrentGroupDic objectForKey:@"countries"];
     
-    _gamePieceArray = [[NSMutableArray alloc] initWithCapacity:[countries count]]; // This array will hold a pointer to all game piece objects used during this stage.
-    _gamePiecesCompletedInCurrentStep = [[NSMutableArray alloc] initWithCapacity:[countries count]]; // Used to track which game pieces have been successfully completed during each step.
+    _gamePieceArray = [[NSMutableArray alloc] init]; // This array will hold a pointer to all game piece objects used during this stage.
+    _gamePiecesCompletedInCurrentStep = [[NSMutableArray alloc] init]; // Used to track which game pieces have been successfully completed during each step.
     
-    for (NSDictionary *countryDictionary in countries) {
-        UIImage *activeImage = [UIImage imageNamed:[countryDictionary objectForKey:@"active_image_filename"]];
-        UIImage *inactiveImage = [UIImage imageNamed:[countryDictionary objectForKey:@"inactive_image_filename"]];
-        UIImage *placeholderImage = [UIImage imageNamed:[countryDictionary objectForKey:@"placeholder_image_filename"]];
+    for (int i = 0; i < [_CurrentStageArray count]; i++) {
+        NSDictionary *dicAllGroup = [_CurrentStageArray objectAtIndex:i];
+        NSArray *countries = [dicAllGroup objectForKey:@"countries"];
         
-        //For Flag
-        UIImage *activeImage_flag = [UIImage imageNamed:[countryDictionary objectForKey:@"active_image_filename_flag"]];
-        UIImage *placeholderImage_flag = [UIImage imageNamed:[countryDictionary objectForKey:@"placeholder_image_filename_flag"]];
-        UIImage *inactiveImage_flag = [UIImage imageNamed:[countryDictionary objectForKey:@"inactive_image_filename_flag"]];
-        //
-        
-        // Create the game piece object.
-        MGAGamePiece *gamePiece = [[MGAGamePiece alloc] initWithImage:inactiveImage];
-        gamePiece.delegate = self;
-        
-        UIImageView *placeholderImageView = [[UIImageView alloc] initWithImage:placeholderImage];
-        gamePiece.placeholder = placeholderImageView;
-        
-        gamePiece.image_active = activeImage;
-        gamePiece.image_inactive = inactiveImage;
-        gamePiece.image_placeholder = placeholderImage;
-        
-        //For Flag
-        gamePiece.image_active_flag = activeImage_flag;
-        gamePiece.image_inactive_flag = inactiveImage_flag;
-        gamePiece.image_placeholder_flag = placeholderImage_flag;
-        //
-        
-        gamePiece.name = [countryDictionary objectForKey:@"name"];
-        gamePiece.scaleStep0 = [[countryDictionary objectForKey:@"scaleStep0"] floatValue];
-        gamePiece.maxDistanceFromCenterStep2 = [[countryDictionary objectForKey:@"maxDistanceFromCenterStep2"] floatValue];
-        
-        // Setup the game piece label. We will position it on the screen later.
-        UILabel *gamePieceLabel = [[UILabel alloc] init];
-        [gamePieceLabel setTextAlignment:NSTextAlignmentCenter];
-        [gamePieceLabel setTextColor:[UIColor blackColor]];
-        [gamePieceLabel setFont:[UIFont systemFontOfSize:24.0f]];
-        [gamePieceLabel setText:gamePiece.name];
-        [gamePieceLabel sizeToFit];
-        gamePiece.lbl_name = gamePieceLabel;
-        
-        // Get the various frames for this game piece
-        NSDictionary *frames = [countryDictionary objectForKey:@"frames"];
-        
-        //For Flag
-        NSDictionary *frames_flag = [countryDictionary objectForKey:@"framesflag"];
-        //
-        
-        NSDictionary *frameStep0 = [frames objectForKey:@"frameStep0"];
-        gamePiece.frameStep0 = CGRectMake([[frameStep0 objectForKey:@"x"] floatValue],
-                                          [[frameStep0 objectForKey:@"y"] floatValue],
-                                          [[frameStep0 objectForKey:@"width"] floatValue],
-                                          [[frameStep0 objectForKey:@"height"] floatValue]);
-        
-        //For Flag
-        NSDictionary *frameStep0_flag = [frames_flag objectForKey:@"frameStep0"];
-        gamePiece.frameStep0_flag = CGRectMake([[frameStep0_flag objectForKey:@"x"] floatValue],
-                                               [[frameStep0_flag objectForKey:@"y"] floatValue],
-                                               [[frameStep0_flag objectForKey:@"width"] floatValue],
-                                               [[frameStep0_flag objectForKey:@"height"] floatValue]);
-        //
-        
-        
-        NSDictionary *frameStep1 = [frames objectForKey:@"frameStep1"];
-        gamePiece.frameStep1 = CGRectMake([[frameStep1 objectForKey:@"x"] floatValue],
-                                          [[frameStep1 objectForKey:@"y"] floatValue],
-                                          [[frameStep1 objectForKey:@"width"] floatValue],
-                                          [[frameStep1 objectForKey:@"height"] floatValue]);
-        
-        //For Flag
-        NSDictionary *frameStep1_flag = [frames_flag objectForKey:@"frameStep1"];
-        gamePiece.frameStep1_flag = CGRectMake([[frameStep1_flag objectForKey:@"x"] floatValue],
-                                               [[frameStep1_flag objectForKey:@"y"] floatValue],
-                                               [[frameStep1_flag objectForKey:@"width"] floatValue],
-                                               [[frameStep1_flag objectForKey:@"height"] floatValue]);
-        //
-        
-        
-        NSDictionary *frameStep2Placeholder = [frames objectForKey:@"frameStep2Placeholder"];
-        gamePiece.frameStep2Placeholder = CGRectMake([[frameStep2Placeholder objectForKey:@"x"] floatValue],
-                                                     [[frameStep2Placeholder objectForKey:@"y"] floatValue],
-                                                     [[frameStep2Placeholder objectForKey:@"width"] floatValue],
-                                                     [[frameStep2Placeholder objectForKey:@"height"] floatValue]);
-        
-        //For Flag
-        NSDictionary *frameStep2Placeholder_flag = [frames_flag objectForKey:@"frameStep2Placeholder"];
-        gamePiece.frameStep2Placeholder_flag = CGRectMake([[frameStep2Placeholder_flag objectForKey:@"x"] floatValue],
-                                                          [[frameStep2Placeholder_flag objectForKey:@"y"] floatValue],
-                                                          [[frameStep2Placeholder_flag objectForKey:@"width"] floatValue],
-                                                          [[frameStep2Placeholder_flag objectForKey:@"height"] floatValue]);
-        //
-        
-        
-        NSDictionary *frameStep2GamePiece = [frames objectForKey:@"frameStep2GamePiece"];
-        gamePiece.frameStep2GamePiece = CGRectMake([[frameStep2GamePiece objectForKey:@"x"] floatValue],
-                                                   [[frameStep2GamePiece objectForKey:@"y"] floatValue],
-                                                   [[frameStep2GamePiece objectForKey:@"width"] floatValue],
-                                                   [[frameStep2GamePiece objectForKey:@"height"] floatValue]);
-        
-        //For Flag
-        NSDictionary *frameStep2GamePiece_flag = [frames_flag objectForKey:@"frameStep2GamePiece"];
-        gamePiece.frameStep2GamePiece_flag = CGRectMake([[frameStep2GamePiece_flag objectForKey:@"x"] floatValue],
-                                                        [[frameStep2GamePiece_flag objectForKey:@"y"] floatValue],
-                                                        [[frameStep2GamePiece_flag objectForKey:@"width"] floatValue],
-                                                        [[frameStep2GamePiece_flag objectForKey:@"height"] floatValue]);
-        //
-        
-        
-        
-        NSDictionary *frameStep3 = [frames objectForKey:@"frameStep3"];
-        gamePiece.frameStep3 = CGRectMake([[frameStep3 objectForKey:@"x"] floatValue],
-                                          [[frameStep3 objectForKey:@"y"] floatValue],
-                                          [[frameStep3 objectForKey:@"width"] floatValue],
-                                          [[frameStep3 objectForKey:@"height"] floatValue]);
-        
-        //For Flag
-        NSDictionary *frameStep3_flag = [frames_flag objectForKey:@"frameStep3"];
-        gamePiece.frameStep3_flag = CGRectMake([[frameStep3_flag objectForKey:@"x"] floatValue],
-                                               [[frameStep3_flag objectForKey:@"y"] floatValue],
-                                               [[frameStep3_flag objectForKey:@"width"] floatValue],
-                                               [[frameStep3_flag objectForKey:@"height"] floatValue]);
-        //
-        
-        [_gamePieceArray addObject:gamePiece];
+        for (NSDictionary *countryDictionary in countries) {
+            UIImage *activeImage = [UIImage imageNamed:[countryDictionary objectForKey:@"active_image_filename"]];
+            UIImage *inactiveImage = [UIImage imageNamed:[countryDictionary objectForKey:@"inactive_image_filename"]];
+            UIImage *placeholderImage = [UIImage imageNamed:[countryDictionary objectForKey:@"placeholder_image_filename"]];
+            
+            //For Flag
+            UIImage *activeImage_flag = [UIImage imageNamed:[countryDictionary objectForKey:@"active_image_filename_flag"]];
+            UIImage *placeholderImage_flag = [UIImage imageNamed:[countryDictionary objectForKey:@"placeholder_image_filename_flag"]];
+            UIImage *inactiveImage_flag = [UIImage imageNamed:[countryDictionary objectForKey:@"inactive_image_filename_flag"]];
+            //
+            
+            // Create the game piece object.
+            MGAGamePiece *gamePiece = [[MGAGamePiece alloc] initWithImage:inactiveImage];
+            gamePiece.delegate = self;
+            
+            UIImageView *placeholderImageView = [[UIImageView alloc] initWithImage:placeholderImage];
+            gamePiece.placeholder = placeholderImageView;
+            
+            gamePiece.image_active = activeImage;
+            gamePiece.image_inactive = inactiveImage;
+            gamePiece.image_placeholder = placeholderImage;
+            
+            //For Flag
+            gamePiece.image_active_flag = activeImage_flag;
+            gamePiece.image_inactive_flag = inactiveImage_flag;
+            gamePiece.image_placeholder_flag = placeholderImage_flag;
+            //
+            
+            gamePiece.name = [countryDictionary objectForKey:@"name"];
+            gamePiece.scaleStep0 = [[countryDictionary objectForKey:@"scaleStep0"] floatValue];
+            gamePiece.maxDistanceFromCenterStep2 = [[countryDictionary objectForKey:@"maxDistanceFromCenterStep2"] floatValue];
+            
+            // Setup the game piece label. We will position it on the screen later.
+            UILabel *gamePieceLabel = [[UILabel alloc] init];
+            [gamePieceLabel setTextAlignment:NSTextAlignmentCenter];
+            [gamePieceLabel setTextColor:[UIColor blackColor]];
+            [gamePieceLabel setFont:[UIFont systemFontOfSize:24.0f]];
+            [gamePieceLabel setText:gamePiece.name];
+            [gamePieceLabel sizeToFit];
+            gamePiece.lbl_name = gamePieceLabel;
+            
+            // Get the various frames for this game piece
+            NSDictionary *frames = [countryDictionary objectForKey:@"frames_allGroups"];
+            
+            //For Flag
+            NSDictionary *frames_flag = [countryDictionary objectForKey:@"frames_allGroups_flag"];
+            //
+            
+            NSDictionary *frameStep1 = [frames objectForKey:@"frameStep1"];
+            gamePiece.frameStep1 = CGRectMake([[frameStep1 objectForKey:@"x"] floatValue],
+                                              [[frameStep1 objectForKey:@"y"] floatValue],
+                                              [[frameStep1 objectForKey:@"width"] floatValue],
+                                              [[frameStep1 objectForKey:@"height"] floatValue]);
+            
+            //For Flag
+            NSDictionary *frameStep1_flag = [frames_flag objectForKey:@"frameStep1"];
+            gamePiece.frameStep1_flag = CGRectMake([[frameStep1_flag objectForKey:@"x"] floatValue],
+                                                   [[frameStep1_flag objectForKey:@"y"] floatValue],
+                                                   [[frameStep1_flag objectForKey:@"width"] floatValue],
+                                                   [[frameStep1_flag objectForKey:@"height"] floatValue]);
+            //
+            
+            
+            NSDictionary *frameStep2Placeholder = [frames objectForKey:@"frameStep2Placeholder"];
+            gamePiece.frameStep2Placeholder = CGRectMake([[frameStep2Placeholder objectForKey:@"x"] floatValue],
+                                                         [[frameStep2Placeholder objectForKey:@"y"] floatValue],
+                                                         [[frameStep2Placeholder objectForKey:@"width"] floatValue],
+                                                         [[frameStep2Placeholder objectForKey:@"height"] floatValue]);
+            
+            //For Flag
+            NSDictionary *frameStep2Placeholder_flag = [frames_flag objectForKey:@"frameStep2Placeholder"];
+            gamePiece.frameStep2Placeholder_flag = CGRectMake([[frameStep2Placeholder_flag objectForKey:@"x"] floatValue],
+                                                              [[frameStep2Placeholder_flag objectForKey:@"y"] floatValue],
+                                                              [[frameStep2Placeholder_flag objectForKey:@"width"] floatValue],
+                                                              [[frameStep2Placeholder_flag objectForKey:@"height"] floatValue]);
+            //
+            
+            NSDictionary *frameStep2GamePiece = [frames objectForKey:@"frameStep2GamePiece"];
+            gamePiece.frameStep2GamePiece = CGRectMake([[frameStep2GamePiece objectForKey:@"x"] floatValue],
+                                                       [[frameStep2GamePiece objectForKey:@"y"] floatValue],
+                                                       [[frameStep2GamePiece objectForKey:@"width"] floatValue],
+                                                       [[frameStep2GamePiece objectForKey:@"height"] floatValue]);
+            
+            //For Flag
+            NSDictionary *frameStep2GamePiece_flag = [frames_flag objectForKey:@"frameStep2GamePiece"];
+            gamePiece.frameStep2GamePiece_flag = CGRectMake([[frameStep2GamePiece_flag objectForKey:@"x"] floatValue],
+                                                            [[frameStep2GamePiece_flag objectForKey:@"y"] floatValue],
+                                                            [[frameStep2GamePiece_flag objectForKey:@"width"] floatValue],
+                                                            [[frameStep2GamePiece_flag objectForKey:@"height"] floatValue]);
+            //
+            
+            [_gamePieceArray addObject:gamePiece];
+        }
+
     }
+    [self setupStep1];
     
-    [self setupStep0];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -218,7 +157,20 @@
     } completion:^(BOOL finished){
     }];
     
-    [self performSelector:@selector(startStep0) withObject:nil afterDelay:2.0];
+    // Fade out the current view to prepare for step 1.
+    [UIView animateWithDuration:1.0
+                          delay:2.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         _imgView_Stage_Map.alpha = 0.0f;
+                         
+                         for (MGAGamePiece *gamePiece in _gamePieceArray) {
+                             gamePiece.alpha = 0.0f;
+                         }
+                     }
+                     completion:^(BOOL finished){
+                         [self startStep1];
+                     }];
 }
 
 #pragma mark - Instruction Label Instance Methods
@@ -269,22 +221,23 @@
 }
 
 
-#pragma mark - Step 0 (Intro) Instance Methods
-- (void)setupStep0 {
+#pragma mark - Step 1 Instance Methods
+- (void)setupStep1 {
     _currentStep = kSTEP0;
     _currentGamePieceIndex = 0;
     
     //Setup mapframe for step 0
-    _imgView_Stage_Map.frame = obj_mapFrame.MapframeStep0;
+    _imgView_Stage_Map.frame = [GlobalMethods ReturnFrameForAllGroup:_currentStage+1];
+    
     
     // Apply the frame for step 1 for each game piece
     for (MGAGamePiece *gamePiece in _gamePieceArray) {
         
-        gamePiece.placeholder.frame = gamePiece.frameStep0;
+        gamePiece.placeholder.frame = gamePiece.frameStep2Placeholder;
         if (_currentGameMode == kModeCountry)
         {
             gamePiece.image = gamePiece.image_inactive;
-            gamePiece.frame = gamePiece.frameStep0;
+            gamePiece.frame = gamePiece.frameStep2Placeholder;
             gamePiece.placeholder.alpha = 0.0;
         }
         else
@@ -300,183 +253,11 @@
     }
     
 }
-- (void)introduceGamePiece:(MGAGamePiece *)gamePiece
-                 withScale:(float)scale
-                  withText:(NSString *)text
-                completion:(void (^)(void))completion
-{
-    [self.view bringSubviewToFront:gamePiece];
-    
-    CGPoint originalCenterGamePiece = gamePiece.center;
-    
-    NSString *strText = [NSString stringWithFormat:@"This is %@", gamePiece.name];
-    if (_currentGameMode == kModeFlag)
-        strText = [NSString stringWithFormat:@"This is %@'s flag", gamePiece.name];
-    
-    [_lbl_Instruction setText:strText];
-    
-    float labelHeight = _lbl_Instruction.frame.size.height;
-    CGRect newLabelFrame = CGRectMake(0.0, self.view.bounds.size.height - labelHeight, self.view.bounds.size.width, labelHeight);
-    
-    [UIView animateWithDuration:0.7
-                          delay:0.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         
-                         if (_currentGameMode == kModeCountry)
-                         {
-                             _imgView_Stage_Map.alpha = 0.0f;
-                             
-                             for (MGAGamePiece *otherGamePiece in _gamePieceArray) {
-                                 if (otherGamePiece != gamePiece) {
-                                     otherGamePiece.alpha = 0.0f;
-                                     otherGamePiece.placeholder.alpha = 0.0f;
-                                 }
-                             }
-                             
-                             gamePiece.center = self.view.center;
-                             gamePiece.transform = CGAffineTransformScale(gamePiece.transform, scale, scale);
-                         }
-                         else
-                         {
-                             gamePiece.center = gamePiece.placeholder.center;
-                         }
-                         
-                         _lbl_Instruction.frame = newLabelFrame;
-                     }
-                     completion:^(BOOL finished){
-                         // Animate the transition of the label text changing.
-                        /* CATransition *animation = [CATransition animation];
-                         animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-                         animation.type = kCATransitionFade;
-                         animation.duration = 1.5;
-                         [_lbl_Instruction.layer addAnimation:animation forKey:@"kCATransitionFade"];
-                         
-                         NSString *strText = [NSString stringWithFormat:@"%@", gamePiece.name];
-                         if (_currentGameMode == kModeFlag)
-                             strText = [NSString stringWithFormat:@"%@'s flag", gamePiece.name];
-                         
-                         [_lbl_Instruction setText:strText];*/
-                         
-                         CGRect newLabelFrame = CGRectMake(0.0, self.view.bounds.size.height, self.view.bounds.size.width, labelHeight);
-                         
-                         [UIView animateWithDuration:0.7
-                                               delay:5.0
-                                             options:UIViewAnimationOptionCurveEaseInOut
-                                          animations:^{
-                                              
-                                              if (_currentGameMode == kModeCountry)
-                                              {
-                                                  _imgView_Stage_Map.alpha = 1.0f;
-                                                  
-                                                  for (MGAGamePiece *otherGamePiece in _gamePieceArray) {
-                                                      if (otherGamePiece != gamePiece) {
-                                                          otherGamePiece.alpha = 1.0f;
-                                                      }
-                                                  }
-                                                  
-                                                  gamePiece.center = originalCenterGamePiece;
-                                                  gamePiece.transform = CGAffineTransformIdentity;
-                                              }
-                                              else
-                                              {
-                                                  gamePiece.frame = gamePiece.frameStep0_flag;
-                                              }
-                                              
-                                              _lbl_Instruction.frame = newLabelFrame;
-                                          }
-                                          completion:^(BOOL finished){
-                                              
-                                              if (_currentGameMode == kModeFlag)
-                                                  gamePiece.placeholder.image = gamePiece.image_inactive;
-                                              
-                                              [_gamePiecesCompletedInCurrentStep addObject:gamePiece];
-                                              
-                                              if (completion)
-                                                  completion();
-                                          }];
-                     }];
-}
-
-- (void)startStep0 {
-    // For every game piece we create a completion block that will instruct
-    // the viewController to introduce the next game piece.
-    // The last game piece has no completion handler.
-    
-    int gamePieceCount = (int)[_gamePieceArray count];
-    
-    NSMutableArray *completionBlocks = [[NSMutableArray alloc] initWithCapacity:gamePieceCount];
-    
-    void (^lastBlock)(void) = ^(void) {
-        void (^completion)(void) = ^(void) {
-            [self.view setUserInteractionEnabled:NO];
-            [self PlaneAnimationPathAfterActivityCompletion];
-            [self performSelector:@selector(endStep0) withObject:nil afterDelay:StepCompleteAnimationTime-1.0];
-        };
-        [self hideInstructionWithTextWithCompletion:completion];
-    };
-    [completionBlocks addObject:lastBlock];
-    
-    int blockIndex = 0;
-    for (int i = gamePieceCount - 1; i > 0; i--) {
-        MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:i];
-        void (^completionBlock)(void) = ^(void) {
-            void (^completion)(void) = ^(void) {
-                _currentGamePieceIndex++;
-                
-                NSString *strText = [NSString stringWithFormat:@"This is %@", gamePiece.name];
-                if (_currentGameMode == kModeFlag)
-                    strText = [NSString stringWithFormat:@"This is %@'s flag", gamePiece.name];
-                
-                [self introduceGamePiece:gamePiece
-                               withScale:gamePiece.scaleStep0
-                                withText:strText
-                              completion:[completionBlocks objectAtIndex:blockIndex]];
-            };
-            [self hideInstructionWithTextWithCompletion:completion];
-        };
-        
-        [completionBlocks addObject:completionBlock];
-        blockIndex++;
-    }
-    NSArray* reversedCompletionBlocks = [[completionBlocks reverseObjectEnumerator] allObjects];
-    
-    // We start with the first game piece in the stage. We hide the map at the same time.
-    _currentGamePieceIndex = 0;
-    MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:_currentGamePieceIndex];
-    
-    NSString *strText = [NSString stringWithFormat:@"This is %@", gamePiece.name];
-    if (_currentGameMode == kModeFlag)
-        strText = [NSString stringWithFormat:@"This is %@'s flag", gamePiece.name];
-    
-    [self introduceGamePiece:gamePiece
-                   withScale:gamePiece.scaleStep0
-                    withText:strText
-                  completion:[reversedCompletionBlocks objectAtIndex:0]];
-}
-
-- (void)endStep0 {
-    
-    [self.view setUserInteractionEnabled:YES];
-    // Fade out the current view to prepare for step 1.
-    [UIView animateWithDuration:0.35
-                          delay:1.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _imgView_Stage_Map.alpha = 0.0f;
-                         
-                         for (MGAGamePiece *gamePiece in _gamePieceArray) {
-                             gamePiece.alpha = 0.0f;
-                             gamePiece.placeholder.alpha = 0.0f;
-                         }
-                     }
-                     completion:^(BOOL finished){
-                         [self startStep1];
-                     }];
-}
-
 #pragma mark - Step 1 (Taping - No Map) Instance Methods
 - (void)startStep1 {
+    
+    _imgView_Stage_Map.alpha = 0.0f;
+    
     _currentStep = kSTEP1;
     _currentGamePieceIndex = 0;
     
@@ -492,6 +273,9 @@
     
     int gamePieceCount = (int)[_gamePieceArray count];
     
+    int maxWidth = 0;
+    int maxHeight = 0;
+    
     // TODO: Layout currently only supports 1 row of pieces. Need a more scalable solution for when 3+ pieces are shown.
     for (int i = 0; i < gamePieceCount; i++) {
         MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:i];
@@ -499,15 +283,56 @@
         {
             gamePiece.image = gamePiece.image_active;
             gamePiece.frame = gamePiece.frameStep1;
+            if (maxWidth < gamePiece.frame.size.width) {
+                maxWidth = gamePiece.frame.size.width;
+            }
+            if (maxHeight < gamePiece.frame.size.height) {
+                maxHeight = gamePiece.frame.size.height;
+            }
         }
         else
         {
             gamePiece.image = gamePiece.image_active_flag;
             gamePiece.frame = gamePiece.frameStep1_flag;
+            gamePiece.placeholder.alpha = 0.0f;
+            if (maxWidth < gamePiece.frameStep1.size.width) {
+                maxWidth = gamePiece.frameStep1.size.width;
+            }
+            if (maxHeight < gamePiece.frameStep1.size.height) {
+                maxHeight = gamePiece.frameStep1.size.height;
+            }
         }
-        gamePiece.center = CGPointMake((i+i+1)*(self.view.bounds.size.width / (2*gamePieceCount)), -(self.view.bounds.size.height/2));
+        
         gamePiece.alpha = 1.0f;
         [gamePiece setUserInteractionEnabled:NO];
+    }
+    
+    //Calculate Row : Column
+    int row = (self.view.bounds.size.height-_lbl_Instruction.frame.size.height)/maxHeight;
+    int column = gamePieceCount / row;
+    if (gamePieceCount % row != 0) {
+        column = column + 1;
+    }
+    
+    int xAxis = 0;
+    int yAxis = 0;
+    int tempWidth = self.view.bounds.size.width/column;
+    int tempHeight = (self.view.bounds.size.height-_lbl_Instruction.frame.size.height)/row;
+    
+    //Set the center of all game pieace
+    for (int i = 0; i < gamePieceCount; i++) {
+        
+        CGRect Tempframe = CGRectMake(xAxis*tempWidth, yAxis*tempHeight, tempWidth, tempHeight);
+        MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:i];
+        gamePiece.center = CGPointMake(CGRectGetMidX(Tempframe), -CGRectGetMidY(Tempframe));
+        
+        if ((xAxis+1) % column == 0) {
+            xAxis = 0;
+            yAxis++;
+        }
+        else{
+            xAxis++;
+        }
     }
     
     // Get all the centers of the game pieces.
@@ -531,7 +356,8 @@
     // Now we let the game pieces drop down into the screen form the top.
     for (int i = 0; i < gamePieceCount; i++) {
         MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:i];
-        CGPoint center = CGPointMake(gamePiece.center.x, (self.view.bounds.size.height/2));
+        
+        CGPoint center = CGPointMake(gamePiece.center.x, gamePiece.center.y*-1);
         [gamePiece makeGamePieceTappableWithCenter:center];
         
         [gamePiece performSelector:@selector(setUserInteractionEnabled:) withObject:[NSNumber numberWithBool:YES] afterDelay:2.0];
@@ -616,7 +442,7 @@
     _currentGamePieceIndex = 0;
     
     //Setup mapframe for step 2
-    _imgView_Stage_Map.frame = obj_mapFrame.MapframeStep2;
+    _imgView_Stage_Map.alpha = 1.0f;
     
     // First empty the array that tracks which game pieces have been completed for this step.
     [_gamePiecesCompletedInCurrentStep removeAllObjects];
@@ -644,6 +470,8 @@
                                  gamePiece.placeholder.image = gamePiece.image_placeholder;
                              }
                              
+                             gamePiece.alpha = 0.0f;
+                             
                              gamePiece.placeholder.frame = gamePiece.frameStep2Placeholder;
                              [self.view bringSubviewToFront:gamePiece];
                              
@@ -666,9 +494,10 @@
                                                delay:0.0
                                              options:UIViewAnimationOptionCurveEaseInOut
                                           animations:^{
-                                              for (MGAGamePiece *gamePiece in _gamePieceArray) {
-                                                  gamePiece.lbl_name.alpha = 1.0;
-                                              }
+                                              
+                                              MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:0];
+                                              gamePiece.lbl_name.alpha = 1.0;
+                                              gamePiece.alpha = 1.0f;
                                           }
                                           completion:^(BOOL finished){
                                               void (^completion)(void) = ^(void) {
@@ -683,80 +512,12 @@
                                           }];
                      }];
 }
--(void)endStep2
-{
-    [self.view setUserInteractionEnabled:YES];
-    // Fade out the current view to prepare for step 1.
-    [UIView animateWithDuration:0.35
-                          delay:1.0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         _imgView_Stage_Map.alpha = 0.0f;
-                         
-                         for (MGAGamePiece *gamePiece in _gamePieceArray) {
-                             gamePiece.alpha = 0.0f;
-                         }
-                     }
-                     completion:^(BOOL finished){
-                         [self startStep3];
-                     }];
-}
 
 
 - (void)setupGamePiecesForDragging {
     for (MGAGamePiece *gamePiece in _gamePieceArray) {
         [gamePiece makeGamePieceDraggable];
     }
-}
-
-#pragma mark - Step 3 (Taping - On Map) Instance Methods
-- (void)startStep3 {
-    
-    [self.view setUserInteractionEnabled:YES];
-    
-    _currentStep = kSTEP3;
-    _currentGamePieceIndex = 0;
-    
-    //Setup mapframe for step 3
-    _imgView_Stage_Map.frame = obj_mapFrame.MapframeStep3;
-    _imgView_Stage_Map.alpha = 1.0f;
-    
-    Step_Timer = [NSTimer scheduledTimerWithTimeInterval: 10.0 target: self selector:@selector(ChangeInActiveForHint:) userInfo: nil repeats:NO];
-    
-    
-    // First empty the array that tracks which game pieces have been completed for this step.
-    [_gamePiecesCompletedInCurrentStep removeAllObjects];
-    
-    // Game pieces should now be in their proper postions on the map.
-    // Make them tappable for this step.
-    
-    for (MGAGamePiece *gamePiece in _gamePieceArray) {
-        
-        if (_currentGameMode == kModeCountry)
-        {
-            gamePiece.image = gamePiece.image_active;
-            gamePiece.frame = gamePiece.frameStep3;
-        }
-        else
-        {
-            gamePiece.image = gamePiece.image_active_flag;
-            gamePiece.frame = gamePiece.frameStep3_flag;
-            gamePiece.placeholder.image = gamePiece.image_active;
-            gamePiece.placeholder.frame = gamePiece.frameStep3;
-            
-        }
-        gamePiece.alpha = 1.0f;
-        
-        [gamePiece makeGamePieceTappableWithCenter:gamePiece.center];
-        [gamePiece setUserInteractionEnabled:YES];
-    }
-    
-    // Start with the first game piece in this stage.
-    MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:_currentGamePieceIndex];
-    void (^completion)(void) = ^(void) {
-        [_lbl_Instruction setText:gamePiece.name];
-    };
-    [self showInstructionWithText1:[NSString stringWithFormat:@"Show me %@", gamePiece.name] withText2:[NSString stringWithFormat:@"%@", gamePiece.name] completion:completion];
 }
 
 #pragma mark - MGAGamePieceDelegate Game Piece Methods
@@ -849,9 +610,27 @@
         // Check to see if all game pieces have been correctly placed on the map.
         if ([_gamePiecesCompletedInCurrentStep count] == [_gamePieceArray count]) {
             
+            //Time Invalidate - Stage Complete
+            [Step_Timer invalidate];
+            
             [self.view setUserInteractionEnabled:NO];
-            [self PlaneAnimationPathAfterActivityCompletion];
-            [self performSelector:@selector(endStep2) withObject:nil afterDelay:StepCompleteAnimationTime-1.0];
+            // Stage complete.
+            void (^completion)(void) = ^(void) {
+                void (^completion)(void) = ^(void) {
+                    
+                    void (^completion)(void) = ^(void) {
+                        [self PlaneAnimationPathAfterActivityCompletion];
+                        [self performSelector:@selector(PopViewToNextStageorGroup) withObject:nil afterDelay:StepCompleteAnimationTime];
+                    };
+                    [self showInstructionWithText1:LSSTRING(@"On to the next stage.") withText2:nil completion:completion];
+                };
+                [self hideInstructionWithTextWithCompletion:completion];
+            };
+            [self showInstructionWithText1:LSSTRING(@"Stage completed! Well done!") withText2:nil completion:completion];
+        }else{
+            MGAGamePiece *gamePiece = [_gamePieceArray objectAtIndex:[_gamePiecesCompletedInCurrentStep count]];
+            gamePiece.lbl_name.alpha = 1.0;
+            gamePiece.alpha = 1.0f;
         }
     }
 }
@@ -924,30 +703,10 @@
             }
             
         }
-        else if (_currentStep == kSTEP3) {
-            
-            //Time Invalidate - Stage Complete
-            [Step_Timer invalidate];
-            
-            [self.view setUserInteractionEnabled:NO];
-            // Stage complete.
-            void (^completion)(void) = ^(void) {
-                void (^completion)(void) = ^(void) {
-                    
-                    void (^completion)(void) = ^(void) {
-                        [self PlaneAnimationPathAfterActivityCompletion];
-                        [self performSelector:@selector(PopViewToNextStageorGroup) withObject:nil afterDelay:StepCompleteAnimationTime];
-                    };
-                    [self showInstructionWithText1:LSSTRING(@"On to the next stage.") withText2:nil completion:completion];
-                };
-                [self hideInstructionWithTextWithCompletion:completion];
-            };
-            [self showInstructionWithText1:LSSTRING(@"Stage completed! Well done!") withText2:nil completion:completion];
-        }
     }
     else {
         
-        if (_currentStep == kSTEP1 || _currentStep == kSTEP3)
+        if (_currentStep == kSTEP1)
         {
             //Set Timer of 10 Seconds for New GamePiece
             [Step_Timer invalidate];
@@ -976,13 +735,13 @@
 -(void)PopViewToNextStageorGroup
 {
     [self.navigationController popViewControllerAnimated:NO];
-    [_Stagedelegate StageComplete:Completed];
+    [_StageAllGroupDelegate StageCompleteForAllGroup];
 }
 
 #pragma mark - CAAnimation Delegate
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
-    if (_currentStep == kSTEP1 || _currentStep == kSTEP3) {
+    if (_currentStep == kSTEP1) {
         
         if (flag)
         {
@@ -1115,5 +874,6 @@
     
     return transparent;
 }
+
 
 @end

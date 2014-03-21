@@ -29,13 +29,13 @@
         else
         {
             [AppDel dismissGlobalHUD];
-            DisplayAlertWithTitle(@"Error Message", [products objectAtIndex:0]);
+            DisplayAlertWithTitle(LSSTRING(@"Error Message"), [products objectAtIndex:0]);
         }
     }];
 }
 +(void)RestoreInApp
 {
-    [AppDel showGlobalProgressHUDWithTitle:@"Restoring product...."];
+    [AppDel showGlobalProgressHUDWithTitle:LSSTRING(@"Restoring product....")];
     [SubclassInAppHelper sharedInstance];
     [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
@@ -43,12 +43,12 @@
 {
     if (ArryProducts.count == 0)
     {
-        [AppDel showGlobalProgressHUDWithTitle:@"Loading products..."];
+        [AppDel showGlobalProgressHUDWithTitle:LSSTRING(@"Loading products...")];
         [self getProducts:strProductId];
     }
     else
     {
-        [AppDel showGlobalProgressHUDWithTitle:@"Buying products..."];
+        [AppDel showGlobalProgressHUDWithTitle:LSSTRING(@"Buying products...")];
         SKProduct *product;
         for (product in ArryProducts)
         {
@@ -121,26 +121,89 @@
 {
     switch (StageValue) {
         case 0:
-            return @"East Asia";
+            return LSSTRING(@"East Asia");
             break;
         case 1:
-            return @"Southeast Asia";
+            return LSSTRING(@"Southeast Asia");
             break;
         case 2:
-            return @"South Asia";
+            return LSSTRING(@"South Asia");
             break;
         case 3:
-            return @"Central Asia";
+            return LSSTRING(@"Central Asia");
             break;
         case 4:
-            return @"Middle East";
+            return LSSTRING(@"Middle East");
             break;
         case 5:
-            return @"Eurasia";
+            return LSSTRING(@"Eurasia");
             break;
         default:
             break;
     }
     return @"";
 }
++(CGRect)ReturnFrameForAllGroup:(int)StageValue{
+    CGRect MapFrame;
+    
+    if (StageValue == 1) {
+        MapFrame = CGRectMake(18.05, 344.42, 581.55, 392.58);
+        //18.05	344.42	581.55	392.58
+    }
+    else if (StageValue == 2) {
+        MapFrame = CGRectMake(0.00, 0.00, 883.50, 426.50);
+        //0.00	0.00	883.50	426.50
+    }
+    else if (StageValue == 3) {
+        MapFrame = CGRectMake(0.00, 0.00, 1024.00, 768.00);
+        //0.00	0.00	1024.00	768.00
+    }
+    else if (StageValue == 4) {
+        MapFrame = CGRectMake(0.00, 0.00, 1024.00, 768.00);
+        //0.00	0.00	1024.00	768.00
+    }
+    else if (StageValue == 5) {
+        MapFrame = CGRectMake(434.00, 0.00, 590.00, 504.50);
+        //434.00	0.00	590.00	504.50
+    }
+    return MapFrame;
+
+}
++(void)replaceTextWithLocalizedTextInSubviewsForView:(UIView*)view
+{
+    for (UIView* v in view.subviews)
+    {
+        if (v.subviews.count > 0)
+        {
+            [self replaceTextWithLocalizedTextInSubviewsForView:v];
+        }
+        
+        if ([v isKindOfClass:[UILabel class]])
+        {
+            UILabel* l = (UILabel*)v;
+            l.text = NSLocalizedString(l.text, nil);
+        }
+        
+        if ([v isKindOfClass:[UIButton class]])
+        {
+            UIButton* b = (UIButton*)v;
+            [b setTitle:NSLocalizedString(b.titleLabel.text, nil) forState:UIControlStateNormal];
+        }
+        
+        if ([v isKindOfClass:[UISegmentedControl class]]) {
+            UISegmentedControl* s = (UISegmentedControl*)v;
+            for (int i = 0; i < s.numberOfSegments; i++) {
+                [s setTitle:NSLocalizedString([s titleForSegmentAtIndex:i],nil) forSegmentAtIndex:i];
+            }
+        }
+        
+        if ([v isKindOfClass:[UITextField class]])
+        {
+            UITextField* tf = (UITextField*)v;
+            tf.placeholder = NSLocalizedString(tf.placeholder, nil);
+        }
+        
+    }
+}
+
 @end

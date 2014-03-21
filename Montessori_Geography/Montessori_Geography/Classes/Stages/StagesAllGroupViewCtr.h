@@ -1,8 +1,8 @@
 //
-//  StagesViewCtr.h
+//  StagesAllGroupViewCtr.h
 //  Montessori_Geography
 //
-//  Created by Chirag on 08/01/14.
+//  Created by MAC236 on 18/03/14.
 //  Copyright (c) 2014 MAC 227. All rights reserved.
 //
 
@@ -13,18 +13,17 @@
 #import "MGAGamePiece.h"
 #import "MapFrameModal.h"
 
-@protocol StageCompleteDelegate <NSObject>
+@protocol StageCompleteForAllGroupDelegate <NSObject>
 
 @optional
--(void)StageComplete:(BOOL)previouslycompleted;
+-(void)StageCompleteForAllGroup;
 @end
 
-@interface StagesViewCtr : UIViewController <MGAGamePieceDelegate>
+@interface StagesAllGroupViewCtr : UIViewController <MGAGamePieceDelegate>
 {
     NSMutableArray *_gamePieceArray;
     
     int _currentStage;
-    int _currentGroup;
     int _currentStep;
     int _currentGamePieceIndex;
     int _currentGameMode;
@@ -42,18 +41,18 @@
     //Timer For No Action in Step 1 & 3
     NSTimer *Step_Timer;
     
-    //Stage or Group Complete Delegate
-    id <StageCompleteDelegate> _Stagedelegate;
     
     //Map Frame Modal
     MapFrameModal *obj_mapFrame;
     
     IBOutlet UILabel *_lblStageTitle;
+    
+    //Stage Complete Delegate
+    id <StageCompleteForAllGroupDelegate> _StageAllGroupDelegate;
 }
-@property (nonatomic,strong) id <StageCompleteDelegate> _Stagedelegate;
+@property (nonatomic,strong) id <StageCompleteForAllGroupDelegate> _StageAllGroupDelegate;
 @property (nonatomic,readwrite) int _currentGameMode;
 @property (nonatomic,readwrite) int _currentStage;
-@property (nonatomic,readwrite) int _currentGroup;
-@property (nonatomic,assign)BOOL Completed;
+
 
 @end

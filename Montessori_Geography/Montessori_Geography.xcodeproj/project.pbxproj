@@ -523,6 +523,16 @@
 		FD0E6F6D18D2FCFE00B838FE /* flag_Vietnam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0E6F4118D2FCFE00B838FE /* flag_Vietnam@2x.png */; };
 		FD0E6F7618D2FD6E00B838FE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FD0E6F7018D2FD6E00B838FE /* README.md */; };
 		FD0E6F7718D2FD6E00B838FE /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = FD0E6F7118D2FD6E00B838FE /* release_notes.md */; };
+		FD0ECB2A18DAE99E0036A963 /* plane_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2018DAE99E0036A963 /* plane_1.png */; };
+		FD0ECB2B18DAE99E0036A963 /* plane_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2118DAE99E0036A963 /* plane_1@2x.png */; };
+		FD0ECB2C18DAE99E0036A963 /* plane_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2218DAE99E0036A963 /* plane_2.png */; };
+		FD0ECB2D18DAE99E0036A963 /* plane_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2318DAE99E0036A963 /* plane_2@2x.png */; };
+		FD0ECB2E18DAE99E0036A963 /* plane_3.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2418DAE99E0036A963 /* plane_3.png */; };
+		FD0ECB2F18DAE99E0036A963 /* plane_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2518DAE99E0036A963 /* plane_3@2x.png */; };
+		FD0ECB3018DAE99E0036A963 /* plane_4.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2618DAE99E0036A963 /* plane_4.png */; };
+		FD0ECB3118DAE99E0036A963 /* plane_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2718DAE99E0036A963 /* plane_4@2x.png */; };
+		FD0ECB3218DAE99E0036A963 /* plane_5.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2818DAE99E0036A963 /* plane_5.png */; };
+		FD0ECB3318DAE99E0036A963 /* plane_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0ECB2918DAE99E0036A963 /* plane_5@2x.png */; };
 		FD0EF838187E7D21008BE10E /* active_Japan_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF832187E7D21008BE10E /* active_Japan_flag@2x.png */; };
 		FD0EF839187E7D21008BE10E /* active_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF833187E7D21008BE10E /* active_NorthKorea_flag@2x.png */; };
 		FD0EF83A187E7D21008BE10E /* active_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF834187E7D21008BE10E /* active_SouthKorea_flag@2x.png */; };
@@ -530,6 +540,7 @@
 		FD0EF83C187E7D21008BE10E /* placeholder_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF836187E7D21008BE10E /* placeholder_NorthKorea_flag@2x.png */; };
 		FD0EF83D187E7D21008BE10E /* placeholder_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF837187E7D21008BE10E /* placeholder_SouthKorea_flag@2x.png */; };
 		FD0EF83F187E7D39008BE10E /* asia_map_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */; };
+		FD1281F518DC5269008EC651 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD1281F418DC5269008EC651 /* Localizable.strings */; };
 		FD128E771883E21F00D760E9 /* InAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E741883E21F00D760E9 /* InAppHelper.m */; };
 		FD128E781883E21F00D760E9 /* SubclassInAppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E761883E21F00D760E9 /* SubclassInAppHelper.m */; };
 		FD128E7C1883E2B500D760E9 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FD128E7B1883E2B500D760E9 /* MBProgressHUD.m */; };
@@ -619,6 +630,8 @@
 		FD37E9F7188FB585009C51C2 /* inactive_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */; };
 		FD37E9F8188FB585009C51C2 /* placeholder_Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */; };
 		FD37E9F9188FB585009C51C2 /* placeholder_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */; };
+		FD4FC25418D826110095C079 /* StagesAllGroupViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FC25218D826110095C079 /* StagesAllGroupViewCtr.m */; };
+		FD4FC25518D826110095C079 /* StagesAllGroupViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4FC25318D826110095C079 /* StagesAllGroupViewCtr.xib */; };
 		FD4FF1C9187FCB8000D6823A /* NSUserDefaults+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */; };
 		FD4FF1CC187FCE3B00D6823A /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FF1CB187FCE3B00D6823A /* NSString+Validation.m */; };
 		FD4FF1CE187FDD7300D6823A /* MGAMapStages.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD4FF1CD187FDD7300D6823A /* MGAMapStages.plist */; };
@@ -647,7 +660,6 @@
 		FD6CEE8C187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */; };
 		FD71B22C18740158006DD001 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22A18740158006DD001 /* plane.png */; };
 		FD71B22D18740158006DD001 /* plane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22B18740158006DD001 /* plane@2x.png */; };
-		FD7C839D1880119600F7329C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD7C839C1880119600F7329C /* Localization.strings */; };
 		FD9D7000187D348300404C3C /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */; };
 		FD9D7003187D3F1C00404C3C /* MGAGamePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7002187D3F1C00404C3C /* MGAGamePiece.m */; };
 		FD9D7005187D3F3100404C3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9D7004187D3F3100404C3C /* QuartzCore.framework */; };
@@ -1244,6 +1256,16 @@
 		FD0E6F7218D2FD6E00B838FE /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		FD0E6F7318D2FD6E00B838FE /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		FD0E6F7418D2FD6E00B838FE /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		FD0ECB2018DAE99E0036A963 /* plane_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_1.png; sourceTree = "<group>"; };
+		FD0ECB2118DAE99E0036A963 /* plane_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane_1@2x.png"; sourceTree = "<group>"; };
+		FD0ECB2218DAE99E0036A963 /* plane_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_2.png; sourceTree = "<group>"; };
+		FD0ECB2318DAE99E0036A963 /* plane_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane_2@2x.png"; sourceTree = "<group>"; };
+		FD0ECB2418DAE99E0036A963 /* plane_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_3.png; sourceTree = "<group>"; };
+		FD0ECB2518DAE99E0036A963 /* plane_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane_3@2x.png"; sourceTree = "<group>"; };
+		FD0ECB2618DAE99E0036A963 /* plane_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_4.png; sourceTree = "<group>"; };
+		FD0ECB2718DAE99E0036A963 /* plane_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane_4@2x.png"; sourceTree = "<group>"; };
+		FD0ECB2818DAE99E0036A963 /* plane_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane_5.png; sourceTree = "<group>"; };
+		FD0ECB2918DAE99E0036A963 /* plane_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane_5@2x.png"; sourceTree = "<group>"; };
 		FD0EF832187E7D21008BE10E /* active_Japan_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Japan_flag@2x.png"; sourceTree = "<group>"; };
 		FD0EF833187E7D21008BE10E /* active_NorthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_NorthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD0EF834187E7D21008BE10E /* active_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
@@ -1251,6 +1273,7 @@
 		FD0EF836187E7D21008BE10E /* placeholder_NorthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_NorthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD0EF837187E7D21008BE10E /* placeholder_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "asia_map_blue@2x.png"; sourceTree = "<group>"; };
+		FD1281F418DC5269008EC651 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FD128E731883E21F00D760E9 /* InAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppHelper.h; sourceTree = "<group>"; };
 		FD128E741883E21F00D760E9 /* InAppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppHelper.m; sourceTree = "<group>"; };
 		FD128E751883E21F00D760E9 /* SubclassInAppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubclassInAppHelper.h; sourceTree = "<group>"; };
@@ -1345,6 +1368,9 @@
 		FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Singapore@2x.png"; sourceTree = "<group>"; };
 		FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Singapore.png; sourceTree = "<group>"; };
 		FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Singapore@2x.png"; sourceTree = "<group>"; };
+		FD4FC25118D826110095C079 /* StagesAllGroupViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StagesAllGroupViewCtr.h; sourceTree = "<group>"; };
+		FD4FC25218D826110095C079 /* StagesAllGroupViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StagesAllGroupViewCtr.m; sourceTree = "<group>"; };
+		FD4FC25318D826110095C079 /* StagesAllGroupViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StagesAllGroupViewCtr.xib; sourceTree = "<group>"; };
 		FD4FF1C7187FCB8000D6823A /* NSUserDefaults+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Helpers.h"; sourceTree = "<group>"; };
 		FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Helpers.m"; sourceTree = "<group>"; };
 		FD4FF1CA187FCE3B00D6823A /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
@@ -1376,7 +1402,6 @@
 		FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD71B22A18740158006DD001 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		FD71B22B18740158006DD001 /* plane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane@2x.png"; sourceTree = "<group>"; };
-		FD7C839C1880119600F7329C /* Localization.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localization.strings; sourceTree = "<group>"; };
 		FD968D96187E5F5D0046AE06 /* MGACurrentMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGACurrentMode.h; sourceTree = "<group>"; };
 		FD9D6FFE187D348300404C3C /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
 		FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
@@ -2197,6 +2222,16 @@
 				FDFDE2F5187425DA00206614 /* logo@2x.png */,
 				FD71B22A18740158006DD001 /* plane.png */,
 				FD71B22B18740158006DD001 /* plane@2x.png */,
+				FD0ECB2018DAE99E0036A963 /* plane_1.png */,
+				FD0ECB2118DAE99E0036A963 /* plane_1@2x.png */,
+				FD0ECB2218DAE99E0036A963 /* plane_2.png */,
+				FD0ECB2318DAE99E0036A963 /* plane_2@2x.png */,
+				FD0ECB2418DAE99E0036A963 /* plane_3.png */,
+				FD0ECB2518DAE99E0036A963 /* plane_3@2x.png */,
+				FD0ECB2618DAE99E0036A963 /* plane_4.png */,
+				FD0ECB2718DAE99E0036A963 /* plane_4@2x.png */,
+				FD0ECB2818DAE99E0036A963 /* plane_5.png */,
+				FD0ECB2918DAE99E0036A963 /* plane_5@2x.png */,
 				FD0EF83E187E7D39008BE10E /* asia_map_blue@2x.png */,
 				FD6BEFB6188D460E005BEED3 /* asia_map@2x.png */,
 				FD6BEFB7188D460E005BEED3 /* world_map@2x.png */,
@@ -2207,7 +2242,7 @@
 		FD7C839B1880117A00F7329C /* LocalizesString */ = {
 			isa = PBXGroup;
 			children = (
-				FD7C839C1880119600F7329C /* Localization.strings */,
+				FD1281F418DC5269008EC651 /* Localizable.strings */,
 			);
 			path = LocalizesString;
 			sourceTree = "<group>";
@@ -2218,6 +2253,9 @@
 				FD1CA73B187D45050064FBBA /* StagesViewCtr.h */,
 				FD1CA73C187D45050064FBBA /* StagesViewCtr.m */,
 				FD1CA73D187D45050064FBBA /* StagesViewCtr.xib */,
+				FD4FC25118D826110095C079 /* StagesAllGroupViewCtr.h */,
+				FD4FC25218D826110095C079 /* StagesAllGroupViewCtr.m */,
+				FD4FC25318D826110095C079 /* StagesAllGroupViewCtr.xib */,
 				FD63A479188E335E005535EA /* TempViewCtr.h */,
 				FD63A47A188E335E005535EA /* TempViewCtr.m */,
 				FD63A47B188E335E005535EA /* TempViewCtr.xib */,
@@ -2558,6 +2596,7 @@
 				FD0E6BE618D2FC7B00B838FE /* stage2_group1_complete.png in Resources */,
 				FD0E6EFB18D2FCD700B838FE /* flag_SouthKorea_gray@2x.png in Resources */,
 				FD0E6DAE18D2FC9500B838FE /* flag_Bhutan_gray.png in Resources */,
+				FD0ECB2E18DAE99E0036A963 /* plane_3.png in Resources */,
 				FD0EF83A187E7D21008BE10E /* active_SouthKorea_flag@2x.png in Resources */,
 				FD0E6EBD18D2FC9500B838FE /* stage5_group1_map@2x.png in Resources */,
 				FD37E9BD188FAFB2009C51C2 /* inactive_Cambodia@2x.png in Resources */,
@@ -2617,6 +2656,7 @@
 				FD0E6E2718D2FC9500B838FE /* active_Iran@2x.png in Resources */,
 				FD0E6E7818D2FC9500B838FE /* flag_UnitedArabEmirates_gray.png in Resources */,
 				FD0E6E5318D2FC9500B838FE /* flag_Jordan@2x.png in Resources */,
+				FD0ECB2F18DAE99E0036A963 /* plane_3@2x.png in Resources */,
 				FD0E6C0518D2FC7B00B838FE /* stage3_group2_complete@2x.png in Resources */,
 				FDC3616518894349001D8E27 /* placeholder_Mongolia.png in Resources */,
 				FD0E6DE418D2FC9500B838FE /* stage3_allGroups_map.png in Resources */,
@@ -2666,6 +2706,7 @@
 				FD0E6E1018D2FC9500B838FE /* inactive_Turkmenistan.png in Resources */,
 				FD37E9B6188FAFB2009C51C2 /* active_Thailand.png in Resources */,
 				FD0E6E3D18D2FC9500B838FE /* active_Turkey@2x.png in Resources */,
+				FD0ECB3318DAE99E0036A963 /* plane_5@2x.png in Resources */,
 				FD0E6C2D18D2FC7B00B838FE /* stage5_group4_active@2x.png in Resources */,
 				FD37E9A5188FAFB2009C51C2 /* active_Brunei@2x.png in Resources */,
 				FD0E6E6018D2FC9500B838FE /* flag_Oman_gray.png in Resources */,
@@ -2736,6 +2777,7 @@
 				FD0E6DF318D2FC9500B838FE /* active_Turkmenistan@2x.png in Resources */,
 				FD0E6BFD18D2FC7B00B838FE /* stage3_group1_active@2x.png in Resources */,
 				FD0E6E5718D2FC9500B838FE /* flag_Kuwait@2x.png in Resources */,
+				FD0ECB2A18DAE99E0036A963 /* plane_1.png in Resources */,
 				FD0E6E8118D2FC9500B838FE /* inactive_Iran@2x.png in Resources */,
 				FD0E6D9A18D2FC9500B838FE /* active_India.png in Resources */,
 				FD0E6ED218D2FC9500B838FE /* flag_Azerbaijan_gray.png in Resources */,
@@ -2758,7 +2800,6 @@
 				FD0E6E4B18D2FC9500B838FE /* flag_Iraq@2x.png in Resources */,
 				FD0E6E1818D2FC9500B838FE /* placeholder_Tajikistan.png in Resources */,
 				FD37E9E2188FAFB2009C51C2 /* placeholder_Thailand.png in Resources */,
-				FD7C839D1880119600F7329C /* Localization.strings in Resources */,
 				FD0E6E5518D2FC9500B838FE /* flag_Jordan_gray@2x.png in Resources */,
 				FD0E6C2918D2FC7B00B838FE /* stage5_group3_complete@2x.png in Resources */,
 				FD0E6E6318D2FC9500B838FE /* flag_Palestine@2x.png in Resources */,
@@ -2799,6 +2840,7 @@
 				FD0E6C0218D2FC7B00B838FE /* stage3_group2_active.png in Resources */,
 				FDC3615718894349001D8E27 /* active_China.png in Resources */,
 				FD0E6DC818D2FC9500B838FE /* inactive_Bhutan.png in Resources */,
+				FD0ECB3018DAE99E0036A963 /* plane_4.png in Resources */,
 				FD0E6E2B18D2FC9500B838FE /* active_Israel@2x.png in Resources */,
 				FD0E6EA618D2FC9500B838FE /* placeholder_Kuwait.png in Resources */,
 				FD0E6F6B18D2FCFE00B838FE /* flag_Vietnam_gray@2x.png in Resources */,
@@ -2830,6 +2872,7 @@
 				FD37E9DE188FAFB2009C51C2 /* placeholder_Philippines.png in Resources */,
 				FD37E9E6188FAFB2009C51C2 /* stage2_group1_map.png in Resources */,
 				FD0E6EDB18D2FC9500B838FE /* inactive_Azerbaijan@2x.png in Resources */,
+				FD1281F518DC5269008EC651 /* Localizable.strings in Resources */,
 				FD0E6DCE18D2FC9500B838FE /* inactive_Nepal.png in Resources */,
 				FD0E6C0118D2FC7B00B838FE /* stage3_group1_placeholder@2x.png in Resources */,
 				FD0E6F5218D2FCFE00B838FE /* flag_Laos_gray.png in Resources */,
@@ -2883,6 +2926,7 @@
 				FD0E6E3718D2FC9500B838FE /* active_Qatar@2x.png in Resources */,
 				FD0E6E7D18D2FC9500B838FE /* flag_Yemen_gray@2x.png in Resources */,
 				FD0E6DF118D2FC9500B838FE /* active_Tajikistan@2x.png in Resources */,
+				FD0ECB3218DAE99E0036A963 /* plane_5.png in Resources */,
 				FD0E6DB218D2FC9500B838FE /* flag_India_gray.png in Resources */,
 				FD0E6ECE18D2FC9500B838FE /* flag_Armenia_gray.png in Resources */,
 				FD37E9DF188FAFB2009C51C2 /* placeholder_Philippines@2x.png in Resources */,
@@ -2906,6 +2950,7 @@
 				FD0E6E8418D2FC9500B838FE /* inactive_Israel.png in Resources */,
 				FD0E6EA218D2FC9500B838FE /* placeholder_Israel.png in Resources */,
 				FD0E6E0D18D2FC9500B838FE /* inactive_Kyrgyzstan@2x.png in Resources */,
+				FD4FC25518D826110095C079 /* StagesAllGroupViewCtr.xib in Resources */,
 				FD0E6C2E18D2FC7B00B838FE /* stage5_group4_complete.png in Resources */,
 				FD0E6DE518D2FC9500B838FE /* stage3_allGroups_map@2x.png in Resources */,
 				FD0E6E7318D2FC9500B838FE /* flag_Turkey@2x.png in Resources */,
@@ -3054,6 +3099,7 @@
 				FD63A48C188E3A8A005535EA /* inactive_Russia_flag@2x.png in Resources */,
 				FDC3615D18894349001D8E27 /* inactive_China.png in Resources */,
 				FD0E6E1B18D2FC9500B838FE /* placeholder_Turkmenistan@2x.png in Resources */,
+				FD0ECB2B18DAE99E0036A963 /* plane_1@2x.png in Resources */,
 				FD0E6DC318D2FC9500B838FE /* flag_SriLanka_gray@2x.png in Resources */,
 				FD128E891883E8C500D760E9 /* flags_blue@2x.png in Resources */,
 				FD0E6F7618D2FD6E00B838FE /* README.md in Resources */,
@@ -3118,8 +3164,10 @@
 				FD71B22D18740158006DD001 /* plane@2x.png in Resources */,
 				FD0E6DFE18D2FC9500B838FE /* flag_Tajikistan.png in Resources */,
 				FD0E6DC218D2FC9500B838FE /* flag_SriLanka_gray.png in Resources */,
+				FD0ECB2D18DAE99E0036A963 /* plane_2@2x.png in Resources */,
 				FD0E6DD218D2FC9500B838FE /* inactive_SriLanka.png in Resources */,
 				FD0E6EA518D2FC9500B838FE /* placeholder_Jordan@2x.png in Resources */,
+				FD0ECB3118DAE99E0036A963 /* plane_4@2x.png in Resources */,
 				FD0E6EB618D2FC9500B838FE /* placeholder_UnitedArabEmirates.png in Resources */,
 				FDC3616818894349001D8E27 /* placeholder_Russia@2x.png in Resources */,
 				FD0E6BE918D2FC7B00B838FE /* stage2_group1_placeholder@2x.png in Resources */,
@@ -3172,6 +3220,7 @@
 				FD0E6DD318D2FC9500B838FE /* inactive_SriLanka@2x.png in Resources */,
 				FD0E6E2E18D2FC9500B838FE /* active_Kuwait.png in Resources */,
 				FD0E6C0818D2FC7B00B838FE /* stage3_group3_active.png in Resources */,
+				FD0ECB2C18DAE99E0036A963 /* plane_2.png in Resources */,
 				FD0E6BD618D2FC7B00B838FE /* intro_world_map.png in Resources */,
 				FD0E6E4118D2FC9500B838FE /* active_Yemen@2x.png in Resources */,
 				FD0E6E1A18D2FC9500B838FE /* placeholder_Turkmenistan.png in Resources */,
@@ -3254,6 +3303,7 @@
 				FD128E7C1883E2B500D760E9 /* MBProgressHUD.m in Sources */,
 				FD9D7000187D348300404C3C /* NSMutableArray+Shuffling.m in Sources */,
 				FDFF884818714D8C0005173E /* IntroductionViewCtr.m in Sources */,
+				FD4FC25418D826110095C079 /* StagesAllGroupViewCtr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3378,8 +3428,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3409,9 +3458,11 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Blue Label Solutions LLC (6NWNVVFK58)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Blue Label Solutions LLC (6NWNVVFK58)";
+
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/SVN_Code/BL051/Montessori_Geography",

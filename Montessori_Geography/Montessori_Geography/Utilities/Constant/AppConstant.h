@@ -33,6 +33,9 @@
 #define DisplayLocalizedAlertWithTitle(msg,title){UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(title,@"") message:NSLocalizedString(msg,@"") delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]; [alertView show]; }
 
 
+//alert with Offline message
+#define DisplayLocalizedAlertNoInternet {UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Oops!",@"") message:NSLocalizedString(@"You're not connected to the internet.\nPlease connect and retry.",@"") delegate:nil cancelButtonTitle:@"Got it!" otherButtonTitles:nil]; [alertView show]; }
+
 #define Questrial_Regular(f) [UIFont fontWithName:@"Questrial-Regular" size:f]
 #define P(x,y) CGPointMake(x, y)
 
@@ -41,6 +44,9 @@
 
 // Set RGB Color
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.0f]
+
+
+#define LSSTRING(str) NSLocalizedString(str, nil)
 
 //Current Stage & Group & GameMode
 #define CurrentStage_Map @"CurrentStage_Map"
@@ -55,9 +61,9 @@
 
 #define APP_ID @""
 
-#define InApp_Maps_identifier @"Monty001"
-#define InApp_Flags_identifier @"Monty001"
-#define InApp_Maps_Flags_identifier @"Monty001"
+#define InApp_Countries_ID @"MGA_001"
+#define InApp_Flags_ID @"MGA_002"
+#define InApp_Countries_Flags_ID @"MGA_003"
 
 
 #define SharedSecret @"67be95a0338f49e58f4718c68ff7a5f8"
