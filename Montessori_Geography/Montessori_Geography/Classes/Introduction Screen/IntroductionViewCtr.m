@@ -486,14 +486,14 @@
         else
         {
             if (_CurrentMode == kModeCountry) {
-              //  if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"])
-               // {
+                if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"])
+                {
                     [self StageBegan:stage CurrentGroup:group PreviousComplete:YesNo AllGroup:tempflag];
-               /* }
+                }
                 else
                 {
                     [btnMenu sendActionsForControlEvents:UIControlEventTouchUpInside];
-                }*/
+                }
             }
             else if (_CurrentMode == kModeFlag)
             {
