@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="4510" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13A603" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TempViewCtr">
@@ -14,24 +15,128 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YrF-el-9At">
-                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage5_allGroups_map.png" id="YrF-el-9At">
+                    <rect key="frame" x="434" y="0.0" width="590" height="504"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Vietnam.png" id="4O6-ae-pFL">
-                    <rect key="frame" x="309" y="133" width="211" height="446"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Iran.png" id="4O6-ae-pFL">
+                    <rect key="frame" x="517" y="97" width="350" height="320"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Laos.png" id="lFi-kF-mHp">
-                    <rect key="frame" x="251" y="160" width="214" height="258"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="deX-yi-8Ye">
+                    <rect key="frame" x="841" y="123" width="73" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Cambodia.png" id="bXr-Zs-d9A">
-                    <rect key="frame" x="314" y="403" width="149" height="120"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Iraq.png" id="lFi-kF-mHp">
+                    <rect key="frame" x="420" y="153" width="175" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage2_group3_map.png" id="2WB-vi-6Cp">
-                    <rect key="frame" x="0.0" y="0.0" width="1400" height="1024"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="keD-re-n7N">
+                    <rect key="frame" x="575" y="198" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Kuwait.png" id="bXr-Zs-d9A">
+                    <rect key="frame" x="564" y="314" width="31" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gkH-Vy-MB8">
+                    <rect key="frame" x="603" y="304" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Oman.png" id="Kh6-qg-bnf">
+                    <rect key="frame" x="663" y="390" width="143" height="192"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZSH-HE-cGR">
+                    <rect key="frame" x="794" y="512" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Yemen.png" id="x9q-5j-uuz">
+                    <rect key="frame" x="487" y="539" width="221" height="130"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="n08-d7-mp1">
+                    <rect key="frame" x="550" y="655" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_UnitedArabEmirates.png" id="RY8-SH-9bS">
+                    <rect key="frame" x="653" y="396" width="88" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5pg-Vu-sG1">
+                    <rect key="frame" x="734" y="425" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Bahrain.png" id="BvZ-To-Lp8">
+                    <rect key="frame" x="633" y="393" width="3" height="9"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RWs-qB-du6">
+                    <rect key="frame" x="550" y="363" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_SaudiArabia.png" id="V8N-9j-1vQ">
+                    <rect key="frame" x="339" y="271" width="387" height="316"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0Pt-Zo-cWD">
+                    <rect key="frame" x="328" y="469" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Qatar.png" id="bmb-Db-MgT">
+                    <rect key="frame" x="638" y="396" width="16" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="N9N-6r-XpJ">
+                    <rect key="frame" x="564" y="420" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Turkey.png" id="5bU-bK-aH2">
+                    <rect key="frame" x="177" y="38" width="350" height="146"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="chi-D6-iCK">
+                    <rect key="frame" x="96" y="45" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Syria.png" id="AfJ-Of-whV">
+                    <rect key="frame" x="362" y="155" width="121" height="108"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="M16-IE-Swy">
+                    <rect key="frame" x="296" y="128" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Lebanon.png" id="bZO-Sc-Uxd">
+                    <rect key="frame" x="352" y="215" width="25" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="BCx-HS-UWN">
+                    <rect key="frame" x="271" y="198" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Jordan.png" id="en9-j3-rDy">
+                    <rect key="frame" x="348" y="244" width="78" height="86"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cYU-TU-mmm">
+                    <rect key="frame" x="401" y="314" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Israel.png" id="GCM-cm-6CR">
+                    <rect key="frame" x="337" y="245" width="26" height="75"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0UG-tx-8pj">
+                    <rect key="frame" x="258" y="304" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Palestine.png" id="Cpn-IN-oN0">
+                    <rect key="frame" x="335" y="262" width="22" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="agY-gm-LLH">
+                    <rect key="frame" x="365" y="250" width="73" height="49"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
@@ -39,11 +144,613 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9w9-18-GAy">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage4_allGroups_map.png" id="OLR-bh-2YN">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Tajikistan.png" id="HG7-eE-S3Y">
+                    <rect key="frame" x="430" y="437" width="133" height="95"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cZZ-sU-zVs">
+                    <rect key="frame" x="463" y="539" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Kyrgyzstan.png" id="XRg-dV-gEQ">
+                    <rect key="frame" x="463" y="385" width="191" height="90"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Eae-8u-PjK">
+                    <rect key="frame" x="607" y="442" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Kazakhstan.png" id="IvS-Fj-Jbo">
+                    <rect key="frame" x="63" y="53" width="713" height="391"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dHO-AH-IJz">
+                    <rect key="frame" x="222" y="120" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Uzbekistan.png" id="Q1j-1A-vAu">
+                    <rect key="frame" x="230" y="327" width="296" height="193"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hr2-vc-2m8">
+                    <rect key="frame" x="328" y="305" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Turkmenistan.png" id="ntZ-A0-zVb">
+                    <rect key="frame" x="167" y="397" width="247" height="167"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="u4e-uL-Voi">
+                    <rect key="frame" x="203" y="522" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="iMU-z0-JbL">
+                    <rect key="frame" x="790" y="495" width="160" height="107"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="B6V-0w-XJp">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage3_allGroups_map.png" id="brX-nu-w7c">
+                    <rect key="frame" x="434" y="0.0" width="590" height="504"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Bhutan.png" id="EQD-ML-W7P">
+                    <rect key="frame" x="745" y="214" width="48" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YbA-Di-MKH">
+                    <rect key="frame" x="734" y="157" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Bangladesh.png" id="cOf-qL-C5l">
+                    <rect key="frame" x="734" y="247" width="67" height="94"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ybT-Fw-Cfo">
+                    <rect key="frame" x="728" y="346" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Nepal.png" id="FWZ-9T-GTS">
+                    <rect key="frame" x="611" y="178" width="122" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ush-eF-DOa">
+                    <rect key="frame" x="636" y="125" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_India.png" id="4TL-hC-1cf">
+                    <rect key="frame" x="428" y="85" width="446" height="477"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="5cB-wm-rtn">
+                    <rect key="frame" x="398" y="348" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_SriLanka.png" id="8oa-kv-eur">
+                    <rect key="frame" x="604" y="514" width="34" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="r9W-DQ-USd">
+                    <rect key="frame" x="641" y="570" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Maldives.png" id="ilo-vc-gCE">
+                    <rect key="frame" x="498" y="557" width="16" height="120"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Rbv-8W-d6U">
+                    <rect key="frame" x="417" y="592" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Pakistan.png" id="eke-yT-NCZ">
+                    <rect key="frame" x="320" y="55" width="243" height="237"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZoM-io-R0R">
+                    <rect key="frame" x="283" y="274" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Afghanistan.png" id="3f8-S2-2PD">
+                    <rect key="frame" x="312" y="28" width="215" height="165"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ket-LL-BwN">
+                    <rect key="frame" x="277" y="24" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Qnk-Wy-AJG">
+                    <rect key="frame" x="75" y="490" width="160" height="107"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="KPZ-SH-tZu">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage2_allGroups_map.png" id="wds-3v-NlO">
+                    <rect key="frame" x="0.0" y="0.0" width="883" height="426"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_EastTimor.png" id="aq1-u7-NBH">
+                    <rect key="frame" x="764" y="657" width="54" height="23"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="zjF-IR-uh2">
+                    <rect key="frame" x="794" y="680" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Indonesia.png" id="Ubf-7S-sL0">
+                    <rect key="frame" x="290" y="427" width="750" height="276"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2We-56-0aT">
+                    <rect key="frame" x="314" y="593" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Philippines.png" id="aa8-Qk-UoP">
+                    <rect key="frame" x="648" y="170" width="158" height="277"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="mfG-hg-Z6d">
+                    <rect key="frame" x="794" y="269" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Malaysia.png" id="kyA-pk-NN6">
+                    <rect key="frame" x="365" y="403" width="321" height="105"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="VHR-lo-Zr2">
+                    <rect key="frame" x="447" y="429" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Brunei.png" id="Z27-j0-3YM">
+                    <rect key="frame" x="604" y="441" width="16" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TIM-w0-Oqt">
+                    <rect key="frame" x="538" y="391" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Singapore.png" id="l18-L1-w3L">
+                    <rect key="frame" x="431" y="500" width="6" height="3"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kW5-FB-9rS">
+                    <rect key="frame" x="411" y="506" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Vietnam.png" id="QCG-OQ-UWG">
+                    <rect key="frame" x="408" y="133" width="118" height="250"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HXF-aM-pgh">
+                    <rect key="frame" x="495" y="187" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Laos.png" id="pnh-BL-8Az">
+                    <rect key="frame" x="375" y="148" width="120" height="145"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R1T-bn-YyZ">
+                    <rect key="frame" x="361" y="85" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Cambodia.png" id="1se-s5-mot">
+                    <rect key="frame" x="411" y="284" width="84" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9Uq-o9-fez">
+                    <rect key="frame" x="345" y="346" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Thailand.png" id="Gr0-gy-Jfl">
+                    <rect key="frame" x="331" y="183" width="132" height="246"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kra-Cc-RZc">
+                    <rect key="frame" x="265" y="281" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Myanmar.png" id="uNL-BZ-KEW">
+                    <rect key="frame" x="245" y="39" width="144" height="324"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Ran-fh-3mD">
+                    <rect key="frame" x="172" y="99" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dyO-bs-XDh">
+                    <rect key="frame" x="45" y="500" width="160" height="107"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gaz-MR-mXR">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage1_allGroups_map.png" id="Ji7-lE-0aK">
+                    <rect key="frame" x="18" y="344" width="582" height="393"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_NorthKorea.png" id="sNC-1N-lI0">
+                    <rect key="frame" x="516" y="441" width="31" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Fh4-Xd-dke">
+                    <rect key="frame" x="440" y="427" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_SouthKorea.png" id="5eE-mo-5aH">
+                    <rect key="frame" x="517" y="470" width="32" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="gky-8Z-UaW">
+                    <rect key="frame" x="461" y="500" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Japan.png" id="zFF-qH-cRQ">
+                    <rect key="frame" x="509" y="423" width="115" height="133"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="kOB-RC-Lhc">
+                    <rect key="frame" x="608" y="483" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_China.png" id="Ag1-GC-Rdb">
+                    <rect key="frame" x="260" y="360" width="308" height="228"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="MBu-j5-mWD">
+                    <rect key="frame" x="227" y="529" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Mongolia.png" id="3No-4i-ljW">
+                    <rect key="frame" x="332" y="373" width="161" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qW8-vw-Jt4">
+                    <rect key="frame" x="251" y="378" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="active_Russia.png" id="Hgc-j6-apG">
+                    <rect key="frame" x="-12" y="-83" width="865" height="535"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="0Dh-up-GEn">
+                    <rect key="frame" x="484" y="57" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="e6i-pF-edA">
+                    <rect key="frame" x="820" y="505" width="160" height="107"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+        <view contentMode="scaleToFill" id="Ja2-Nj-Nsw">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage1_group1_complete.png" id="Crw-Ai-i6a">
+                    <rect key="frame" x="613" y="393" width="132" height="152"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="12" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage1_group2_complete.png" id="YgS-UA-IDq">
+                    <rect key="frame" x="19" y="-184" width="986" height="765"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="21" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage2_group1_complete.png" id="Efn-Eq-Anc">
+                    <rect key="frame" x="453" y="563" width="264" height="188"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="22" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage2_group2_complete.png" id="m5l-eE-ZW8">
+                    <rect key="frame" x="479" y="645" width="113" height="37"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="23" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage2_group3_complete.png" id="eig-0S-xkn">
+                    <rect key="frame" x="483" y="550" width="53" height="88"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="24" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage2_group4_complete.png" id="5JG-rL-G47">
+                    <rect key="frame" x="437" y="517" width="76" height="137"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="31" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage3_group1_complete.png" id="eAv-Gh-1Ge">
+                    <rect key="frame" x="367" y="504" width="71" height="62"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="32" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage3_group2_complete.png" id="2kZ-FB-2Uu">
+                    <rect key="frame" x="298" y="470" width="168" height="222"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="33" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage3_group3_complete.png" id="OFf-Ac-b0L">
+                    <rect key="frame" x="255" y="448" width="94" height="99"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="41" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage4_group1_complete.png" id="7m2-nj-Squ">
+                    <rect key="frame" x="294" y="412" width="73" height="49"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="42" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage4_group2_complete.png" id="tSM-oE-QrY">
+                    <rect key="frame" x="174" y="304" width="233" height="167"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="51" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage5_group1_complete.png" id="c3G-uq-Iuy">
+                    <rect key="frame" x="130" y="439" width="140" height="100"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="52" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage5_group2_complete.png" id="cxN-cZ-tY0">
+                    <rect key="frame" x="151" y="530" width="100" height="87"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="53" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage5_group3_complete.png" id="07Z-gX-d5o">
+                    <rect key="frame" x="105" y="493" width="121" height="99"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="54" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage5_group4_complete.png" id="2le-qK-4Ee">
+                    <rect key="frame" x="54" y="420" width="109" height="70"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="55" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage5_group5_complete.png" id="tNY-uh-IIQ">
+                    <rect key="frame" x="104" y="485" width="28" height="27"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="61" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stage6_group1_complete.png" id="wyp-Sd-xqq">
+                    <rect key="frame" x="137" y="409" width="61" height="39"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="EEa-C8-x5w">
+                    <rect key="frame" x="726" y="452" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="SGI-f8-auh">
+                    <rect key="frame" x="540" y="335" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="xIi-nQ-al9">
+                    <rect key="frame" x="575" y="669" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="DWz-tP-JvG">
+                    <rect key="frame" x="533" y="637" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="07q-9J-gM8">
+                    <rect key="frame" x="530" y="583" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="BTo-jc-K5S">
+                    <rect key="frame" x="446" y="562" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="G2a-3m-iDI">
+                    <rect key="frame" x="386" y="482" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="IGp-m6-epR">
+                    <rect key="frame" x="322" y="598" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="nsa-U9-nt7">
+                    <rect key="frame" x="296" y="465" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="eam-Dd-vRd">
+                    <rect key="frame" x="334" y="409" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="5nJ-2Q-asS">
+                    <rect key="frame" x="247" y="376" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="Gn4-Pj-nzM">
+                    <rect key="frame" x="190" y="439" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="BXr-JU-bAn">
+                    <rect key="frame" x="220" y="564" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="uKG-dI-Xe5">
+                    <rect key="frame" x="170" y="509" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="SYp-zZ-O6F">
+                    <rect key="frame" x="96" y="431" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="isD-XI-TrY">
+                    <rect key="frame" x="89" y="469" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange_pin.png" id="k11-cA-CGH">
+                    <rect key="frame" x="130" y="381" width="20" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_pin.png" id="nqt-y1-APy">
+                    <rect key="frame" x="502" y="315" width="28" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_pin.png" id="oTj-SE-MQZ">
+                    <rect key="frame" x="413" y="542" width="28" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_pin.png" id="HYn-A8-IJt">
+                    <rect key="frame" x="263" y="445" width="28" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_pin.png" id="827-5G-FhY">
+                    <rect key="frame" x="214" y="356" width="28" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_pin.png" id="iBa-hw-uHW">
+                    <rect key="frame" x="59" y="449" width="28" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <accessibility key="accessibilityConfiguration" label="flag_pin">
+                        <bool key="isElement" value="YES"/>
+                    </accessibility>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.92156862745098034" green="0.97254901960784312" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+        </view>
     </objects>
     <resources>
+        <image name="active_Afghanistan.png" width="519" height="398"/>
+        <image name="active_Bahrain.png" width="172" height="506"/>
+        <image name="active_Bangladesh.png" width="510" height="712"/>
+        <image name="active_Bhutan.png" width="638" height="335"/>
+        <image name="active_Brunei.png" width="301" height="293"/>
         <image name="active_Cambodia.png" width="374" height="302"/>
+        <image name="active_China.png" width="529" height="392"/>
+        <image name="active_EastTimor.png" width="497" height="210"/>
+        <image name="active_India.png" width="769" height="822"/>
+        <image name="active_Indonesia.png" width="1542" height="569"/>
+        <image name="active_Iran.png" width="600" height="547"/>
+        <image name="active_Iraq.png" width="552" height="567"/>
+        <image name="active_Israel.png" width="191" height="548"/>
+        <image name="active_Japan.png" width="1041" height="1196"/>
+        <image name="active_Jordan.png" width="429" height="474"/>
+        <image name="active_Kazakhstan.png" width="656" height="359"/>
+        <image name="active_Kuwait.png" width="559" height="538"/>
+        <image name="active_Kyrgyzstan.png" width="319" height="151"/>
         <image name="active_Laos.png" width="429" height="517"/>
+        <image name="active_Lebanon.png" width="368" height="475"/>
+        <image name="active_Malaysia.png" width="1490" height="489"/>
+        <image name="active_Maldives.png" width="110" height="762"/>
+        <image name="active_Mongolia.png" width="528" height="252"/>
+        <image name="active_Myanmar.png" width="425" height="955"/>
+        <image name="active_Nepal.png" width="804" height="446"/>
+        <image name="active_NorthKorea.png" width="319" height="353"/>
+        <image name="active_Oman.png" width="422" height="569"/>
+        <image name="active_Pakistan.png" width="471" height="459"/>
+        <image name="active_Palestine.png" width="395" height="463"/>
+        <image name="active_Philippines.png" width="349" height="613"/>
+        <image name="active_Qatar.png" width="241" height="489"/>
+        <image name="active_Russia.png" width="1414" height="876"/>
+        <image name="active_SaudiArabia.png" width="852" height="695"/>
+        <image name="active_Singapore.png" width="283" height="144"/>
+        <image name="active_SouthKorea.png" width="431" height="453"/>
+        <image name="active_SriLanka.png" width="237" height="418"/>
+        <image name="active_Syria.png" width="431" height="387"/>
+        <image name="active_Tajikistan.png" width="316" height="225"/>
+        <image name="active_Thailand.png" width="388" height="724"/>
+        <image name="active_Turkey.png" width="862" height="361"/>
+        <image name="active_Turkmenistan.png" width="290" height="196"/>
+        <image name="active_UnitedArabEmirates.png" width="527" height="406"/>
+        <image name="active_Uzbekistan.png" width="306" height="200"/>
         <image name="active_Vietnam.png" width="423" height="895"/>
-        <image name="stage2_group3_map.png" width="1400" height="1024"/>
+        <image name="active_Yemen.png" width="676" height="398"/>
+        <image name="green_pin.png" width="29" height="60"/>
+        <image name="orange_pin.png" width="19" height="40"/>
+        <image name="stage1_allGroups_map.png" width="582" height="393"/>
+        <image name="stage1_group1_complete.png" width="132" height="152"/>
+        <image name="stage1_group2_complete.png" width="986" height="765"/>
+        <image name="stage2_allGroups_map.png" width="884" height="427"/>
+        <image name="stage2_group1_complete.png" width="265" height="188"/>
+        <image name="stage2_group2_complete.png" width="114" height="38"/>
+        <image name="stage2_group3_complete.png" width="54" height="89"/>
+        <image name="stage2_group4_complete.png" width="77" height="138"/>
+        <image name="stage3_allGroups_map.png" width="1024" height="768"/>
+        <image name="stage3_group1_complete.png" width="72" height="62"/>
+        <image name="stage3_group2_complete.png" width="168" height="222"/>
+        <image name="stage3_group3_complete.png" width="95" height="100"/>
+        <image name="stage4_allGroups_map.png" width="1024" height="768"/>
+        <image name="stage4_group1_complete.png" width="74" height="49"/>
+        <image name="stage4_group2_complete.png" width="234" height="167"/>
+        <image name="stage5_allGroups_map.png" width="590" height="505"/>
+        <image name="stage5_group1_complete.png" width="140" height="100"/>
+        <image name="stage5_group2_complete.png" width="100" height="88"/>
+        <image name="stage5_group3_complete.png" width="122" height="100"/>
+        <image name="stage5_group4_complete.png" width="110" height="71"/>
+        <image name="stage5_group5_complete.png" width="29" height="27"/>
+        <image name="stage6_group1_complete.png" width="62" height="39"/>
     </resources>
 </document>
