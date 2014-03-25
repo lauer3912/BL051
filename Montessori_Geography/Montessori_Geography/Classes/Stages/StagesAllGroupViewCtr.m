@@ -637,6 +637,14 @@
 
 - (void)gamePieceReturnedToOriginalLocation:(MGAGamePiece *)gamePiece {
     
+    if (_currentStep == kSTEP2) {
+        if (_currentGameMode == kModeCountry) {
+            gamePiece.frame = gamePiece.frameStep2GamePiece;
+        }
+        else{
+            gamePiece.frame = gamePiece.frameStep2GamePiece_flag;
+        }
+    }
 }
 
 #pragma mark - MGAGamePieceDelegate Tappable Game Piece Methods
