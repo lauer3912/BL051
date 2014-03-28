@@ -1649,7 +1649,7 @@
 							<key>scaleStep0</key>
 							<real>0.88</real>
 							<key>maxDistanceFromCenterStep2</key>
-							<integer>50</integer>
+							<integer>70</integer>
 							<key>placeholder_image_filename_flag</key>
 							<string>flag_Indonesia_gray</string>
 							<key>active_image_filename_flag</key>
@@ -2111,7 +2111,7 @@
 							<key>scaleStep0</key>
 							<real>0.9399999999999999</real>
 							<key>maxDistanceFromCenterStep2</key>
-							<real>50</real>
+							<integer>80</integer>
 							<key>placeholder_image_filename_flag</key>
 							<string>flag_Malaysia_gray</string>
 							<key>active_image_filename_flag</key>
@@ -2319,7 +2319,7 @@
 							<key>scaleStep0</key>
 							<real>8.199999999999999</real>
 							<key>maxDistanceFromCenterStep2</key>
-							<integer>20</integer>
+							<integer>40</integer>
 							<key>placeholder_image_filename_flag</key>
 							<string>flag_Brunei_gray</string>
 							<key>active_image_filename_flag</key>
@@ -9991,7 +9991,7 @@
 							<key>scaleStep0</key>
 							<real>9.6</real>
 							<key>maxDistanceFromCenterStep2</key>
-							<integer>35</integer>
+							<integer>50</integer>
 							<key>placeholder_image_filename_flag</key>
 							<string>flag_Palestine_gray</string>
 							<key>active_image_filename_flag</key>

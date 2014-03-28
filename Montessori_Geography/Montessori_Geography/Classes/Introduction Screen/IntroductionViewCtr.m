@@ -132,7 +132,6 @@
         [AsiaView addSubview:WelComeView];
         WelComeView.frame = CGRectMake(20, 10, 440, 70);
         ViewContry.hidden = NO;
-        
         [self AddIntroImagesForStage];
         //Menu Down
         [UIView animateWithDuration:10.00 delay:1.00 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -219,6 +218,7 @@
                                             [[DicMapFrame objectForKey:@"height"] floatValue]);
             imgViewGroup.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_placeholder",i+1,j+1]];
             imgViewGroup.contentMode = UIViewContentModeScaleToFill;
+            imgViewGroup.userInteractionEnabled = YES;
             imgViewGroup.tag = [[NSString stringWithFormat:@"%d%d",i+1,j+1] intValue];
             [imgViewGroup setAccessibilityIdentifier:@"placeholder"];
             [ViewContry addSubview:imgViewGroup];
@@ -233,21 +233,27 @@
                                             imgOrange.size.height);
             imgViewGroupFlag_Pin.image = imgOrange;
             imgViewGroupFlag_Pin.hidden = YES;
+            imgViewGroupFlag_Pin.userInteractionEnabled = YES;
             imgViewGroupFlag_Pin.tag = [[NSString stringWithFormat:@"%d%d",i+1,j+1] intValue];
-            [imgViewGroupFlag_Pin setAccessibilityIdentifier:@"flag_pin"];
+            [imgViewGroupFlag_Pin setAccessibilityIdentifier:@"flag_pin_orange"];
             [ViewContry addSubview:imgViewGroupFlag_Pin];
             
         }
-        NSDictionary *DicGreen_flag_Pin_Frame = [[_stageDataArray objectAtIndex:i] valueForKey:@"green_flag_pin_frame"];
         
-        UIImageView *imgViewStageFlag_Pin = [[UIImageView alloc] init];
-        UIImage *imgGreen = [UIImage imageNamed:@"orange_pin"];
-        imgViewStageFlag_Pin.frame = CGRectMake([[DicGreen_flag_Pin_Frame objectForKey:@"x"] floatValue],
-                                                [[DicGreen_flag_Pin_Frame objectForKey:@"y"] floatValue], imgGreen.size.width, imgGreen.size.height);
-        imgViewStageFlag_Pin.image = imgGreen;
-        imgViewStageFlag_Pin.hidden = YES;
-        imgViewStageFlag_Pin.tag = [[NSString stringWithFormat:@"%d",i+1] intValue];
-        [ViewContry addSubview:imgViewStageFlag_Pin];
+        if (i < [_stageDataArray count] - 1) {
+            NSDictionary *DicGreen_flag_Pin_Frame = [[_stageDataArray objectAtIndex:i] valueForKey:@"green_flag_pin_frame"];
+            
+            UIImageView *imgViewStageFlag_Pin = [[UIImageView alloc] init];
+            UIImage *imgGreen = [UIImage imageNamed:@"green_pin"];
+            imgViewStageFlag_Pin.frame = CGRectMake([[DicGreen_flag_Pin_Frame objectForKey:@"x"] floatValue],
+                                                    [[DicGreen_flag_Pin_Frame objectForKey:@"y"] floatValue], imgGreen.size.width, imgGreen.size.height);
+            imgViewStageFlag_Pin.image = imgGreen;
+            imgViewStageFlag_Pin.hidden = YES;
+            imgViewStageFlag_Pin.userInteractionEnabled = YES;
+            imgViewStageFlag_Pin.tag = [[NSString stringWithFormat:@"%d",i+1] intValue];
+            [imgViewStageFlag_Pin setAccessibilityIdentifier:@"flag_pin_green"];
+            [ViewContry addSubview:imgViewStageFlag_Pin];
+        }
     }
     
 }
@@ -267,47 +273,54 @@
         TempGroup = imgViewComplete.tag % 10;
         TempStage = imgViewComplete.tag / 10;
         
+        NSString *strIdentifier = [imgViewComplete accessibilityIdentifier];
+        
         if (imgViewComplete.tag < [strTag intValue]) {
             
             NSString *strTagStart = [NSString stringWithFormat:@"%d0",CurrStage+1];
             if (_CurrentGroup == 111 && imgViewComplete.tag > [strTagStart intValue]) {
                 
-                if (![[imgViewComplete accessibilityIdentifier] isEqualToString:@"flag_pin"]) {
+                if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
                     imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_active",TempStage,TempGroup]];
                     [imgViewComplete setAccessibilityIdentifier:@"active"];
                 }
-                else if ([[imgViewComplete accessibilityIdentifier] isEqualToString:@"flag_pin"]){
-                    [self SetPin_Flag:imgViewComplete];
+                else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
+                    [self SetPin_Flag:imgViewComplete Identifier:@"flag_pin_orange_active"];
                 }
             }
             else{
-                if (![[imgViewComplete accessibilityIdentifier] isEqualToString:@"flag_pin"]) {
+                if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
                     imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_complete",TempStage,TempGroup]];
                     [imgViewComplete setAccessibilityIdentifier:@"complete"];
                 }
-                else if ([[imgViewComplete accessibilityIdentifier] isEqualToString:@"flag_pin"]){
-                    [self SetPin_Flag:imgViewComplete];
+                else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
+                    [self SetPin_Flag:imgViewComplete Identifier:@"flag_pin_orange_complete"];
                 }
             }
         }
-        else if (imgViewComplete.tag == [strTag intValue] && ![[imgViewComplete accessibilityIdentifier] isEqualToString:@"flag_pin"])
+        else if (imgViewComplete.tag == [strTag intValue])
         {
-            imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_active",TempStage,TempGroup]];
-            [imgViewComplete setAccessibilityIdentifier:@"active"];
+            if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
+                imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_active",TempStage,TempGroup]];
+                [imgViewComplete setAccessibilityIdentifier:@"active"];
+            }
+            else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
+                [self SetPin_Flag:imgViewComplete Identifier:@"flag_pin_orange_active"];
+            }
         }
         else{
-            if (![[imgViewComplete accessibilityIdentifier] isEqualToString:@"flag_pin"]) {
+            if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
                 imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_placeholder",TempStage,TempGroup]];
                 [imgViewComplete setAccessibilityIdentifier:@"placeholder"];
             }
-            else if ([[imgViewComplete accessibilityIdentifier] isEqualToString:@"flag_pin"]){
+            else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
                 imgViewComplete.hidden = YES;
             }
         }
     }
     [self ShowGreenPin_Flag];
 }
--(void)SetPin_Flag:(UIImageView*)imgName
+-(void)SetPin_Flag:(UIImageView*)imgName Identifier:(NSString*)strIdentifier
 {
     UIImage *img;
     if (_CurrentMode == kModeCountry) {
@@ -319,30 +332,41 @@
     imgName.image = img;
     imgName.frame = CGRectMake(imgName.frame.origin.x, imgName.frame.origin.y, img.size.width, img.size.height);
     imgName.hidden = NO;
+    [imgName setAccessibilityIdentifier:strIdentifier];
+    [ViewContry bringSubviewToFront:imgName];
 }
 -(void)ShowGreenPin_Flag
 {
     NSArray *_totalStageArray = [GlobalMethods ReturnCurrentStageArray:_CurrentStage ForKey:@"AllStage"];
-    for (int i = 0; i < _totalStageArray.count; i++) {
+    for (int i = 0; i < _totalStageArray.count - 1; i++) {
         
         UIImageView *imgGreen = (UIImageView*)[ViewContry viewWithTag:i+1];
         if (i < _CurrentStage) {
-            UIImage *img;
-            if (_CurrentMode == kModeCountry) {
-                img = [UIImage imageNamed:@"green_pin"];
-            }
-            else if (_CurrentMode == kModeFlag){
-                img = [UIImage imageNamed:@"green_flag"];
-            }
-            imgGreen.image = img;
-            imgGreen.frame = CGRectMake(imgGreen.frame.origin.x, imgGreen.frame.origin.y, img.size.width, img.size.height);
-            imgGreen.hidden = NO;
-            [ViewContry bringSubviewToFront:imgGreen];
+            [self SetGreenPin_Flag:imgGreen Identifier:@"flag_pin_green_complete"];
         }
         else{
             imgGreen.hidden = YES;
         }
     }
+    if (_CurrentGroup == 111) {
+        UIImageView *imgGreen = (UIImageView*)[ViewContry viewWithTag:_CurrentStage+1];
+        [self SetGreenPin_Flag:imgGreen Identifier:@"flag_pin_green_active"];
+    }
+}
+-(void)SetGreenPin_Flag:(UIImageView*)imgName Identifier:(NSString*)strIdentifier
+{
+    UIImage *img;
+    if (_CurrentMode == kModeCountry) {
+        img = [UIImage imageNamed:@"green_pin"];
+    }
+    else if (_CurrentMode == kModeFlag){
+        img = [UIImage imageNamed:@"green_flag"];
+    }
+    imgName.image = img;
+    imgName.frame = CGRectMake(imgName.frame.origin.x, imgName.frame.origin.y, img.size.width, img.size.height);
+    imgName.hidden = NO;
+    [imgName setAccessibilityIdentifier:strIdentifier];
+    [ViewContry bringSubviewToFront:imgName];
 }
 #pragma mark - Create Path for Plane Animation
 -(void)CreatePlaneAnimationPath:(NSDictionary*)dicPath
@@ -374,7 +398,7 @@
 {
     /*CAShapeLayer *centerline = [CAShapeLayer layer];
      centerline.path = trackPath.CGPath;
-     centerline.strokeColor = [UIColor greenColor].CGColor;
+     centerline.strokeColor = [UIColor orangeColor].CGColor;
      centerline.fillColor = [UIColor clearColor].CGColor;
      centerline.lineWidth = 2.0;
      centerline.lineDashPattern = [NSArray arrayWithObjects:[NSNumber numberWithInt:6], [NSNumber numberWithInt:2], nil];
@@ -431,34 +455,69 @@
     //Else highlighted countries touch
     else{
         CGPoint currentPointViewContry = [touch locationInView:ViewContry];
-        for (UIImageView *imgViewContry in ViewContry.subviews) {
-            if (CGRectContainsPoint(imgViewContry.frame,currentPointViewContry)==YES)
-            {
-                CGPoint touchLocationTemp = [touch locationInView:imgViewContry];
+        
+        if([touch.view isKindOfClass:[UIImageView class]])
+        {
+            UIImageView *imgViewContryorFlag = (UIImageView *) touch.view;
+            
+            NSString *strIdentifier = [imgViewContryorFlag accessibilityIdentifier];
+            
+            if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
                 
-                if (![self isTouchOnTransparentPixel:touchLocationTemp ImageView:imgViewContry]) {
-                    
-                    NSString *file_name = [imgViewContry accessibilityIdentifier] ;
-                    int TempStage = 0;
-                    int TempGroup = 0;
-                    
-                    TempGroup = imgViewContry.tag % 10;
-                    TempStage = imgViewContry.tag / 10;
-                    if ([file_name isEqualToString:@"complete"]) {
-                        [self CheckInAppAndStartStage:TempStage-1 CurrentGroup:TempGroup-1 PreviousComplete:YES AllGroup:0];
-                    }
-                    else if ([file_name isEqualToString:@"active"]){
+                for (UIImageView *imgViewContry in ViewContry.subviews) {
+                    if (CGRectContainsPoint(imgViewContry.frame,currentPointViewContry)==YES)
+                    {
+                        CGPoint touchLocationTemp = [touch locationInView:imgViewContry];
                         
-                        int tempflag = 0;
-                        if (_CurrentGroup == 111) {
-                            tempflag = 1;
+                        if (![self isTouchOnTransparentPixel:touchLocationTemp ImageView:imgViewContry]) {
+                            
+                            [self CheckTouchObject:imgViewContry];
+                             break;
                         }
-                        [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:tempflag];
                     }
-                    break;
+                }
+                
+            }
+            else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
+                [self CheckTouchObject:imgViewContryorFlag];
+            }
+            else if ([strIdentifier rangeOfString:@"flag_pin_green"].location != NSNotFound){
+                
+                NSString *file_name = [imgViewContryorFlag accessibilityIdentifier] ;
+                int TempStage = 0;
+                
+                TempStage = imgViewContryorFlag.tag - 1;
+                
+                if ([file_name rangeOfString:@"complete"].location != NSNotFound) {
+                    [self CheckInAppAndStartStage:TempStage CurrentGroup:111 PreviousComplete:YES AllGroup:1];
+                }
+                else if ([file_name rangeOfString:@"active"].location != NSNotFound){
+                    
+                    [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:1];
                 }
             }
         }
+    }
+}
+-(void)CheckTouchObject:(UIImageView*)imgName
+{
+    NSString *file_name = [imgName accessibilityIdentifier] ;
+    int TempStage = 0;
+    int TempGroup = 0;
+    
+    TempGroup = imgName.tag % 10;
+    TempStage = imgName.tag / 10;
+    
+    if ([file_name rangeOfString:@"complete"].location != NSNotFound) {
+        [self CheckInAppAndStartStage:TempStage-1 CurrentGroup:TempGroup-1 PreviousComplete:YES AllGroup:0];
+    }
+    else if ([file_name rangeOfString:@"active"].location != NSNotFound){
+        
+        int tempflag = 0;
+        if (_CurrentGroup == 111) {
+            tempflag = 1;
+        }
+        [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:tempflag];
     }
 }
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
@@ -554,6 +613,7 @@
             StagesAllGroupViewCtr *obj_StagesAllGroupViewCtr = [[StagesAllGroupViewCtr alloc]initWithNibName:@"StagesAllGroupViewCtr" bundle:nil];
             obj_StagesAllGroupViewCtr._currentGameMode = _CurrentMode;
             obj_StagesAllGroupViewCtr._currentStage = stage;
+            obj_StagesAllGroupViewCtr.Completed = YesNo;
             obj_StagesAllGroupViewCtr._StageAllGroupDelegate = self;
             [self.navigationController pushViewController:obj_StagesAllGroupViewCtr animated:NO];
         }
@@ -636,7 +696,7 @@
 
 
 #pragma mark - _StageAllGroupDelegate Delegate
--(void)StageCompleteForAllGroup
+-(void)StageCompleteForAllGroup:(BOOL)previouslycompleted
 {
     [self ZoomOutForNextStage];
     
@@ -646,6 +706,7 @@
     
     [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
     
+    if (!previouslycompleted) {
         _CurrentStage++;
         _CurrentGroup = 0;
         
@@ -661,7 +722,8 @@
             [NSUserDefaults saveObject:strCurrentGroup forKey:CurrentGroup_Flag];
         }
     
-    [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
+        [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
+    }
 }
 #pragma mark - Mode Selection
 -(IBAction)btnModeSelectPressed:(id)sender

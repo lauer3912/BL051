@@ -627,6 +627,7 @@
 		FD37E9F7188FB585009C51C2 /* inactive_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */; };
 		FD37E9F8188FB585009C51C2 /* placeholder_Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */; };
 		FD37E9F9188FB585009C51C2 /* placeholder_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */; };
+		FD4B38D418E2922A007B2FB5 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4B38D318E2922A007B2FB5 /* libTestFlight.a */; };
 		FD4FC25418D826110095C079 /* StagesAllGroupViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FC25218D826110095C079 /* StagesAllGroupViewCtr.m */; };
 		FD4FC25518D826110095C079 /* StagesAllGroupViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4FC25318D826110095C079 /* StagesAllGroupViewCtr.xib */; };
 		FD4FF1C9187FCB8000D6823A /* NSUserDefaults+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */; };
@@ -1370,6 +1371,7 @@
 		FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Singapore@2x.png"; sourceTree = "<group>"; };
 		FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Singapore.png; sourceTree = "<group>"; };
 		FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Singapore@2x.png"; sourceTree = "<group>"; };
+		FD4B38D318E2922A007B2FB5 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		FD4FC25118D826110095C079 /* StagesAllGroupViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StagesAllGroupViewCtr.h; sourceTree = "<group>"; };
 		FD4FC25218D826110095C079 /* StagesAllGroupViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StagesAllGroupViewCtr.m; sourceTree = "<group>"; };
 		FD4FC25318D826110095C079 /* StagesAllGroupViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StagesAllGroupViewCtr.xib; sourceTree = "<group>"; };
@@ -1392,7 +1394,6 @@
 		FD54FBC518E19FB40060F9FF /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		FD54FBC618E19FB40060F9FF /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		FD54FBC718E19FB40060F9FF /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
-		FD54FBCA18E1A0110060F9FF /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		FD54FBCC18E1A0840060F9FF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FD54FBCD18E1A0840060F9FF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FD58E76C1884066400322E54 /* menu_with_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_with_arrow@2x.png"; sourceTree = "<group>"; };
@@ -1500,6 +1501,7 @@
 				C5916E2E18D630B900FF97CB /* libTestFlight.a in Frameworks */,
 				FD54FBC118E19F710060F9FF /* (null) in Frameworks */,
 				C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */,
+				FD4B38D418E2922A007B2FB5 /* libTestFlight.a in Frameworks */,
 				FD128E801883E3CF00D760E9 /* StoreKit.framework in Frameworks */,
 				FD128E7E1883E3C400D760E9 /* SystemConfiguration.framework in Frameworks */,
 				FD1CA741187D53D10064FBBA /* CoreText.framework in Frameworks */,
@@ -2216,7 +2218,7 @@
 		FD54FBC218E19FB40060F9FF /* TestFlightSDK2.1.4 */ = {
 			isa = PBXGroup;
 			children = (
-				FD54FBCA18E1A0110060F9FF /* libTestFlight.a */,
+				FD4B38D318E2922A007B2FB5 /* libTestFlight.a */,
 				FD54FBC318E19FB40060F9FF /* README.md */,
 				FD54FBC418E19FB40060F9FF /* release_notes.md */,
 				FD54FBC518E19FB40060F9FF /* TestFlight+AsyncLogging.h */,
@@ -3471,13 +3473,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/SVN_Code/BL051/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
-					/Users/bobby/Documents/dev/TestFlightSDK2.1.4,
-					/Users/bobby/Documents/dev/TestFlightSDK3.0.0,
+					"$(PROJECT_DIR)/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1F30DF2E-004B-4E32-88F9-979AED4330CD";
+				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3488,28 +3488,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Blue Label Solutions LLC (6NWNVVFK58)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Blue Label Solutions LLC (6NWNVVFK58)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/SVN_Code/BL051/Montessori_Geography",
-					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography",
-					"$(PROJECT_DIR)",
-				);
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
 				INFOPLIST_FILE = "Montessori_Geography/Montessori_Geography-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/riddhi/Desktop/Chirag\\ Patel/Applications/Montessori_Geography/SVN_Code/BL051/Montessori_Geography/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
-					/Users/bobby/Documents/dev/TestFlightSDK2.1.4,
-					/Users/bobby/Documents/dev/TestFlightSDK3.0.0,
 					"$(PROJECT_DIR)/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8E6AD001-1F09-4FD2-A2BD-B4E6182CCBDD";
+				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

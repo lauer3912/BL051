@@ -16,6 +16,7 @@
 @implementation StagesAllGroupViewCtr
 @synthesize _currentGameMode,_currentStage;
 @synthesize _StageAllGroupDelegate;
+@synthesize Completed;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -743,7 +744,7 @@
 -(void)PopViewToNextStageorGroup
 {
     [self.navigationController popViewControllerAnimated:NO];
-    [_StageAllGroupDelegate StageCompleteForAllGroup];
+    [_StageAllGroupDelegate StageCompleteForAllGroup:Completed];
 }
 
 #pragma mark - CAAnimation Delegate

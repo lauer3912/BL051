@@ -16,7 +16,7 @@
 @protocol StageCompleteForAllGroupDelegate <NSObject>
 
 @optional
--(void)StageCompleteForAllGroup;
+-(void)StageCompleteForAllGroup:(BOOL)previouslycompleted;
 @end
 
 @interface StagesAllGroupViewCtr : UIViewController <MGAGamePieceDelegate>
@@ -53,6 +53,6 @@
 @property (nonatomic,strong) id <StageCompleteForAllGroupDelegate> _StageAllGroupDelegate;
 @property (nonatomic,readwrite) int _currentGameMode;
 @property (nonatomic,readwrite) int _currentStage;
-
+@property (nonatomic,assign)BOOL Completed;
 
 @end
