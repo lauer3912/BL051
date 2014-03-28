@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C5023B8018E5A770001DDE7D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5023B7F18E5A770001DDE7D /* Crashlytics.framework */; };
+		C553823118E5A89A00AA1B2C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C553822C18E5A89A00AA1B2C /* README.md */; };
+		C553823218E5A89A00AA1B2C /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C553822D18E5A89A00AA1B2C /* release_notes.md */; };
+		C553823418E5A8ED00AA1B2C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C553823318E5A8ED00AA1B2C /* libTestFlight.a */; };
 		C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39FB188C26BF0083C112 /* libz.dylib */; };
 		FD022595187FF54C00B51647 /* GlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FD022594187FF54C00B51647 /* GlobalMethods.m */; };
 		FD0E6BD618D2FC7B00B838FE /* intro_world_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0E6B6E18D2FC7A00B838FE /* intro_world_map.png */; };
@@ -741,6 +744,12 @@
 
 /* Begin PBXFileReference section */
 		C5023B7F18E5A770001DDE7D /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C553822C18E5A89A00AA1B2C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		C553822D18E5A89A00AA1B2C /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		C553822E18E5A89A00AA1B2C /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		C553822F18E5A89A00AA1B2C /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		C553823018E5A89A00AA1B2C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		C553823318E5A8ED00AA1B2C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = ../../TestFlightSDK3.0.0/libTestFlight.a; sourceTree = "<group>"; };
 		C58C39FB188C26BF0083C112 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FD022593187FF54C00B51647 /* GlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalMethods.h; sourceTree = "<group>"; };
 		FD022594187FF54C00B51647 /* GlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalMethods.m; sourceTree = "<group>"; };
@@ -1486,6 +1495,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C553823418E5A8ED00AA1B2C /* libTestFlight.a in Frameworks */,
 				FD54FBC118E19F710060F9FF /* (null) in Frameworks */,
 				C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */,
 				FD128E801883E3CF00D760E9 /* StoreKit.framework in Frameworks */,
@@ -1512,6 +1522,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C553822B18E5A89A00AA1B2C /* TestFlightSDK3.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				C553822C18E5A89A00AA1B2C /* README.md */,
+				C553822D18E5A89A00AA1B2C /* release_notes.md */,
+				C553822E18E5A89A00AA1B2C /* TestFlight+AsyncLogging.h */,
+				C553822F18E5A89A00AA1B2C /* TestFlight+ManualSessions.h */,
+				C553823018E5A89A00AA1B2C /* TestFlight.h */,
+			);
+			path = TestFlightSDK3.0.0;
+			sourceTree = "<group>";
+		};
 		FD0225961880034F00B51647 /* Group2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2371,6 +2393,7 @@
 		FDFF880818714AAE0005173E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C553823318E5A8ED00AA1B2C /* libTestFlight.a */,
 				C5023B7F18E5A770001DDE7D /* Crashlytics.framework */,
 				C58C39FB188C26BF0083C112 /* libz.dylib */,
 				FD128E7F1883E3CF00D760E9 /* StoreKit.framework */,
@@ -2450,6 +2473,7 @@
 		FDFF884318714D470005173E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C553822B18E5A89A00AA1B2C /* TestFlightSDK3.0.0 */,
 				FD128E791883E2B500D760E9 /* MBProgress */,
 				FD128E721883E21F00D760E9 /* In App Purchase Classes */,
 				FD7C839B1880117A00F7329C /* LocalizesString */,
@@ -2793,6 +2817,7 @@
 				FD0E6DA418D2FC9500B838FE /* flag_Afghanistan.png in Resources */,
 				FD0E6F4718D2FCFE00B838FE /* flag_Cambodia_gray@2x.png in Resources */,
 				FD0E6C1C18D2FC7B00B838FE /* stage5_group1_complete.png in Resources */,
+				C553823218E5A89A00AA1B2C /* release_notes.md in Resources */,
 				FD0E6DC918D2FC9500B838FE /* inactive_Bhutan@2x.png in Resources */,
 				FDC3613518891E60001D8E27 /* placeholder_SouthKorea.png in Resources */,
 				FD37E9C2188FAFB2009C51C2 /* inactive_Laos.png in Resources */,
@@ -2989,6 +3014,7 @@
 				FD0E6DA718D2FC9500B838FE /* flag_Afghanistan_gray@2x.png in Resources */,
 				FDC3613418891E60001D8E27 /* placeholder_NorthKorea@2x.png in Resources */,
 				FDC3613718891E60001D8E27 /* stage1_group1_map@2x.png in Resources */,
+				C553823118E5A89A00AA1B2C /* README.md in Resources */,
 				FD0E6C0C18D2FC7B00B838FE /* stage3_group3_placeholder.png in Resources */,
 				FD0E6C1318D2FC7B00B838FE /* stage4_group1_placeholder@2x.png in Resources */,
 				FD0E6E0018D2FC9500B838FE /* flag_Tajikistan_gray.png in Resources */,
@@ -3443,6 +3469,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
+					/Users/bobby/Documents/dev/TestFlightSDK3.0.0,
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3470,6 +3497,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
+					/Users/bobby/Documents/dev/TestFlightSDK3.0.0,
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
