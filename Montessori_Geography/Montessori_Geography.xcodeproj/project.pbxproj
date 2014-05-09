@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C5023B8018E5A770001DDE7D /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5023B7F18E5A770001DDE7D /* Crashlytics.framework */; };
 		C553823118E5A89A00AA1B2C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C553822C18E5A89A00AA1B2C /* README.md */; };
 		C553823218E5A89A00AA1B2C /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C553822D18E5A89A00AA1B2C /* release_notes.md */; };
-		C553823418E5A8ED00AA1B2C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C553823318E5A8ED00AA1B2C /* libTestFlight.a */; };
 		C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C58C39FB188C26BF0083C112 /* libz.dylib */; };
 		FD022595187FF54C00B51647 /* GlobalMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = FD022594187FF54C00B51647 /* GlobalMethods.m */; };
 		FD0E6BD618D2FC7B00B838FE /* intro_world_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD0E6B6E18D2FC7A00B838FE /* intro_world_map.png */; };
@@ -667,8 +665,10 @@
 		FD6CEE8A187EB237009ADF7D /* inactive_Japan_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE87187EB237009ADF7D /* inactive_Japan_flag@2x.png */; };
 		FD6CEE8B187EB237009ADF7D /* inactive_NorthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE88187EB237009ADF7D /* inactive_NorthKorea_flag@2x.png */; };
 		FD6CEE8C187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */; };
-		FD71B22C18740158006DD001 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22A18740158006DD001 /* plane.png */; };
-		FD71B22D18740158006DD001 /* plane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD71B22B18740158006DD001 /* plane@2x.png */; };
+		FD78B679191CD90B00229992 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FD78B677191CD90B00229992 /* back_button.png */; };
+		FD78B67A191CD90B00229992 /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD78B678191CD90B00229992 /* back_button@2x.png */; };
+		FD78B67B191CE5BA00229992 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5023B7F18E5A770001DDE7D /* Crashlytics.framework */; };
+		FD78B67C191CF0DE00229992 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78B675191CB83A00229992 /* libTestFlight.a */; };
 		FD9D7000187D348300404C3C /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */; };
 		FD9D7003187D3F1C00404C3C /* MGAGamePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9D7002187D3F1C00404C3C /* MGAGamePiece.m */; };
 		FD9D7005187D3F3100404C3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9D7004187D3F3100404C3C /* QuartzCore.framework */; };
@@ -749,7 +749,6 @@
 		C553822E18E5A89A00AA1B2C /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		C553822F18E5A89A00AA1B2C /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		C553823018E5A89A00AA1B2C /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
-		C553823318E5A8ED00AA1B2C /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = ../../TestFlightSDK3.0.0/libTestFlight.a; sourceTree = "<group>"; };
 		C58C39FB188C26BF0083C112 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FD022593187FF54C00B51647 /* GlobalMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalMethods.h; sourceTree = "<group>"; };
 		FD022594187FF54C00B51647 /* GlobalMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalMethods.m; sourceTree = "<group>"; };
@@ -1415,8 +1414,9 @@
 		FD6CEE87187EB237009ADF7D /* inactive_Japan_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Japan_flag@2x.png"; sourceTree = "<group>"; };
 		FD6CEE88187EB237009ADF7D /* inactive_NorthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_NorthKorea_flag@2x.png"; sourceTree = "<group>"; };
 		FD6CEE89187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_SouthKorea_flag@2x.png"; sourceTree = "<group>"; };
-		FD71B22A18740158006DD001 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
-		FD71B22B18740158006DD001 /* plane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane@2x.png"; sourceTree = "<group>"; };
+		FD78B675191CB83A00229992 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Montessori_Geography/Utilities/TestFlightSDK3.0.0/libTestFlight.a; sourceTree = "<group>"; };
+		FD78B677191CD90B00229992 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
+		FD78B678191CD90B00229992 /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
 		FD968D96187E5F5D0046AE06 /* MGACurrentMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGACurrentMode.h; sourceTree = "<group>"; };
 		FD9D6FFE187D348300404C3C /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
 		FD9D6FFF187D348300404C3C /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
@@ -1495,7 +1495,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C553823418E5A8ED00AA1B2C /* libTestFlight.a in Frameworks */,
+				FD78B67C191CF0DE00229992 /* libTestFlight.a in Frameworks */,
+				FD78B67B191CE5BA00229992 /* Crashlytics.framework in Frameworks */,
 				FD54FBC118E19F710060F9FF /* (null) in Frameworks */,
 				C58C39FC188C26BF0083C112 /* libz.dylib in Frameworks */,
 				FD128E801883E3CF00D760E9 /* StoreKit.framework in Frameworks */,
@@ -1504,7 +1505,6 @@
 				FD9D7005187D3F3100404C3C /* QuartzCore.framework in Frameworks */,
 				FDFF880C18714AAE0005173E /* CoreGraphics.framework in Frameworks */,
 				FDFF880E18714AAE0005173E /* UIKit.framework in Frameworks */,
-				C5023B8018E5A770001DDE7D /* Crashlytics.framework in Frameworks */,
 				FDFF880A18714AAE0005173E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2243,8 +2243,6 @@
 				FD54FBB618E19F200060F9FF /* orange_flag@2x.png */,
 				FD54FBB718E19F200060F9FF /* orange_pin.png */,
 				FD54FBB818E19F200060F9FF /* orange_pin@2x.png */,
-				FD71B22A18740158006DD001 /* plane.png */,
-				FD71B22B18740158006DD001 /* plane@2x.png */,
 				FD0ECB2018DAE99E0036A963 /* plane_1.png */,
 				FD0ECB2118DAE99E0036A963 /* plane_1@2x.png */,
 				FD0ECB2218DAE99E0036A963 /* plane_2.png */,
@@ -2255,6 +2253,8 @@
 				FD0ECB2718DAE99E0036A963 /* plane_4@2x.png */,
 				FD0ECB2818DAE99E0036A963 /* plane_5.png */,
 				FD0ECB2918DAE99E0036A963 /* plane_5@2x.png */,
+				FD78B677191CD90B00229992 /* back_button.png */,
+				FD78B678191CD90B00229992 /* back_button@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -2393,7 +2393,7 @@
 		FDFF880818714AAE0005173E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C553823318E5A8ED00AA1B2C /* libTestFlight.a */,
+				FD78B675191CB83A00229992 /* libTestFlight.a */,
 				C5023B7F18E5A770001DDE7D /* Crashlytics.framework */,
 				C58C39FB188C26BF0083C112 /* libz.dylib */,
 				FD128E7F1883E3CF00D760E9 /* StoreKit.framework */,
@@ -2637,6 +2637,7 @@
 				FDC3612918891E60001D8E27 /* active_SouthKorea.png in Resources */,
 				FD0E6F6418D2FCFE00B838FE /* flag_Singapore.png in Resources */,
 				FD0E6E6E18D2FC9500B838FE /* flag_Syria.png in Resources */,
+				FD78B679191CD90B00229992 /* back_button.png in Resources */,
 				FD0E6E9E18D2FC9500B838FE /* placeholder_Iran.png in Resources */,
 				FD0E6EC918D2FC9500B838FE /* active_Azerbaijan@2x.png in Resources */,
 				FD0E6C0F18D2FC7B00B838FE /* stage4_group1_active@2x.png in Resources */,
@@ -2931,7 +2932,6 @@
 				FD0E6EDD18D2FC9500B838FE /* inactive_Georgia@2x.png in Resources */,
 				FD0E6EB518D2FC9500B838FE /* placeholder_Turkey@2x.png in Resources */,
 				FD0E6BF218D2FC7B00B838FE /* stage2_group3_complete.png in Resources */,
-				FD71B22C18740158006DD001 /* plane.png in Resources */,
 				FD0E6E3C18D2FC9500B838FE /* active_Turkey.png in Resources */,
 				FD0E6E0318D2FC9500B838FE /* flag_Turkmenistan@2x.png in Resources */,
 				FD0E6E4C18D2FC9500B838FE /* flag_Iraq_gray.png in Resources */,
@@ -2987,6 +2987,7 @@
 				FD0E6E6718D2FC9500B838FE /* flag_Qatar@2x.png in Resources */,
 				FD37E9A8188FAFB2009C51C2 /* active_EastTimor.png in Resources */,
 				FD0E6BF718D2FC7B00B838FE /* stage2_group4_active@2x.png in Resources */,
+				FD78B67A191CD90B00229992 /* back_button@2x.png in Resources */,
 				FD0E6EBB18D2FC9500B838FE /* stage5_allGroups_map@2x.png in Resources */,
 				FD0E6DDD18D2FC9500B838FE /* placeholder_Maldives@2x.png in Resources */,
 				FD0E6F6018D2FCFE00B838FE /* flag_Philippines.png in Resources */,
@@ -3188,7 +3189,6 @@
 				FD0E6DE118D2FC9500B838FE /* placeholder_Pakistan@2x.png in Resources */,
 				FD0E6EAD18D2FC9500B838FE /* placeholder_Palestine@2x.png in Resources */,
 				FD37E9C0188FAFB2009C51C2 /* inactive_Indonesia.png in Resources */,
-				FD71B22D18740158006DD001 /* plane@2x.png in Resources */,
 				FD0E6DFE18D2FC9500B838FE /* flag_Tajikistan.png in Resources */,
 				FD0E6DC218D2FC9500B838FE /* flag_SriLanka_gray.png in Resources */,
 				FD0ECB2D18DAE99E0036A963 /* plane_2@2x.png in Resources */,
@@ -3455,12 +3455,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
@@ -3468,12 +3467,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
-					/Users/bobby/Documents/dev/TestFlightSDK3.0.0,
+					"$(PROJECT_DIR)/Montessori_Geography/Utilities/TestFlightSDK3.0.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1F30DF2E-004B-4E32-88F9-979AED4330CD";
+				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3484,11 +3482,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Blue Label Solutions LLC (6NWNVVFK58)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Blue Label Solutions LLC (6NWNVVFK58)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/bobby/Documents/dev/BlueLabelLabs-BL032-MGA/Montessori_Geography",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Montessori_Geography/Montessori_Geography-Prefix.pch";
@@ -3496,12 +3494,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Montessori_Geography/Utilities/TestFlightSDK2.1.4",
-					/Users/bobby/Documents/dev/TestFlightSDK3.0.0,
+					"$(PROJECT_DIR)/Montessori_Geography/Utilities/TestFlightSDK3.0.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8E6AD001-1F09-4FD2-A2BD-B4E6182CCBDD";
+				PROVISIONING_PROFILE = "5174F507-F86A-4494-A1ED-AEFE26F45BDB";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

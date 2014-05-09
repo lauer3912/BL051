@@ -14,11 +14,11 @@
 @interface IntroductionViewCtr : UIViewController <StageCompleteDelegate,UIAlertViewDelegate,StageCompleteForAllGroupDelegate>
 {
     //Welcome View
-    IBOutlet UIView *WelComeView,*AsiaView,*ViewContry;
-    IBOutlet UILabel *lblWelcome,*lblMonte,*lblAsia,*lblLine1,*lblStageTitle;
-    IBOutlet UIButton *btnMap,*btnFlag,*btnMenu;
+   __weak IBOutlet UIView *WelComeView,*AsiaView,*ViewContry;
+   __weak IBOutlet UILabel *lblWelcome,*lblMonte,*lblAsia,*lblLine1,*lblStageTitle;
+   __weak IBOutlet UIButton *btnMap,*btnFlag,*btnMenu;
     
-    IBOutlet UIImageView *img_Map,*img_Logo;
+   __weak IBOutlet UIImageView *img_Map,*img_Logo;
     
     CALayer *plane;
     
@@ -28,12 +28,12 @@
     
     
     //Purchase Screen
-    IBOutlet UIView *View_Purchase,*View_Menu;
-    IBOutlet UIButton *btnMapsPurchase,*btnFlagsPurchase,*btnMapsFlagsPurchase,*btnReset,*btnRestorePurchases;
-    IBOutlet UILabel *lblMapsPurchase,*lblFlagsPurchase,*lblMapsFlagsPurchase,*lblReset;
-    IBOutlet UIImageView *img_Shadow;
-    IBOutlet UILabel *lblBlue,*lblBorderMenu;
-    IBOutlet UILabel *lblMonte_Purchase,*lblAsia_Purchase;
+   __weak IBOutlet UIView *View_Purchase,*View_Menu;
+   __weak IBOutlet UIButton *btnMapsPurchase,*btnFlagsPurchase,*btnMapsFlagsPurchase,*btnReset,*btnRestorePurchases;
+   __weak IBOutlet UILabel *lblMapsPurchase,*lblFlagsPurchase,*lblMapsFlagsPurchase,*lblReset;
+   __weak IBOutlet UIImageView *img_Shadow;
+   __weak IBOutlet UILabel *lblBlue,*lblBorderMenu;
+   __weak IBOutlet UILabel *lblMonte_Purchase,*lblAsia_Purchase;
     
     
 }

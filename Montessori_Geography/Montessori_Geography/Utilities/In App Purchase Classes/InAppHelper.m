@@ -103,6 +103,10 @@
     SKPayment * payment = [SKPayment paymentWithProduct:product];
     [[SKPaymentQueue defaultQueue] addPayment:payment];    
 }
+- (void)restoreCompletedTransactions
+{
+    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+}
 // The transaction status of the SKPaymentQueue is sent here.
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
 {
@@ -174,6 +178,10 @@
 -(void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
 {
     [AppDel dismissGlobalHUD];;
+}
+- (void) paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    [AppDel dismissGlobalHUD];
 }
 - (void)failedTransaction:(SKPaymentTransaction *)transaction
 {

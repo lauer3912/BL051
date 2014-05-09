@@ -70,6 +70,7 @@
 {
     [MBProgressHUD hideAllHUDsForView:self.window animated:YES];
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.window animated:YES];
+    hud.color = RGBCOLOR(15, 99, 191);
     hud.labelText = title;
     return hud;
 }

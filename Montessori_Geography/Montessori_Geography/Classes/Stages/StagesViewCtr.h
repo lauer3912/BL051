@@ -17,6 +17,7 @@
 
 @optional
 -(void)StageComplete:(BOOL)previouslycompleted;
+-(void)PopViewSetAnimationBack;
 @end
 
 @interface StagesViewCtr : UIViewController <MGAGamePieceDelegate>
@@ -33,24 +34,21 @@
     
     NSMutableArray *_gamePiecesCompletedInCurrentStep;
     
-    IBOutlet UILabel *_lbl_Instruction;
-    IBOutlet UIImageView *_imgView_Stage_Map;
+    __weak IBOutlet UILabel *_lbl_Instruction;
+    __weak IBOutlet UIImageView *_imgView_Stage_Map;
     
     //Plane For Fly After Activity Completion
     CALayer *plane;
     
     //Timer For No Action in Step 1 & 3
     NSTimer *Step_Timer;
-    
-    //Stage or Group Complete Delegate
-    id <StageCompleteDelegate> _Stagedelegate;
-    
+        
     //Map Frame Modal
     MapFrameModal *obj_mapFrame;
     
-    IBOutlet UILabel *_lblStageTitle;
+    __weak IBOutlet UILabel *_lblStageTitle;
 }
-@property (nonatomic,strong) id <StageCompleteDelegate> _Stagedelegate;
+@property (nonatomic,weak) id <StageCompleteDelegate> _Stagedelegate;
 @property (nonatomic,readwrite) int _currentGameMode;
 @property (nonatomic,readwrite) int _currentStage;
 @property (nonatomic,readwrite) int _currentGroup;

@@ -35,9 +35,8 @@
 }
 +(void)RestoreInApp
 {
-    [AppDel showGlobalProgressHUDWithTitle:LSSTRING(@"Restoring product....")];
-    [SubclassInAppHelper sharedInstance];
-    [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+    [AppDel showGlobalProgressHUDWithTitle:@"Restoring purchases...."];
+    [[SubclassInAppHelper sharedInstance] restoreCompletedTransactions];
 }
 +(void)BuyProduct:(NSString*)strProductId
 {

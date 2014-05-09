@@ -220,7 +220,24 @@
     
     [self performSelector:@selector(startStep0) withObject:nil afterDelay:2.0];
 }
-
+#pragma mark - Back Pressed
+-(IBAction)btnBackPressed:(id)sender
+{
+    [self.view.layer removeAllAnimations];
+    [self.navigationController.view.layer removeAllAnimations];
+    
+    [CATransaction begin];
+    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+    
+    CATransition *transition = [CATransition animation];
+    [transition setType:kCATransitionFade];
+    [transition setDuration:0.70];
+    [self.navigationController.view.layer addAnimation:transition forKey:@"someAnimation"];
+    [self.navigationController popViewControllerAnimated:NO];
+    [CATransaction commit];
+    
+    [_Stagedelegate PopViewSetAnimationBack];
+}
 #pragma mark - Instruction Label Instance Methods
 - (void)showInstructionWithText1:(NSString *)text1 withText2:(NSString *)text2 completion:(void (^)(void))completion {
     // Animate the view into the screen coming up from the bottom.
@@ -1069,9 +1086,10 @@
 	
     if (!plane)
     {
+        UIImage *imgPlane = [UIImage imageNamed:@"plane_2.png"];
         plane = [CALayer layer];
-        plane.bounds = CGRectMake(0, 0, 46.0, 88.0);
-        plane.contents = (id)([UIImage imageNamed:@"plane.png"].CGImage);
+        plane.bounds = CGRectMake(0, 0, imgPlane.size.width, imgPlane.size.height);
+        plane.contents = (id)(imgPlane.CGImage);
         [self.view.layer addSublayer:plane];
     }
     else

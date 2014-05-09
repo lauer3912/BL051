@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 #import <SystemConfiguration/SystemConfiguration.h>
+#import "AppConstant.h"
 
 #define AppDel ((AppDelegate*)[[UIApplication sharedApplication] delegate])
 

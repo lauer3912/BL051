@@ -225,7 +225,8 @@
             
             NSDictionary *DicFlag_PinFrame = [[_groupDataArray objectAtIndex:j] valueForKey:@"flag_pin"];
             
-            UIImageView *imgViewGroupFlag_Pin = [[UIImageView alloc] init];
+            //Chirag
+            /*UIImageView *imgViewGroupFlag_Pin = [[UIImageView alloc] init];
             UIImage *imgOrange = [UIImage imageNamed:@"orange_pin"];
             imgViewGroupFlag_Pin.frame = CGRectMake([[DicFlag_PinFrame objectForKey:@"x"] floatValue],
                                             [[DicFlag_PinFrame objectForKey:@"y"] floatValue],
@@ -234,16 +235,35 @@
             imgViewGroupFlag_Pin.image = imgOrange;
             imgViewGroupFlag_Pin.hidden = YES;
             imgViewGroupFlag_Pin.userInteractionEnabled = YES;
+            [imgViewGroupFlag_Pin setHighlightedImage:[UIImage imageNamed:@"green_pin"]];
+            imgViewGroupFlag_Pin.highlighted = NO;
             imgViewGroupFlag_Pin.tag = [[NSString stringWithFormat:@"%d%d",i+1,j+1] intValue];
             [imgViewGroupFlag_Pin setAccessibilityIdentifier:@"flag_pin_orange"];
-            [ViewContry addSubview:imgViewGroupFlag_Pin];
+            [ViewContry addSubview:imgViewGroupFlag_Pin];*/
+            //Chirag
+            
+            UIImage *imgOrange = [UIImage imageNamed:@"orange_pin"];
+            UIButton *btnGroupFlag_Pin = [UIButton buttonWithType:UIButtonTypeCustom];
+            btnGroupFlag_Pin.frame = CGRectMake([[DicFlag_PinFrame objectForKey:@"x"] floatValue],
+                                                    [[DicFlag_PinFrame objectForKey:@"y"] floatValue],
+                                                    imgOrange.size.width,
+                                                    imgOrange.size.height);
+            [btnGroupFlag_Pin setImage:imgOrange forState:UIControlStateNormal];
+            btnGroupFlag_Pin.hidden = YES;
+            btnGroupFlag_Pin.userInteractionEnabled = YES;
+           // btnGroupFlag_Pin.showsTouchWhenHighlighted = YES;
+            btnGroupFlag_Pin.tag = [[NSString stringWithFormat:@"%d%d",i+1,j+1] intValue];
+            [btnGroupFlag_Pin setAccessibilityIdentifier:@"flag_pin_orange"];
+            [btnGroupFlag_Pin addTarget:self action:@selector(btnFlagPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [ViewContry addSubview:btnGroupFlag_Pin];
             
         }
         
         if (i < [_stageDataArray count] - 1) {
             NSDictionary *DicGreen_flag_Pin_Frame = [[_stageDataArray objectAtIndex:i] valueForKey:@"green_flag_pin_frame"];
             
-            UIImageView *imgViewStageFlag_Pin = [[UIImageView alloc] init];
+            //Chirag
+            /*UIImageView *imgViewStageFlag_Pin = [[UIImageView alloc] init];
             UIImage *imgGreen = [UIImage imageNamed:@"green_pin"];
             imgViewStageFlag_Pin.frame = CGRectMake([[DicGreen_flag_Pin_Frame objectForKey:@"x"] floatValue],
                                                     [[DicGreen_flag_Pin_Frame objectForKey:@"y"] floatValue], imgGreen.size.width, imgGreen.size.height);
@@ -252,14 +272,28 @@
             imgViewStageFlag_Pin.userInteractionEnabled = YES;
             imgViewStageFlag_Pin.tag = [[NSString stringWithFormat:@"%d",i+1] intValue];
             [imgViewStageFlag_Pin setAccessibilityIdentifier:@"flag_pin_green"];
-            [ViewContry addSubview:imgViewStageFlag_Pin];
+            [ViewContry addSubview:imgViewStageFlag_Pin];*/
+            //Chirag
+            
+            UIImage *imgGreen = [UIImage imageNamed:@"green_pin"];
+            UIButton *btnStageFlag_Pin = [UIButton buttonWithType:UIButtonTypeCustom];
+            btnStageFlag_Pin.frame = CGRectMake([[DicGreen_flag_Pin_Frame objectForKey:@"x"] floatValue],
+                                                [[DicGreen_flag_Pin_Frame objectForKey:@"y"] floatValue], imgGreen.size.width, imgGreen.size.height);
+            [btnStageFlag_Pin setImage:imgGreen forState:UIControlStateNormal];
+            btnStageFlag_Pin.hidden = YES;
+            btnStageFlag_Pin.userInteractionEnabled = YES;
+            //btnStageFlag_Pin.showsTouchWhenHighlighted = YES;
+            btnStageFlag_Pin.tag = [[NSString stringWithFormat:@"%d",i+1] intValue];
+            [btnStageFlag_Pin setAccessibilityIdentifier:@"flag_pin_green"];
+            [btnStageFlag_Pin addTarget:self action:@selector(btnFlagPressed:) forControlEvents:UIControlEventTouchUpInside];
+            [ViewContry addSubview:btnStageFlag_Pin];
         }
     }
     
 }
 -(void)SetImagesToGroups:(int)CurrStage Group:(int)CurrGroup
 {
-    for (UIImageView *imgViewComplete in ViewContry.subviews) {
+    for (id subView in ViewContry.subviews) {
         NSString *strTag;
         if (_CurrentGroup == 111) {
             strTag = [NSString stringWithFormat:@"%d9",CurrStage+1];
@@ -270,57 +304,62 @@
         int TempStage = 0;
         int TempGroup = 0;
         
-        TempGroup = imgViewComplete.tag % 10;
-        TempStage = imgViewComplete.tag / 10;
-        
-        NSString *strIdentifier = [imgViewComplete accessibilityIdentifier];
-        
-        if (imgViewComplete.tag < [strTag intValue]) {
+        if ([subView isKindOfClass:[UIImageView class]]) {
             
-            NSString *strTagStart = [NSString stringWithFormat:@"%d0",CurrStage+1];
-            if (_CurrentGroup == 111 && imgViewComplete.tag > [strTagStart intValue]) {
+            UIImageView *imgViewComplete = (UIImageView*)subView;
+            TempGroup = imgViewComplete.tag % 10;
+            TempStage = imgViewComplete.tag / 10;
+            
+            if (imgViewComplete.tag < [strTag intValue]) {
                 
-                if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
-                    imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_active",TempStage,TempGroup]];
-                    [imgViewComplete setAccessibilityIdentifier:@"active"];
+                NSString *strTagStart = [NSString stringWithFormat:@"%d0",CurrStage+1];
+                if (_CurrentGroup == 111 && imgViewComplete.tag > [strTagStart intValue]) {
+                        imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_active",TempStage,TempGroup]];
+                        [imgViewComplete setAccessibilityIdentifier:@"active"];
                 }
-                else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
-                    [self SetPin_Flag:imgViewComplete Identifier:@"flag_pin_orange_active"];
-                }
-            }
-            else{
-                if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
-                    imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_complete",TempStage,TempGroup]];
-                    [imgViewComplete setAccessibilityIdentifier:@"complete"];
-                }
-                else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
-                    [self SetPin_Flag:imgViewComplete Identifier:@"flag_pin_orange_complete"];
+                else{
+                        imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_complete",TempStage,TempGroup]];
+                        [imgViewComplete setAccessibilityIdentifier:@"complete"];
                 }
             }
-        }
-        else if (imgViewComplete.tag == [strTag intValue])
-        {
-            if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
+            else if (imgViewComplete.tag == [strTag intValue])
+            {
                 imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_active",TempStage,TempGroup]];
                 [imgViewComplete setAccessibilityIdentifier:@"active"];
             }
-            else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
-                [self SetPin_Flag:imgViewComplete Identifier:@"flag_pin_orange_active"];
-            }
-        }
-        else{
-            if ([strIdentifier rangeOfString:@"flag_pin"].location == NSNotFound) {
+            else{
                 imgViewComplete.image = [UIImage imageNamed:[NSString stringWithFormat:@"stage%d_group%d_placeholder",TempStage,TempGroup]];
                 [imgViewComplete setAccessibilityIdentifier:@"placeholder"];
             }
-            else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
-                imgViewComplete.hidden = YES;
+        }
+        else if ([subView isKindOfClass:[UIButton class]])
+        {
+            UIButton *btnComplete = (UIButton*)subView;
+            //TempGroup = btnComplete.tag % 10;
+            //TempStage = btnComplete.tag / 10;
+            
+            if (btnComplete.tag < [strTag intValue]) {
+                
+                NSString *strTagStart = [NSString stringWithFormat:@"%d0",CurrStage+1];
+                if (_CurrentGroup == 111 && btnComplete.tag > [strTagStart intValue]) {
+                    [self SetPin_Flag:btnComplete Identifier:@"flag_pin_orange_active"];
+                }
+                else{
+                    [self SetPin_Flag:btnComplete Identifier:@"flag_pin_orange_complete"];
+                }
+            }
+            else if (btnComplete.tag == [strTag intValue])
+            {
+                [self SetPin_Flag:btnComplete Identifier:@"flag_pin_orange_active"];
+            }
+            else{
+                btnComplete.hidden = YES;
             }
         }
     }
     [self ShowGreenPin_Flag];
 }
--(void)SetPin_Flag:(UIImageView*)imgName Identifier:(NSString*)strIdentifier
+-(void)SetPin_Flag:(UIButton*)btnName Identifier:(NSString*)strIdentifier
 {
     UIImage *img;
     if (_CurrentMode == kModeCountry) {
@@ -329,31 +368,31 @@
     else if (_CurrentMode == kModeFlag){
         img = [UIImage imageNamed:@"orange_flag"];
     }
-    imgName.image = img;
-    imgName.frame = CGRectMake(imgName.frame.origin.x, imgName.frame.origin.y, img.size.width, img.size.height);
-    imgName.hidden = NO;
-    [imgName setAccessibilityIdentifier:strIdentifier];
-    [ViewContry bringSubviewToFront:imgName];
+    [btnName setImage:img forState:UIControlStateNormal];
+    btnName.frame = CGRectMake(btnName.frame.origin.x, btnName.frame.origin.y, img.size.width, img.size.height);
+    btnName.hidden = NO;
+    [btnName setAccessibilityIdentifier:strIdentifier];
+    [ViewContry bringSubviewToFront:btnName];
 }
 -(void)ShowGreenPin_Flag
 {
     NSArray *_totalStageArray = [GlobalMethods ReturnCurrentStageArray:_CurrentStage ForKey:@"AllStage"];
     for (int i = 0; i < _totalStageArray.count - 1; i++) {
         
-        UIImageView *imgGreen = (UIImageView*)[ViewContry viewWithTag:i+1];
+        UIButton *btnGreen = (UIButton*)[ViewContry viewWithTag:i+1];
         if (i < _CurrentStage) {
-            [self SetGreenPin_Flag:imgGreen Identifier:@"flag_pin_green_complete"];
+            [self SetGreenPin_Flag:btnGreen Identifier:@"flag_pin_green_complete"];
         }
         else{
-            imgGreen.hidden = YES;
+            btnGreen.hidden = YES;
         }
     }
     if (_CurrentGroup == 111) {
-        UIImageView *imgGreen = (UIImageView*)[ViewContry viewWithTag:_CurrentStage+1];
-        [self SetGreenPin_Flag:imgGreen Identifier:@"flag_pin_green_active"];
+        UIButton *btnGreen = (UIButton*)[ViewContry viewWithTag:_CurrentStage+1];
+        [self SetGreenPin_Flag:btnGreen Identifier:@"flag_pin_green_active"];
     }
 }
--(void)SetGreenPin_Flag:(UIImageView*)imgName Identifier:(NSString*)strIdentifier
+-(void)SetGreenPin_Flag:(UIButton*)btnName Identifier:(NSString*)strIdentifier
 {
     UIImage *img;
     if (_CurrentMode == kModeCountry) {
@@ -362,11 +401,11 @@
     else if (_CurrentMode == kModeFlag){
         img = [UIImage imageNamed:@"green_flag"];
     }
-    imgName.image = img;
-    imgName.frame = CGRectMake(imgName.frame.origin.x, imgName.frame.origin.y, img.size.width, img.size.height);
-    imgName.hidden = NO;
-    [imgName setAccessibilityIdentifier:strIdentifier];
-    [ViewContry bringSubviewToFront:imgName];
+    [btnName setImage:img forState:UIControlStateNormal];
+    btnName.frame = CGRectMake(btnName.frame.origin.x, btnName.frame.origin.y, img.size.width, img.size.height);
+    btnName.hidden = NO;
+    [btnName setAccessibilityIdentifier:strIdentifier];
+    [ViewContry bringSubviewToFront:btnName];
 }
 #pragma mark - Create Path for Plane Animation
 -(void)CreatePlaneAnimationPath:(NSDictionary*)dicPath
@@ -406,9 +445,10 @@
 	
     if (!plane)
     {
+        UIImage *imgPlane = [UIImage imageNamed:@"plane_4.png"];
         plane = [CALayer layer];
-        plane.bounds = CGRectMake(0, 0, 46.0, 88.0);
-        plane.contents = (id)([UIImage imageNamed:@"plane.png"].CGImage);
+        plane.bounds = CGRectMake(0, 0, imgPlane.size.width, imgPlane.size.height);
+        plane.contents = (id)(imgPlane.CGImage);
         [self.view.layer addSublayer:plane];
     }
     else
@@ -471,35 +511,41 @@
                         
                         if (![self isTouchOnTransparentPixel:touchLocationTemp ImageView:imgViewContry]) {
                             
-                            [self CheckTouchObject:imgViewContry];
+                            [self CheckTouchObjectForImageView:imgViewContry];
                              break;
                         }
                     }
                 }
                 
             }
-            else if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
-                [self CheckTouchObject:imgViewContryorFlag];
-            }
-            else if ([strIdentifier rangeOfString:@"flag_pin_green"].location != NSNotFound){
-                
-                NSString *file_name = [imgViewContryorFlag accessibilityIdentifier] ;
-                int TempStage = 0;
-                
-                TempStage = imgViewContryorFlag.tag - 1;
-                
-                if ([file_name rangeOfString:@"complete"].location != NSNotFound) {
-                    [self CheckInAppAndStartStage:TempStage CurrentGroup:111 PreviousComplete:YES AllGroup:1];
-                }
-                else if ([file_name rangeOfString:@"active"].location != NSNotFound){
-                    
-                    [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:1];
-                }
-            }
         }
     }
 }
--(void)CheckTouchObject:(UIImageView*)imgName
+-(void)btnFlagPressed:(id)sender
+{
+    UIButton *btnFlag_Pin_Selected = (UIButton*)sender;
+    NSString *strIdentifier = [btnFlag_Pin_Selected accessibilityIdentifier];
+    
+    if ([strIdentifier rangeOfString:@"flag_pin_orange"].location != NSNotFound){
+        [self CheckTouchObjectForButton:btnFlag_Pin_Selected];
+    }
+    else if ([strIdentifier rangeOfString:@"flag_pin_green"].location != NSNotFound){
+        
+        int TempStage = 0;
+        
+        TempStage = btnFlag_Pin_Selected.tag - 1;
+        
+        if ([strIdentifier rangeOfString:@"complete"].location != NSNotFound) {
+            [self CheckInAppAndStartStage:TempStage CurrentGroup:111 PreviousComplete:YES AllGroup:1];
+        }
+        else if ([strIdentifier rangeOfString:@"active"].location != NSNotFound){
+            
+            [self CheckInAppAndStartStage:_CurrentStage CurrentGroup:_CurrentGroup PreviousComplete:NO AllGroup:1];
+        }
+    }
+
+}
+-(void)CheckTouchObjectForImageView:(UIImageView*)imgName
 {
     NSString *file_name = [imgName accessibilityIdentifier] ;
     int TempStage = 0;
@@ -508,10 +554,25 @@
     TempGroup = imgName.tag % 10;
     TempStage = imgName.tag / 10;
     
-    if ([file_name rangeOfString:@"complete"].location != NSNotFound) {
+    [self CheckStateofTouchedObject:file_name Stage:TempStage Group:TempGroup];
+}
+-(void)CheckTouchObjectForButton:(UIButton*)btnName
+{
+    NSString *file_name = [btnName accessibilityIdentifier] ;
+    int TempStage = 0;
+    int TempGroup = 0;
+    
+    TempGroup = btnName.tag % 10;
+    TempStage = btnName.tag / 10;
+    
+    [self CheckStateofTouchedObject:file_name Stage:TempStage Group:TempGroup];
+}
+-(void)CheckStateofTouchedObject:(NSString*)strIdentifier Stage:(int)TempStage Group:(int)TempGroup
+{
+    if ([strIdentifier rangeOfString:@"complete"].location != NSNotFound) {
         [self CheckInAppAndStartStage:TempStage-1 CurrentGroup:TempGroup-1 PreviousComplete:YES AllGroup:0];
     }
-    else if ([file_name rangeOfString:@"active"].location != NSNotFound){
+    else if ([strIdentifier rangeOfString:@"active"].location != NSNotFound){
         
         int tempflag = 0;
         if (_CurrentGroup == 111) {
@@ -693,7 +754,16 @@
         [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
     }
 }
-
+-(void)PopViewSetAnimationBack
+{
+    [self ZoomOutForNextStage];
+    
+    //Move Plane to next stage
+    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+    //Change Stage And Group for Plane Animation
+    
+    [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
+}
 
 #pragma mark - _StageAllGroupDelegate Delegate
 -(void)StageCompleteForAllGroup:(BOOL)previouslycompleted
@@ -888,28 +958,34 @@
 }
 -(IBAction)btnRestorePurchasedPressed:(id)sender
 {
-    [GlobalMethods RestoreInApp];
+    if ([AppDel checkConnection])
+        [GlobalMethods RestoreInApp];
+    else
+        DisplayLocalizedAlertNoInternet;
 }
 -(void)CheckPurchaseAndUpdateUI
 {
     if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"])
-        [btnMapsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
-    
-    if ([[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"])
-        [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
-    
-    if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_Flags_ID] isEqualToString:@"YES"])
     {
         [btnMapsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
-        [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
-        [btnMapsFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
+        [btnMapsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateHighlighted];
     }
     
-    if ([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"] && [[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"])
+    if ([[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"])
+    {
+        [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
+        [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateHighlighted];
+    }
+    
+    if (([[NSUserDefaults retrieveObjectForKey:InApp_Countries_ID] isEqualToString:@"YES"] && [[NSUserDefaults retrieveObjectForKey:InApp_Flags_ID] isEqualToString:@"YES"]) || [[NSUserDefaults retrieveObjectForKey:InApp_Countries_Flags_ID] isEqualToString:@"YES"])
     {
         [btnMapsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
         [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
         [btnMapsFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateNormal];
+        
+        [btnMapsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateHighlighted];
+        [btnFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateHighlighted];
+        [btnMapsFlagsPurchase setTitle:LSSTRING(@"UNLOCKED") forState:UIControlStateHighlighted];
     }
 }
 
