@@ -123,7 +123,7 @@
 							<key>x1</key>
 							<string>719</string>
 							<key>y1</key>
-							<string>500</string>
+							<string>510</string>
 							<key>px1</key>
 							<string>766</string>
 							<key>py1</key>
@@ -139,127 +139,15 @@
 					<key>airplane</key>
 					<dict>
 						<key>animationtime</key>
-						<string>16.0</string>
+						<string>17.0</string>
 					</dict>
 					<key>path</key>
 					<array>
 						<dict>
 							<key>x</key>
-							<string>1024</string>
+							<string>719</string>
 							<key>y</key>
-							<string>215</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>528</string>
-							<key>y1</key>
-							<string>347</string>
-							<key>px1</key>
-							<string>913</string>
-							<key>py1</key>
-							<string>278</string>
-							<key>px2</key>
-							<string>720</string>
-							<key>py2</key>
-							<string>355</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>0</string>
-							<key>y1</key>
-							<string>356</string>
-							<key>px1</key>
-							<string>370</string>
-							<key>py1</key>
-							<string>348</string>
-							<key>px2</key>
-							<string>168</string>
-							<key>py2</key>
-							<string>336</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>0</string>
-							<key>y1</key>
-							<string>710</string>
-							<key>px1</key>
-							<string>-200</string>
-							<key>py1</key>
-							<string>354</string>
-							<key>px2</key>
-							<string>-100</string>
-							<key>py2</key>
-							<string>710</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>528</string>
-							<key>y1</key>
-							<string>680</string>
-							<key>px1</key>
-							<string>168</string>
-							<key>py1</key>
-							<string>730</string>
-							<key>px2</key>
-							<string>370</string>
-							<key>py2</key>
-							<string>710</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>1023</string>
-							<key>y1</key>
-							<string>625</string>
-							<key>px1</key>
-							<string>720</string>
-							<key>py1</key>
-							<string>640</string>
-							<key>px2</key>
-							<string>913</string>
-							<key>py2</key>
-							<string>620</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>1023</string>
-							<key>y1</key>
-							<string>437</string>
-							<key>px1</key>
-							<string>1123</string>
-							<key>py1</key>
-							<string>630</string>
-							<key>px2</key>
-							<string>1223</string>
-							<key>py2</key>
-							<string>425</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>815</string>
-							<key>y1</key>
-							<string>545</string>
-							<key>px1</key>
-							<string>938</string>
-							<key>py1</key>
-							<string>485</string>
-							<key>px2</key>
-							<string>866</string>
-							<key>py2</key>
-							<string>520</string>
-						</dict>
-						<dict>
-							<key>x1</key>
-							<string>719</string>
-							<key>y1</key>
 							<string>510</string>
-							<key>px1</key>
-							<string>766</string>
-							<key>py1</key>
-							<string>568</string>
-							<key>px2</key>
-							<string>719</string>
-							<key>py2</key>
-							<string>555</string>
 						</dict>
 						<dict>
 							<key>x1</key>
@@ -279,7 +167,7 @@
 							<key>x1</key>
 							<string>635</string>
 							<key>y1</key>
-							<string>217</string>
+							<string>220</string>
 							<key>px1</key>
 							<string>702</string>
 							<key>py1</key>
@@ -297,11 +185,32 @@
 							<key>px1</key>
 							<string>585</string>
 							<key>py1</key>
-							<string>217</string>
+							<string>210</string>
 							<key>px2</key>
 							<string>540</string>
 							<key>py2</key>
 							<string>259</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>groups</key>
+			<array>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>18.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>539</string>
+							<key>y</key>
+							<string>369</string>
 						</dict>
 						<dict>
 							<key>x1</key>
@@ -317,6 +226,22 @@
 							<key>py2</key>
 							<string>564</string>
 						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>19.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>588</string>
+							<key>y</key>
+							<string>707</string>
+						</dict>
 						<dict>
 							<key>x1</key>
 							<string>544</string>
@@ -331,13 +256,29 @@
 							<key>py2</key>
 							<string>731</string>
 						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>20.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>544</string>
+							<key>y</key>
+							<string>672</string>
+						</dict>
 						<dict>
 							<key>x1</key>
-							<string>605</string>
+							<string>590</string>
 							<key>y1</key>
 							<string>553</string>
 							<key>px1</key>
-							<string>557</string>
+							<string>550</string>
 							<key>py1</key>
 							<string>634</string>
 							<key>px2</key>
@@ -347,31 +288,47 @@
 						</dict>
 						<dict>
 							<key>x1</key>
-							<string>575</string>
+							<string>560</string>
 							<key>y1</key>
-							<string>447</string>
+							<string>480</string>
 							<key>px1</key>
-							<string>621</string>
+							<string>591</string>
 							<key>py1</key>
-							<string>505</string>
+							<string>540</string>
 							<key>px2</key>
 							<string>605</string>
 							<key>py2</key>
-							<string>459</string>
+							<string>470</string>
 						</dict>
 						<dict>
 							<key>x1</key>
-							<string>539</string>
+							<string>530</string>
 							<key>y1</key>
 							<string>624</string>
 							<key>px1</key>
 							<string>530</string>
 							<key>py1</key>
-							<string>448</string>
+							<string>485</string>
 							<key>px2</key>
-							<string>521</string>
+							<string>520</string>
 							<key>py2</key>
-							<string>535</string>
+							<string>580</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>21.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>530</string>
+							<key>y</key>
+							<string>624</string>
 						</dict>
 						<dict>
 							<key>x1</key>
@@ -379,13 +336,34 @@
 							<key>y1</key>
 							<string>584</string>
 							<key>px1</key>
-							<string>539</string>
+							<string>530</string>
 							<key>py1</key>
 							<string>685</string>
 							<key>px2</key>
 							<string>446</string>
 							<key>py2</key>
 							<string>700</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>groups</key>
+			<array>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>22.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>460</string>
+							<key>y</key>
+							<string>584</string>
 						</dict>
 						<dict>
 							<key>x1</key>
@@ -401,11 +379,27 @@
 							<key>py2</key>
 							<string>516</string>
 						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>23.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>386</string>
+							<key>y</key>
+							<string>513</string>
+						</dict>
 						<dict>
 							<key>x1</key>
-							<string>335</string>
+							<string>338</string>
 							<key>y1</key>
-							<string>637</string>
+							<string>635</string>
 							<key>px1</key>
 							<string>343</string>
 							<key>py1</key>
@@ -414,6 +408,361 @@
 							<string>329</string>
 							<key>py2</key>
 							<string>568</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>24.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>338</string>
+							<key>y</key>
+							<string>635</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>385</string>
+							<key>y1</key>
+							<string>655</string>
+							<key>px1</key>
+							<string>338</string>
+							<key>py1</key>
+							<string>635</string>
+							<key>px2</key>
+							<string>355</string>
+							<key>py2</key>
+							<string>710</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>320</string>
+							<key>y1</key>
+							<string>500</string>
+							<key>px1</key>
+							<string>405</string>
+							<key>py1</key>
+							<string>580</string>
+							<key>px2</key>
+							<string>385</string>
+							<key>py2</key>
+							<string>520</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>groups</key>
+			<array>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>25.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>320</string>
+							<key>y</key>
+							<string>500</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>340</string>
+							<key>y1</key>
+							<string>430</string>
+							<key>px1</key>
+							<string>310</string>
+							<key>py1</key>
+							<string>495</string>
+							<key>px2</key>
+							<string>200</string>
+							<key>py2</key>
+							<string>463</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>26.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>340</string>
+							<key>y</key>
+							<string>430</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>340</string>
+							<key>y1</key>
+							<string>330</string>
+							<key>px1</key>
+							<string>340</string>
+							<key>py1</key>
+							<string>430</string>
+							<key>px2</key>
+							<string>480</string>
+							<key>py2</key>
+							<string>400</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>250</string>
+							<key>y1</key>
+							<string>390</string>
+							<key>px1</key>
+							<string>340</string>
+							<key>py1</key>
+							<string>330</string>
+							<key>px2</key>
+							<string>280</string>
+							<key>py2</key>
+							<string>300</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>groups</key>
+			<array>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>27.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>250</string>
+							<key>y</key>
+							<string>390</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>160</string>
+							<key>y1</key>
+							<string>410</string>
+							<key>px1</key>
+							<string>250</string>
+							<key>py1</key>
+							<string>390</string>
+							<key>px2</key>
+							<string>220</string>
+							<key>py2</key>
+							<string>540</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>28.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>160</string>
+							<key>y</key>
+							<string>410</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>210</string>
+							<key>y1</key>
+							<string>372</string>
+							<key>px1</key>
+							<string>150</string>
+							<key>py1</key>
+							<string>370</string>
+							<key>px2</key>
+							<string>168</string>
+							<key>py2</key>
+							<string>340</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>207</string>
+							<key>y1</key>
+							<string>485</string>
+							<key>px1</key>
+							<string>235</string>
+							<key>py1</key>
+							<string>395</string>
+							<key>px2</key>
+							<string>285</string>
+							<key>py2</key>
+							<string>440</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>29.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>207</string>
+							<key>y</key>
+							<string>485</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>225</string>
+							<key>y1</key>
+							<string>590</string>
+							<key>px1</key>
+							<string>200</string>
+							<key>py1</key>
+							<string>490</string>
+							<key>px2</key>
+							<string>50</string>
+							<key>py2</key>
+							<string>540</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>30.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>225</string>
+							<key>y</key>
+							<string>590</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>290</string>
+							<key>y1</key>
+							<string>630</string>
+							<key>px1</key>
+							<string>225</string>
+							<key>py1</key>
+							<string>590</string>
+							<key>px2</key>
+							<string>290</string>
+							<key>py2</key>
+							<string>605</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>185</string>
+							<key>y1</key>
+							<string>600</string>
+							<key>px1</key>
+							<string>290</string>
+							<key>py1</key>
+							<string>650</string>
+							<key>px2</key>
+							<string>230</string>
+							<key>py2</key>
+							<string>702</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>180</string>
+							<key>y1</key>
+							<string>545</string>
+							<key>px1</key>
+							<string>185</string>
+							<key>py1</key>
+							<string>600</string>
+							<key>px2</key>
+							<string>175</string>
+							<key>py2</key>
+							<string>570</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>31.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>180</string>
+							<key>y</key>
+							<string>545</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>85</string>
+							<key>y1</key>
+							<string>465</string>
+							<key>px1</key>
+							<string>180</string>
+							<key>py1</key>
+							<string>545</string>
+							<key>px2</key>
+							<string>200</string>
+							<key>py2</key>
+							<string>435</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>groups</key>
+			<array>
+				<dict>
+					<key>airplane</key>
+					<dict>
+						<key>animationtime</key>
+						<string>32.0</string>
+					</dict>
+					<key>path</key>
+					<array>
+						<dict>
+							<key>x</key>
+							<string>85</string>
+							<key>y</key>
+							<string>465</string>
+						</dict>
+						<dict>
+							<key>x1</key>
+							<string>100</string>
+							<key>y1</key>
+							<string>500</string>
+							<key>px1</key>
+							<string>85</string>
+							<key>py1</key>
+							<string>465</string>
+							<key>px2</key>
+							<string>25</string>
+							<key>py2</key>
+							<string>500</string>
 						</dict>
 					</array>
 				</dict>

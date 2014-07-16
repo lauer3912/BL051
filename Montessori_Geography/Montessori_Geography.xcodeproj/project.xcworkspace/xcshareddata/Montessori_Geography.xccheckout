@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F25C57E5-51C8-48F4-B975-2D55E930DC05</string>
+	<string>2E8EFD81-B833-4A15-B4A3-D78791D3F90C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Montessori_Geography</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,19 +14,14 @@
 		<string>https://github.com/iggytheiguana/BL051.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>trunk/Montessori_Geography/Montessori_Geography.xcodeproj/project.xcworkspace</string>
+	<string>Montessori_Geography/Montessori_Geography.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>04C8967F-8983-45DB-8C1F-4345C8E93D9C</key>
-		<string>../../../../..</string>
-	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>04C8967F-8983-45DB-8C1F-4345C8E93D9C</key>
-		<string>https://github.com/iggytheiguana/BL051.git</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/iggytheiguana/BL051.git/trunk/App/Montessori_Geography/Montessori_Geography.xcodeproj</string>
+	<string>https://github.com/iggytheiguana/BL051.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,12 +29,8 @@
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
-			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
-			<string>branches</string>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
-			<string>trunk</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>04C8967F-8983-45DB-8C1F-4345C8E93D9C</string>
 			<key>IDESourceControlWCCName</key>

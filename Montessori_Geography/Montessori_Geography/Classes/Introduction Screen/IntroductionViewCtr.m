@@ -445,7 +445,7 @@
 	
     if (!plane)
     {
-        UIImage *imgPlane = [UIImage imageNamed:@"plane_4.png"];
+        UIImage *imgPlane = [UIImage imageNamed:@"plane_2.png"];
         plane = [CALayer layer];
         plane.bounds = CGRectMake(0, 0, imgPlane.size.width, imgPlane.size.height);
         plane.contents = (id)(imgPlane.CGImage);
