@@ -18,6 +18,7 @@
 @synthesize _currentGameMode,_currentStage,_currentGroup;
 @synthesize _Stagedelegate;
 @synthesize Completed;
+@synthesize plane_flying;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -110,7 +111,7 @@
         UILabel *gamePieceLabel = [[UILabel alloc] init];
         [gamePieceLabel setTextAlignment:NSTextAlignmentCenter];
         [gamePieceLabel setTextColor:[UIColor blackColor]];
-        [gamePieceLabel setFont:[UIFont systemFontOfSize:24.0f]];
+        [gamePieceLabel setFont:KGPrimaryPenmanship2(30)];
         [gamePieceLabel setText:gamePiece.name];
         [gamePieceLabel sizeToFit];
         gamePiece.lbl_name = gamePieceLabel;
@@ -206,8 +207,8 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    _lbl_Instruction.font = Questrial_Regular(_lbl_Instruction.font.pointSize);
-    _lblStageTitle.font = Questrial_Regular(_lblStageTitle.font.pointSize);
+    _lbl_Instruction.font = KGPrimaryPenmanship2(_lbl_Instruction.font.pointSize + kSizeDiff);
+    _lblStageTitle.font = KGPrimaryPenmanship2(_lblStageTitle.font.pointSize + kSizeDiff);
     
     //Set Stage Title
     _lblStageTitle.text = [GlobalMethods ReturnStageTitle:_currentStage];
@@ -428,7 +429,7 @@
         void (^completion)(void) = ^(void) {
             [self.view setUserInteractionEnabled:NO];
             [self PlaneAnimationPathAfterActivityCompletion];
-            [self performSelector:@selector(endStep0) withObject:nil afterDelay:StepCompleteAnimationTime-1.0];
+            [self performSelector:@selector(endStep0) withObject:nil afterDelay:StepCompleteAnimationTime];
         };
         [self hideInstructionWithTextWithCompletion:completion];
     };
@@ -474,6 +475,7 @@
 
 - (void)endStep0 {
     
+    [self.plane_flying stop];
     [self.view setUserInteractionEnabled:YES];
     // Fade out the current view to prepare for step 1.
     [UIView animateWithDuration:0.35
@@ -628,6 +630,7 @@
 #pragma mark - Step 2 (Dragging - On Map) Instance Methods
 - (void)startStep2 {
     
+    [self.plane_flying stop];
     [self.view setUserInteractionEnabled:YES];
     _currentStep = kSTEP2;
     _currentGamePieceIndex = 0;
@@ -702,6 +705,7 @@
 }
 -(void)endStep2
 {
+    [self.plane_flying stop];
     [self.view setUserInteractionEnabled:YES];
     // Fade out the current view to prepare for step 1.
     [UIView animateWithDuration:0.35
@@ -868,7 +872,7 @@
             
             [self.view setUserInteractionEnabled:NO];
             [self PlaneAnimationPathAfterActivityCompletion];
-            [self performSelector:@selector(endStep2) withObject:nil afterDelay:StepCompleteAnimationTime-1.0];
+            [self performSelector:@selector(endStep2) withObject:nil afterDelay:StepCompleteAnimationTime];
         }
     }
 }
@@ -1000,6 +1004,7 @@
 }
 -(void)PopViewToNextStageorGroup
 {
+    [self.plane_flying stop];
     [self.navigationController popViewControllerAnimated:NO];
     [_Stagedelegate StageComplete:Completed];
 }
@@ -1098,6 +1103,8 @@
     }
     plane.position = point;
     
+    [self playPlaneSound];
+
 	CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
 	anim.path = trackPath.CGPath;
 	anim.rotationMode = kCAAnimationRotateAutoReverse;
@@ -1106,7 +1113,6 @@
     anim.removedOnCompletion = NO;
     anim.fillMode = kCAFillModeForwards;
 	[plane addAnimation:anim forKey:@"race"];
-    
 }
 - (void)bringSublayerToFront:(CALayer *)layer {
     CALayer *superlayer = layer.superlayer;
@@ -1116,6 +1122,21 @@
 
 -(int)getRandomNumberBetween:(int)from to:(int)to {
     return (int)from + arc4random() % (to-from+1);
+}
+
+#pragma mark - Play Plane Sound
+-(void)playPlaneSound
+{
+    if (self.plane_flying == nil)
+    {
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"plane_flying" ofType: @"wav"];
+        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+        AVAudioPlayer *newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
+        newPlayer.numberOfLoops = -1;
+        self.plane_flying = newPlayer;
+        [self.plane_flying prepareToPlay];
+    }
+    [self.plane_flying play];
 }
 - (void)didReceiveMemoryWarning
 {

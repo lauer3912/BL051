@@ -627,6 +627,12 @@
 		FD37E9F7188FB585009C51C2 /* inactive_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */; };
 		FD37E9F8188FB585009C51C2 /* placeholder_Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */; };
 		FD37E9F9188FB585009C51C2 /* placeholder_Singapore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */; };
+		FD46FEF71977AF2500921521 /* kg-primary-penmanship-2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD46FEF61977AF2500921521 /* kg-primary-penmanship-2.ttf */; };
+		FD46FEFD1977B4B000921521 /* plane_landing.wav in Resources */ = {isa = PBXBuildFile; fileRef = FD46FEFA1977B4B000921521 /* plane_landing.wav */; };
+		FD46FEFE1977B4B000921521 /* plane_take_off.wav in Resources */ = {isa = PBXBuildFile; fileRef = FD46FEFB1977B4B000921521 /* plane_take_off.wav */; };
+		FD46FF001977B54400921521 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD46FEFF1977B54400921521 /* AVFoundation.framework */; };
+		FD46FF041977BA8B00921521 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD46FF031977BA8B00921521 /* AudioToolbox.framework */; };
+		FD46FF061977C3EE00921521 /* plane_flying.wav in Resources */ = {isa = PBXBuildFile; fileRef = FD46FF051977C3EE00921521 /* plane_flying.wav */; };
 		FD4FC25418D826110095C079 /* StagesAllGroupViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FC25218D826110095C079 /* StagesAllGroupViewCtr.m */; };
 		FD4FC25518D826110095C079 /* StagesAllGroupViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4FC25318D826110095C079 /* StagesAllGroupViewCtr.xib */; };
 		FD4FF1C9187FCB8000D6823A /* NSUserDefaults+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4FF1C8187FCB8000D6823A /* NSUserDefaults+Helpers.m */; };
@@ -1373,6 +1379,12 @@
 		FD37E9F1188FB585009C51C2 /* inactive_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_Singapore@2x.png"; sourceTree = "<group>"; };
 		FD37E9F2188FB585009C51C2 /* placeholder_Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder_Singapore.png; sourceTree = "<group>"; };
 		FD37E9F3188FB585009C51C2 /* placeholder_Singapore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder_Singapore@2x.png"; sourceTree = "<group>"; };
+		FD46FEF61977AF2500921521 /* kg-primary-penmanship-2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "kg-primary-penmanship-2.ttf"; sourceTree = "<group>"; };
+		FD46FEFA1977B4B000921521 /* plane_landing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plane_landing.wav; sourceTree = "<group>"; };
+		FD46FEFB1977B4B000921521 /* plane_take_off.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plane_take_off.wav; sourceTree = "<group>"; };
+		FD46FEFF1977B54400921521 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FD46FF031977BA8B00921521 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FD46FF051977C3EE00921521 /* plane_flying.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plane_flying.wav; sourceTree = "<group>"; };
 		FD4FC25118D826110095C079 /* StagesAllGroupViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StagesAllGroupViewCtr.h; sourceTree = "<group>"; };
 		FD4FC25218D826110095C079 /* StagesAllGroupViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StagesAllGroupViewCtr.m; sourceTree = "<group>"; };
 		FD4FC25318D826110095C079 /* StagesAllGroupViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StagesAllGroupViewCtr.xib; sourceTree = "<group>"; };
@@ -1495,6 +1507,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD46FF041977BA8B00921521 /* AudioToolbox.framework in Frameworks */,
+				FD46FF001977B54400921521 /* AVFoundation.framework in Frameworks */,
 				FD78B67C191CF0DE00229992 /* libTestFlight.a in Frameworks */,
 				FD78B67B191CE5BA00229992 /* Crashlytics.framework in Frameworks */,
 				FD54FBC118E19F710060F9FF /* (null) in Frameworks */,
@@ -2223,6 +2237,16 @@
 			path = Stage2;
 			sourceTree = "<group>";
 		};
+		FD46FEF81977B4B000921521 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FD46FF051977C3EE00921521 /* plane_flying.wav */,
+				FD46FEFA1977B4B000921521 /* plane_landing.wav */,
+				FD46FEFB1977B4B000921521 /* plane_take_off.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		FD71B21D1873D233006DD001 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -2393,6 +2417,8 @@
 		FDFF880818714AAE0005173E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD46FF031977BA8B00921521 /* AudioToolbox.framework */,
+				FD46FEFF1977B54400921521 /* AVFoundation.framework */,
 				FD78B675191CB83A00229992 /* libTestFlight.a */,
 				C5023B7F18E5A770001DDE7D /* Crashlytics.framework */,
 				C58C39FB188C26BF0083C112 /* libz.dylib */,
@@ -2464,6 +2490,7 @@
 		FDFF884218714D470005173E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FD46FEF81977B4B000921521 /* Sounds */,
 				FD71B21D1873D233006DD001 /* Images */,
 				FDFF888E187152900005173E /* Fonts */,
 			);
@@ -2508,6 +2535,7 @@
 		FDFF888E187152900005173E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				FD46FEF61977AF2500921521 /* kg-primary-penmanship-2.ttf */,
 				FDFF888F187152900005173E /* Questrial-Regular.otf */,
 			);
 			path = Fonts;
@@ -2673,6 +2701,7 @@
 				FD0E6E9B18D2FC9500B838FE /* inactive_Yemen@2x.png in Resources */,
 				FD0E6DD118D2FC9500B838FE /* inactive_Pakistan@2x.png in Resources */,
 				FD37E9D0188FAFB2009C51C2 /* placeholder_Brunei.png in Resources */,
+				FD46FEF71977AF2500921521 /* kg-primary-penmanship-2.ttf in Resources */,
 				FD0E6C3118D2FC7B00B838FE /* stage5_group4_placeholder@2x.png in Resources */,
 				FD0E6E3818D2FC9500B838FE /* active_SaudiArabia.png in Resources */,
 				FD128E911883FE2000D760E9 /* menu_blue@2x.png in Resources */,
@@ -2748,6 +2777,7 @@
 				FD0E6EDF18D2FC9500B838FE /* placeholder_Armenia@2x.png in Resources */,
 				FD37E9D7188FAFB2009C51C2 /* placeholder_Indonesia@2x.png in Resources */,
 				FD6CEE8C187EB237009ADF7D /* inactive_SouthKorea_flag@2x.png in Resources */,
+				FD46FF061977C3EE00921521 /* plane_flying.wav in Resources */,
 				FD0E6DDF18D2FC9500B838FE /* placeholder_Nepal@2x.png in Resources */,
 				FD0E6E0818D2FC9500B838FE /* flag_Uzbekistan_gray.png in Resources */,
 				FD0E6DDB18D2FC9500B838FE /* placeholder_India@2x.png in Resources */,
@@ -3224,6 +3254,7 @@
 				FD0E6E9A18D2FC9500B838FE /* inactive_Yemen.png in Resources */,
 				FD0E6ED718D2FC9500B838FE /* flag_Georgia_gray@2x.png in Resources */,
 				FD0E6C3218D2FC7B00B838FE /* stage5_group5_active.png in Resources */,
+				FD46FEFD1977B4B000921521 /* plane_landing.wav in Resources */,
 				FD0E6DCA18D2FC9500B838FE /* inactive_India.png in Resources */,
 				FD37E9BE188FAFB2009C51C2 /* inactive_EastTimor.png in Resources */,
 				FD0E6C3918D2FC7B00B838FE /* stage6_group1_active@2x.png in Resources */,
@@ -3274,6 +3305,7 @@
 				FDC815001887B65600A28EB5 /* img_shadow@2x.png in Resources */,
 				FD0EF839187E7D21008BE10E /* active_NorthKorea_flag@2x.png in Resources */,
 				FD0E6BF518D2FC7B00B838FE /* stage2_group3_placeholder@2x.png in Resources */,
+				FD46FEFE1977B4B000921521 /* plane_take_off.wav in Resources */,
 				FDC3616918894349001D8E27 /* stage1_group2_map.png in Resources */,
 				FD0E6E7718D2FC9500B838FE /* flag_UnitedArabEmirates@2x.png in Resources */,
 				FD0E6C2B18D2FC7B00B838FE /* stage5_group3_placeholder@2x.png in Resources */,

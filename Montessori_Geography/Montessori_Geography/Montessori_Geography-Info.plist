@@ -26,6 +26,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>kg-primary-penmanship-2.ttf</string>
 		<string>Questrial-Regular.otf</string>
 	</array>
 	<key>UILaunchImages~ipad</key>

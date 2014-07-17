@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 #import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 #import "MGAGamePiece.h"
 #import "MapFrameModal.h"
@@ -53,5 +55,5 @@
 @property (nonatomic,readwrite) int _currentStage;
 @property (nonatomic,readwrite) int _currentGroup;
 @property (nonatomic,assign)BOOL Completed;
-
+@property (nonatomic,strong) AVAudioPlayer *plane_flying;
 @end

@@ -14,6 +14,7 @@
 @end
 
 @implementation IntroductionViewCtr
+@synthesize plane_flying,plane_landing,plane_takeoff;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,15 +54,15 @@
     
     //Zoom Map To Asia
     self.view.userInteractionEnabled = NO;
+    
+    [self setPlaneSoundsPlayer];
     // if (_CurrentStage == 0 && _CurrentGroup == 0)
     //{
     [self performSelector:@selector(ZoomAsiaMap) withObject:nil afterDelay:1.0];
-    [self performSelector:@selector(EnableViewInteraction) withObject:nil afterDelay:PlaneAnimationTime+1.0];
     //}
     //else
     //{
     //Set Asia Witout Zoom If app not in first time
-    // [self SetAisaWithZoomWithoutAnimation];
     //}
     
     
@@ -81,22 +82,25 @@
 
 -(void)SetCustomFont
 {
-    lblWelcome.font = Questrial_Regular(lblWelcome.font.pointSize);
-    lblMonte.font = Questrial_Regular(lblMonte.font.pointSize);
-    lblAsia.font = Questrial_Regular(lblAsia.font.pointSize);
-    lblStageTitle.font = Questrial_Regular(lblStageTitle.font.pointSize);
+    lblWelcome.font = KGPrimaryPenmanship2(lblWelcome.font.pointSize + (2*kSizeDiff));
+    lblMonte.font = KGPrimaryPenmanship2(lblMonte.font.pointSize + (4*kSizeDiff));
+    lblAsia.font = KGPrimaryPenmanship2(lblAsia.font.pointSize + kSizeDiff);
+    lblStageTitle.font = KGPrimaryPenmanship2(lblStageTitle.font.pointSize + kSizeDiff);
     
     //Home Screen
-    btnMapsPurchase.titleLabel.font = Questrial_Regular(btnReset.titleLabel.font.pointSize);
-    btnFlagsPurchase.titleLabel.font = Questrial_Regular(btnReset.titleLabel.font.pointSize);
-    btnMapsFlagsPurchase.titleLabel.font = Questrial_Regular(btnReset.titleLabel.font.pointSize);
-    btnReset.titleLabel.font = Questrial_Regular(btnReset.titleLabel.font.pointSize);
-    btnRestorePurchases.titleLabel.font = Questrial_Regular(btnRestorePurchases.titleLabel.font.pointSize);
+    btnMapsPurchase.titleLabel.font = KGPrimaryPenmanship2(btnReset.titleLabel.font.pointSize + kSizeDiff);
+    btnFlagsPurchase.titleLabel.font = KGPrimaryPenmanship2(btnReset.titleLabel.font.pointSize + kSizeDiff);
+    btnMapsFlagsPurchase.titleLabel.font = KGPrimaryPenmanship2(btnReset.titleLabel.font.pointSize + kSizeDiff);
+    btnReset.titleLabel.font = KGPrimaryPenmanship2(btnReset.titleLabel.font.pointSize + kSizeDiff);
+    btnRestorePurchases.titleLabel.font = KGPrimaryPenmanship2(btnRestorePurchases.titleLabel.font.pointSize + kSizeDiff);
     
-    lblMapsPurchase.font = Questrial_Regular(lblMapsPurchase.font.pointSize);
-    lblFlagsPurchase.font = Questrial_Regular(lblFlagsPurchase.font.pointSize);
-    lblMapsFlagsPurchase.font = Questrial_Regular(lblMapsFlagsPurchase.font.pointSize);
-    lblReset.font = Questrial_Regular(lblReset.font.pointSize);
+    lblMapsPurchase.font = KGPrimaryPenmanship2(lblMapsPurchase.font.pointSize + kSizeDiff);
+    lblFlagsPurchase.font = KGPrimaryPenmanship2(lblFlagsPurchase.font.pointSize + kSizeDiff);
+    lblMapsFlagsPurchase.font = KGPrimaryPenmanship2(lblMapsFlagsPurchase.font.pointSize + kSizeDiff);
+    lblReset.font = KGPrimaryPenmanship2(lblReset.font.pointSize + kSizeDiff);
+    
+    lblMonte_Purchase.font = KGPrimaryPenmanship2(lblMonte_Purchase.font.pointSize + (3*kSizeDiff));
+    lblAsia_Purchase.font = KGPrimaryPenmanship2(lblAsia_Purchase.font.pointSize + (3*kSizeDiff));
     
     //Set Border To Purchase Buttos
     btnMapsPurchase.layer.cornerRadius = 3;
@@ -117,10 +121,15 @@
     // get the path Detail we are interested in.
     
     NSArray *ArryIntroPath = [temp valueForKey:@"introductionpath"];
-    NSArray *ArryCurrentStageGroup = [[ArryIntroPath objectAtIndex:0] valueForKey:@"groups"];
-    NSDictionary *DicPathCurretnGroup = [ArryCurrentStageGroup objectAtIndex:0];
-    [self CreatePlaneAnimationPath:DicPathCurretnGroup];
+    NSArray *ArryCurrentStageGroup = [[ArryIntroPath objectAtIndex:_CurrentStage] valueForKey:@"groups"];
     
+    int group_ = _CurrentGroup;
+    if (group_ == 111)
+        group_ = [ArryCurrentStageGroup count] - 1;
+    
+    NSDictionary *DicPathCurretnGroup = [ArryCurrentStageGroup objectAtIndex:group_];
+    [self CreatePlaneAnimationPath:DicPathCurretnGroup];
+    [self PlayPlaneSoundwithDictionary:DicPathCurretnGroup];
     //Map Zoom
     [UIView animateWithDuration:4.50 animations:^{
         AsiaView.frame = CGRectMake(AsiaView.frame.origin.x, 90, AsiaView.frame.size.width, AsiaView.frame.size.height);
@@ -159,38 +168,6 @@
         
     }];
 }
-
--(void)SetAisaWithZoomWithoutAnimation
-{
-    lblLine1.alpha = 0.0;
-    lblWelcome.alpha = 0.0;
-    
-    
-    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
-    
-    [self performSelector:@selector(EnableViewInteraction) withObject:nil afterDelay:0.1+1];
-    
-    NSArray *ArrayPath = [[DicPathCurretnGroup valueForKey:@"start"] valueForKey:@"path"];
-    NSDictionary *DicTemp = [ArrayPath objectAtIndex:0];
-    UIBezierPath *trackPath = [UIBezierPath bezierPath];
-    
-    [trackPath moveToPoint:P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]+20)];
-    [trackPath addLineToPoint:P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue])];
-    
-    [self movePlane:trackPath PlaneLastPoint:P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]) AnimationTime:0.1];
-    
-    
-    //Aisa
-    View_Purchase.frame = CGRectMake(View_Purchase.frame.origin.x, 0, View_Purchase.frame.size.width, View_Purchase.frame.size.height);
-    img_Shadow.frame = CGRectMake(img_Shadow.frame.origin.x, 0, img_Shadow.frame.size.width, img_Shadow.frame.size.height);
-    WelComeView.transform = CGAffineTransformScale(WelComeView.transform, 0.80, 0.80);
-    WelComeView.frame = CGRectMake(292, 10, 440, 70);
-    img_Map.frame = CGRectMake(0, 0, 1024, 768);
-    img_Map.image = [UIImage imageNamed:@"asia_map"];
-    
-    //Show Logo
-    img_Logo.frame = CGRectMake(img_Logo.frame.origin.x, img_Logo.frame.origin.y, 365, img_Logo.frame.size.height);
-}
 -(void)EnableViewInteraction
 {
     self.view.userInteractionEnabled = YES;
@@ -225,23 +202,6 @@
             
             NSDictionary *DicFlag_PinFrame = [[_groupDataArray objectAtIndex:j] valueForKey:@"flag_pin"];
             
-            //Chirag
-            /*UIImageView *imgViewGroupFlag_Pin = [[UIImageView alloc] init];
-            UIImage *imgOrange = [UIImage imageNamed:@"orange_pin"];
-            imgViewGroupFlag_Pin.frame = CGRectMake([[DicFlag_PinFrame objectForKey:@"x"] floatValue],
-                                            [[DicFlag_PinFrame objectForKey:@"y"] floatValue],
-                                            imgOrange.size.width,
-                                            imgOrange.size.height);
-            imgViewGroupFlag_Pin.image = imgOrange;
-            imgViewGroupFlag_Pin.hidden = YES;
-            imgViewGroupFlag_Pin.userInteractionEnabled = YES;
-            [imgViewGroupFlag_Pin setHighlightedImage:[UIImage imageNamed:@"green_pin"]];
-            imgViewGroupFlag_Pin.highlighted = NO;
-            imgViewGroupFlag_Pin.tag = [[NSString stringWithFormat:@"%d%d",i+1,j+1] intValue];
-            [imgViewGroupFlag_Pin setAccessibilityIdentifier:@"flag_pin_orange"];
-            [ViewContry addSubview:imgViewGroupFlag_Pin];*/
-            //Chirag
-            
             UIImage *imgOrange = [UIImage imageNamed:@"orange_pin"];
             UIButton *btnGroupFlag_Pin = [UIButton buttonWithType:UIButtonTypeCustom];
             btnGroupFlag_Pin.frame = CGRectMake([[DicFlag_PinFrame objectForKey:@"x"] floatValue],
@@ -261,19 +221,6 @@
         
         if (i < [_stageDataArray count] - 1) {
             NSDictionary *DicGreen_flag_Pin_Frame = [[_stageDataArray objectAtIndex:i] valueForKey:@"green_flag_pin_frame"];
-            
-            //Chirag
-            /*UIImageView *imgViewStageFlag_Pin = [[UIImageView alloc] init];
-            UIImage *imgGreen = [UIImage imageNamed:@"green_pin"];
-            imgViewStageFlag_Pin.frame = CGRectMake([[DicGreen_flag_Pin_Frame objectForKey:@"x"] floatValue],
-                                                    [[DicGreen_flag_Pin_Frame objectForKey:@"y"] floatValue], imgGreen.size.width, imgGreen.size.height);
-            imgViewStageFlag_Pin.image = imgGreen;
-            imgViewStageFlag_Pin.hidden = YES;
-            imgViewStageFlag_Pin.userInteractionEnabled = YES;
-            imgViewStageFlag_Pin.tag = [[NSString stringWithFormat:@"%d",i+1] intValue];
-            [imgViewStageFlag_Pin setAccessibilityIdentifier:@"flag_pin_green"];
-            [ViewContry addSubview:imgViewStageFlag_Pin];*/
-            //Chirag
             
             UIImage *imgGreen = [UIImage imageNamed:@"green_pin"];
             UIButton *btnStageFlag_Pin = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1105,6 +1052,96 @@
     BOOL transparent = alpha < 0.01;
     
     return transparent;
+}
+
+#pragma mark - Audio Player
+-(void)setPlaneSoundsPlayer
+{
+    if (self.plane_landing == nil)
+    {
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"plane_landing" ofType: @"wav"];
+        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+        AVAudioPlayer *newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
+        newPlayer.numberOfLoops = 0;
+        self.plane_landing = newPlayer;
+        [self.plane_landing prepareToPlay];
+        [self.plane_landing stop];
+    }
+    if (self.plane_takeoff == nil)
+    {
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"plane_take_off" ofType: @"wav"];
+        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+        AVAudioPlayer *newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
+        newPlayer.numberOfLoops = 0;
+        self.plane_takeoff = newPlayer;
+        [self.plane_takeoff prepareToPlay];
+        [self.plane_takeoff stop];
+    }
+    if (self.plane_flying == nil)
+    {
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: @"plane_flying" ofType: @"wav"];
+        NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
+        AVAudioPlayer *newPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL error: nil];
+        newPlayer.numberOfLoops = -1;
+        self.plane_flying = newPlayer;
+        [self.plane_flying prepareToPlay];
+        [self.plane_flying stop];
+    }
+}
+-(void)PlayPlaneSoundwithDictionary:(NSDictionary*)dicPath
+{
+    plane_Current_Time = 0;
+    NSDictionary *DicAirplaneInfo = [dicPath valueForKey:@"airplane"];
+    plane_Animation_Time = [[DicAirplaneInfo valueForKey:@"animationtime"] floatValue];
+    plane_timer = [NSTimer scheduledTimerWithTimeInterval:0.10 target:self selector:@selector(timeChanged:) userInfo:nil repeats:YES];
+    [self.plane_takeoff play];
+}
+-(void)timeChanged:(NSTimer*)timer
+{
+    plane_Current_Time = plane_Current_Time + 0.10;
+    if (plane_Current_Time >= plane_Animation_Time) {
+        if ([self.plane_takeoff isPlaying])
+            [self.plane_takeoff stop];
+        
+        if ([self.plane_flying isPlaying])
+            [self.plane_flying stop];
+        
+        if ([self.plane_landing isPlaying])
+            [self.plane_landing stop];
+        
+        if ([plane_timer isValid]) {
+            [plane_timer invalidate];
+            plane_timer = nil;
+        }
+        plane_Current_Time = 0;
+        [self EnableViewInteraction];
+    }
+    else if (plane_Current_Time > (plane_Animation_Time - self.plane_landing.duration))
+    {
+        if ([self.plane_takeoff isPlaying])
+            [self.plane_takeoff stop];
+        
+        if ([self.plane_flying isPlaying])
+            [self.plane_flying stop];
+    }
+    else if (plane_Current_Time > (plane_Animation_Time - self.plane_landing.duration) - 0.80)
+    {
+        if (![self.plane_landing isPlaying])
+            [self.plane_landing play];
+    }
+    else if (plane_Current_Time > (int)self.plane_takeoff.duration)
+    {
+        if ([self.plane_takeoff isPlaying])
+            [self.plane_takeoff stop];
+        
+        if ([self.plane_landing isPlaying])
+            [self.plane_landing stop];
+    }
+    else if (plane_Current_Time > (int)self.plane_takeoff.duration - 0.80)
+    {
+        if (![self.plane_flying isPlaying])
+            [self.plane_flying play];
+    }
 }
 
 - (void)didReceiveMemoryWarning

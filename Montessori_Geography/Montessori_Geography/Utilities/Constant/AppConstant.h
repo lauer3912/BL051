@@ -37,7 +37,11 @@
 #define DisplayLocalizedAlertNoInternet {UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Oops!",@"") message:NSLocalizedString(@"You're not connected to the internet.\nPlease connect and retry.",@"") delegate:nil cancelButtonTitle:@"Got it!" otherButtonTitles:nil]; [alertView show]; }
 
 #define Questrial_Regular(f) [UIFont fontWithName:@"Questrial-Regular" size:f]
+#define KGPrimaryPenmanship2(f) [UIFont fontWithName:@"KGPrimaryPenmanship2" size:f]
 #define P(x,y) CGPointMake(x, y)
+
+#define kSizeDiff 3
+
 
 #define PlaneAnimationTime 16.0
 #define StepCompleteAnimationTime 5.0
