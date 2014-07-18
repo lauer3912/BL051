@@ -1105,6 +1105,8 @@
     
     [self playPlaneSound];
 
+    [plane removeAllAnimations];
+    
 	CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
 	anim.path = trackPath.CGPath;
 	anim.rotationMode = kCAAnimationRotateAutoReverse;

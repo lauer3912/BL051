@@ -29,13 +29,14 @@
 {
     [super viewDidLoad];
     //Set Localized String of the view
+    
     [GlobalMethods replaceTextWithLocalizedTextInSubviewsForView:self.view];
     
     lblBlue.layer.cornerRadius = 8.0;
     lblBorderMenu.layer.cornerRadius = 8.0;
     
-    [AsiaView.layer setCornerRadius:8.0f];
     // drop shadow
+    [AsiaView.layer setCornerRadius:8.0f];
     [AsiaView.layer setShadowColor:[UIColor blackColor].CGColor];
     [AsiaView.layer setShadowOpacity:0.2];
     [AsiaView.layer setShadowRadius:8.0];
@@ -392,7 +393,7 @@
 	
     if (!plane)
     {
-        UIImage *imgPlane = [UIImage imageNamed:@"plane_2.png"];
+        UIImage *imgPlane = [UIImage imageNamed:@"plane_3.png"];
         plane = [CALayer layer];
         plane.bounds = CGRectMake(0, 0, imgPlane.size.width, imgPlane.size.height);
         plane.contents = (id)(imgPlane.CGImage);
@@ -403,6 +404,8 @@
         [self bringSublayerToFront:plane];
     }
     plane.position = point;
+    
+    [plane removeAllAnimations];
     
 	CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
 	anim.path = trackPath.CGPath;
@@ -581,10 +584,10 @@
 -(void)StageBegan:(int)stage CurrentGroup:(int)group PreviousComplete:(BOOL)YesNo AllGroup:(int)tempflag
 {
     //NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
-    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+   // NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
     
-    [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"start"]];
-    
+   // [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"start"]];
+    [self MovePlaneWhenStageStart];
     //Set Stage Title
     lblStageTitle.text = [GlobalMethods ReturnStageTitle:stage];
     
@@ -658,10 +661,10 @@
     [self ZoomOutForNextStage];
     
     //Move Plane to next stage
-    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+    //NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
     //Change Stage And Group for Plane Animation
     
-    [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
+   // [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
     
     if (!previouslycompleted) {
         
@@ -700,16 +703,20 @@
         }
         [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
     }
+    
+    [self MovePlaneToCurrentStageFromOtherStage];
+
 }
 -(void)PopViewSetAnimationBack
 {
     [self ZoomOutForNextStage];
     
     //Move Plane to next stage
-    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+    //NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
     //Change Stage And Group for Plane Animation
     
-    [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
+    //[self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
+    [self MovePlaneToCurrentStageFromOtherStage];
 }
 
 #pragma mark - _StageAllGroupDelegate Delegate
@@ -718,10 +725,10 @@
     [self ZoomOutForNextStage];
     
     //Move Plane to next stage
-    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
+   // NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:0 ForGroup:0];
     //Change Stage And Group for Plane Animation
     
-    [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
+   // [self CreatePlaneAnimationPath:[DicPathCurretnGroup valueForKey:@"end"]];
     
     if (!previouslycompleted) {
         _CurrentStage++;
@@ -741,6 +748,7 @@
     
         [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
     }
+    [self MovePlaneToCurrentStageFromOtherStage];
 }
 #pragma mark - Mode Selection
 -(IBAction)btnModeSelectPressed:(id)sender
@@ -791,7 +799,7 @@
     {
         //Move Plane
         if (planeMove){
-            //[self MovePlaneToCurrentStageFromOtherStage];
+            [self MovePlaneToCurrentStageFromOtherStage];
         }
         [self SetImagesToGroups:_CurrentStage Group:_CurrentGroup];
     }
@@ -997,8 +1005,7 @@
     
     NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
     
-    NSArray *ArrayPath = [[DicPathCurretnGroup valueForKey:@"start"] valueForKey:@"path"];
-    NSDictionary *DicTemp = [ArrayPath objectAtIndex:0];
+    NSDictionary *DicTemp = [[DicPathCurretnGroup valueForKey:@"start"] valueForKey:@"path"];
     
     float Fromx1 = plane.position.x;
     float Fromy1 = plane.position.y;
@@ -1020,12 +1027,12 @@
     
     //ControlPoint1
     float cp1X = [self getRandomNumberBetween:Fromx1 to:Fromx2];
-    float cp1Y = [self getRandomNumberBetween:Fromy1 to:Fromy2+50];
+    float cp1Y = [self getRandomNumberBetween:Fromy1 to:Fromy2+100];
     
     CGPoint s = plane.position;
     CGPoint e = P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]);
     CGPoint cp1 = P(cp1X, cp1Y);
-    CGPoint cp2 = P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]+50);
+    CGPoint cp2 = P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]+100);
     
     UIBezierPath *trackpath = [UIBezierPath bezierPath];
     [trackpath moveToPoint:s];
@@ -1033,7 +1040,60 @@
     
     [self movePlane:trackpath PlaneLastPoint:e AnimationTime:StepCompleteAnimationTime];
 }
+-(void)MovePlaneWhenStageStart
+{
+    //Set Plane to stage 1 group 1
+    
+    NSDictionary *DicPathCurretnGroup = [GlobalMethods ReturnPathForPlaneAnimationForStage:_CurrentStage ForGroup:_CurrentGroup];
+    
+    NSDictionary *DicStartPath = [[DicPathCurretnGroup valueForKey:@"start"] valueForKey:@"path"];
+    NSDictionary *DicEndPath = [[DicPathCurretnGroup valueForKey:@"end"] valueForKey:@"path"];
+    //random values
+    
+    CGPoint s = P([[DicStartPath valueForKey:@"x"] floatValue], [[DicStartPath valueForKey:@"y"] floatValue]);
+    CGPoint e = P([[DicEndPath valueForKey:@"x"] floatValue], [[DicEndPath valueForKey:@"y"] floatValue]);
+    
+    float distanceDiff = [[DicStartPath valueForKey:@"x"] floatValue] + [[DicEndPath valueForKey:@"x"] floatValue];
+    distanceDiff = distanceDiff/3;
+    UIBezierPath *trackpath = [UIBezierPath bezierPath];
+    [trackpath moveToPoint:s];
+    if ([[DicEndPath valueForKey:@"x"] floatValue] > 1024)
+    {
+        float y1 = [[DicStartPath valueForKey:@"y"] floatValue] - distanceDiff;
+        float y2 = [[DicStartPath valueForKey:@"y"] floatValue] + distanceDiff;
+        /*if ([[DicStartPath valueForKey:@"y"] floatValue] > [[DicEndPath valueForKey:@"y"] floatValue])
+        {
+            y1 = [[DicStartPath valueForKey:@"y"] floatValue] - distanceDiff;
+            y2 = [[DicStartPath valueForKey:@"y"] floatValue] + distanceDiff;
+        }
+        else
+        {
+            y1 = [[DicStartPath valueForKey:@"y"] floatValue] + distanceDiff;
+            y2 = [[DicStartPath valueForKey:@"y"] floatValue] - distanceDiff;
+        }*/
+        [trackpath addCurveToPoint:e controlPoint1:P([[DicStartPath valueForKey:@"x"] floatValue] +distanceDiff, y1) controlPoint2:P([[DicStartPath valueForKey:@"x"] floatValue] + distanceDiff, y2)];
+    }
+    else
+    {
+        float y1 = [[DicStartPath valueForKey:@"y"] floatValue] + distanceDiff;
+        float y2 = [[DicStartPath valueForKey:@"y"] floatValue] - distanceDiff;
+        /*if ([[DicStartPath valueForKey:@"y"] floatValue] > [[DicEndPath valueForKey:@"y"] floatValue])
+        {
+            y1 = [[DicStartPath valueForKey:@"y"] floatValue] + distanceDiff;
+            y2 = [[DicStartPath valueForKey:@"y"] floatValue] - distanceDiff;
+        }
+        else
+        {
+            y1 = [[DicStartPath valueForKey:@"y"] floatValue] - distanceDiff;
+            y2 = [[DicStartPath valueForKey:@"y"] floatValue] + distanceDiff;
+        }*/
 
+        [trackpath addCurveToPoint:e controlPoint1:P([[DicStartPath valueForKey:@"x"] floatValue] -distanceDiff, y1) controlPoint2:P([[DicStartPath valueForKey:@"x"] floatValue] -distanceDiff, y2)];
+    }
+    
+    CGFloat animationTime = [[[[DicPathCurretnGroup valueForKey:@"start"] valueForKey:@"airplane"] valueForKeyPath:@"animationtime"] floatValue];
+    [self movePlane:trackpath PlaneLastPoint:e AnimationTime:animationTime];
+}
 #pragma mark - Check ImageView Transperant or not
 - (BOOL)isTouchOnTransparentPixel:(CGPoint)point ImageView:(UIImageView*)iv{
     
@@ -1143,7 +1203,6 @@
             [self.plane_flying play];
     }
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

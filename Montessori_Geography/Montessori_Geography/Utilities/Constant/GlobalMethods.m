@@ -112,6 +112,10 @@
     
     NSArray *ArrayStages = [temp valueForKey:@"stages"];
     NSArray *ArryCurrentStageGroup = [[ArrayStages objectAtIndex:StageValue] valueForKey:@"groups"];
+    
+    if (GroupValue == 111)
+        GroupValue = [ArryCurrentStageGroup count] - 1;
+    
     NSDictionary *DicPathCurretnGroup = [ArryCurrentStageGroup objectAtIndex:GroupValue];
     
     return DicPathCurretnGroup;

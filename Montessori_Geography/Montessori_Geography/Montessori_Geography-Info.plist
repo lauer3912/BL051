@@ -8,6 +8,21 @@
 	<string>MGA</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Icon-80</string>
+				<string>Icon-40</string>
+				<string>Icon-Small</string>
+				<string>Icon</string>
+				<string>Icon-152</string>
+				<string>Icon-76</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.bluelabellabs.bl032</string>
 	<key>CFBundleInfoDictionaryVersion</key>
