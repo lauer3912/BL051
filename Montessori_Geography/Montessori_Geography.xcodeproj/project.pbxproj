@@ -656,8 +656,6 @@
 		FD5D1AA418D31D630089EF8E /* stage2_allGroups_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5D1AA218D31D630089EF8E /* stage2_allGroups_map@2x.png */; };
 		FD5D1AA718D31D6B0089EF8E /* stage1_allGroups_map.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5D1AA518D31D6B0089EF8E /* stage1_allGroups_map.png */; };
 		FD5D1AA818D31D6B0089EF8E /* stage1_allGroups_map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD5D1AA618D31D6B0089EF8E /* stage1_allGroups_map@2x.png */; };
-		FD63A47C188E335E005535EA /* TempViewCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FD63A47A188E335E005535EA /* TempViewCtr.m */; };
-		FD63A47D188E335E005535EA /* TempViewCtr.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD63A47B188E335E005535EA /* TempViewCtr.xib */; };
 		FD63A487188E3A8A005535EA /* active_China_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A47E188E3A8A005535EA /* active_China_flag@2x.png */; };
 		FD63A488188E3A8A005535EA /* active_Mongolia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A47F188E3A8A005535EA /* active_Mongolia_flag@2x.png */; };
 		FD63A489188E3A8A005535EA /* active_Russia_flag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FD63A480188E3A8A005535EA /* active_Russia_flag@2x.png */; };
@@ -1422,9 +1420,6 @@
 		FD5D1AA218D31D630089EF8E /* stage2_allGroups_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage2_allGroups_map@2x.png"; sourceTree = "<group>"; };
 		FD5D1AA518D31D6B0089EF8E /* stage1_allGroups_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1_allGroups_map.png; sourceTree = "<group>"; };
 		FD5D1AA618D31D6B0089EF8E /* stage1_allGroups_map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stage1_allGroups_map@2x.png"; sourceTree = "<group>"; };
-		FD63A479188E335E005535EA /* TempViewCtr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewCtr.h; sourceTree = "<group>"; };
-		FD63A47A188E335E005535EA /* TempViewCtr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewCtr.m; sourceTree = "<group>"; };
-		FD63A47B188E335E005535EA /* TempViewCtr.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TempViewCtr.xib; sourceTree = "<group>"; };
 		FD63A47E188E3A8A005535EA /* active_China_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_China_flag@2x.png"; sourceTree = "<group>"; };
 		FD63A47F188E3A8A005535EA /* active_Mongolia_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Mongolia_flag@2x.png"; sourceTree = "<group>"; };
 		FD63A480188E3A8A005535EA /* active_Russia_flag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_Russia_flag@2x.png"; sourceTree = "<group>"; };
@@ -2324,9 +2319,6 @@
 				FD4FC25118D826110095C079 /* StagesAllGroupViewCtr.h */,
 				FD4FC25218D826110095C079 /* StagesAllGroupViewCtr.m */,
 				FD4FC25318D826110095C079 /* StagesAllGroupViewCtr.xib */,
-				FD63A479188E335E005535EA /* TempViewCtr.h */,
-				FD63A47A188E335E005535EA /* TempViewCtr.m */,
-				FD63A47B188E335E005535EA /* TempViewCtr.xib */,
 			);
 			path = Stages;
 			sourceTree = "<group>";
@@ -2680,7 +2672,6 @@
 				FD37E9E8188FAFB2009C51C2 /* stage2_group2_map.png in Resources */,
 				FD0E6E3618D2FC9500B838FE /* active_Qatar.png in Resources */,
 				FD37E9B0188FAFB2009C51C2 /* active_Myanmar.png in Resources */,
-				FD63A47D188E335E005535EA /* TempViewCtr.xib in Resources */,
 				FD0E6ECA18D2FC9500B838FE /* active_Georgia.png in Resources */,
 				FD0E6E0218D2FC9500B838FE /* flag_Turkmenistan.png in Resources */,
 				FD0E6EAE18D2FC9500B838FE /* placeholder_Qatar.png in Resources */,
@@ -3407,7 +3398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD63A47C188E335E005535EA /* TempViewCtr.m in Sources */,
 				FD1CA73E187D45050064FBBA /* StagesViewCtr.m in Sources */,
 				FD4FF1C9187FCB8000D6823A /* NSUserDefaults+Helpers.m in Sources */,
 				FD128E771883E21F00D760E9 /* InAppHelper.m in Sources */,

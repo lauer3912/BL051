@@ -501,7 +501,7 @@
 							<key>scaleStep0</key>
 							<real>1.25</real>
 							<key>maxDistanceFromCenterStep2</key>
-							<integer>100</integer>
+							<integer>75</integer>
 							<key>placeholder_image_filename_flag</key>
 							<string>flag_Japan_gray</string>
 							<key>active_image_filename_flag</key>

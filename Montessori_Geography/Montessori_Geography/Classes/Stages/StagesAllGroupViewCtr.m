@@ -177,9 +177,6 @@
 #pragma mark - Back Pressed
 -(IBAction)btnBackPressed:(id)sender
 {
-    [self.view.layer removeAllAnimations];
-    [self.navigationController.view.layer removeAllAnimations];
-    
     [CATransaction begin];
     [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
     
@@ -631,8 +628,10 @@
         if ([_gamePiecesCompletedInCurrentStep count] == [_gamePieceArray count]) {
             
             //Time Invalidate - Stage Complete
-            [Step_Timer invalidate];
-            
+            if ([Step_Timer isValid]) {
+                [Step_Timer invalidate];
+                Step_Timer = nil;
+            }
             [self.view setUserInteractionEnabled:NO];
             // Stage complete.
             void (^completion)(void) = ^(void) {
@@ -672,8 +671,10 @@
     [self.view bringSubviewToFront:gamePiece];
     
     //Time Invalidate - If user touch the any gamePiece cancel timer of 10 seconds and set gamePiece to active
-    [Step_Timer invalidate];
-    
+    if ([Step_Timer isValid]) {
+        [Step_Timer invalidate];
+        Step_Timer = nil;
+    }
     //Remove All animation Of the Game Pieces
     for (int i = 0; i < [_gamePieceArray count]; i++)
     {
@@ -715,8 +716,10 @@
             
             _nooftimesCompletedStep1++;
             //Time Invalidate - Stage Complete
-            [Step_Timer invalidate];
-            
+            if ([Step_Timer isValid]) {
+                [Step_Timer invalidate];
+                Step_Timer = nil;
+            }
             //Repeat Step 1 upto 3 times
             if (_nooftimesCompletedStep1 == 3)
             {
@@ -737,7 +740,10 @@
         if (_currentStep == kSTEP1)
         {
             //Set Timer of 10 Seconds for New GamePiece
-            [Step_Timer invalidate];
+            if ([Step_Timer isValid]) {
+                [Step_Timer invalidate];
+                Step_Timer = nil;
+            }
             Step_Timer = [NSTimer scheduledTimerWithTimeInterval: 10.0 target: self selector:@selector(ChangeInActiveForHint:) userInfo: nil repeats:NO];
         }
         
@@ -756,7 +762,10 @@
     if (_currentStep == kSTEP1 || _currentStep == kSTEP3)
     {
         //Set Timer of 10 Seconds After Touches
-        [Step_Timer invalidate];
+        if ([Step_Timer isValid]) {
+            [Step_Timer invalidate];
+            Step_Timer = nil;
+        }
         Step_Timer = [NSTimer scheduledTimerWithTimeInterval: 10.0 target: self selector:@selector(ChangeInActiveForHint:) userInfo: nil repeats:NO];
     }
 }
@@ -922,5 +931,16 @@
     return transparent;
 }
 
+#pragma mark - viewWillDisappear
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if ([Step_Timer isValid]) {
+        [Step_Timer invalidate];
+        Step_Timer = nil;
+    }
+    [self.view.layer removeAllAnimations];
+    [self.navigationController.view.layer removeAllAnimations];
+}
 
 @end

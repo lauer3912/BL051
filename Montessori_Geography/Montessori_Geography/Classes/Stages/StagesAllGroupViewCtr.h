@@ -35,8 +35,8 @@
     
     NSMutableArray *_gamePiecesCompletedInCurrentStep;
     
-    __weak IBOutlet UILabel *_lbl_Instruction;
-    __weak IBOutlet UIImageView *_imgView_Stage_Map;
+    IBOutlet UILabel *_lbl_Instruction;
+    IBOutlet UIImageView *_imgView_Stage_Map;
     
     //Plane For Fly After Activity Completion
     CALayer *plane;
@@ -48,7 +48,7 @@
     //Map Frame Modal
     MapFrameModal *obj_mapFrame;
     
-    __weak IBOutlet UILabel *_lblStageTitle;
+    IBOutlet UILabel *_lblStageTitle;
     
 }
 @property (nonatomic,weak) id <StageCompleteForAllGroupDelegate> _StageAllGroupDelegate;

@@ -1027,11 +1027,11 @@
     
     //ControlPoint1
     float cp1X = [self getRandomNumberBetween:Fromx1 to:Fromx2];
-    float cp1Y = [self getRandomNumberBetween:Fromy1 to:Fromy2+100];
+    float cp1Y = [self getRandomNumberBetween:Fromy1 to:Fromy2];
     
     CGPoint s = plane.position;
     CGPoint e = P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]);
-    CGPoint cp1 = P(cp1X, cp1Y);
+    CGPoint cp1 = P(cp1X+100, cp1Y);
     CGPoint cp2 = P([[DicTemp valueForKey:@"x"] floatValue], [[DicTemp valueForKey:@"y"] floatValue]+100);
     
     UIBezierPath *trackpath = [UIBezierPath bezierPath];
